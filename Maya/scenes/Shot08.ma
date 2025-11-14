@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: Shot08.ma
-//Last modified: Thu, Nov 13, 2025 10:10:53 AM
+//Last modified: Thu, Nov 13, 2025 08:54:04 PM
 //Codeset: 1252
 file -rdi 1 -ns "Skeleton" -rfn "SkeletonRN" -op "v=0;" -typ "mayaAscii" "D:/trist/WorkDayShortFilmOfficialRepo/Maya//assets/characters/skeleton/Skeleton.ma";
 file -rdi 1 -ns "SkeletonFish" -dr 1 -rfn "SkeletonFishRN" -op "v=0;" -typ "mayaAscii"
@@ -22,18 +22,18 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202407121012-8ed02f4c99";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "CA7CC827-4261-51E8-5D47-EF8A016951B7";
+fileInfo "UUID" "4D525B86-4283-DA40-6C69-CA85A7889F7B";
 createNode transform -s -n "persp";
 	rename -uid "A5AB0C49-4479-4887-1D93-CEA0A071F624";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -45.248780526980774 103.62969516076697 645.38198166920586 ;
-	setAttr ".r" -type "double3" -2.399999999936524 2159.5999999999995 -8.386432535460277e-17 ;
+	setAttr ".t" -type "double3" -51.888364617060653 74.290640419788772 142.83635736172525 ;
+	setAttr ".r" -type "double3" 8.3999999999999062 2154.799999999706 0 ;
 	setAttr ".rpt" -type "double3" -8.767926068837572e-15 -4.3870102976520094e-15 2.7099633829619382e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "44D0B96A-4FD5-521A-C047-4AAD0045C9B8";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 587.00801197820272;
+	setAttr ".coi" 82.273802518517329;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -270,7 +270,7 @@ createNode clusterHandle -n "cluster7HandleShape" -p "cluster7Handle";
 	setAttr -k off ".v";
 	setAttr ".or" -type "double3" -121.71793365478516 52.041454695165157 59.175660133361816 ;
 createNode fosterParent -n "SkeletonRNfosterParent1";
-	rename -uid "F1B543DC-4464-F69B-FF9F-17B1A3890BD0";
+	rename -uid "0EF7BC76-4804-4B95-5126-A5B8D492377E";
 createNode mesh -n "Skeleton_Smooth_GeoShapeDeformed" -p "SkeletonRNfosterParent1";
 	rename -uid "21206B83-4401-5C87-D0C1-70B637ABD86E";
 	setAttr -k off ".v";
@@ -305,21 +305,21 @@ createNode mesh -n "L_Skeleton_Reg_Arms_GeoShapeDeformed" -p "SkeletonRNfosterPa
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".vcs" 2;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "B587B0EF-429E-FD3D-550C-5C8B1A43D2F7";
+	rename -uid "A8915EB1-4C69-3D58-0526-0D8701BA7A3E";
 	setAttr -s 10 ".lnk";
 	setAttr -s 10 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "2D43C7FF-47C0-CCDD-CDA2-3DBDFBA7B8AF";
+	rename -uid "CAFDE484-4B80-8FB2-8EFB-10AC4639F1CC";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "5B90717A-44D7-5902-C7B1-09B9715B4E8B";
+	rename -uid "2DC7A22A-4B93-49D6-B9FC-00A6A8A33154";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "55FAAADB-43B0-870B-F3D4-C9B4986A5DAB";
+	rename -uid "08CFEF7D-46C4-12C9-46C5-F199940D1181";
 	setAttr -s 4 ".dli[1:3]"  2 3 4;
 createNode displayLayer -n "defaultLayer";
 	rename -uid "AEC4204B-4076-C7C5-C591-F49B865660C6";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "FCB1B85C-46A6-8BCE-1E41-1DB3EA935EE2";
+	rename -uid "37B5718E-44B6-E696-E5EF-70A7C312384E";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "BDB40158-45CD-07E7-2C59-69953C09C507";
 	setAttr ".g" yes;
@@ -328,30 +328,30 @@ createNode script -n "uiConfigurationScriptNode";
 	setAttr ".b" -type "string" (
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $nodeEditorPanelVisible = stringArrayContains(\"nodeEditorPanel1\", `getPanel -vis`);\n\tint    $nodeEditorWorkspaceControlOpen = (`workspaceControl -exists nodeEditorPanel1Window` && `workspaceControl -q -visible nodeEditorPanel1Window`);\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 1\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
-		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n"
+		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 1\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 650\n            -height 203\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n"
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n"
 		+ "            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n"
-		+ "            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n"
+		+ "            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 650\n            -height 202\n            -sceneRenderFilter 0\n"
 		+ "            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n"
 		+ "            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n"
 		+ "            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n"
-		+ "            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|ShotCamera\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"wireframe\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 1\n"
-		+ "            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n"
-		+ "            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n"
-		+ "            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 592\n            -height 446\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n"
-		+ "            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 0\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n"
-		+ "            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -selectCommand \"print(\\\"\\\")\" \n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
-		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n"
-		+ "            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n"
-		+ "            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n"
-		+ "                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -isSet 0\n                -isSetMember 0\n                -showUfeItems 1\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n"
-		+ "                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                -selectionOrder \"display\" \n                -expandAttribute 1\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayValues 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showPlayRangeShades \"on\" \n                -lockPlayRangeShades \"off\" \n                -smoothness \"fine\" \n"
-		+ "                -resultSamples 0.5\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -keyMinScale 1\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -preSelectionHighlight 0\n                -limitToSelectedCurves 0\n                -constrainDrag 0\n                -valueLinesToggle 0\n                -outliner \"graphEditor1OutlineEd\" \n                -highlightAffectedCurves 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n"
-		+ "                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n"
-		+ "                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 1\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -showUfeItems 1\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n"
-		+ "            dopeSheetEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -hierarchyBelow 0\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n"
-		+ "            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n"
+		+ "            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 650\n            -height 202\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|ShotCamera\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"wireframe\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n"
+		+ "            -useDefaultMaterial 1\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n"
+		+ "            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n"
+		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1307\n            -height 452\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n"
+		+ "            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n"
+		+ "            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -selectCommand \"print(\\\"\\\")\" \n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n"
+		+ "            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n"
+		+ "            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n"
+		+ "                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -isSet 0\n                -isSetMember 0\n                -showUfeItems 1\n                -displayMode \"DAG\" \n                -expandObjects 0\n"
+		+ "                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                -selectionOrder \"display\" \n                -expandAttribute 1\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayValues 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showPlayRangeShades \"on\" \n                -lockPlayRangeShades \"off\" \n"
+		+ "                -smoothness \"fine\" \n                -resultSamples 0.5\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -keyMinScale 1\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -preSelectionHighlight 0\n                -limitToSelectedCurves 0\n                -constrainDrag 0\n                -valueLinesToggle 0\n                -outliner \"graphEditor1OutlineEd\" \n                -highlightAffectedCurves 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n"
+		+ "                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n"
+		+ "                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 1\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -showUfeItems 1\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n"
+		+ "                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -hierarchyBelow 0\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n"
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n"
 		+ "                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -connectedGraphingMode 1\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n"
@@ -366,8 +366,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n"
 		+ "                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -bluePencil 1\n                -greasePencils 0\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n"
 		+ "\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"|ShotCamera\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"wireframe\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 1\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 592\\n    -height 446\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"|ShotCamera\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"wireframe\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 1\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 592\\n    -height 446\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"|ShotCamera\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"wireframe\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 1\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1307\\n    -height 452\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"|ShotCamera\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"wireframe\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 1\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1307\\n    -height 452\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 14 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -376,7 +376,7 @@ createNode script -n "sceneConfigurationScriptNode";
 	setAttr ".st" 6;
 createNode reference -n "SkeletonRN";
 	rename -uid "10411468-4F60-2362-CC10-9F8D8D70455F";
-	setAttr -s 1474 ".phl";
+	setAttr -s 1471 ".phl";
 	setAttr ".phl[130]" 0;
 	setAttr ".phl[131]" 0;
 	setAttr ".phl[132]" 0;
@@ -1847,9 +1847,6 @@ createNode reference -n "SkeletonRN";
 	setAttr ".phl[1597]" 0;
 	setAttr ".phl[1598]" 0;
 	setAttr ".phl[1599]" 0;
-	setAttr ".phl[1600]" 0;
-	setAttr ".phl[1601]" 0;
-	setAttr ".phl[1602]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"SkeletonRN"
 		"SkeletonRN" 1
@@ -1925,6 +1922,9 @@ createNode reference -n "SkeletonRN";
 		2 "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_01|Skeleton:L_Finger_01_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_01_Knuckle_02_Ctrl" 
 		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
 		2 "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_MetCarp_02_Ctrl_Grp|Skeleton:L_MetCarp_02_Ctrl" 
+		"rotate" " -type \"double3\" 26.82981906212760848 14.77057812174854945 16.3979086492488797"
+		
+		2 "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_MetCarp_02_Ctrl_Grp|Skeleton:L_MetCarp_02_Ctrl" 
 		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
 		2 "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_01_Ctrl" 
 		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
@@ -1933,6 +1933,9 @@ createNode reference -n "SkeletonRN";
 		2 "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_03_Ctrl" 
 		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
 		2 "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_MetCarp_03_Ctrl_Grp|Skeleton:L_MetCarp_03_Ctrl" 
+		"rotate" " -type \"double3\" 4.84642598124568824 2.82548688144516813 15.51076771059689996"
+		
+		2 "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_MetCarp_03_Ctrl_Grp|Skeleton:L_MetCarp_03_Ctrl" 
 		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
 		2 "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_01_Ctrl" 
 		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
@@ -1940,6 +1943,9 @@ createNode reference -n "SkeletonRN";
 		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
 		2 "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_03_Ctrl" 
 		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_MetCarp_04_Ctrl_Grp|Skeleton:L_MetCarp_04_Ctrl" 
+		"rotate" " -type \"double3\" -6.60304776396161319 -3.84302033636019047 15.5372584702931924"
+		
 		2 "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_MetCarp_04_Ctrl_Grp|Skeleton:L_MetCarp_04_Ctrl" 
 		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
 		2 "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_01_Ctrl" 
@@ -2827,2149 +2833,2143 @@ createNode reference -n "SkeletonRN";
 		"SkeletonRN.placeHolderList[529]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_MetCarp_02_Ctrl_Grp|Skeleton:L_MetCarp_02_Ctrl.rotateY" 
 		"SkeletonRN.placeHolderList[530]" ""
-		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_MetCarp_02_Ctrl_Grp|Skeleton:L_MetCarp_02_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[531]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_MetCarp_02_Ctrl_Grp|Skeleton:L_MetCarp_02_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[532]" ""
+		"SkeletonRN.placeHolderList[531]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_MetCarp_02_Ctrl_Grp|Skeleton:L_MetCarp_02_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[533]" ""
+		"SkeletonRN.placeHolderList[532]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_MetCarp_02_Ctrl_Grp|Skeleton:L_MetCarp_02_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[534]" ""
+		"SkeletonRN.placeHolderList[533]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_MetCarp_02_Ctrl_Grp|Skeleton:L_MetCarp_02_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[535]" ""
+		"SkeletonRN.placeHolderList[534]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_01_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[536]" ""
+		"SkeletonRN.placeHolderList[535]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_01_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[537]" ""
+		"SkeletonRN.placeHolderList[536]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_01_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[538]" ""
+		"SkeletonRN.placeHolderList[537]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_01_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[539]" ""
+		"SkeletonRN.placeHolderList[538]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_01_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[540]" ""
+		"SkeletonRN.placeHolderList[539]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_01_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[541]" ""
+		"SkeletonRN.placeHolderList[540]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_01_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[542]" ""
+		"SkeletonRN.placeHolderList[541]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_01_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[543]" ""
+		"SkeletonRN.placeHolderList[542]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_01_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[544]" ""
+		"SkeletonRN.placeHolderList[543]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_01_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[545]" ""
+		"SkeletonRN.placeHolderList[544]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_02_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[546]" ""
+		"SkeletonRN.placeHolderList[545]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_02_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[547]" ""
+		"SkeletonRN.placeHolderList[546]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_02_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[548]" ""
+		"SkeletonRN.placeHolderList[547]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_02_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[549]" ""
+		"SkeletonRN.placeHolderList[548]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_02_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[550]" ""
+		"SkeletonRN.placeHolderList[549]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_02_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[551]" ""
+		"SkeletonRN.placeHolderList[550]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_02_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[552]" ""
+		"SkeletonRN.placeHolderList[551]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_02_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[553]" ""
+		"SkeletonRN.placeHolderList[552]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_02_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[554]" ""
+		"SkeletonRN.placeHolderList[553]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_02_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[555]" ""
+		"SkeletonRN.placeHolderList[554]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_03_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[556]" ""
+		"SkeletonRN.placeHolderList[555]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_03_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[557]" ""
+		"SkeletonRN.placeHolderList[556]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_03_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[558]" ""
+		"SkeletonRN.placeHolderList[557]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_03_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[559]" ""
+		"SkeletonRN.placeHolderList[558]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_03_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[560]" ""
+		"SkeletonRN.placeHolderList[559]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_03_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[561]" ""
+		"SkeletonRN.placeHolderList[560]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_03_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[562]" ""
+		"SkeletonRN.placeHolderList[561]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_03_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[563]" ""
+		"SkeletonRN.placeHolderList[562]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_03_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[564]" ""
+		"SkeletonRN.placeHolderList[563]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_02|Skeleton:L_Finger_02_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_02_Knuckle_03_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[565]" ""
+		"SkeletonRN.placeHolderList[564]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_MetCarp_03_Ctrl_Grp|Skeleton:L_MetCarp_03_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[566]" ""
+		"SkeletonRN.placeHolderList[565]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_MetCarp_03_Ctrl_Grp|Skeleton:L_MetCarp_03_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[567]" ""
+		"SkeletonRN.placeHolderList[566]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_MetCarp_03_Ctrl_Grp|Skeleton:L_MetCarp_03_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[568]" ""
+		"SkeletonRN.placeHolderList[567]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_MetCarp_03_Ctrl_Grp|Skeleton:L_MetCarp_03_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[569]" ""
+		"SkeletonRN.placeHolderList[568]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_MetCarp_03_Ctrl_Grp|Skeleton:L_MetCarp_03_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[570]" ""
-		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_MetCarp_03_Ctrl_Grp|Skeleton:L_MetCarp_03_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[571]" ""
+		"SkeletonRN.placeHolderList[569]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_MetCarp_03_Ctrl_Grp|Skeleton:L_MetCarp_03_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[572]" ""
+		"SkeletonRN.placeHolderList[570]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_MetCarp_03_Ctrl_Grp|Skeleton:L_MetCarp_03_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[573]" ""
+		"SkeletonRN.placeHolderList[571]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_MetCarp_03_Ctrl_Grp|Skeleton:L_MetCarp_03_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[574]" ""
+		"SkeletonRN.placeHolderList[572]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_MetCarp_03_Ctrl_Grp|Skeleton:L_MetCarp_03_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[575]" ""
+		"SkeletonRN.placeHolderList[573]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_01_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[576]" ""
+		"SkeletonRN.placeHolderList[574]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_01_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[577]" ""
+		"SkeletonRN.placeHolderList[575]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_01_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[578]" ""
+		"SkeletonRN.placeHolderList[576]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_01_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[579]" ""
+		"SkeletonRN.placeHolderList[577]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_01_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[580]" ""
+		"SkeletonRN.placeHolderList[578]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_01_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[581]" ""
+		"SkeletonRN.placeHolderList[579]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_01_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[582]" ""
+		"SkeletonRN.placeHolderList[580]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_01_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[583]" ""
+		"SkeletonRN.placeHolderList[581]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_01_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[584]" ""
+		"SkeletonRN.placeHolderList[582]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_01_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[585]" ""
+		"SkeletonRN.placeHolderList[583]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_02_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[586]" ""
+		"SkeletonRN.placeHolderList[584]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_02_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[587]" ""
+		"SkeletonRN.placeHolderList[585]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_02_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[588]" ""
+		"SkeletonRN.placeHolderList[586]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_02_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[589]" ""
+		"SkeletonRN.placeHolderList[587]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_02_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[590]" ""
+		"SkeletonRN.placeHolderList[588]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_02_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[591]" ""
+		"SkeletonRN.placeHolderList[589]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_02_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[592]" ""
+		"SkeletonRN.placeHolderList[590]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_02_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[593]" ""
+		"SkeletonRN.placeHolderList[591]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_02_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[594]" ""
+		"SkeletonRN.placeHolderList[592]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_02_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[595]" ""
+		"SkeletonRN.placeHolderList[593]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_03_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[596]" ""
+		"SkeletonRN.placeHolderList[594]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_03_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[597]" ""
+		"SkeletonRN.placeHolderList[595]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_03_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[598]" ""
+		"SkeletonRN.placeHolderList[596]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_03_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[599]" ""
+		"SkeletonRN.placeHolderList[597]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_03_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[600]" ""
+		"SkeletonRN.placeHolderList[598]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_03_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[601]" ""
+		"SkeletonRN.placeHolderList[599]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_03_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[602]" ""
+		"SkeletonRN.placeHolderList[600]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_03_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[603]" ""
+		"SkeletonRN.placeHolderList[601]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_03_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[604]" ""
+		"SkeletonRN.placeHolderList[602]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_03|Skeleton:L_Finger_03_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_03_Knuckle_03_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[605]" ""
+		"SkeletonRN.placeHolderList[603]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_MetCarp_04_Ctrl_Grp|Skeleton:L_MetCarp_04_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[606]" ""
+		"SkeletonRN.placeHolderList[604]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_MetCarp_04_Ctrl_Grp|Skeleton:L_MetCarp_04_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[607]" ""
+		"SkeletonRN.placeHolderList[605]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_MetCarp_04_Ctrl_Grp|Skeleton:L_MetCarp_04_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[608]" ""
+		"SkeletonRN.placeHolderList[606]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_MetCarp_04_Ctrl_Grp|Skeleton:L_MetCarp_04_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[609]" ""
+		"SkeletonRN.placeHolderList[607]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_MetCarp_04_Ctrl_Grp|Skeleton:L_MetCarp_04_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[610]" ""
-		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_MetCarp_04_Ctrl_Grp|Skeleton:L_MetCarp_04_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[611]" ""
+		"SkeletonRN.placeHolderList[608]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_MetCarp_04_Ctrl_Grp|Skeleton:L_MetCarp_04_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[612]" ""
+		"SkeletonRN.placeHolderList[609]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_MetCarp_04_Ctrl_Grp|Skeleton:L_MetCarp_04_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[613]" ""
+		"SkeletonRN.placeHolderList[610]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_MetCarp_04_Ctrl_Grp|Skeleton:L_MetCarp_04_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[614]" ""
+		"SkeletonRN.placeHolderList[611]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_MetCarp_04_Ctrl_Grp|Skeleton:L_MetCarp_04_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[615]" ""
+		"SkeletonRN.placeHolderList[612]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_01_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[616]" ""
+		"SkeletonRN.placeHolderList[613]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_01_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[617]" ""
+		"SkeletonRN.placeHolderList[614]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_01_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[618]" ""
+		"SkeletonRN.placeHolderList[615]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_01_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[619]" ""
+		"SkeletonRN.placeHolderList[616]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_01_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[620]" ""
+		"SkeletonRN.placeHolderList[617]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_01_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[621]" ""
+		"SkeletonRN.placeHolderList[618]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_01_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[622]" ""
+		"SkeletonRN.placeHolderList[619]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_01_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[623]" ""
+		"SkeletonRN.placeHolderList[620]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_01_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[624]" ""
+		"SkeletonRN.placeHolderList[621]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_01_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[625]" ""
+		"SkeletonRN.placeHolderList[622]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_02_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[626]" ""
+		"SkeletonRN.placeHolderList[623]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_02_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[627]" ""
+		"SkeletonRN.placeHolderList[624]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_02_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[628]" ""
+		"SkeletonRN.placeHolderList[625]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_02_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[629]" ""
+		"SkeletonRN.placeHolderList[626]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_02_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[630]" ""
+		"SkeletonRN.placeHolderList[627]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_02_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[631]" ""
+		"SkeletonRN.placeHolderList[628]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_02_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[632]" ""
+		"SkeletonRN.placeHolderList[629]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_02_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[633]" ""
+		"SkeletonRN.placeHolderList[630]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_02_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[634]" ""
+		"SkeletonRN.placeHolderList[631]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_02_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[635]" ""
+		"SkeletonRN.placeHolderList[632]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_03_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[636]" ""
+		"SkeletonRN.placeHolderList[633]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_03_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[637]" ""
+		"SkeletonRN.placeHolderList[634]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_03_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[638]" ""
+		"SkeletonRN.placeHolderList[635]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_03_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[639]" ""
+		"SkeletonRN.placeHolderList[636]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_03_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[640]" ""
+		"SkeletonRN.placeHolderList[637]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_03_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[641]" ""
+		"SkeletonRN.placeHolderList[638]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_03_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[642]" ""
+		"SkeletonRN.placeHolderList[639]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_03_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[643]" ""
+		"SkeletonRN.placeHolderList[640]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_03_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[644]" ""
+		"SkeletonRN.placeHolderList[641]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_04|Skeleton:L_Finger_04_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_04_Knuckle_03_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[645]" ""
+		"SkeletonRN.placeHolderList[642]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_MetCarp_05_Ctrl_Grp|Skeleton:L_MetCarp_05_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[646]" ""
+		"SkeletonRN.placeHolderList[643]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_MetCarp_05_Ctrl_Grp|Skeleton:L_MetCarp_05_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[647]" ""
+		"SkeletonRN.placeHolderList[644]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_MetCarp_05_Ctrl_Grp|Skeleton:L_MetCarp_05_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[648]" ""
+		"SkeletonRN.placeHolderList[645]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_MetCarp_05_Ctrl_Grp|Skeleton:L_MetCarp_05_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[649]" ""
+		"SkeletonRN.placeHolderList[646]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_MetCarp_05_Ctrl_Grp|Skeleton:L_MetCarp_05_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[650]" ""
+		"SkeletonRN.placeHolderList[647]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_MetCarp_05_Ctrl_Grp|Skeleton:L_MetCarp_05_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[651]" ""
+		"SkeletonRN.placeHolderList[648]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_MetCarp_05_Ctrl_Grp|Skeleton:L_MetCarp_05_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[652]" ""
+		"SkeletonRN.placeHolderList[649]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_MetCarp_05_Ctrl_Grp|Skeleton:L_MetCarp_05_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[653]" ""
+		"SkeletonRN.placeHolderList[650]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_MetCarp_05_Ctrl_Grp|Skeleton:L_MetCarp_05_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[654]" ""
+		"SkeletonRN.placeHolderList[651]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_MetCarp_05_Ctrl_Grp|Skeleton:L_MetCarp_05_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[655]" ""
+		"SkeletonRN.placeHolderList[652]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_01_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[656]" ""
+		"SkeletonRN.placeHolderList[653]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_01_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[657]" ""
+		"SkeletonRN.placeHolderList[654]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_01_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[658]" ""
+		"SkeletonRN.placeHolderList[655]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_01_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[659]" ""
+		"SkeletonRN.placeHolderList[656]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_01_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[660]" ""
+		"SkeletonRN.placeHolderList[657]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_01_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[661]" ""
+		"SkeletonRN.placeHolderList[658]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_01_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[662]" ""
+		"SkeletonRN.placeHolderList[659]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_01_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[663]" ""
+		"SkeletonRN.placeHolderList[660]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_01_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[664]" ""
+		"SkeletonRN.placeHolderList[661]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_01_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_01_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[665]" ""
+		"SkeletonRN.placeHolderList[662]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_02_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[666]" ""
+		"SkeletonRN.placeHolderList[663]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_02_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[667]" ""
+		"SkeletonRN.placeHolderList[664]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_02_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[668]" ""
+		"SkeletonRN.placeHolderList[665]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_02_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[669]" ""
+		"SkeletonRN.placeHolderList[666]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_02_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[670]" ""
+		"SkeletonRN.placeHolderList[667]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_02_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[671]" ""
+		"SkeletonRN.placeHolderList[668]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_02_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[672]" ""
+		"SkeletonRN.placeHolderList[669]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_02_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[673]" ""
+		"SkeletonRN.placeHolderList[670]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_02_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[674]" ""
+		"SkeletonRN.placeHolderList[671]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_02_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_02_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[675]" ""
+		"SkeletonRN.placeHolderList[672]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_03_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[676]" ""
+		"SkeletonRN.placeHolderList[673]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_03_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[677]" ""
+		"SkeletonRN.placeHolderList[674]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_03_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[678]" ""
+		"SkeletonRN.placeHolderList[675]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_03_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[679]" ""
+		"SkeletonRN.placeHolderList[676]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_03_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[680]" ""
+		"SkeletonRN.placeHolderList[677]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_03_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[681]" ""
+		"SkeletonRN.placeHolderList[678]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_03_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[682]" ""
+		"SkeletonRN.placeHolderList[679]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_03_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[683]" ""
+		"SkeletonRN.placeHolderList[680]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_03_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[684]" ""
+		"SkeletonRN.placeHolderList[681]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Arm|Skeleton:Left_Arm_Reg_Controls|Skeleton:Left_Hand|Skeleton:Left_Finger_05|Skeleton:L_Finger_05_Knuckle_03_Ctrl_Grp|Skeleton:L_Finger_05_Knuckle_03_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[685]" ""
+		"SkeletonRN.placeHolderList[682]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:L_Leg_Pivot_Ctrl_Grp|Skeleton:L_Leg_Pivot_Ctrl.Follow_Translate" 
-		"SkeletonRN.placeHolderList[686]" ""
+		"SkeletonRN.placeHolderList[683]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:L_Leg_Pivot_Ctrl_Grp|Skeleton:L_Leg_Pivot_Ctrl.Follow_Rotate" 
-		"SkeletonRN.placeHolderList[687]" ""
+		"SkeletonRN.placeHolderList[684]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:L_Leg_Pivot_Ctrl_Grp|Skeleton:L_Leg_Pivot_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[688]" ""
+		"SkeletonRN.placeHolderList[685]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:L_Leg_Pivot_Ctrl_Grp|Skeleton:L_Leg_Pivot_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[689]" ""
+		"SkeletonRN.placeHolderList[686]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:L_Leg_Pivot_Ctrl_Grp|Skeleton:L_Leg_Pivot_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[690]" ""
+		"SkeletonRN.placeHolderList[687]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:L_Leg_Pivot_Ctrl_Grp|Skeleton:L_Leg_Pivot_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[691]" ""
+		"SkeletonRN.placeHolderList[688]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:L_Leg_Pivot_Ctrl_Grp|Skeleton:L_Leg_Pivot_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[692]" ""
+		"SkeletonRN.placeHolderList[689]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:L_Leg_Pivot_Ctrl_Grp|Skeleton:L_Leg_Pivot_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[693]" ""
+		"SkeletonRN.placeHolderList[690]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:L_Leg_Pivot_Ctrl_Grp|Skeleton:L_Leg_Pivot_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[694]" ""
+		"SkeletonRN.placeHolderList[691]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:L_Leg_Pivot_Ctrl_Grp|Skeleton:L_Leg_Pivot_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[695]" ""
+		"SkeletonRN.placeHolderList[692]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:L_Leg_Pivot_Ctrl_Grp|Skeleton:L_Leg_Pivot_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[696]" ""
+		"SkeletonRN.placeHolderList[693]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:L_Leg_Pivot_Ctrl_Grp|Skeleton:L_Leg_Pivot_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[697]" ""
+		"SkeletonRN.placeHolderList[694]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_Base_Ctrl_Grp|Skeleton:L_Leg_IK_Base_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[698]" ""
+		"SkeletonRN.placeHolderList[695]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_Base_Ctrl_Grp|Skeleton:L_Leg_IK_Base_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[699]" ""
+		"SkeletonRN.placeHolderList[696]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_Base_Ctrl_Grp|Skeleton:L_Leg_IK_Base_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[700]" ""
+		"SkeletonRN.placeHolderList[697]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_Base_Ctrl_Grp|Skeleton:L_Leg_IK_Base_Ctrl.Operating_Space" 
-		"SkeletonRN.placeHolderList[701]" ""
+		"SkeletonRN.placeHolderList[698]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_Base_Ctrl_Grp|Skeleton:L_Leg_IK_Base_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[702]" ""
+		"SkeletonRN.placeHolderList[699]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_Base_Ctrl_Grp|Skeleton:L_Leg_IK_Base_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[703]" ""
+		"SkeletonRN.placeHolderList[700]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_Base_Ctrl_Grp|Skeleton:L_Leg_IK_Base_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[704]" ""
+		"SkeletonRN.placeHolderList[701]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_Base_Ctrl_Grp|Skeleton:L_Leg_IK_Base_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[705]" ""
+		"SkeletonRN.placeHolderList[702]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_Base_Ctrl_Grp|Skeleton:L_Leg_IK_Base_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[706]" ""
+		"SkeletonRN.placeHolderList[703]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_Base_Ctrl_Grp|Skeleton:L_Leg_IK_Base_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[707]" ""
+		"SkeletonRN.placeHolderList[704]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_Base_Ctrl_Grp|Skeleton:L_Leg_IK_Base_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[708]" ""
+		"SkeletonRN.placeHolderList[705]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_PV_Ctrl_Grp|Skeleton:L_Leg_PV_Ctrl_Offset_Grp|Skeleton:L_Leg_PV_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[709]" ""
+		"SkeletonRN.placeHolderList[706]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_PV_Ctrl_Grp|Skeleton:L_Leg_PV_Ctrl_Offset_Grp|Skeleton:L_Leg_PV_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[710]" ""
+		"SkeletonRN.placeHolderList[707]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_PV_Ctrl_Grp|Skeleton:L_Leg_PV_Ctrl_Offset_Grp|Skeleton:L_Leg_PV_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[711]" ""
+		"SkeletonRN.placeHolderList[708]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_PV_Ctrl_Grp|Skeleton:L_Leg_PV_Ctrl_Offset_Grp|Skeleton:L_Leg_PV_Ctrl.Operating_Space" 
-		"SkeletonRN.placeHolderList[712]" ""
+		"SkeletonRN.placeHolderList[709]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_PV_Ctrl_Grp|Skeleton:L_Leg_PV_Ctrl_Offset_Grp|Skeleton:L_Leg_PV_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[713]" ""
+		"SkeletonRN.placeHolderList[710]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_PV_Ctrl_Grp|Skeleton:L_Leg_PV_Ctrl_Offset_Grp|Skeleton:L_Leg_PV_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[714]" ""
+		"SkeletonRN.placeHolderList[711]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_PV_Ctrl_Grp|Skeleton:L_Leg_PV_Ctrl_Offset_Grp|Skeleton:L_Leg_PV_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[715]" ""
+		"SkeletonRN.placeHolderList[712]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_PV_Ctrl_Grp|Skeleton:L_Leg_PV_Ctrl_Offset_Grp|Skeleton:L_Leg_PV_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[716]" ""
+		"SkeletonRN.placeHolderList[713]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_PV_Ctrl_Grp|Skeleton:L_Leg_PV_Ctrl_Offset_Grp|Skeleton:L_Leg_PV_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[717]" ""
+		"SkeletonRN.placeHolderList[714]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_PV_Ctrl_Grp|Skeleton:L_Leg_PV_Ctrl_Offset_Grp|Skeleton:L_Leg_PV_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[718]" ""
+		"SkeletonRN.placeHolderList[715]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_PV_Ctrl_Grp|Skeleton:L_Leg_PV_Ctrl_Offset_Grp|Skeleton:L_Leg_PV_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[719]" ""
+		"SkeletonRN.placeHolderList[716]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[720]" ""
+		"SkeletonRN.placeHolderList[717]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[721]" ""
+		"SkeletonRN.placeHolderList[718]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[722]" ""
+		"SkeletonRN.placeHolderList[719]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl.Operating_Space" 
-		"SkeletonRN.placeHolderList[723]" ""
+		"SkeletonRN.placeHolderList[720]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[724]" ""
+		"SkeletonRN.placeHolderList[721]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[725]" ""
+		"SkeletonRN.placeHolderList[722]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[726]" ""
+		"SkeletonRN.placeHolderList[723]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[727]" ""
+		"SkeletonRN.placeHolderList[724]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[728]" ""
+		"SkeletonRN.placeHolderList[725]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[729]" ""
+		"SkeletonRN.placeHolderList[726]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[730]" ""
+		"SkeletonRN.placeHolderList[727]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[731]" ""
+		"SkeletonRN.placeHolderList[728]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[732]" ""
+		"SkeletonRN.placeHolderList[729]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[733]" ""
+		"SkeletonRN.placeHolderList[730]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[734]" ""
+		"SkeletonRN.placeHolderList[731]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[735]" ""
+		"SkeletonRN.placeHolderList[732]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[736]" ""
+		"SkeletonRN.placeHolderList[733]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[737]" ""
+		"SkeletonRN.placeHolderList[734]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[738]" ""
+		"SkeletonRN.placeHolderList[735]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[739]" ""
+		"SkeletonRN.placeHolderList[736]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[740]" ""
+		"SkeletonRN.placeHolderList[737]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[741]" ""
+		"SkeletonRN.placeHolderList[738]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[742]" ""
+		"SkeletonRN.placeHolderList[739]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[743]" ""
+		"SkeletonRN.placeHolderList[740]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[744]" ""
+		"SkeletonRN.placeHolderList[741]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[745]" ""
+		"SkeletonRN.placeHolderList[742]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[746]" ""
+		"SkeletonRN.placeHolderList[743]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[747]" ""
+		"SkeletonRN.placeHolderList[744]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[748]" ""
+		"SkeletonRN.placeHolderList[745]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[749]" ""
+		"SkeletonRN.placeHolderList[746]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[750]" ""
+		"SkeletonRN.placeHolderList[747]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[751]" ""
+		"SkeletonRN.placeHolderList[748]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[752]" ""
+		"SkeletonRN.placeHolderList[749]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[753]" ""
+		"SkeletonRN.placeHolderList[750]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[754]" ""
+		"SkeletonRN.placeHolderList[751]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[755]" ""
+		"SkeletonRN.placeHolderList[752]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[756]" ""
+		"SkeletonRN.placeHolderList[753]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[757]" ""
+		"SkeletonRN.placeHolderList[754]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[758]" ""
+		"SkeletonRN.placeHolderList[755]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[759]" ""
+		"SkeletonRN.placeHolderList[756]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[760]" ""
+		"SkeletonRN.placeHolderList[757]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[761]" ""
+		"SkeletonRN.placeHolderList[758]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[762]" ""
+		"SkeletonRN.placeHolderList[759]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[763]" ""
+		"SkeletonRN.placeHolderList[760]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[764]" ""
+		"SkeletonRN.placeHolderList[761]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[765]" ""
+		"SkeletonRN.placeHolderList[762]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[766]" ""
+		"SkeletonRN.placeHolderList[763]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[767]" ""
+		"SkeletonRN.placeHolderList[764]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[768]" ""
+		"SkeletonRN.placeHolderList[765]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[769]" ""
+		"SkeletonRN.placeHolderList[766]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[770]" ""
+		"SkeletonRN.placeHolderList[767]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl|Skeleton:L_Foot_IK_Ball_Ctrl_Grp|Skeleton:L_Foot_IK_Ball_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[771]" ""
+		"SkeletonRN.placeHolderList[768]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl|Skeleton:L_Foot_IK_Ball_Ctrl_Grp|Skeleton:L_Foot_IK_Ball_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[772]" ""
+		"SkeletonRN.placeHolderList[769]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl|Skeleton:L_Foot_IK_Ball_Ctrl_Grp|Skeleton:L_Foot_IK_Ball_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[773]" ""
+		"SkeletonRN.placeHolderList[770]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl|Skeleton:L_Foot_IK_Ball_Ctrl_Grp|Skeleton:L_Foot_IK_Ball_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[774]" ""
+		"SkeletonRN.placeHolderList[771]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl|Skeleton:L_Foot_IK_Ball_Ctrl_Grp|Skeleton:L_Foot_IK_Ball_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[775]" ""
+		"SkeletonRN.placeHolderList[772]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl|Skeleton:L_Foot_IK_Ball_Ctrl_Grp|Skeleton:L_Foot_IK_Ball_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[776]" ""
+		"SkeletonRN.placeHolderList[773]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl|Skeleton:L_Foot_IK_Ball_Ctrl_Grp|Skeleton:L_Foot_IK_Ball_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[777]" ""
+		"SkeletonRN.placeHolderList[774]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl|Skeleton:L_Foot_IK_Ball_Ctrl_Grp|Skeleton:L_Foot_IK_Ball_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[778]" ""
+		"SkeletonRN.placeHolderList[775]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl|Skeleton:L_Foot_IK_Ball_Ctrl_Grp|Skeleton:L_Foot_IK_Ball_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[779]" ""
+		"SkeletonRN.placeHolderList[776]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl|Skeleton:L_Foot_IK_Ball_Ctrl_Grp|Skeleton:L_Foot_IK_Ball_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[780]" ""
+		"SkeletonRN.placeHolderList[777]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl|Skeleton:L_Foot_IK_Tap_Ctrl_Grp|Skeleton:L_Foot_IK_Tap_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[781]" ""
+		"SkeletonRN.placeHolderList[778]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl|Skeleton:L_Foot_IK_Tap_Ctrl_Grp|Skeleton:L_Foot_IK_Tap_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[782]" ""
+		"SkeletonRN.placeHolderList[779]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl|Skeleton:L_Foot_IK_Tap_Ctrl_Grp|Skeleton:L_Foot_IK_Tap_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[783]" ""
+		"SkeletonRN.placeHolderList[780]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl|Skeleton:L_Foot_IK_Tap_Ctrl_Grp|Skeleton:L_Foot_IK_Tap_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[784]" ""
+		"SkeletonRN.placeHolderList[781]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl|Skeleton:L_Foot_IK_Tap_Ctrl_Grp|Skeleton:L_Foot_IK_Tap_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[785]" ""
+		"SkeletonRN.placeHolderList[782]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl|Skeleton:L_Foot_IK_Tap_Ctrl_Grp|Skeleton:L_Foot_IK_Tap_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[786]" ""
+		"SkeletonRN.placeHolderList[783]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl|Skeleton:L_Foot_IK_Tap_Ctrl_Grp|Skeleton:L_Foot_IK_Tap_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[787]" ""
+		"SkeletonRN.placeHolderList[784]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl|Skeleton:L_Foot_IK_Tap_Ctrl_Grp|Skeleton:L_Foot_IK_Tap_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[788]" ""
+		"SkeletonRN.placeHolderList[785]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl|Skeleton:L_Foot_IK_Tap_Ctrl_Grp|Skeleton:L_Foot_IK_Tap_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[789]" ""
+		"SkeletonRN.placeHolderList[786]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:L_Leg_IK_End_Ctrl_Grp|Skeleton:L_Leg_IK_End_Ctrl|Skeleton:L_Foot_IK_Out_Ctrl_Grp|Skeleton:L_Foot_IK_Out_Ctrl|Skeleton:L_Foot_IK_In_Ctrl_Grp|Skeleton:L_Foot_IK_In_Ctrl|Skeleton:L_Foot_IK_Heel_Ctrl_Grp|Skeleton:L_Foot_IK_Heel_Ctrl|Skeleton:L_Foot_IK_Toe_Ctrl_Grp|Skeleton:L_Foot_IK_Toe_Ctrl|Skeleton:L_Foot_IK_Tap_Ctrl_Grp|Skeleton:L_Foot_IK_Tap_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[790]" ""
+		"SkeletonRN.placeHolderList[787]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_MetTars_01_IK_Ctrl_Grp|Skeleton:L_MetTars_01_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[791]" ""
+		"SkeletonRN.placeHolderList[788]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_MetTars_01_IK_Ctrl_Grp|Skeleton:L_MetTars_01_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[792]" ""
+		"SkeletonRN.placeHolderList[789]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_MetTars_01_IK_Ctrl_Grp|Skeleton:L_MetTars_01_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[793]" ""
+		"SkeletonRN.placeHolderList[790]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_MetTars_01_IK_Ctrl_Grp|Skeleton:L_MetTars_01_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[794]" ""
+		"SkeletonRN.placeHolderList[791]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_MetTars_01_IK_Ctrl_Grp|Skeleton:L_MetTars_01_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[795]" ""
+		"SkeletonRN.placeHolderList[792]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_MetTars_01_IK_Ctrl_Grp|Skeleton:L_MetTars_01_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[796]" ""
+		"SkeletonRN.placeHolderList[793]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_MetTars_01_IK_Ctrl_Grp|Skeleton:L_MetTars_01_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[797]" ""
+		"SkeletonRN.placeHolderList[794]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_MetTars_01_IK_Ctrl_Grp|Skeleton:L_MetTars_01_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[798]" ""
+		"SkeletonRN.placeHolderList[795]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_MetTars_01_IK_Ctrl_Grp|Skeleton:L_MetTars_01_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[799]" ""
+		"SkeletonRN.placeHolderList[796]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_MetTars_01_IK_Ctrl_Grp|Skeleton:L_MetTars_01_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[800]" ""
+		"SkeletonRN.placeHolderList[797]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_Toe_01_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_01_Knuckle_01_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[801]" ""
+		"SkeletonRN.placeHolderList[798]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_Toe_01_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_01_Knuckle_01_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[802]" ""
+		"SkeletonRN.placeHolderList[799]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_Toe_01_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_01_Knuckle_01_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[803]" ""
+		"SkeletonRN.placeHolderList[800]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_Toe_01_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_01_Knuckle_01_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[804]" ""
+		"SkeletonRN.placeHolderList[801]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_Toe_01_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_01_Knuckle_01_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[805]" ""
+		"SkeletonRN.placeHolderList[802]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_Toe_01_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_01_Knuckle_01_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[806]" ""
+		"SkeletonRN.placeHolderList[803]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_Toe_01_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_01_Knuckle_01_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[807]" ""
+		"SkeletonRN.placeHolderList[804]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_Toe_01_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_01_Knuckle_01_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[808]" ""
+		"SkeletonRN.placeHolderList[805]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_Toe_01_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_01_Knuckle_01_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[809]" ""
+		"SkeletonRN.placeHolderList[806]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_Toe_01_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_01_Knuckle_01_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[810]" ""
+		"SkeletonRN.placeHolderList[807]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_Toe_01_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_01_Knuckle_02_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[811]" ""
+		"SkeletonRN.placeHolderList[808]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_Toe_01_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_01_Knuckle_02_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[812]" ""
+		"SkeletonRN.placeHolderList[809]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_Toe_01_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_01_Knuckle_02_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[813]" ""
+		"SkeletonRN.placeHolderList[810]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_Toe_01_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_01_Knuckle_02_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[814]" ""
+		"SkeletonRN.placeHolderList[811]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_Toe_01_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_01_Knuckle_02_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[815]" ""
+		"SkeletonRN.placeHolderList[812]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_Toe_01_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_01_Knuckle_02_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[816]" ""
+		"SkeletonRN.placeHolderList[813]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_Toe_01_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_01_Knuckle_02_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[817]" ""
+		"SkeletonRN.placeHolderList[814]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_Toe_01_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_01_Knuckle_02_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[818]" ""
+		"SkeletonRN.placeHolderList[815]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_Toe_01_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_01_Knuckle_02_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[819]" ""
+		"SkeletonRN.placeHolderList[816]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_01_IK|Skeleton:L_Toe_01_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_01_Knuckle_02_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[820]" ""
+		"SkeletonRN.placeHolderList[817]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_MetTars_02_IK_Ctrl_Grp|Skeleton:L_MetTars_02_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[821]" ""
+		"SkeletonRN.placeHolderList[818]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_MetTars_02_IK_Ctrl_Grp|Skeleton:L_MetTars_02_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[822]" ""
+		"SkeletonRN.placeHolderList[819]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_MetTars_02_IK_Ctrl_Grp|Skeleton:L_MetTars_02_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[823]" ""
+		"SkeletonRN.placeHolderList[820]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_MetTars_02_IK_Ctrl_Grp|Skeleton:L_MetTars_02_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[824]" ""
+		"SkeletonRN.placeHolderList[821]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_MetTars_02_IK_Ctrl_Grp|Skeleton:L_MetTars_02_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[825]" ""
+		"SkeletonRN.placeHolderList[822]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_MetTars_02_IK_Ctrl_Grp|Skeleton:L_MetTars_02_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[826]" ""
+		"SkeletonRN.placeHolderList[823]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_MetTars_02_IK_Ctrl_Grp|Skeleton:L_MetTars_02_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[827]" ""
+		"SkeletonRN.placeHolderList[824]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_MetTars_02_IK_Ctrl_Grp|Skeleton:L_MetTars_02_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[828]" ""
+		"SkeletonRN.placeHolderList[825]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_MetTars_02_IK_Ctrl_Grp|Skeleton:L_MetTars_02_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[829]" ""
+		"SkeletonRN.placeHolderList[826]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_MetTars_02_IK_Ctrl_Grp|Skeleton:L_MetTars_02_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[830]" ""
+		"SkeletonRN.placeHolderList[827]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_01_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[831]" ""
+		"SkeletonRN.placeHolderList[828]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_01_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[832]" ""
+		"SkeletonRN.placeHolderList[829]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_01_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[833]" ""
+		"SkeletonRN.placeHolderList[830]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_01_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[834]" ""
+		"SkeletonRN.placeHolderList[831]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_01_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[835]" ""
+		"SkeletonRN.placeHolderList[832]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_01_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[836]" ""
+		"SkeletonRN.placeHolderList[833]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_01_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[837]" ""
+		"SkeletonRN.placeHolderList[834]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_01_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[838]" ""
+		"SkeletonRN.placeHolderList[835]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_01_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[839]" ""
+		"SkeletonRN.placeHolderList[836]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_01_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[840]" ""
+		"SkeletonRN.placeHolderList[837]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_02_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[841]" ""
+		"SkeletonRN.placeHolderList[838]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_02_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[842]" ""
+		"SkeletonRN.placeHolderList[839]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_02_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[843]" ""
+		"SkeletonRN.placeHolderList[840]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_02_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[844]" ""
+		"SkeletonRN.placeHolderList[841]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_02_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[845]" ""
+		"SkeletonRN.placeHolderList[842]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_02_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[846]" ""
+		"SkeletonRN.placeHolderList[843]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_02_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[847]" ""
+		"SkeletonRN.placeHolderList[844]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_02_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[848]" ""
+		"SkeletonRN.placeHolderList[845]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_02_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[849]" ""
+		"SkeletonRN.placeHolderList[846]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_02_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[850]" ""
+		"SkeletonRN.placeHolderList[847]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_03_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[851]" ""
+		"SkeletonRN.placeHolderList[848]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_03_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[852]" ""
+		"SkeletonRN.placeHolderList[849]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_03_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[853]" ""
+		"SkeletonRN.placeHolderList[850]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_03_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[854]" ""
+		"SkeletonRN.placeHolderList[851]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_03_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[855]" ""
+		"SkeletonRN.placeHolderList[852]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_03_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[856]" ""
+		"SkeletonRN.placeHolderList[853]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_03_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[857]" ""
+		"SkeletonRN.placeHolderList[854]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_03_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[858]" ""
+		"SkeletonRN.placeHolderList[855]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_03_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[859]" ""
+		"SkeletonRN.placeHolderList[856]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_02_IK|Skeleton:L_Toe_02_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_02_Knuckle_03_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[860]" ""
+		"SkeletonRN.placeHolderList[857]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_MetTars_03_IK_Ctrl_Grp|Skeleton:L_MetTars_03_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[861]" ""
+		"SkeletonRN.placeHolderList[858]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_MetTars_03_IK_Ctrl_Grp|Skeleton:L_MetTars_03_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[862]" ""
+		"SkeletonRN.placeHolderList[859]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_MetTars_03_IK_Ctrl_Grp|Skeleton:L_MetTars_03_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[863]" ""
+		"SkeletonRN.placeHolderList[860]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_MetTars_03_IK_Ctrl_Grp|Skeleton:L_MetTars_03_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[864]" ""
+		"SkeletonRN.placeHolderList[861]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_MetTars_03_IK_Ctrl_Grp|Skeleton:L_MetTars_03_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[865]" ""
+		"SkeletonRN.placeHolderList[862]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_MetTars_03_IK_Ctrl_Grp|Skeleton:L_MetTars_03_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[866]" ""
+		"SkeletonRN.placeHolderList[863]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_MetTars_03_IK_Ctrl_Grp|Skeleton:L_MetTars_03_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[867]" ""
+		"SkeletonRN.placeHolderList[864]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_MetTars_03_IK_Ctrl_Grp|Skeleton:L_MetTars_03_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[868]" ""
+		"SkeletonRN.placeHolderList[865]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_MetTars_03_IK_Ctrl_Grp|Skeleton:L_MetTars_03_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[869]" ""
+		"SkeletonRN.placeHolderList[866]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_MetTars_03_IK_Ctrl_Grp|Skeleton:L_MetTars_03_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[870]" ""
+		"SkeletonRN.placeHolderList[867]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_01_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[871]" ""
+		"SkeletonRN.placeHolderList[868]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_01_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[872]" ""
+		"SkeletonRN.placeHolderList[869]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_01_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[873]" ""
+		"SkeletonRN.placeHolderList[870]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_01_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[874]" ""
+		"SkeletonRN.placeHolderList[871]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_01_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[875]" ""
+		"SkeletonRN.placeHolderList[872]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_01_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[876]" ""
+		"SkeletonRN.placeHolderList[873]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_01_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[877]" ""
+		"SkeletonRN.placeHolderList[874]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_01_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[878]" ""
+		"SkeletonRN.placeHolderList[875]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_01_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[879]" ""
+		"SkeletonRN.placeHolderList[876]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_01_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[880]" ""
+		"SkeletonRN.placeHolderList[877]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_02_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[881]" ""
+		"SkeletonRN.placeHolderList[878]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_02_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[882]" ""
+		"SkeletonRN.placeHolderList[879]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_02_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[883]" ""
+		"SkeletonRN.placeHolderList[880]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_02_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[884]" ""
+		"SkeletonRN.placeHolderList[881]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_02_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[885]" ""
+		"SkeletonRN.placeHolderList[882]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_02_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[886]" ""
+		"SkeletonRN.placeHolderList[883]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_02_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[887]" ""
+		"SkeletonRN.placeHolderList[884]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_02_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[888]" ""
+		"SkeletonRN.placeHolderList[885]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_02_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[889]" ""
+		"SkeletonRN.placeHolderList[886]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_02_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[890]" ""
+		"SkeletonRN.placeHolderList[887]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_03_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[891]" ""
+		"SkeletonRN.placeHolderList[888]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_03_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[892]" ""
+		"SkeletonRN.placeHolderList[889]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_03_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[893]" ""
+		"SkeletonRN.placeHolderList[890]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_03_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[894]" ""
+		"SkeletonRN.placeHolderList[891]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_03_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[895]" ""
+		"SkeletonRN.placeHolderList[892]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_03_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[896]" ""
+		"SkeletonRN.placeHolderList[893]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_03_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[897]" ""
+		"SkeletonRN.placeHolderList[894]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_03_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[898]" ""
+		"SkeletonRN.placeHolderList[895]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_03_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[899]" ""
+		"SkeletonRN.placeHolderList[896]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_03_IK|Skeleton:L_Toe_03_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_03_Knuckle_03_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[900]" ""
+		"SkeletonRN.placeHolderList[897]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_MetTars_04_IK_Ctrl_Grp|Skeleton:L_MetTars_04_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[901]" ""
+		"SkeletonRN.placeHolderList[898]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_MetTars_04_IK_Ctrl_Grp|Skeleton:L_MetTars_04_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[902]" ""
+		"SkeletonRN.placeHolderList[899]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_MetTars_04_IK_Ctrl_Grp|Skeleton:L_MetTars_04_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[903]" ""
+		"SkeletonRN.placeHolderList[900]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_MetTars_04_IK_Ctrl_Grp|Skeleton:L_MetTars_04_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[904]" ""
+		"SkeletonRN.placeHolderList[901]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_MetTars_04_IK_Ctrl_Grp|Skeleton:L_MetTars_04_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[905]" ""
+		"SkeletonRN.placeHolderList[902]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_MetTars_04_IK_Ctrl_Grp|Skeleton:L_MetTars_04_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[906]" ""
+		"SkeletonRN.placeHolderList[903]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_MetTars_04_IK_Ctrl_Grp|Skeleton:L_MetTars_04_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[907]" ""
+		"SkeletonRN.placeHolderList[904]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_MetTars_04_IK_Ctrl_Grp|Skeleton:L_MetTars_04_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[908]" ""
+		"SkeletonRN.placeHolderList[905]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_MetTars_04_IK_Ctrl_Grp|Skeleton:L_MetTars_04_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[909]" ""
+		"SkeletonRN.placeHolderList[906]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_MetTars_04_IK_Ctrl_Grp|Skeleton:L_MetTars_04_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[910]" ""
+		"SkeletonRN.placeHolderList[907]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_01_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[911]" ""
+		"SkeletonRN.placeHolderList[908]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_01_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[912]" ""
+		"SkeletonRN.placeHolderList[909]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_01_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[913]" ""
+		"SkeletonRN.placeHolderList[910]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_01_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[914]" ""
+		"SkeletonRN.placeHolderList[911]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_01_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[915]" ""
+		"SkeletonRN.placeHolderList[912]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_01_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[916]" ""
+		"SkeletonRN.placeHolderList[913]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_01_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[917]" ""
+		"SkeletonRN.placeHolderList[914]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_01_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[918]" ""
+		"SkeletonRN.placeHolderList[915]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_01_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[919]" ""
+		"SkeletonRN.placeHolderList[916]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_01_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[920]" ""
+		"SkeletonRN.placeHolderList[917]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_02_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[921]" ""
+		"SkeletonRN.placeHolderList[918]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_02_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[922]" ""
+		"SkeletonRN.placeHolderList[919]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_02_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[923]" ""
+		"SkeletonRN.placeHolderList[920]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_02_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[924]" ""
+		"SkeletonRN.placeHolderList[921]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_02_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[925]" ""
+		"SkeletonRN.placeHolderList[922]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_02_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[926]" ""
+		"SkeletonRN.placeHolderList[923]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_02_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[927]" ""
+		"SkeletonRN.placeHolderList[924]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_02_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[928]" ""
+		"SkeletonRN.placeHolderList[925]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_02_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[929]" ""
+		"SkeletonRN.placeHolderList[926]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_02_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[930]" ""
+		"SkeletonRN.placeHolderList[927]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_03_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[931]" ""
+		"SkeletonRN.placeHolderList[928]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_03_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[932]" ""
+		"SkeletonRN.placeHolderList[929]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_03_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[933]" ""
+		"SkeletonRN.placeHolderList[930]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_03_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[934]" ""
+		"SkeletonRN.placeHolderList[931]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_03_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[935]" ""
+		"SkeletonRN.placeHolderList[932]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_03_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[936]" ""
+		"SkeletonRN.placeHolderList[933]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_03_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[937]" ""
+		"SkeletonRN.placeHolderList[934]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_03_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[938]" ""
+		"SkeletonRN.placeHolderList[935]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_03_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[939]" ""
+		"SkeletonRN.placeHolderList[936]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_04_IK|Skeleton:L_Toe_04_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_04_Knuckle_03_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[940]" ""
+		"SkeletonRN.placeHolderList[937]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_MetTars_05_IK_Ctrl_Grp|Skeleton:L_MetTars_05_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[941]" ""
+		"SkeletonRN.placeHolderList[938]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_MetTars_05_IK_Ctrl_Grp|Skeleton:L_MetTars_05_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[942]" ""
+		"SkeletonRN.placeHolderList[939]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_MetTars_05_IK_Ctrl_Grp|Skeleton:L_MetTars_05_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[943]" ""
+		"SkeletonRN.placeHolderList[940]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_MetTars_05_IK_Ctrl_Grp|Skeleton:L_MetTars_05_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[944]" ""
+		"SkeletonRN.placeHolderList[941]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_MetTars_05_IK_Ctrl_Grp|Skeleton:L_MetTars_05_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[945]" ""
+		"SkeletonRN.placeHolderList[942]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_MetTars_05_IK_Ctrl_Grp|Skeleton:L_MetTars_05_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[946]" ""
+		"SkeletonRN.placeHolderList[943]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_MetTars_05_IK_Ctrl_Grp|Skeleton:L_MetTars_05_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[947]" ""
+		"SkeletonRN.placeHolderList[944]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_MetTars_05_IK_Ctrl_Grp|Skeleton:L_MetTars_05_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[948]" ""
+		"SkeletonRN.placeHolderList[945]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_MetTars_05_IK_Ctrl_Grp|Skeleton:L_MetTars_05_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[949]" ""
+		"SkeletonRN.placeHolderList[946]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_MetTars_05_IK_Ctrl_Grp|Skeleton:L_MetTars_05_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[950]" ""
+		"SkeletonRN.placeHolderList[947]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_01_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[951]" ""
+		"SkeletonRN.placeHolderList[948]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_01_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[952]" ""
+		"SkeletonRN.placeHolderList[949]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_01_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[953]" ""
+		"SkeletonRN.placeHolderList[950]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_01_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[954]" ""
+		"SkeletonRN.placeHolderList[951]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_01_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[955]" ""
+		"SkeletonRN.placeHolderList[952]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_01_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[956]" ""
+		"SkeletonRN.placeHolderList[953]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_01_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[957]" ""
+		"SkeletonRN.placeHolderList[954]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_01_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[958]" ""
+		"SkeletonRN.placeHolderList[955]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_01_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[959]" ""
+		"SkeletonRN.placeHolderList[956]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_01_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_01_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[960]" ""
+		"SkeletonRN.placeHolderList[957]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_02_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[961]" ""
+		"SkeletonRN.placeHolderList[958]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_02_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[962]" ""
+		"SkeletonRN.placeHolderList[959]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_02_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[963]" ""
+		"SkeletonRN.placeHolderList[960]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_02_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[964]" ""
+		"SkeletonRN.placeHolderList[961]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_02_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[965]" ""
+		"SkeletonRN.placeHolderList[962]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_02_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[966]" ""
+		"SkeletonRN.placeHolderList[963]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_02_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[967]" ""
+		"SkeletonRN.placeHolderList[964]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_02_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[968]" ""
+		"SkeletonRN.placeHolderList[965]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_02_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[969]" ""
+		"SkeletonRN.placeHolderList[966]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_02_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_02_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[970]" ""
+		"SkeletonRN.placeHolderList[967]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_03_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[971]" ""
+		"SkeletonRN.placeHolderList[968]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_03_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[972]" ""
+		"SkeletonRN.placeHolderList[969]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_03_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[973]" ""
+		"SkeletonRN.placeHolderList[970]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_03_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[974]" ""
+		"SkeletonRN.placeHolderList[971]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_03_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[975]" ""
+		"SkeletonRN.placeHolderList[972]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_03_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[976]" ""
+		"SkeletonRN.placeHolderList[973]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_03_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[977]" ""
+		"SkeletonRN.placeHolderList[974]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_03_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[978]" ""
+		"SkeletonRN.placeHolderList[975]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_03_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[979]" ""
+		"SkeletonRN.placeHolderList[976]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:Left_Leg_IK|Skeleton:Left_Toes_IK|Skeleton:Left_Toe_05_IK|Skeleton:L_Toe_05_Knuckle_03_IK_Ctrl_Grp|Skeleton:L_Toe_05_Knuckle_03_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[980]" ""
+		"SkeletonRN.placeHolderList[977]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Left_Leg|Skeleton:L_Leg_IKFK_Ctrl_Grp|Skeleton:L_Leg_IKFK_Ctrl.IKFK_Switch" 
-		"SkeletonRN.placeHolderList[981]" ""
+		"SkeletonRN.placeHolderList[978]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Scap_Ctrl_Grp|Skeleton:R_Scap_Ctrl.Follow_Translate" 
-		"SkeletonRN.placeHolderList[982]" ""
+		"SkeletonRN.placeHolderList[979]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Scap_Ctrl_Grp|Skeleton:R_Scap_Ctrl.Follow_Rotate" 
-		"SkeletonRN.placeHolderList[983]" ""
+		"SkeletonRN.placeHolderList[980]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Scap_Ctrl_Grp|Skeleton:R_Scap_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[984]" ""
+		"SkeletonRN.placeHolderList[981]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Scap_Ctrl_Grp|Skeleton:R_Scap_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[985]" ""
+		"SkeletonRN.placeHolderList[982]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Scap_Ctrl_Grp|Skeleton:R_Scap_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[986]" ""
+		"SkeletonRN.placeHolderList[983]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Scap_Ctrl_Grp|Skeleton:R_Scap_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[987]" ""
+		"SkeletonRN.placeHolderList[984]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Scap_Ctrl_Grp|Skeleton:R_Scap_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[988]" ""
+		"SkeletonRN.placeHolderList[985]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Scap_Ctrl_Grp|Skeleton:R_Scap_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[989]" ""
+		"SkeletonRN.placeHolderList[986]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Scap_Ctrl_Grp|Skeleton:R_Scap_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[990]" ""
+		"SkeletonRN.placeHolderList[987]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Scap_Ctrl_Grp|Skeleton:R_Scap_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[991]" ""
+		"SkeletonRN.placeHolderList[988]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Scap_Ctrl_Grp|Skeleton:R_Scap_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[992]" ""
+		"SkeletonRN.placeHolderList[989]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Scap_Ctrl_Grp|Skeleton:R_Scap_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[993]" ""
+		"SkeletonRN.placeHolderList[990]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_IKFK_Ctrl_Grp|Skeleton:R_Arm_IKFK_Ctrl.Reg_Arm" 
-		"SkeletonRN.placeHolderList[994]" ""
+		"SkeletonRN.placeHolderList[991]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_IKFK_Ctrl_Grp|Skeleton:R_Arm_IKFK_Ctrl.Rev_FK_Arm" 
-		"SkeletonRN.placeHolderList[995]" ""
+		"SkeletonRN.placeHolderList[992]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_IKFK_Ctrl_Grp|Skeleton:R_Arm_IKFK_Ctrl.IKFK_Switch" 
-		"SkeletonRN.placeHolderList[996]" ""
+		"SkeletonRN.placeHolderList[993]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_01_FK_Ctrl_Grp|Skeleton:R_Arm_01_FK_Ctrl.Follow_Translate" 
-		"SkeletonRN.placeHolderList[997]" ""
+		"SkeletonRN.placeHolderList[994]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_01_FK_Ctrl_Grp|Skeleton:R_Arm_01_FK_Ctrl.Follow_Rotate" 
-		"SkeletonRN.placeHolderList[998]" ""
+		"SkeletonRN.placeHolderList[995]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_01_FK_Ctrl_Grp|Skeleton:R_Arm_01_FK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[999]" ""
+		"SkeletonRN.placeHolderList[996]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_01_FK_Ctrl_Grp|Skeleton:R_Arm_01_FK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1000]" ""
+		"SkeletonRN.placeHolderList[997]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_01_FK_Ctrl_Grp|Skeleton:R_Arm_01_FK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1001]" ""
+		"SkeletonRN.placeHolderList[998]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_01_FK_Ctrl_Grp|Skeleton:R_Arm_01_FK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1002]" ""
+		"SkeletonRN.placeHolderList[999]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_01_FK_Ctrl_Grp|Skeleton:R_Arm_01_FK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1003]" ""
+		"SkeletonRN.placeHolderList[1000]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_01_FK_Ctrl_Grp|Skeleton:R_Arm_01_FK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1004]" ""
+		"SkeletonRN.placeHolderList[1001]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_01_FK_Ctrl_Grp|Skeleton:R_Arm_01_FK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1005]" ""
+		"SkeletonRN.placeHolderList[1002]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_01_FK_Ctrl_Grp|Skeleton:R_Arm_01_FK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1006]" ""
+		"SkeletonRN.placeHolderList[1003]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_01_FK_Ctrl_Grp|Skeleton:R_Arm_01_FK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1007]" ""
+		"SkeletonRN.placeHolderList[1004]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_01_FK_Ctrl_Grp|Skeleton:R_Arm_01_FK_Ctrl.Operating_Space" 
-		"SkeletonRN.placeHolderList[1008]" ""
+		"SkeletonRN.placeHolderList[1005]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_01_FK_Ctrl_Grp|Skeleton:R_Arm_01_FK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1009]" ""
+		"SkeletonRN.placeHolderList[1006]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_02_FK_Ctrl_Grp|Skeleton:R_Arm_02_FK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1010]" ""
+		"SkeletonRN.placeHolderList[1007]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_02_FK_Ctrl_Grp|Skeleton:R_Arm_02_FK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1011]" ""
+		"SkeletonRN.placeHolderList[1008]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_02_FK_Ctrl_Grp|Skeleton:R_Arm_02_FK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1012]" ""
+		"SkeletonRN.placeHolderList[1009]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_02_FK_Ctrl_Grp|Skeleton:R_Arm_02_FK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1013]" ""
+		"SkeletonRN.placeHolderList[1010]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_02_FK_Ctrl_Grp|Skeleton:R_Arm_02_FK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1014]" ""
+		"SkeletonRN.placeHolderList[1011]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_02_FK_Ctrl_Grp|Skeleton:R_Arm_02_FK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1015]" ""
+		"SkeletonRN.placeHolderList[1012]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_02_FK_Ctrl_Grp|Skeleton:R_Arm_02_FK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1016]" ""
+		"SkeletonRN.placeHolderList[1013]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_02_FK_Ctrl_Grp|Skeleton:R_Arm_02_FK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1017]" ""
+		"SkeletonRN.placeHolderList[1014]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_02_FK_Ctrl_Grp|Skeleton:R_Arm_02_FK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1018]" ""
+		"SkeletonRN.placeHolderList[1015]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_02_FK_Ctrl_Grp|Skeleton:R_Arm_02_FK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1019]" ""
+		"SkeletonRN.placeHolderList[1016]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_03_FK_Ctrl_Grp|Skeleton:R_Arm_03_FK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1020]" ""
+		"SkeletonRN.placeHolderList[1017]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_03_FK_Ctrl_Grp|Skeleton:R_Arm_03_FK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1021]" ""
+		"SkeletonRN.placeHolderList[1018]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_03_FK_Ctrl_Grp|Skeleton:R_Arm_03_FK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1022]" ""
+		"SkeletonRN.placeHolderList[1019]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_03_FK_Ctrl_Grp|Skeleton:R_Arm_03_FK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1023]" ""
+		"SkeletonRN.placeHolderList[1020]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_03_FK_Ctrl_Grp|Skeleton:R_Arm_03_FK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1024]" ""
+		"SkeletonRN.placeHolderList[1021]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_03_FK_Ctrl_Grp|Skeleton:R_Arm_03_FK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1025]" ""
+		"SkeletonRN.placeHolderList[1022]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_03_FK_Ctrl_Grp|Skeleton:R_Arm_03_FK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1026]" ""
+		"SkeletonRN.placeHolderList[1023]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_03_FK_Ctrl_Grp|Skeleton:R_Arm_03_FK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1027]" ""
+		"SkeletonRN.placeHolderList[1024]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_03_FK_Ctrl_Grp|Skeleton:R_Arm_03_FK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1028]" ""
+		"SkeletonRN.placeHolderList[1025]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Arm_FK|Skeleton:R_Arm_03_FK_Ctrl_Grp|Skeleton:R_Arm_03_FK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1029]" ""
+		"SkeletonRN.placeHolderList[1026]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:R_Arm_Wrist_Ctrl_Grp|Skeleton:R_Arm_Wrist_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1030]" ""
+		"SkeletonRN.placeHolderList[1027]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:R_Arm_Wrist_Ctrl_Grp|Skeleton:R_Arm_Wrist_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1031]" ""
+		"SkeletonRN.placeHolderList[1028]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:R_Arm_Wrist_Ctrl_Grp|Skeleton:R_Arm_Wrist_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1032]" ""
+		"SkeletonRN.placeHolderList[1029]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:R_Arm_Wrist_Ctrl_Grp|Skeleton:R_Arm_Wrist_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1033]" ""
+		"SkeletonRN.placeHolderList[1030]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:R_Arm_Wrist_Ctrl_Grp|Skeleton:R_Arm_Wrist_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1034]" ""
+		"SkeletonRN.placeHolderList[1031]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:R_Arm_Wrist_Ctrl_Grp|Skeleton:R_Arm_Wrist_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1035]" ""
+		"SkeletonRN.placeHolderList[1032]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:R_Arm_Wrist_Ctrl_Grp|Skeleton:R_Arm_Wrist_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1036]" ""
+		"SkeletonRN.placeHolderList[1033]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:R_Arm_Wrist_Ctrl_Grp|Skeleton:R_Arm_Wrist_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1037]" ""
+		"SkeletonRN.placeHolderList[1034]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:R_Arm_Wrist_Ctrl_Grp|Skeleton:R_Arm_Wrist_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1038]" ""
+		"SkeletonRN.placeHolderList[1035]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:R_Arm_Wrist_Ctrl_Grp|Skeleton:R_Arm_Wrist_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1039]" ""
+		"SkeletonRN.placeHolderList[1036]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_MetCarp_01_Ctrl_Grp|Skeleton:R_MetCarp_01_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1040]" ""
+		"SkeletonRN.placeHolderList[1037]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_MetCarp_01_Ctrl_Grp|Skeleton:R_MetCarp_01_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1041]" ""
+		"SkeletonRN.placeHolderList[1038]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_MetCarp_01_Ctrl_Grp|Skeleton:R_MetCarp_01_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1042]" ""
+		"SkeletonRN.placeHolderList[1039]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_MetCarp_01_Ctrl_Grp|Skeleton:R_MetCarp_01_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1043]" ""
+		"SkeletonRN.placeHolderList[1040]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_MetCarp_01_Ctrl_Grp|Skeleton:R_MetCarp_01_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1044]" ""
+		"SkeletonRN.placeHolderList[1041]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_MetCarp_01_Ctrl_Grp|Skeleton:R_MetCarp_01_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1045]" ""
+		"SkeletonRN.placeHolderList[1042]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_MetCarp_01_Ctrl_Grp|Skeleton:R_MetCarp_01_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1046]" ""
+		"SkeletonRN.placeHolderList[1043]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_MetCarp_01_Ctrl_Grp|Skeleton:R_MetCarp_01_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1047]" ""
+		"SkeletonRN.placeHolderList[1044]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_MetCarp_01_Ctrl_Grp|Skeleton:R_MetCarp_01_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1048]" ""
+		"SkeletonRN.placeHolderList[1045]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_MetCarp_01_Ctrl_Grp|Skeleton:R_MetCarp_01_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1049]" ""
+		"SkeletonRN.placeHolderList[1046]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_Finger_01_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_01_Knuckle_01_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1050]" ""
+		"SkeletonRN.placeHolderList[1047]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_Finger_01_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_01_Knuckle_01_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1051]" ""
+		"SkeletonRN.placeHolderList[1048]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_Finger_01_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_01_Knuckle_01_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1052]" ""
+		"SkeletonRN.placeHolderList[1049]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_Finger_01_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_01_Knuckle_01_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1053]" ""
+		"SkeletonRN.placeHolderList[1050]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_Finger_01_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_01_Knuckle_01_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1054]" ""
+		"SkeletonRN.placeHolderList[1051]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_Finger_01_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_01_Knuckle_01_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1055]" ""
+		"SkeletonRN.placeHolderList[1052]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_Finger_01_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_01_Knuckle_01_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1056]" ""
+		"SkeletonRN.placeHolderList[1053]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_Finger_01_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_01_Knuckle_01_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1057]" ""
+		"SkeletonRN.placeHolderList[1054]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_Finger_01_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_01_Knuckle_01_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1058]" ""
+		"SkeletonRN.placeHolderList[1055]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_Finger_01_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_01_Knuckle_01_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1059]" ""
+		"SkeletonRN.placeHolderList[1056]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_Finger_01_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_01_Knuckle_02_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1060]" ""
+		"SkeletonRN.placeHolderList[1057]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_Finger_01_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_01_Knuckle_02_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1061]" ""
+		"SkeletonRN.placeHolderList[1058]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_Finger_01_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_01_Knuckle_02_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1062]" ""
+		"SkeletonRN.placeHolderList[1059]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_Finger_01_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_01_Knuckle_02_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1063]" ""
+		"SkeletonRN.placeHolderList[1060]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_Finger_01_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_01_Knuckle_02_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1064]" ""
+		"SkeletonRN.placeHolderList[1061]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_Finger_01_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_01_Knuckle_02_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1065]" ""
+		"SkeletonRN.placeHolderList[1062]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_Finger_01_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_01_Knuckle_02_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1066]" ""
+		"SkeletonRN.placeHolderList[1063]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_Finger_01_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_01_Knuckle_02_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1067]" ""
+		"SkeletonRN.placeHolderList[1064]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_Finger_01_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_01_Knuckle_02_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1068]" ""
+		"SkeletonRN.placeHolderList[1065]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_01|Skeleton:R_Finger_01_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_01_Knuckle_02_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1069]" ""
+		"SkeletonRN.placeHolderList[1066]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_MetCarp_02_Ctrl_Grp|Skeleton:R_MetCarp_02_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1070]" ""
+		"SkeletonRN.placeHolderList[1067]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_MetCarp_02_Ctrl_Grp|Skeleton:R_MetCarp_02_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1071]" ""
+		"SkeletonRN.placeHolderList[1068]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_MetCarp_02_Ctrl_Grp|Skeleton:R_MetCarp_02_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1072]" ""
+		"SkeletonRN.placeHolderList[1069]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_MetCarp_02_Ctrl_Grp|Skeleton:R_MetCarp_02_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1073]" ""
+		"SkeletonRN.placeHolderList[1070]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_MetCarp_02_Ctrl_Grp|Skeleton:R_MetCarp_02_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1074]" ""
+		"SkeletonRN.placeHolderList[1071]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_MetCarp_02_Ctrl_Grp|Skeleton:R_MetCarp_02_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1075]" ""
+		"SkeletonRN.placeHolderList[1072]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_MetCarp_02_Ctrl_Grp|Skeleton:R_MetCarp_02_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1076]" ""
+		"SkeletonRN.placeHolderList[1073]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_MetCarp_02_Ctrl_Grp|Skeleton:R_MetCarp_02_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1077]" ""
+		"SkeletonRN.placeHolderList[1074]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_MetCarp_02_Ctrl_Grp|Skeleton:R_MetCarp_02_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1078]" ""
+		"SkeletonRN.placeHolderList[1075]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_MetCarp_02_Ctrl_Grp|Skeleton:R_MetCarp_02_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1079]" ""
+		"SkeletonRN.placeHolderList[1076]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_01_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1080]" ""
+		"SkeletonRN.placeHolderList[1077]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_01_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1081]" ""
+		"SkeletonRN.placeHolderList[1078]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_01_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1082]" ""
+		"SkeletonRN.placeHolderList[1079]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_01_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1083]" ""
+		"SkeletonRN.placeHolderList[1080]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_01_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1084]" ""
+		"SkeletonRN.placeHolderList[1081]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_01_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1085]" ""
+		"SkeletonRN.placeHolderList[1082]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_01_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1086]" ""
+		"SkeletonRN.placeHolderList[1083]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_01_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1087]" ""
+		"SkeletonRN.placeHolderList[1084]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_01_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1088]" ""
+		"SkeletonRN.placeHolderList[1085]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_01_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1089]" ""
+		"SkeletonRN.placeHolderList[1086]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_02_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1090]" ""
+		"SkeletonRN.placeHolderList[1087]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_02_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1091]" ""
+		"SkeletonRN.placeHolderList[1088]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_02_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1092]" ""
+		"SkeletonRN.placeHolderList[1089]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_02_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1093]" ""
+		"SkeletonRN.placeHolderList[1090]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_02_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1094]" ""
+		"SkeletonRN.placeHolderList[1091]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_02_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1095]" ""
+		"SkeletonRN.placeHolderList[1092]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_02_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1096]" ""
+		"SkeletonRN.placeHolderList[1093]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_02_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1097]" ""
+		"SkeletonRN.placeHolderList[1094]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_02_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1098]" ""
+		"SkeletonRN.placeHolderList[1095]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_02_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1099]" ""
+		"SkeletonRN.placeHolderList[1096]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_03_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1100]" ""
+		"SkeletonRN.placeHolderList[1097]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_03_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1101]" ""
+		"SkeletonRN.placeHolderList[1098]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_03_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1102]" ""
+		"SkeletonRN.placeHolderList[1099]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_03_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1103]" ""
+		"SkeletonRN.placeHolderList[1100]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_03_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1104]" ""
+		"SkeletonRN.placeHolderList[1101]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_03_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1105]" ""
+		"SkeletonRN.placeHolderList[1102]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_03_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1106]" ""
+		"SkeletonRN.placeHolderList[1103]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_03_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1107]" ""
+		"SkeletonRN.placeHolderList[1104]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_03_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1108]" ""
+		"SkeletonRN.placeHolderList[1105]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_02|Skeleton:R_Finger_02_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_02_Knuckle_03_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1109]" ""
+		"SkeletonRN.placeHolderList[1106]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_MetCarp_03_Ctrl_Grp|Skeleton:R_MetCarp_03_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1110]" ""
+		"SkeletonRN.placeHolderList[1107]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_MetCarp_03_Ctrl_Grp|Skeleton:R_MetCarp_03_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1111]" ""
+		"SkeletonRN.placeHolderList[1108]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_MetCarp_03_Ctrl_Grp|Skeleton:R_MetCarp_03_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1112]" ""
+		"SkeletonRN.placeHolderList[1109]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_MetCarp_03_Ctrl_Grp|Skeleton:R_MetCarp_03_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1113]" ""
+		"SkeletonRN.placeHolderList[1110]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_MetCarp_03_Ctrl_Grp|Skeleton:R_MetCarp_03_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1114]" ""
+		"SkeletonRN.placeHolderList[1111]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_MetCarp_03_Ctrl_Grp|Skeleton:R_MetCarp_03_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1115]" ""
+		"SkeletonRN.placeHolderList[1112]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_MetCarp_03_Ctrl_Grp|Skeleton:R_MetCarp_03_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1116]" ""
+		"SkeletonRN.placeHolderList[1113]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_MetCarp_03_Ctrl_Grp|Skeleton:R_MetCarp_03_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1117]" ""
+		"SkeletonRN.placeHolderList[1114]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_MetCarp_03_Ctrl_Grp|Skeleton:R_MetCarp_03_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1118]" ""
+		"SkeletonRN.placeHolderList[1115]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_MetCarp_03_Ctrl_Grp|Skeleton:R_MetCarp_03_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1119]" ""
+		"SkeletonRN.placeHolderList[1116]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_01_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1120]" ""
+		"SkeletonRN.placeHolderList[1117]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_01_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1121]" ""
+		"SkeletonRN.placeHolderList[1118]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_01_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1122]" ""
+		"SkeletonRN.placeHolderList[1119]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_01_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1123]" ""
+		"SkeletonRN.placeHolderList[1120]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_01_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1124]" ""
+		"SkeletonRN.placeHolderList[1121]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_01_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1125]" ""
+		"SkeletonRN.placeHolderList[1122]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_01_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1126]" ""
+		"SkeletonRN.placeHolderList[1123]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_01_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1127]" ""
+		"SkeletonRN.placeHolderList[1124]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_01_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1128]" ""
+		"SkeletonRN.placeHolderList[1125]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_01_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1129]" ""
+		"SkeletonRN.placeHolderList[1126]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_02_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1130]" ""
+		"SkeletonRN.placeHolderList[1127]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_02_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1131]" ""
+		"SkeletonRN.placeHolderList[1128]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_02_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1132]" ""
+		"SkeletonRN.placeHolderList[1129]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_02_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1133]" ""
+		"SkeletonRN.placeHolderList[1130]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_02_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1134]" ""
+		"SkeletonRN.placeHolderList[1131]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_02_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1135]" ""
+		"SkeletonRN.placeHolderList[1132]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_02_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1136]" ""
+		"SkeletonRN.placeHolderList[1133]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_02_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1137]" ""
+		"SkeletonRN.placeHolderList[1134]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_02_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1138]" ""
+		"SkeletonRN.placeHolderList[1135]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_02_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1139]" ""
+		"SkeletonRN.placeHolderList[1136]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_03_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1140]" ""
+		"SkeletonRN.placeHolderList[1137]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_03_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1141]" ""
+		"SkeletonRN.placeHolderList[1138]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_03_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1142]" ""
+		"SkeletonRN.placeHolderList[1139]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_03_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1143]" ""
+		"SkeletonRN.placeHolderList[1140]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_03_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1144]" ""
+		"SkeletonRN.placeHolderList[1141]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_03_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1145]" ""
+		"SkeletonRN.placeHolderList[1142]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_03_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1146]" ""
+		"SkeletonRN.placeHolderList[1143]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_03_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1147]" ""
+		"SkeletonRN.placeHolderList[1144]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_03_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1148]" ""
+		"SkeletonRN.placeHolderList[1145]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_03|Skeleton:R_Finger_03_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_03_Knuckle_03_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1149]" ""
+		"SkeletonRN.placeHolderList[1146]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_MetCarp_04_Ctrl_Grp|Skeleton:R_MetCarp_04_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1150]" ""
+		"SkeletonRN.placeHolderList[1147]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_MetCarp_04_Ctrl_Grp|Skeleton:R_MetCarp_04_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1151]" ""
+		"SkeletonRN.placeHolderList[1148]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_MetCarp_04_Ctrl_Grp|Skeleton:R_MetCarp_04_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1152]" ""
+		"SkeletonRN.placeHolderList[1149]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_MetCarp_04_Ctrl_Grp|Skeleton:R_MetCarp_04_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1153]" ""
+		"SkeletonRN.placeHolderList[1150]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_MetCarp_04_Ctrl_Grp|Skeleton:R_MetCarp_04_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1154]" ""
+		"SkeletonRN.placeHolderList[1151]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_MetCarp_04_Ctrl_Grp|Skeleton:R_MetCarp_04_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1155]" ""
+		"SkeletonRN.placeHolderList[1152]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_MetCarp_04_Ctrl_Grp|Skeleton:R_MetCarp_04_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1156]" ""
+		"SkeletonRN.placeHolderList[1153]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_MetCarp_04_Ctrl_Grp|Skeleton:R_MetCarp_04_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1157]" ""
+		"SkeletonRN.placeHolderList[1154]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_MetCarp_04_Ctrl_Grp|Skeleton:R_MetCarp_04_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1158]" ""
+		"SkeletonRN.placeHolderList[1155]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_MetCarp_04_Ctrl_Grp|Skeleton:R_MetCarp_04_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1159]" ""
+		"SkeletonRN.placeHolderList[1156]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_01_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1160]" ""
+		"SkeletonRN.placeHolderList[1157]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_01_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1161]" ""
+		"SkeletonRN.placeHolderList[1158]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_01_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1162]" ""
+		"SkeletonRN.placeHolderList[1159]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_01_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1163]" ""
+		"SkeletonRN.placeHolderList[1160]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_01_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1164]" ""
+		"SkeletonRN.placeHolderList[1161]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_01_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1165]" ""
+		"SkeletonRN.placeHolderList[1162]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_01_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1166]" ""
+		"SkeletonRN.placeHolderList[1163]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_01_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1167]" ""
+		"SkeletonRN.placeHolderList[1164]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_01_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1168]" ""
+		"SkeletonRN.placeHolderList[1165]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_01_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1169]" ""
+		"SkeletonRN.placeHolderList[1166]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_02_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1170]" ""
+		"SkeletonRN.placeHolderList[1167]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_02_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1171]" ""
+		"SkeletonRN.placeHolderList[1168]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_02_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1172]" ""
+		"SkeletonRN.placeHolderList[1169]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_02_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1173]" ""
+		"SkeletonRN.placeHolderList[1170]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_02_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1174]" ""
+		"SkeletonRN.placeHolderList[1171]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_02_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1175]" ""
+		"SkeletonRN.placeHolderList[1172]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_02_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1176]" ""
+		"SkeletonRN.placeHolderList[1173]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_02_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1177]" ""
+		"SkeletonRN.placeHolderList[1174]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_02_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1178]" ""
+		"SkeletonRN.placeHolderList[1175]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_02_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1179]" ""
+		"SkeletonRN.placeHolderList[1176]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_03_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1180]" ""
+		"SkeletonRN.placeHolderList[1177]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_03_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1181]" ""
+		"SkeletonRN.placeHolderList[1178]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_03_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1182]" ""
+		"SkeletonRN.placeHolderList[1179]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_03_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1183]" ""
+		"SkeletonRN.placeHolderList[1180]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_03_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1184]" ""
+		"SkeletonRN.placeHolderList[1181]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_03_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1185]" ""
+		"SkeletonRN.placeHolderList[1182]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_03_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1186]" ""
+		"SkeletonRN.placeHolderList[1183]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_03_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1187]" ""
+		"SkeletonRN.placeHolderList[1184]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_03_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1188]" ""
+		"SkeletonRN.placeHolderList[1185]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_04|Skeleton:R_Finger_04_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_04_Knuckle_03_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1189]" ""
+		"SkeletonRN.placeHolderList[1186]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_MetCarp_05_Ctrl_Grp|Skeleton:R_MetCarp_05_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1190]" ""
+		"SkeletonRN.placeHolderList[1187]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_MetCarp_05_Ctrl_Grp|Skeleton:R_MetCarp_05_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1191]" ""
+		"SkeletonRN.placeHolderList[1188]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_MetCarp_05_Ctrl_Grp|Skeleton:R_MetCarp_05_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1192]" ""
+		"SkeletonRN.placeHolderList[1189]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_MetCarp_05_Ctrl_Grp|Skeleton:R_MetCarp_05_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1193]" ""
+		"SkeletonRN.placeHolderList[1190]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_MetCarp_05_Ctrl_Grp|Skeleton:R_MetCarp_05_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1194]" ""
+		"SkeletonRN.placeHolderList[1191]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_MetCarp_05_Ctrl_Grp|Skeleton:R_MetCarp_05_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1195]" ""
+		"SkeletonRN.placeHolderList[1192]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_MetCarp_05_Ctrl_Grp|Skeleton:R_MetCarp_05_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1196]" ""
+		"SkeletonRN.placeHolderList[1193]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_MetCarp_05_Ctrl_Grp|Skeleton:R_MetCarp_05_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1197]" ""
+		"SkeletonRN.placeHolderList[1194]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_MetCarp_05_Ctrl_Grp|Skeleton:R_MetCarp_05_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1198]" ""
+		"SkeletonRN.placeHolderList[1195]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_MetCarp_05_Ctrl_Grp|Skeleton:R_MetCarp_05_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1199]" ""
+		"SkeletonRN.placeHolderList[1196]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_01_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1200]" ""
+		"SkeletonRN.placeHolderList[1197]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_01_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1201]" ""
+		"SkeletonRN.placeHolderList[1198]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_01_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1202]" ""
+		"SkeletonRN.placeHolderList[1199]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_01_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1203]" ""
+		"SkeletonRN.placeHolderList[1200]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_01_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1204]" ""
+		"SkeletonRN.placeHolderList[1201]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_01_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1205]" ""
+		"SkeletonRN.placeHolderList[1202]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_01_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1206]" ""
+		"SkeletonRN.placeHolderList[1203]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_01_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1207]" ""
+		"SkeletonRN.placeHolderList[1204]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_01_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1208]" ""
+		"SkeletonRN.placeHolderList[1205]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_01_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_01_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1209]" ""
+		"SkeletonRN.placeHolderList[1206]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_02_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1210]" ""
+		"SkeletonRN.placeHolderList[1207]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_02_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1211]" ""
+		"SkeletonRN.placeHolderList[1208]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_02_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1212]" ""
+		"SkeletonRN.placeHolderList[1209]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_02_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1213]" ""
+		"SkeletonRN.placeHolderList[1210]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_02_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1214]" ""
+		"SkeletonRN.placeHolderList[1211]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_02_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1215]" ""
+		"SkeletonRN.placeHolderList[1212]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_02_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1216]" ""
+		"SkeletonRN.placeHolderList[1213]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_02_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1217]" ""
+		"SkeletonRN.placeHolderList[1214]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_02_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1218]" ""
+		"SkeletonRN.placeHolderList[1215]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_02_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_02_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1219]" ""
+		"SkeletonRN.placeHolderList[1216]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_03_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1220]" ""
+		"SkeletonRN.placeHolderList[1217]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_03_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1221]" ""
+		"SkeletonRN.placeHolderList[1218]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_03_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1222]" ""
+		"SkeletonRN.placeHolderList[1219]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_03_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1223]" ""
+		"SkeletonRN.placeHolderList[1220]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_03_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1224]" ""
+		"SkeletonRN.placeHolderList[1221]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_03_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1225]" ""
+		"SkeletonRN.placeHolderList[1222]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_03_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1226]" ""
+		"SkeletonRN.placeHolderList[1223]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_03_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1227]" ""
+		"SkeletonRN.placeHolderList[1224]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_03_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1228]" ""
+		"SkeletonRN.placeHolderList[1225]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Arm|Skeleton:R_Arm_Reg_Controls|Skeleton:Right_Hand|Skeleton:Right_Finger_05|Skeleton:R_Finger_05_Knuckle_03_Ctrl_Grp|Skeleton:R_Finger_05_Knuckle_03_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1229]" ""
+		"SkeletonRN.placeHolderList[1226]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:R_Leg_Pivot_Ctrl_Grp|Skeleton:R_Leg_Pivot_Ctrl.Follow_Translate" 
-		"SkeletonRN.placeHolderList[1230]" ""
+		"SkeletonRN.placeHolderList[1227]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:R_Leg_Pivot_Ctrl_Grp|Skeleton:R_Leg_Pivot_Ctrl.Follow_Rotate" 
-		"SkeletonRN.placeHolderList[1231]" ""
+		"SkeletonRN.placeHolderList[1228]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:R_Leg_Pivot_Ctrl_Grp|Skeleton:R_Leg_Pivot_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1232]" ""
+		"SkeletonRN.placeHolderList[1229]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:R_Leg_Pivot_Ctrl_Grp|Skeleton:R_Leg_Pivot_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1233]" ""
+		"SkeletonRN.placeHolderList[1230]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:R_Leg_Pivot_Ctrl_Grp|Skeleton:R_Leg_Pivot_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1234]" ""
+		"SkeletonRN.placeHolderList[1231]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:R_Leg_Pivot_Ctrl_Grp|Skeleton:R_Leg_Pivot_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1235]" ""
+		"SkeletonRN.placeHolderList[1232]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:R_Leg_Pivot_Ctrl_Grp|Skeleton:R_Leg_Pivot_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1236]" ""
+		"SkeletonRN.placeHolderList[1233]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:R_Leg_Pivot_Ctrl_Grp|Skeleton:R_Leg_Pivot_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1237]" ""
+		"SkeletonRN.placeHolderList[1234]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:R_Leg_Pivot_Ctrl_Grp|Skeleton:R_Leg_Pivot_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1238]" ""
+		"SkeletonRN.placeHolderList[1235]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:R_Leg_Pivot_Ctrl_Grp|Skeleton:R_Leg_Pivot_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1239]" ""
+		"SkeletonRN.placeHolderList[1236]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:R_Leg_Pivot_Ctrl_Grp|Skeleton:R_Leg_Pivot_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1240]" ""
+		"SkeletonRN.placeHolderList[1237]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:R_Leg_Pivot_Ctrl_Grp|Skeleton:R_Leg_Pivot_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1241]" ""
+		"SkeletonRN.placeHolderList[1238]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_Base_Ctrl_Grp|Skeleton:R_Leg_IK_Base_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1242]" ""
+		"SkeletonRN.placeHolderList[1239]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_Base_Ctrl_Grp|Skeleton:R_Leg_IK_Base_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1243]" ""
+		"SkeletonRN.placeHolderList[1240]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_Base_Ctrl_Grp|Skeleton:R_Leg_IK_Base_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1244]" ""
+		"SkeletonRN.placeHolderList[1241]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_Base_Ctrl_Grp|Skeleton:R_Leg_IK_Base_Ctrl.Operating_Space" 
-		"SkeletonRN.placeHolderList[1245]" ""
+		"SkeletonRN.placeHolderList[1242]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_Base_Ctrl_Grp|Skeleton:R_Leg_IK_Base_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1246]" ""
+		"SkeletonRN.placeHolderList[1243]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_Base_Ctrl_Grp|Skeleton:R_Leg_IK_Base_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1247]" ""
+		"SkeletonRN.placeHolderList[1244]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_Base_Ctrl_Grp|Skeleton:R_Leg_IK_Base_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1248]" ""
+		"SkeletonRN.placeHolderList[1245]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_Base_Ctrl_Grp|Skeleton:R_Leg_IK_Base_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1249]" ""
+		"SkeletonRN.placeHolderList[1246]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_Base_Ctrl_Grp|Skeleton:R_Leg_IK_Base_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1250]" ""
+		"SkeletonRN.placeHolderList[1247]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_Base_Ctrl_Grp|Skeleton:R_Leg_IK_Base_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1251]" ""
+		"SkeletonRN.placeHolderList[1248]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_Base_Ctrl_Grp|Skeleton:R_Leg_IK_Base_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1252]" ""
+		"SkeletonRN.placeHolderList[1249]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_PV_Ctrl_Grp|Skeleton:R_Leg_PV_Ctrl_Offset_Grp|Skeleton:R_Leg_PV_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1253]" ""
+		"SkeletonRN.placeHolderList[1250]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_PV_Ctrl_Grp|Skeleton:R_Leg_PV_Ctrl_Offset_Grp|Skeleton:R_Leg_PV_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1254]" ""
+		"SkeletonRN.placeHolderList[1251]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_PV_Ctrl_Grp|Skeleton:R_Leg_PV_Ctrl_Offset_Grp|Skeleton:R_Leg_PV_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1255]" ""
+		"SkeletonRN.placeHolderList[1252]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_PV_Ctrl_Grp|Skeleton:R_Leg_PV_Ctrl_Offset_Grp|Skeleton:R_Leg_PV_Ctrl.Operating_Space" 
-		"SkeletonRN.placeHolderList[1256]" ""
+		"SkeletonRN.placeHolderList[1253]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_PV_Ctrl_Grp|Skeleton:R_Leg_PV_Ctrl_Offset_Grp|Skeleton:R_Leg_PV_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1257]" ""
+		"SkeletonRN.placeHolderList[1254]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_PV_Ctrl_Grp|Skeleton:R_Leg_PV_Ctrl_Offset_Grp|Skeleton:R_Leg_PV_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1258]" ""
+		"SkeletonRN.placeHolderList[1255]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_PV_Ctrl_Grp|Skeleton:R_Leg_PV_Ctrl_Offset_Grp|Skeleton:R_Leg_PV_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1259]" ""
+		"SkeletonRN.placeHolderList[1256]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_PV_Ctrl_Grp|Skeleton:R_Leg_PV_Ctrl_Offset_Grp|Skeleton:R_Leg_PV_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1260]" ""
+		"SkeletonRN.placeHolderList[1257]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_PV_Ctrl_Grp|Skeleton:R_Leg_PV_Ctrl_Offset_Grp|Skeleton:R_Leg_PV_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1261]" ""
+		"SkeletonRN.placeHolderList[1258]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_PV_Ctrl_Grp|Skeleton:R_Leg_PV_Ctrl_Offset_Grp|Skeleton:R_Leg_PV_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1262]" ""
+		"SkeletonRN.placeHolderList[1259]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_PV_Ctrl_Grp|Skeleton:R_Leg_PV_Ctrl_Offset_Grp|Skeleton:R_Leg_PV_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1263]" ""
+		"SkeletonRN.placeHolderList[1260]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl.Operating_Space" 
-		"SkeletonRN.placeHolderList[1264]" ""
+		"SkeletonRN.placeHolderList[1261]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1265]" ""
+		"SkeletonRN.placeHolderList[1262]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1266]" ""
+		"SkeletonRN.placeHolderList[1263]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1267]" ""
+		"SkeletonRN.placeHolderList[1264]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1268]" ""
+		"SkeletonRN.placeHolderList[1265]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1269]" ""
+		"SkeletonRN.placeHolderList[1266]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1270]" ""
+		"SkeletonRN.placeHolderList[1267]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1271]" ""
+		"SkeletonRN.placeHolderList[1268]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1272]" ""
+		"SkeletonRN.placeHolderList[1269]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1273]" ""
+		"SkeletonRN.placeHolderList[1270]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1274]" ""
+		"SkeletonRN.placeHolderList[1271]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1275]" ""
+		"SkeletonRN.placeHolderList[1272]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1276]" ""
+		"SkeletonRN.placeHolderList[1273]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1277]" ""
+		"SkeletonRN.placeHolderList[1274]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1278]" ""
+		"SkeletonRN.placeHolderList[1275]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1279]" ""
+		"SkeletonRN.placeHolderList[1276]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1280]" ""
+		"SkeletonRN.placeHolderList[1277]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1281]" ""
+		"SkeletonRN.placeHolderList[1278]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1282]" ""
+		"SkeletonRN.placeHolderList[1279]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1283]" ""
+		"SkeletonRN.placeHolderList[1280]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1284]" ""
+		"SkeletonRN.placeHolderList[1281]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1285]" ""
+		"SkeletonRN.placeHolderList[1282]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1286]" ""
+		"SkeletonRN.placeHolderList[1283]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1287]" ""
+		"SkeletonRN.placeHolderList[1284]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1288]" ""
+		"SkeletonRN.placeHolderList[1285]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1289]" ""
+		"SkeletonRN.placeHolderList[1286]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1290]" ""
+		"SkeletonRN.placeHolderList[1287]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1291]" ""
+		"SkeletonRN.placeHolderList[1288]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1292]" ""
+		"SkeletonRN.placeHolderList[1289]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1293]" ""
+		"SkeletonRN.placeHolderList[1290]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1294]" ""
+		"SkeletonRN.placeHolderList[1291]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1295]" ""
+		"SkeletonRN.placeHolderList[1292]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1296]" ""
+		"SkeletonRN.placeHolderList[1293]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1297]" ""
+		"SkeletonRN.placeHolderList[1294]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1298]" ""
+		"SkeletonRN.placeHolderList[1295]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1299]" ""
+		"SkeletonRN.placeHolderList[1296]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1300]" ""
+		"SkeletonRN.placeHolderList[1297]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1301]" ""
+		"SkeletonRN.placeHolderList[1298]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1302]" ""
+		"SkeletonRN.placeHolderList[1299]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1303]" ""
+		"SkeletonRN.placeHolderList[1300]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1304]" ""
+		"SkeletonRN.placeHolderList[1301]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1305]" ""
+		"SkeletonRN.placeHolderList[1302]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1306]" ""
+		"SkeletonRN.placeHolderList[1303]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1307]" ""
+		"SkeletonRN.placeHolderList[1304]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1308]" ""
+		"SkeletonRN.placeHolderList[1305]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1309]" ""
+		"SkeletonRN.placeHolderList[1306]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1310]" ""
+		"SkeletonRN.placeHolderList[1307]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1311]" ""
+		"SkeletonRN.placeHolderList[1308]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1312]" ""
+		"SkeletonRN.placeHolderList[1309]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1313]" ""
+		"SkeletonRN.placeHolderList[1310]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1314]" ""
+		"SkeletonRN.placeHolderList[1311]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl|Skeleton:R_Foot_IK_Ball_Ctrl_Grp|Skeleton:R_Foot_IK_Ball_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1315]" ""
+		"SkeletonRN.placeHolderList[1312]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl|Skeleton:R_Foot_IK_Ball_Ctrl_Grp|Skeleton:R_Foot_IK_Ball_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1316]" ""
+		"SkeletonRN.placeHolderList[1313]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl|Skeleton:R_Foot_IK_Ball_Ctrl_Grp|Skeleton:R_Foot_IK_Ball_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1317]" ""
+		"SkeletonRN.placeHolderList[1314]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl|Skeleton:R_Foot_IK_Ball_Ctrl_Grp|Skeleton:R_Foot_IK_Ball_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1318]" ""
+		"SkeletonRN.placeHolderList[1315]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl|Skeleton:R_Foot_IK_Ball_Ctrl_Grp|Skeleton:R_Foot_IK_Ball_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1319]" ""
+		"SkeletonRN.placeHolderList[1316]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl|Skeleton:R_Foot_IK_Ball_Ctrl_Grp|Skeleton:R_Foot_IK_Ball_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1320]" ""
+		"SkeletonRN.placeHolderList[1317]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl|Skeleton:R_Foot_IK_Ball_Ctrl_Grp|Skeleton:R_Foot_IK_Ball_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1321]" ""
+		"SkeletonRN.placeHolderList[1318]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl|Skeleton:R_Foot_IK_Ball_Ctrl_Grp|Skeleton:R_Foot_IK_Ball_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1322]" ""
+		"SkeletonRN.placeHolderList[1319]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl|Skeleton:R_Foot_IK_Ball_Ctrl_Grp|Skeleton:R_Foot_IK_Ball_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1323]" ""
+		"SkeletonRN.placeHolderList[1320]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl|Skeleton:R_Foot_IK_Ball_Ctrl_Grp|Skeleton:R_Foot_IK_Ball_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1324]" ""
+		"SkeletonRN.placeHolderList[1321]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl|Skeleton:R_Foot_IK_Tap_Ctrl_Grp|Skeleton:R_Foot_IK_Tap_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1325]" ""
+		"SkeletonRN.placeHolderList[1322]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl|Skeleton:R_Foot_IK_Tap_Ctrl_Grp|Skeleton:R_Foot_IK_Tap_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1326]" ""
+		"SkeletonRN.placeHolderList[1323]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl|Skeleton:R_Foot_IK_Tap_Ctrl_Grp|Skeleton:R_Foot_IK_Tap_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1327]" ""
+		"SkeletonRN.placeHolderList[1324]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl|Skeleton:R_Foot_IK_Tap_Ctrl_Grp|Skeleton:R_Foot_IK_Tap_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1328]" ""
+		"SkeletonRN.placeHolderList[1325]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl|Skeleton:R_Foot_IK_Tap_Ctrl_Grp|Skeleton:R_Foot_IK_Tap_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1329]" ""
+		"SkeletonRN.placeHolderList[1326]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl|Skeleton:R_Foot_IK_Tap_Ctrl_Grp|Skeleton:R_Foot_IK_Tap_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1330]" ""
+		"SkeletonRN.placeHolderList[1327]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl|Skeleton:R_Foot_IK_Tap_Ctrl_Grp|Skeleton:R_Foot_IK_Tap_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1331]" ""
+		"SkeletonRN.placeHolderList[1328]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl|Skeleton:R_Foot_IK_Tap_Ctrl_Grp|Skeleton:R_Foot_IK_Tap_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1332]" ""
+		"SkeletonRN.placeHolderList[1329]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl|Skeleton:R_Foot_IK_Tap_Ctrl_Grp|Skeleton:R_Foot_IK_Tap_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1333]" ""
+		"SkeletonRN.placeHolderList[1330]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:R_Leg_IK_End_Ctrl_Grp|Skeleton:R_Leg_IK_End_Ctrl|Skeleton:R_Foot_IK_Out_Ctrl_Grp|Skeleton:R_Foot_IK_Out_Ctrl|Skeleton:R_Foot_IK_In_Ctrl_Grp|Skeleton:R_Foot_IK_In_Ctrl|Skeleton:R_Foot_IK_Heel_Ctrl_Grp|Skeleton:R_Foot_IK_Heel_Ctrl|Skeleton:R_Foot_IK_Toe_Ctrl_Grp|Skeleton:R_Foot_IK_Toe_Ctrl|Skeleton:R_Foot_IK_Tap_Ctrl_Grp|Skeleton:R_Foot_IK_Tap_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1334]" ""
+		"SkeletonRN.placeHolderList[1331]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_MetTars_01_IK_Ctrl_Grp|Skeleton:R_MetTars_01_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1335]" ""
+		"SkeletonRN.placeHolderList[1332]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_MetTars_01_IK_Ctrl_Grp|Skeleton:R_MetTars_01_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1336]" ""
+		"SkeletonRN.placeHolderList[1333]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_MetTars_01_IK_Ctrl_Grp|Skeleton:R_MetTars_01_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1337]" ""
+		"SkeletonRN.placeHolderList[1334]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_MetTars_01_IK_Ctrl_Grp|Skeleton:R_MetTars_01_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1338]" ""
+		"SkeletonRN.placeHolderList[1335]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_MetTars_01_IK_Ctrl_Grp|Skeleton:R_MetTars_01_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1339]" ""
+		"SkeletonRN.placeHolderList[1336]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_MetTars_01_IK_Ctrl_Grp|Skeleton:R_MetTars_01_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1340]" ""
+		"SkeletonRN.placeHolderList[1337]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_MetTars_01_IK_Ctrl_Grp|Skeleton:R_MetTars_01_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1341]" ""
+		"SkeletonRN.placeHolderList[1338]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_MetTars_01_IK_Ctrl_Grp|Skeleton:R_MetTars_01_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1342]" ""
+		"SkeletonRN.placeHolderList[1339]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_MetTars_01_IK_Ctrl_Grp|Skeleton:R_MetTars_01_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1343]" ""
+		"SkeletonRN.placeHolderList[1340]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_MetTars_01_IK_Ctrl_Grp|Skeleton:R_MetTars_01_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1344]" ""
+		"SkeletonRN.placeHolderList[1341]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_Toe_01_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_01_Knuckle_01_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1345]" ""
+		"SkeletonRN.placeHolderList[1342]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_Toe_01_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_01_Knuckle_01_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1346]" ""
+		"SkeletonRN.placeHolderList[1343]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_Toe_01_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_01_Knuckle_01_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1347]" ""
+		"SkeletonRN.placeHolderList[1344]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_Toe_01_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_01_Knuckle_01_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1348]" ""
+		"SkeletonRN.placeHolderList[1345]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_Toe_01_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_01_Knuckle_01_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1349]" ""
+		"SkeletonRN.placeHolderList[1346]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_Toe_01_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_01_Knuckle_01_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1350]" ""
+		"SkeletonRN.placeHolderList[1347]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_Toe_01_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_01_Knuckle_01_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1351]" ""
+		"SkeletonRN.placeHolderList[1348]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_Toe_01_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_01_Knuckle_01_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1352]" ""
+		"SkeletonRN.placeHolderList[1349]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_Toe_01_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_01_Knuckle_01_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1353]" ""
+		"SkeletonRN.placeHolderList[1350]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_Toe_01_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_01_Knuckle_01_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1354]" ""
+		"SkeletonRN.placeHolderList[1351]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_Toe_01_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_01_Knuckle_02_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1355]" ""
+		"SkeletonRN.placeHolderList[1352]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_Toe_01_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_01_Knuckle_02_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1356]" ""
+		"SkeletonRN.placeHolderList[1353]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_Toe_01_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_01_Knuckle_02_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1357]" ""
+		"SkeletonRN.placeHolderList[1354]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_Toe_01_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_01_Knuckle_02_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1358]" ""
+		"SkeletonRN.placeHolderList[1355]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_Toe_01_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_01_Knuckle_02_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1359]" ""
+		"SkeletonRN.placeHolderList[1356]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_Toe_01_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_01_Knuckle_02_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1360]" ""
+		"SkeletonRN.placeHolderList[1357]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_Toe_01_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_01_Knuckle_02_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1361]" ""
+		"SkeletonRN.placeHolderList[1358]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_Toe_01_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_01_Knuckle_02_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1362]" ""
+		"SkeletonRN.placeHolderList[1359]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_Toe_01_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_01_Knuckle_02_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1363]" ""
+		"SkeletonRN.placeHolderList[1360]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_01_IK|Skeleton:R_Toe_01_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_01_Knuckle_02_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1364]" ""
+		"SkeletonRN.placeHolderList[1361]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_MetTars_02_IK_Ctrl_Grp|Skeleton:R_MetTars_02_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1365]" ""
+		"SkeletonRN.placeHolderList[1362]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_MetTars_02_IK_Ctrl_Grp|Skeleton:R_MetTars_02_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1366]" ""
+		"SkeletonRN.placeHolderList[1363]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_MetTars_02_IK_Ctrl_Grp|Skeleton:R_MetTars_02_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1367]" ""
+		"SkeletonRN.placeHolderList[1364]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_MetTars_02_IK_Ctrl_Grp|Skeleton:R_MetTars_02_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1368]" ""
+		"SkeletonRN.placeHolderList[1365]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_MetTars_02_IK_Ctrl_Grp|Skeleton:R_MetTars_02_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1369]" ""
+		"SkeletonRN.placeHolderList[1366]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_MetTars_02_IK_Ctrl_Grp|Skeleton:R_MetTars_02_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1370]" ""
+		"SkeletonRN.placeHolderList[1367]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_MetTars_02_IK_Ctrl_Grp|Skeleton:R_MetTars_02_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1371]" ""
+		"SkeletonRN.placeHolderList[1368]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_MetTars_02_IK_Ctrl_Grp|Skeleton:R_MetTars_02_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1372]" ""
+		"SkeletonRN.placeHolderList[1369]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_MetTars_02_IK_Ctrl_Grp|Skeleton:R_MetTars_02_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1373]" ""
+		"SkeletonRN.placeHolderList[1370]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_MetTars_02_IK_Ctrl_Grp|Skeleton:R_MetTars_02_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1374]" ""
+		"SkeletonRN.placeHolderList[1371]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_01_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1375]" ""
+		"SkeletonRN.placeHolderList[1372]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_01_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1376]" ""
+		"SkeletonRN.placeHolderList[1373]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_01_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1377]" ""
+		"SkeletonRN.placeHolderList[1374]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_01_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1378]" ""
+		"SkeletonRN.placeHolderList[1375]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_01_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1379]" ""
+		"SkeletonRN.placeHolderList[1376]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_01_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1380]" ""
+		"SkeletonRN.placeHolderList[1377]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_01_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1381]" ""
+		"SkeletonRN.placeHolderList[1378]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_01_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1382]" ""
+		"SkeletonRN.placeHolderList[1379]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_01_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1383]" ""
+		"SkeletonRN.placeHolderList[1380]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_01_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1384]" ""
+		"SkeletonRN.placeHolderList[1381]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_02_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1385]" ""
+		"SkeletonRN.placeHolderList[1382]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_02_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1386]" ""
+		"SkeletonRN.placeHolderList[1383]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_02_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1387]" ""
+		"SkeletonRN.placeHolderList[1384]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_02_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1388]" ""
+		"SkeletonRN.placeHolderList[1385]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_02_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1389]" ""
+		"SkeletonRN.placeHolderList[1386]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_02_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1390]" ""
+		"SkeletonRN.placeHolderList[1387]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_02_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1391]" ""
+		"SkeletonRN.placeHolderList[1388]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_02_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1392]" ""
+		"SkeletonRN.placeHolderList[1389]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_02_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1393]" ""
+		"SkeletonRN.placeHolderList[1390]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_02_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1394]" ""
+		"SkeletonRN.placeHolderList[1391]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_03_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1395]" ""
+		"SkeletonRN.placeHolderList[1392]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_03_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1396]" ""
+		"SkeletonRN.placeHolderList[1393]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_03_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1397]" ""
+		"SkeletonRN.placeHolderList[1394]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_03_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1398]" ""
+		"SkeletonRN.placeHolderList[1395]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_03_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1399]" ""
+		"SkeletonRN.placeHolderList[1396]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_03_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1400]" ""
+		"SkeletonRN.placeHolderList[1397]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_03_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1401]" ""
+		"SkeletonRN.placeHolderList[1398]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_03_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1402]" ""
+		"SkeletonRN.placeHolderList[1399]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_03_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1403]" ""
+		"SkeletonRN.placeHolderList[1400]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_02_IK|Skeleton:R_Toe_02_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_02_Knuckle_03_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1404]" ""
+		"SkeletonRN.placeHolderList[1401]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_MetTars_03_IK_Ctrl_Grp|Skeleton:R_MetTars_03_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1405]" ""
+		"SkeletonRN.placeHolderList[1402]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_MetTars_03_IK_Ctrl_Grp|Skeleton:R_MetTars_03_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1406]" ""
+		"SkeletonRN.placeHolderList[1403]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_MetTars_03_IK_Ctrl_Grp|Skeleton:R_MetTars_03_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1407]" ""
+		"SkeletonRN.placeHolderList[1404]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_MetTars_03_IK_Ctrl_Grp|Skeleton:R_MetTars_03_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1408]" ""
+		"SkeletonRN.placeHolderList[1405]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_MetTars_03_IK_Ctrl_Grp|Skeleton:R_MetTars_03_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1409]" ""
+		"SkeletonRN.placeHolderList[1406]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_MetTars_03_IK_Ctrl_Grp|Skeleton:R_MetTars_03_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1410]" ""
+		"SkeletonRN.placeHolderList[1407]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_MetTars_03_IK_Ctrl_Grp|Skeleton:R_MetTars_03_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1411]" ""
+		"SkeletonRN.placeHolderList[1408]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_MetTars_03_IK_Ctrl_Grp|Skeleton:R_MetTars_03_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1412]" ""
+		"SkeletonRN.placeHolderList[1409]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_MetTars_03_IK_Ctrl_Grp|Skeleton:R_MetTars_03_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1413]" ""
+		"SkeletonRN.placeHolderList[1410]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_MetTars_03_IK_Ctrl_Grp|Skeleton:R_MetTars_03_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1414]" ""
+		"SkeletonRN.placeHolderList[1411]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_01_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1415]" ""
+		"SkeletonRN.placeHolderList[1412]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_01_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1416]" ""
+		"SkeletonRN.placeHolderList[1413]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_01_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1417]" ""
+		"SkeletonRN.placeHolderList[1414]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_01_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1418]" ""
+		"SkeletonRN.placeHolderList[1415]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_01_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1419]" ""
+		"SkeletonRN.placeHolderList[1416]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_01_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1420]" ""
+		"SkeletonRN.placeHolderList[1417]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_01_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1421]" ""
+		"SkeletonRN.placeHolderList[1418]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_01_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1422]" ""
+		"SkeletonRN.placeHolderList[1419]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_01_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1423]" ""
+		"SkeletonRN.placeHolderList[1420]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_01_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1424]" ""
+		"SkeletonRN.placeHolderList[1421]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_02_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1425]" ""
+		"SkeletonRN.placeHolderList[1422]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_02_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1426]" ""
+		"SkeletonRN.placeHolderList[1423]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_02_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1427]" ""
+		"SkeletonRN.placeHolderList[1424]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_02_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1428]" ""
+		"SkeletonRN.placeHolderList[1425]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_02_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1429]" ""
+		"SkeletonRN.placeHolderList[1426]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_02_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1430]" ""
+		"SkeletonRN.placeHolderList[1427]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_02_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1431]" ""
+		"SkeletonRN.placeHolderList[1428]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_02_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1432]" ""
+		"SkeletonRN.placeHolderList[1429]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_02_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1433]" ""
+		"SkeletonRN.placeHolderList[1430]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_02_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1434]" ""
+		"SkeletonRN.placeHolderList[1431]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_03_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1435]" ""
+		"SkeletonRN.placeHolderList[1432]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_03_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1436]" ""
+		"SkeletonRN.placeHolderList[1433]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_03_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1437]" ""
+		"SkeletonRN.placeHolderList[1434]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_03_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1438]" ""
+		"SkeletonRN.placeHolderList[1435]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_03_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1439]" ""
+		"SkeletonRN.placeHolderList[1436]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_03_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1440]" ""
+		"SkeletonRN.placeHolderList[1437]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_03_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1441]" ""
+		"SkeletonRN.placeHolderList[1438]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_03_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1442]" ""
+		"SkeletonRN.placeHolderList[1439]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_03_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1443]" ""
+		"SkeletonRN.placeHolderList[1440]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_03_IK|Skeleton:R_Toe_03_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_03_Knuckle_03_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1444]" ""
+		"SkeletonRN.placeHolderList[1441]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_MetTars_04_IK_Ctrl_Grp|Skeleton:R_MetTars_04_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1445]" ""
+		"SkeletonRN.placeHolderList[1442]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_MetTars_04_IK_Ctrl_Grp|Skeleton:R_MetTars_04_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1446]" ""
+		"SkeletonRN.placeHolderList[1443]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_MetTars_04_IK_Ctrl_Grp|Skeleton:R_MetTars_04_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1447]" ""
+		"SkeletonRN.placeHolderList[1444]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_MetTars_04_IK_Ctrl_Grp|Skeleton:R_MetTars_04_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1448]" ""
+		"SkeletonRN.placeHolderList[1445]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_MetTars_04_IK_Ctrl_Grp|Skeleton:R_MetTars_04_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1449]" ""
+		"SkeletonRN.placeHolderList[1446]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_MetTars_04_IK_Ctrl_Grp|Skeleton:R_MetTars_04_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1450]" ""
+		"SkeletonRN.placeHolderList[1447]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_MetTars_04_IK_Ctrl_Grp|Skeleton:R_MetTars_04_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1451]" ""
+		"SkeletonRN.placeHolderList[1448]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_MetTars_04_IK_Ctrl_Grp|Skeleton:R_MetTars_04_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1452]" ""
+		"SkeletonRN.placeHolderList[1449]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_MetTars_04_IK_Ctrl_Grp|Skeleton:R_MetTars_04_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1453]" ""
+		"SkeletonRN.placeHolderList[1450]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_MetTars_04_IK_Ctrl_Grp|Skeleton:R_MetTars_04_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1454]" ""
+		"SkeletonRN.placeHolderList[1451]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_01_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1455]" ""
+		"SkeletonRN.placeHolderList[1452]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_01_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1456]" ""
+		"SkeletonRN.placeHolderList[1453]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_01_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1457]" ""
+		"SkeletonRN.placeHolderList[1454]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_01_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1458]" ""
+		"SkeletonRN.placeHolderList[1455]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_01_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1459]" ""
+		"SkeletonRN.placeHolderList[1456]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_01_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1460]" ""
+		"SkeletonRN.placeHolderList[1457]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_01_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1461]" ""
+		"SkeletonRN.placeHolderList[1458]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_01_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1462]" ""
+		"SkeletonRN.placeHolderList[1459]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_01_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1463]" ""
+		"SkeletonRN.placeHolderList[1460]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_01_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1464]" ""
+		"SkeletonRN.placeHolderList[1461]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_02_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1465]" ""
+		"SkeletonRN.placeHolderList[1462]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_02_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1466]" ""
+		"SkeletonRN.placeHolderList[1463]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_02_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1467]" ""
+		"SkeletonRN.placeHolderList[1464]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_02_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1468]" ""
+		"SkeletonRN.placeHolderList[1465]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_02_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1469]" ""
+		"SkeletonRN.placeHolderList[1466]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_02_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1470]" ""
+		"SkeletonRN.placeHolderList[1467]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_02_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1471]" ""
+		"SkeletonRN.placeHolderList[1468]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_02_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1472]" ""
+		"SkeletonRN.placeHolderList[1469]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_02_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1473]" ""
+		"SkeletonRN.placeHolderList[1470]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_02_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1474]" ""
+		"SkeletonRN.placeHolderList[1471]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_03_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1475]" ""
+		"SkeletonRN.placeHolderList[1472]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_03_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1476]" ""
+		"SkeletonRN.placeHolderList[1473]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_03_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1477]" ""
+		"SkeletonRN.placeHolderList[1474]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_03_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1478]" ""
+		"SkeletonRN.placeHolderList[1475]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_03_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1479]" ""
+		"SkeletonRN.placeHolderList[1476]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_03_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1480]" ""
+		"SkeletonRN.placeHolderList[1477]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_03_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1481]" ""
+		"SkeletonRN.placeHolderList[1478]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_03_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1482]" ""
+		"SkeletonRN.placeHolderList[1479]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_03_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1483]" ""
+		"SkeletonRN.placeHolderList[1480]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_04_IK|Skeleton:R_Toe_04_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_04_Knuckle_03_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1484]" ""
+		"SkeletonRN.placeHolderList[1481]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_MetTars_05_IK_Ctrl_Grp|Skeleton:R_MetTars_05_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1485]" ""
+		"SkeletonRN.placeHolderList[1482]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_MetTars_05_IK_Ctrl_Grp|Skeleton:R_MetTars_05_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1486]" ""
+		"SkeletonRN.placeHolderList[1483]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_MetTars_05_IK_Ctrl_Grp|Skeleton:R_MetTars_05_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1487]" ""
+		"SkeletonRN.placeHolderList[1484]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_MetTars_05_IK_Ctrl_Grp|Skeleton:R_MetTars_05_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1488]" ""
+		"SkeletonRN.placeHolderList[1485]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_MetTars_05_IK_Ctrl_Grp|Skeleton:R_MetTars_05_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1489]" ""
+		"SkeletonRN.placeHolderList[1486]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_MetTars_05_IK_Ctrl_Grp|Skeleton:R_MetTars_05_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1490]" ""
+		"SkeletonRN.placeHolderList[1487]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_MetTars_05_IK_Ctrl_Grp|Skeleton:R_MetTars_05_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1491]" ""
+		"SkeletonRN.placeHolderList[1488]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_MetTars_05_IK_Ctrl_Grp|Skeleton:R_MetTars_05_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1492]" ""
+		"SkeletonRN.placeHolderList[1489]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_MetTars_05_IK_Ctrl_Grp|Skeleton:R_MetTars_05_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1493]" ""
+		"SkeletonRN.placeHolderList[1490]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_MetTars_05_IK_Ctrl_Grp|Skeleton:R_MetTars_05_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1494]" ""
+		"SkeletonRN.placeHolderList[1491]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_01_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1495]" ""
+		"SkeletonRN.placeHolderList[1492]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_01_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1496]" ""
+		"SkeletonRN.placeHolderList[1493]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_01_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1497]" ""
+		"SkeletonRN.placeHolderList[1494]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_01_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1498]" ""
+		"SkeletonRN.placeHolderList[1495]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_01_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1499]" ""
+		"SkeletonRN.placeHolderList[1496]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_01_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1500]" ""
+		"SkeletonRN.placeHolderList[1497]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_01_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1501]" ""
+		"SkeletonRN.placeHolderList[1498]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_01_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1502]" ""
+		"SkeletonRN.placeHolderList[1499]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_01_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1503]" ""
+		"SkeletonRN.placeHolderList[1500]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_01_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_01_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1504]" ""
+		"SkeletonRN.placeHolderList[1501]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_02_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1505]" ""
+		"SkeletonRN.placeHolderList[1502]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_02_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1506]" ""
+		"SkeletonRN.placeHolderList[1503]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_02_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1507]" ""
+		"SkeletonRN.placeHolderList[1504]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_02_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1508]" ""
+		"SkeletonRN.placeHolderList[1505]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_02_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1509]" ""
+		"SkeletonRN.placeHolderList[1506]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_02_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1510]" ""
+		"SkeletonRN.placeHolderList[1507]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_02_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1511]" ""
+		"SkeletonRN.placeHolderList[1508]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_02_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1512]" ""
+		"SkeletonRN.placeHolderList[1509]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_02_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1513]" ""
+		"SkeletonRN.placeHolderList[1510]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_02_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_02_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1514]" ""
+		"SkeletonRN.placeHolderList[1511]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_03_IK_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1515]" ""
+		"SkeletonRN.placeHolderList[1512]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_03_IK_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1516]" ""
+		"SkeletonRN.placeHolderList[1513]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_03_IK_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1517]" ""
+		"SkeletonRN.placeHolderList[1514]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_03_IK_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1518]" ""
+		"SkeletonRN.placeHolderList[1515]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_03_IK_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1519]" ""
+		"SkeletonRN.placeHolderList[1516]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_03_IK_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1520]" ""
+		"SkeletonRN.placeHolderList[1517]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_03_IK_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1521]" ""
+		"SkeletonRN.placeHolderList[1518]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_03_IK_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1522]" ""
+		"SkeletonRN.placeHolderList[1519]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_03_IK_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1523]" ""
+		"SkeletonRN.placeHolderList[1520]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:Right_Leg_IK|Skeleton:Right_Toes_IK|Skeleton:Right_Toe_05_IK|Skeleton:R_Toe_05_Knuckle_03_IK_Ctrl_Grp|Skeleton:R_Toe_05_Knuckle_03_IK_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1524]" ""
+		"SkeletonRN.placeHolderList[1521]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Right_Leg|Skeleton:R_Leg_IKFK_Ctrl_Grp|Skeleton:R_Leg_IKFK_Ctrl.IKFK_Switch" 
-		"SkeletonRN.placeHolderList[1525]" ""
+		"SkeletonRN.placeHolderList[1522]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Space_Controls|Skeleton:Space_Controllers_Ctrl_Grp|Skeleton:Space_Controllers_Ctrl.L_Space_Ctrl_01" 
-		"SkeletonRN.placeHolderList[1526]" ""
+		"SkeletonRN.placeHolderList[1523]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Space_Controls|Skeleton:Space_Controllers_Ctrl_Grp|Skeleton:Space_Controllers_Ctrl.L_Space_Ctrl_02" 
-		"SkeletonRN.placeHolderList[1527]" ""
+		"SkeletonRN.placeHolderList[1524]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Space_Controls|Skeleton:Space_Controllers_Ctrl_Grp|Skeleton:Space_Controllers_Ctrl.L_Space_Ctrl_03" 
-		"SkeletonRN.placeHolderList[1528]" ""
+		"SkeletonRN.placeHolderList[1525]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Space_Controls|Skeleton:Space_Controllers_Ctrl_Grp|Skeleton:Space_Controllers_Ctrl.R_Space_Ctrl_01" 
-		"SkeletonRN.placeHolderList[1529]" ""
+		"SkeletonRN.placeHolderList[1526]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Space_Controls|Skeleton:Space_Controllers_Ctrl_Grp|Skeleton:Space_Controllers_Ctrl.R_Space_Ctrl_02" 
-		"SkeletonRN.placeHolderList[1530]" ""
+		"SkeletonRN.placeHolderList[1527]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Space_Controls|Skeleton:Space_Controllers_Ctrl_Grp|Skeleton:Space_Controllers_Ctrl.R_Space_Ctrl_03" 
-		"SkeletonRN.placeHolderList[1531]" ""
+		"SkeletonRN.placeHolderList[1528]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Space_Controls|Skeleton:Space_Controllers_Ctrl_Grp|Skeleton:Space_Controllers_Ctrl.Mid_Space_Ctrl_01" 
-		"SkeletonRN.placeHolderList[1532]" ""
+		"SkeletonRN.placeHolderList[1529]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Space_Controls|Skeleton:Space_Controllers_Ctrl_Grp|Skeleton:Space_Controllers_Ctrl.Mid_Space_Ctrl_02" 
-		"SkeletonRN.placeHolderList[1533]" ""
+		"SkeletonRN.placeHolderList[1530]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_01_Redundancy_Ctrl_Grp|Skeleton:Spine_01_Redundancy_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1534]" ""
+		"SkeletonRN.placeHolderList[1531]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_01_Redundancy_Ctrl_Grp|Skeleton:Spine_01_Redundancy_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1535]" ""
+		"SkeletonRN.placeHolderList[1532]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_01_Redundancy_Ctrl_Grp|Skeleton:Spine_01_Redundancy_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1536]" ""
+		"SkeletonRN.placeHolderList[1533]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_01_Redundancy_Ctrl_Grp|Skeleton:Spine_01_Redundancy_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1537]" ""
+		"SkeletonRN.placeHolderList[1534]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_01_Redundancy_Ctrl_Grp|Skeleton:Spine_01_Redundancy_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1538]" ""
+		"SkeletonRN.placeHolderList[1535]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_01_Redundancy_Ctrl_Grp|Skeleton:Spine_01_Redundancy_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1539]" ""
+		"SkeletonRN.placeHolderList[1536]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_01_Redundancy_Ctrl_Grp|Skeleton:Spine_01_Redundancy_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1540]" ""
+		"SkeletonRN.placeHolderList[1537]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_01_Redundancy_Ctrl_Grp|Skeleton:Spine_01_Redundancy_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1541]" ""
+		"SkeletonRN.placeHolderList[1538]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_01_Redundancy_Ctrl_Grp|Skeleton:Spine_01_Redundancy_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1542]" ""
+		"SkeletonRN.placeHolderList[1539]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_01_Redundancy_Ctrl_Grp|Skeleton:Spine_01_Redundancy_Ctrl.Operating_Space" 
-		"SkeletonRN.placeHolderList[1543]" ""
+		"SkeletonRN.placeHolderList[1540]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_01_Redundancy_Ctrl_Grp|Skeleton:Spine_01_Redundancy_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1544]" ""
+		"SkeletonRN.placeHolderList[1541]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_02_Redundancy_Ctrl_Grp|Skeleton:Spine_02_Redundancy_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1545]" ""
+		"SkeletonRN.placeHolderList[1542]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_02_Redundancy_Ctrl_Grp|Skeleton:Spine_02_Redundancy_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1546]" ""
+		"SkeletonRN.placeHolderList[1543]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_02_Redundancy_Ctrl_Grp|Skeleton:Spine_02_Redundancy_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1547]" ""
+		"SkeletonRN.placeHolderList[1544]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_02_Redundancy_Ctrl_Grp|Skeleton:Spine_02_Redundancy_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1548]" ""
+		"SkeletonRN.placeHolderList[1545]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_02_Redundancy_Ctrl_Grp|Skeleton:Spine_02_Redundancy_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1549]" ""
+		"SkeletonRN.placeHolderList[1546]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_02_Redundancy_Ctrl_Grp|Skeleton:Spine_02_Redundancy_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1550]" ""
+		"SkeletonRN.placeHolderList[1547]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_02_Redundancy_Ctrl_Grp|Skeleton:Spine_02_Redundancy_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1551]" ""
+		"SkeletonRN.placeHolderList[1548]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_02_Redundancy_Ctrl_Grp|Skeleton:Spine_02_Redundancy_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1552]" ""
+		"SkeletonRN.placeHolderList[1549]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_02_Redundancy_Ctrl_Grp|Skeleton:Spine_02_Redundancy_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1553]" ""
+		"SkeletonRN.placeHolderList[1550]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_02_Redundancy_Ctrl_Grp|Skeleton:Spine_02_Redundancy_Ctrl.Operating_Space" 
-		"SkeletonRN.placeHolderList[1554]" ""
+		"SkeletonRN.placeHolderList[1551]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_02_Redundancy_Ctrl_Grp|Skeleton:Spine_02_Redundancy_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1555]" ""
+		"SkeletonRN.placeHolderList[1552]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_03_Redundancy_Ctrl_Grp|Skeleton:Spine_03_Redundancy_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1556]" ""
+		"SkeletonRN.placeHolderList[1553]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_03_Redundancy_Ctrl_Grp|Skeleton:Spine_03_Redundancy_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1557]" ""
+		"SkeletonRN.placeHolderList[1554]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_03_Redundancy_Ctrl_Grp|Skeleton:Spine_03_Redundancy_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1558]" ""
+		"SkeletonRN.placeHolderList[1555]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_03_Redundancy_Ctrl_Grp|Skeleton:Spine_03_Redundancy_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1559]" ""
+		"SkeletonRN.placeHolderList[1556]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_03_Redundancy_Ctrl_Grp|Skeleton:Spine_03_Redundancy_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1560]" ""
+		"SkeletonRN.placeHolderList[1557]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_03_Redundancy_Ctrl_Grp|Skeleton:Spine_03_Redundancy_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1561]" ""
+		"SkeletonRN.placeHolderList[1558]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_03_Redundancy_Ctrl_Grp|Skeleton:Spine_03_Redundancy_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1562]" ""
+		"SkeletonRN.placeHolderList[1559]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_03_Redundancy_Ctrl_Grp|Skeleton:Spine_03_Redundancy_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1563]" ""
+		"SkeletonRN.placeHolderList[1560]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_03_Redundancy_Ctrl_Grp|Skeleton:Spine_03_Redundancy_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1564]" ""
+		"SkeletonRN.placeHolderList[1561]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_03_Redundancy_Ctrl_Grp|Skeleton:Spine_03_Redundancy_Ctrl.Operating_Space" 
-		"SkeletonRN.placeHolderList[1565]" ""
+		"SkeletonRN.placeHolderList[1562]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Spine_03_Redundancy_Ctrl_Grp|Skeleton:Spine_03_Redundancy_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1566]" ""
+		"SkeletonRN.placeHolderList[1563]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Chest_Redundancy_Ctrl_Grp|Skeleton:Chest_Redundancy_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1567]" ""
+		"SkeletonRN.placeHolderList[1564]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Chest_Redundancy_Ctrl_Grp|Skeleton:Chest_Redundancy_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1568]" ""
+		"SkeletonRN.placeHolderList[1565]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Chest_Redundancy_Ctrl_Grp|Skeleton:Chest_Redundancy_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1569]" ""
+		"SkeletonRN.placeHolderList[1566]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Chest_Redundancy_Ctrl_Grp|Skeleton:Chest_Redundancy_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1570]" ""
+		"SkeletonRN.placeHolderList[1567]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Chest_Redundancy_Ctrl_Grp|Skeleton:Chest_Redundancy_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1571]" ""
+		"SkeletonRN.placeHolderList[1568]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Chest_Redundancy_Ctrl_Grp|Skeleton:Chest_Redundancy_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1572]" ""
+		"SkeletonRN.placeHolderList[1569]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Chest_Redundancy_Ctrl_Grp|Skeleton:Chest_Redundancy_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1573]" ""
+		"SkeletonRN.placeHolderList[1570]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Chest_Redundancy_Ctrl_Grp|Skeleton:Chest_Redundancy_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1574]" ""
+		"SkeletonRN.placeHolderList[1571]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Chest_Redundancy_Ctrl_Grp|Skeleton:Chest_Redundancy_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1575]" ""
+		"SkeletonRN.placeHolderList[1572]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Chest_Redundancy_Ctrl_Grp|Skeleton:Chest_Redundancy_Ctrl.Operating_Space" 
-		"SkeletonRN.placeHolderList[1576]" ""
+		"SkeletonRN.placeHolderList[1573]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Chest_Redundancy_Ctrl_Grp|Skeleton:Chest_Redundancy_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1577]" ""
+		"SkeletonRN.placeHolderList[1574]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Neck_01_Redundancy_Ctrl_Grp|Skeleton:Neck_01_Redundancy_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1578]" ""
+		"SkeletonRN.placeHolderList[1575]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Neck_01_Redundancy_Ctrl_Grp|Skeleton:Neck_01_Redundancy_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1579]" ""
+		"SkeletonRN.placeHolderList[1576]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Neck_01_Redundancy_Ctrl_Grp|Skeleton:Neck_01_Redundancy_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1580]" ""
+		"SkeletonRN.placeHolderList[1577]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Neck_01_Redundancy_Ctrl_Grp|Skeleton:Neck_01_Redundancy_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1581]" ""
+		"SkeletonRN.placeHolderList[1578]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Neck_01_Redundancy_Ctrl_Grp|Skeleton:Neck_01_Redundancy_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1582]" ""
+		"SkeletonRN.placeHolderList[1579]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Neck_01_Redundancy_Ctrl_Grp|Skeleton:Neck_01_Redundancy_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1583]" ""
+		"SkeletonRN.placeHolderList[1580]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Neck_01_Redundancy_Ctrl_Grp|Skeleton:Neck_01_Redundancy_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1584]" ""
+		"SkeletonRN.placeHolderList[1581]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Neck_01_Redundancy_Ctrl_Grp|Skeleton:Neck_01_Redundancy_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1585]" ""
+		"SkeletonRN.placeHolderList[1582]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Neck_01_Redundancy_Ctrl_Grp|Skeleton:Neck_01_Redundancy_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1586]" ""
+		"SkeletonRN.placeHolderList[1583]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Neck_01_Redundancy_Ctrl_Grp|Skeleton:Neck_01_Redundancy_Ctrl.Operating_Space" 
-		"SkeletonRN.placeHolderList[1587]" ""
+		"SkeletonRN.placeHolderList[1584]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Neck_01_Redundancy_Ctrl_Grp|Skeleton:Neck_01_Redundancy_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1588]" ""
+		"SkeletonRN.placeHolderList[1585]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Neck_02_Redundancy_Ctrl_Grp|Skeleton:Neck_02_Redundancy_Ctrl.translateX" 
-		"SkeletonRN.placeHolderList[1589]" ""
+		"SkeletonRN.placeHolderList[1586]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Neck_02_Redundancy_Ctrl_Grp|Skeleton:Neck_02_Redundancy_Ctrl.translateY" 
-		"SkeletonRN.placeHolderList[1590]" ""
+		"SkeletonRN.placeHolderList[1587]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Neck_02_Redundancy_Ctrl_Grp|Skeleton:Neck_02_Redundancy_Ctrl.translateZ" 
-		"SkeletonRN.placeHolderList[1591]" ""
+		"SkeletonRN.placeHolderList[1588]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Neck_02_Redundancy_Ctrl_Grp|Skeleton:Neck_02_Redundancy_Ctrl.rotateX" 
-		"SkeletonRN.placeHolderList[1592]" ""
+		"SkeletonRN.placeHolderList[1589]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Neck_02_Redundancy_Ctrl_Grp|Skeleton:Neck_02_Redundancy_Ctrl.rotateY" 
-		"SkeletonRN.placeHolderList[1593]" ""
+		"SkeletonRN.placeHolderList[1590]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Neck_02_Redundancy_Ctrl_Grp|Skeleton:Neck_02_Redundancy_Ctrl.rotateZ" 
-		"SkeletonRN.placeHolderList[1594]" ""
+		"SkeletonRN.placeHolderList[1591]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Neck_02_Redundancy_Ctrl_Grp|Skeleton:Neck_02_Redundancy_Ctrl.scaleX" 
-		"SkeletonRN.placeHolderList[1595]" ""
+		"SkeletonRN.placeHolderList[1592]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Neck_02_Redundancy_Ctrl_Grp|Skeleton:Neck_02_Redundancy_Ctrl.scaleY" 
-		"SkeletonRN.placeHolderList[1596]" ""
+		"SkeletonRN.placeHolderList[1593]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Neck_02_Redundancy_Ctrl_Grp|Skeleton:Neck_02_Redundancy_Ctrl.scaleZ" 
-		"SkeletonRN.placeHolderList[1597]" ""
+		"SkeletonRN.placeHolderList[1594]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Neck_02_Redundancy_Ctrl_Grp|Skeleton:Neck_02_Redundancy_Ctrl.Operating_Space" 
-		"SkeletonRN.placeHolderList[1598]" ""
+		"SkeletonRN.placeHolderList[1595]" ""
 		5 4 "SkeletonRN" "|Skeleton:Skeleton_Asset|Skeleton:Controls|Skeleton:Transform_Ctrl_Grp|Skeleton:Transform_Ctrl|Skeleton:COG_Ctrl_Grp|Skeleton:COG_Ctrl|Skeleton:Redundancy_Controls|Skeleton:Neck_02_Redundancy_Ctrl_Grp|Skeleton:Neck_02_Redundancy_Ctrl.visibility" 
-		"SkeletonRN.placeHolderList[1599]" ""
-		5 4 "SkeletonRN" "Skeleton:set1.dagSetMembers" "SkeletonRN.placeHolderList[1600]" 
+		"SkeletonRN.placeHolderList[1596]" ""
+		5 4 "SkeletonRN" "Skeleton:set1.dagSetMembers" "SkeletonRN.placeHolderList[1597]" 
 		""
-		5 4 "SkeletonRN" "Skeleton:set1.dagSetMembers" "SkeletonRN.placeHolderList[1601]" 
+		5 4 "SkeletonRN" "Skeleton:set1.dagSetMembers" "SkeletonRN.placeHolderList[1598]" 
 		""
-		5 4 "SkeletonRN" "Skeleton:set1.dagSetMembers" "SkeletonRN.placeHolderList[1602]" 
+		5 4 "SkeletonRN" "Skeleton:set1.dagSetMembers" "SkeletonRN.placeHolderList[1599]" 
 		"";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
@@ -5075,7 +5075,7 @@ createNode reference -n "FishBowlRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"FishBowlRN"
 		"FishBowlRN" 0
-		"FishBowlRN" 326
+		"FishBowlRN" 325
 		0 "|FishBowl:Castle" "|Fishbowl" "-s -r "
 		0 "|FishBowl:Seaweeds" "|Fishbowl" "-s -r "
 		0 "|FishBowl:SkelyFish" "|Fishbowl" "-s -r "
@@ -5495,10 +5495,10 @@ createNode reference -n "FishBowlRN";
 		2 "|Fishbowl|FishBowl:SkelyFish" "scalePivotTranslate" " -type \"double3\" 47.62396302757328215 100.02841989190370953 -13.26634736760958333"
 		
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:Tail" "visibility" " 1"
-		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:Tail" "translate" " -type \"double3\" -316.67022389763241108 -70.2456761549738502 110.64180724712446136"
+		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:Tail" "translate" " -type \"double3\" -315.79725358402384927 -70.44494127433641495 110.64180724712446136"
 		
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:Tail" "translateZ" " -av"
-		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:Tail" "rotate" " -type \"double3\" 0 0 2.50773980496666393"
+		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:Tail" "rotate" " -type \"double3\" 0 0 8.68063778642306971"
 		
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:Tail" "scale" " -type \"double3\" 1 1 1"
 		
@@ -5511,10 +5511,10 @@ createNode reference -n "FishBowlRN";
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:Tail|FishBowl:TailShape" "uvSet[0].uvSetName" 
 		" -type \"string\" \"map1\""
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:Head_eyes" "visibility" " 1"
-		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:Head_eyes" "translate" " -type \"double3\" -274.2239727123401849 -119.8673349527970089 46.46256380892472748"
+		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:Head_eyes" "translate" " -type \"double3\" -274.29504580661637192 -116.93921989836752573 46.46256380892472748"
 		
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:Head_eyes" "translateZ" " -av"
-		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:Head_eyes" "rotate" " -type \"double3\" 0 0 2.57238985224391303"
+		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:Head_eyes" "rotate" " -type \"double3\" 0 0 8.90442641161354587"
 		
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:Head_eyes" "scale" " -type \"double3\" 2.88504643918544046 2.88504643918544046 2.88504643918544046"
 		
@@ -5537,10 +5537,10 @@ createNode reference -n "FishBowlRN";
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:OG_Head" "scalePivot" " -type \"double3\" 28.21966661801493714 51.99627430933617234 -10.24437913585917315"
 		
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:Spine" "visibility" " 1"
-		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:Spine" "translate" " -type \"double3\" -316.83291837853823836 -69.55832045289236021 110.64180724712446136"
+		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:Spine" "translate" " -type \"double3\" -316.3604267871595539 -68.06563307482363712 110.64180724712446136"
 		
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:Spine" "translateZ" " -av"
-		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:Spine" "rotate" " -type \"double3\" 0 0 2.50773980496666393"
+		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:Spine" "rotate" " -type \"double3\" 0 0 8.68063778642306971"
 		
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:Spine" "scale" " -type \"double3\" 1 1 1"
 		
@@ -5559,12 +5559,12 @@ createNode reference -n "FishBowlRN";
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib4" "visibility" 
 		" 1"
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib4" "translate" 
-		" -type \"double3\" -316.78657778433148451 -69.51541673520570441 110.64180724712446136"
+		" -type \"double3\" -316.20001703798152448 -67.91712020590830434 110.64180724712446136"
 		
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib4" "translateZ" 
 		" -av"
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib4" "rotate" 
-		" -type \"double3\" 0 0 2.50773980496666393"
+		" -type \"double3\" 0 0 8.68063778642306971"
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib4" "scale" 
 		" -type \"double3\" 1 1 1"
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib4" "rotatePivot" 
@@ -5580,12 +5580,12 @@ createNode reference -n "FishBowlRN";
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib1" "visibility" 
 		" 1"
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib1" "translate" 
-		" -type \"double3\" -316.74901588613624881 -69.82329848256492255 110.64180724712446136"
+		" -type \"double3\" -316.069995082689843 -68.98286471599777769 110.64180724712446136"
 		
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib1" "translateZ" 
 		" -av"
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib1" "rotate" 
-		" -type \"double3\" 0 0 2.50773980496666393"
+		" -type \"double3\" 0 0 8.68063778642306971"
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib1" "scale" 
 		" -type \"double3\" 1 1 1"
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib1" "rotatePivot" 
@@ -5599,12 +5599,10 @@ createNode reference -n "FishBowlRN";
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib2" "visibility" 
 		" 1"
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib2" "translate" 
-		" -type \"double3\" -317.17218017176895728 -69.58954533602504 110.64180724712446136"
+		" -type \"double3\" -317.53479453295847179 -68.17371920874428781 110.64180724712446136"
 		
-		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib2" "translateZ" 
-		" -av"
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib2" "rotate" 
-		" -type \"double3\" 0 0 2.50773980496666393"
+		" -type \"double3\" 0 0 8.68063778642306971"
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib2" "scale" 
 		" -type \"double3\" 1 1 1"
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib2" "rotatePivot" 
@@ -5620,12 +5618,12 @@ createNode reference -n "FishBowlRN";
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib3" "visibility" 
 		" 1"
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib3" "translate" 
-		" -type \"double3\" -317.01389591859714301 -69.88118878450885063 110.64180724712446136"
+		" -type \"double3\" -316.98688750274743597 -69.18325422272678793 110.64180724712446136"
 		
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib3" "translateZ" 
 		" -av"
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib3" "rotate" 
-		" -type \"double3\" 0 0 2.50773980496666393"
+		" -type \"double3\" 0 0 8.68063778642306971"
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib3" "scale" 
 		" -type \"double3\" 1 1 1"
 		2 "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib3" "rotatePivot" 
@@ -5658,33 +5656,33 @@ createNode reference -n "FishBowlRN";
 		
 		2 "|Fishbowl|FishBowl:Sand|FishBowl:SandShape" "uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		
-		3 "FishBowl:polyTweakUV60.output" "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib3|FishBowl:RibShape3.inMesh" 
-		""
-		3 "FishBowl:polyTweakUV38.output" "|Fishbowl|FishBowl:Seaweeds|FishBowl:Seaweed4|FishBowl:Seaweed4Shape.inMesh" 
-		""
-		3 "FishBowl:polyTweakUV34.output" "|Fishbowl|FishBowl:Castle|FishBowl:CastleBase|FishBowl:CastleBaseShape.inMesh" 
-		""
-		3 "FishBowl:polyTweakUV65.output" "|Fishbowl|FishBowl:Fishbowl|FishBowl:FishbowlShape.inMesh" 
-		""
-		3 "FishBowl:polyTweakUV35.output" "|Fishbowl|FishBowl:Castle|FishBowl:CastleBase|FishBowl:Door|FishBowl:DoorShape.inMesh" 
-		""
-		3 "FishBowl:polyTweakUV39.output" "|Fishbowl|FishBowl:Seaweeds|FishBowl:Seaweed1|FishBowl:Seaweed1Shape.inMesh" 
-		""
-		3 "FishBowl:polyTweakUV37.output" "|Fishbowl|FishBowl:Sand|FishBowl:SandShape.inMesh" 
-		""
-		3 "FishBowl:polyTweakUV55.output" "|Fishbowl|FishBowl:SkelyFish|FishBowl:Head_eyes|FishBowl:Head_eyesShape.inMesh" 
-		""
-		3 "FishBowl:polyTweakUV57.output" "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib4|FishBowl:Rib4Shape.inMesh" 
+		3 "FishBowl:polyTweakUV5.output" "|Fishbowl|FishBowl:Castle|FishBowl:CastleCrown|FishBowl:CastleCrownShape.inMesh" 
 		""
 		3 "FishBowl:polyTweakUV54.output" "|Fishbowl|FishBowl:SkelyFish|FishBowl:Tail|FishBowl:TailShape.inMesh" 
 		""
-		3 "FishBowl:polyTweakUV58.output" "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib1|FishBowl:RibShape1.inMesh" 
+		3 "FishBowl:polyTweakUV57.output" "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib4|FishBowl:Rib4Shape.inMesh" 
 		""
-		3 "FishBowl:polyTweakUV59.output" "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib2|FishBowl:RibShape2.inMesh" 
+		3 "FishBowl:polyTweakUV38.output" "|Fishbowl|FishBowl:Seaweeds|FishBowl:Seaweed4|FishBowl:Seaweed4Shape.inMesh" 
 		""
 		3 "FishBowl:polyTweakUV56.output" "|Fishbowl|FishBowl:SkelyFish|FishBowl:Spine|FishBowl:SpineShape.inMesh" 
 		""
-		3 "FishBowl:polyTweakUV5.output" "|Fishbowl|FishBowl:Castle|FishBowl:CastleCrown|FishBowl:CastleCrownShape.inMesh" 
+		3 "FishBowl:polyTweakUV55.output" "|Fishbowl|FishBowl:SkelyFish|FishBowl:Head_eyes|FishBowl:Head_eyesShape.inMesh" 
+		""
+		3 "FishBowl:polyTweakUV35.output" "|Fishbowl|FishBowl:Castle|FishBowl:CastleBase|FishBowl:Door|FishBowl:DoorShape.inMesh" 
+		""
+		3 "FishBowl:polyTweakUV65.output" "|Fishbowl|FishBowl:Fishbowl|FishBowl:FishbowlShape.inMesh" 
+		""
+		3 "FishBowl:polyTweakUV59.output" "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib2|FishBowl:RibShape2.inMesh" 
+		""
+		3 "FishBowl:polyTweakUV60.output" "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib3|FishBowl:RibShape3.inMesh" 
+		""
+		3 "FishBowl:polyTweakUV34.output" "|Fishbowl|FishBowl:Castle|FishBowl:CastleBase|FishBowl:CastleBaseShape.inMesh" 
+		""
+		3 "FishBowl:polyTweakUV37.output" "|Fishbowl|FishBowl:Sand|FishBowl:SandShape.inMesh" 
+		""
+		3 "FishBowl:polyTweakUV39.output" "|Fishbowl|FishBowl:Seaweeds|FishBowl:Seaweed1|FishBowl:Seaweed1Shape.inMesh" 
+		""
+		3 "FishBowl:polyTweakUV58.output" "|Fishbowl|FishBowl:SkelyFish|FishBowl:FishRibs|FishBowl:Rib1|FishBowl:RibShape1.inMesh" 
 		""
 		5 4 "FishBowlRN" "|Fishbowl|FishBowl:Castle|FishBowl:CastleBase|FishBowl:CastleBaseShape.inMesh" 
 		"FishBowlRN.placeHolderList[1]" ""
@@ -5964,9 +5962,6 @@ createNode animCurveTL -n "COG_Ctrl_translateX";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 1 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 5 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -5992,7 +5987,6 @@ createNode animCurveTL -n "COG_Ctrl_translateY";
 	setAttr -s 35 ".kit[0:34]"  10 18 18 18 18 18 18 18 
 		18 18 18 18 18 18 18 18 18 10 18 18 18 18 18 18 18 
 		18 18 18 18 18 1 9 10 10 10;
-	setAttr -s 35 ".kot[34]"  10;
 	setAttr -s 35 ".kix[30:34]"  1 1 1 1 1;
 	setAttr -s 35 ".kiy[30:34]"  0 0 0 0 0;
 createNode animCurveTL -n "COG_Ctrl_translateZ";
@@ -6012,9 +6006,6 @@ createNode animCurveTL -n "COG_Ctrl_translateZ";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -6246,56 +6237,65 @@ createNode animCurveTL -n "L_Arm_03_FK_Ctrl_translateX";
 	rename -uid "87FC76E7-4A16-8237-3029-D284072A6520";
 	setAttr ".tan" 5;
 	setAttr ".wgt" no;
-	setAttr -s 31 ".ktv[0:30]"  0 0 1 0 2 0 4 0 5 0 6 0 7 0 8 0 10 0 11 0
-		 12 0 13 0 14 0 16 0 17 0 18 0 19 0 20 0 22 0 23 0 24 0 25 0 26 0 27 0 28 0 29 0 30 0
-		 31 0 32 0 33 0 34 0;
-	setAttr -s 31 ".kit[0:30]"  1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 9 1 1 18;
-	setAttr -s 31 ".kix[0:30]"  1 0.083333333333333287 0.083333333333333287 
-		0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
-		0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
-		0.16666666666666674 0.083333333333333037 1 0.083333333333333037 0.083333333333333703 
+	setAttr -s 34 ".ktv[0:33]"  0 0 1 0 2 0 3 0 4 0 5 0 6 0 7 0 8 0 9 0
+		 10 0 11 0 12 0 13 0 14 0 15 0 16 0 17 0 18 0 19 0 20 0 22 0 23 0 24 0 25 0 26 0 27 0
+		 28 0 29 0 30 0 31 0 32 0 33 0 34 0;
+	setAttr -s 34 ".kit[0:33]"  1 1 1 18 1 1 1 1 
+		1 18 1 1 1 1 1 18 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 9 1 1 18;
+	setAttr -s 34 ".kot[3:33]"  18 5 5 5 5 5 18 5 
+		5 5 5 5 18 5 5 5 5 5 5 5 5 5 5 5 5 
+		5 5 5 5 5 5;
+	setAttr -s 34 ".kix[0:33]"  1 0.083333333333333287 0.083333333333333287 
+		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
+		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
+		1 0.16666666666666674 0.083333333333333037 1 0.083333333333333037 0.083333333333333703 
 		0.16666666666666674 0.083333333333333703 1 0.083333333333333037 0.08333333333333437 
 		0.08333333333333437 0.083333333333333037 1 1 1 1 1 1;
-	setAttr -s 31 ".kiy[0:30]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0 0 0 0 0;
+	setAttr -s 34 ".kiy[0:33]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+		0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTL -n "L_Arm_03_FK_Ctrl_translateY";
 	rename -uid "BBAE094D-4939-FFCD-7354-4B8BB46D728A";
 	setAttr ".tan" 5;
 	setAttr ".wgt" no;
-	setAttr -s 31 ".ktv[0:30]"  0 0 1 0 2 0 4 0 5 0 6 0 7 0 8 0 10 0 11 0
-		 12 0 13 0 14 0 16 0 17 0 18 0 19 0 20 0 22 0 23 0 24 0 25 0 26 0 27 0 28 0 29 0 30 0
-		 31 0 32 0 33 0 34 0;
-	setAttr -s 31 ".kit[0:30]"  1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 9 1 1 18;
-	setAttr -s 31 ".kix[0:30]"  1 0.083333333333333287 0.083333333333333287 
-		0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
-		0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
-		0.16666666666666674 0.083333333333333037 1 0.083333333333333037 0.083333333333333703 
+	setAttr -s 34 ".ktv[0:33]"  0 0 1 0 2 0 3 0 4 0 5 0 6 0 7 0 8 0 9 0
+		 10 0 11 0 12 0 13 0 14 0 15 0 16 0 17 0 18 0 19 0 20 0 22 0 23 0 24 0 25 0 26 0 27 0
+		 28 0 29 0 30 0 31 0 32 0 33 0 34 0;
+	setAttr -s 34 ".kit[0:33]"  1 1 1 18 1 1 1 1 
+		1 18 1 1 1 1 1 18 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 9 1 1 18;
+	setAttr -s 34 ".kot[3:33]"  18 5 5 5 5 5 18 5 
+		5 5 5 5 18 5 5 5 5 5 5 5 5 5 5 5 5 
+		5 5 5 5 5 5;
+	setAttr -s 34 ".kix[0:33]"  1 0.083333333333333287 0.083333333333333287 
+		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
+		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
+		1 0.16666666666666674 0.083333333333333037 1 0.083333333333333037 0.083333333333333703 
 		0.16666666666666674 0.083333333333333703 1 0.083333333333333037 0.08333333333333437 
 		0.08333333333333437 0.083333333333333037 1 1 1 1 1 1;
-	setAttr -s 31 ".kiy[0:30]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0 0 0 0 0;
+	setAttr -s 34 ".kiy[0:33]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+		0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTL -n "L_Arm_03_FK_Ctrl_translateZ";
 	rename -uid "F30EAD12-4B30-77F8-83C7-19A0B04CF0AC";
 	setAttr ".tan" 5;
 	setAttr ".wgt" no;
-	setAttr -s 31 ".ktv[0:30]"  0 0 1 0 2 0 4 0 5 0 6 0 7 0 8 0 10 0 11 0
-		 12 0 13 0 14 0 16 0 17 0 18 0 19 0 20 0 22 0 23 0 24 0 25 0 26 0 27 0 28 0 29 0 30 0
-		 31 0 32 0 33 0 34 0;
-	setAttr -s 31 ".kit[0:30]"  1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 9 1 1 18;
-	setAttr -s 31 ".kix[0:30]"  1 0.083333333333333287 0.083333333333333287 
-		0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
-		0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
-		0.16666666666666674 0.083333333333333037 1 0.083333333333333037 0.083333333333333703 
+	setAttr -s 34 ".ktv[0:33]"  0 0 1 0 2 0 3 0 4 0 5 0 6 0 7 0 8 0 9 0
+		 10 0 11 0 12 0 13 0 14 0 15 0 16 0 17 0 18 0 19 0 20 0 22 0 23 0 24 0 25 0 26 0 27 0
+		 28 0 29 0 30 0 31 0 32 0 33 0 34 0;
+	setAttr -s 34 ".kit[0:33]"  1 1 1 18 1 1 1 1 
+		1 18 1 1 1 1 1 18 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 9 1 1 18;
+	setAttr -s 34 ".kot[3:33]"  18 5 5 5 5 5 18 5 
+		5 5 5 5 18 5 5 5 5 5 5 5 5 5 5 5 5 
+		5 5 5 5 5 5;
+	setAttr -s 34 ".kix[0:33]"  1 0.083333333333333287 0.083333333333333287 
+		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
+		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
+		1 0.16666666666666674 0.083333333333333037 1 0.083333333333333037 0.083333333333333703 
 		0.16666666666666674 0.083333333333333703 1 0.083333333333333037 0.08333333333333437 
 		0.08333333333333437 0.083333333333333037 1 1 1 1 1 1;
-	setAttr -s 31 ".kiy[0:30]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0 0 0 0 0;
+	setAttr -s 34 ".kiy[0:33]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+		0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTL -n "L_Arm_Wrist_Ctrl_translateX";
 	rename -uid "14234936-459A-01E1-8606-53BD265F91A0";
 	setAttr ".tan" 5;
@@ -6396,59 +6396,56 @@ createNode animCurveTL -n "L_Finger_01_Knuckle_02_Ctrl_translateX";
 	rename -uid "F7E37788-4F7C-4BFE-AFB9-8C9C7C1741AB";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 27 ".ktv[0:26]"  0 0 1 0 2 0 4 0 5 0 7 0 8 0 10 0 11 0 13 0
-		 14 0 16 0 17 0 19 0 20 0 22 0 23 0 25 0 26 0 27 0 28 0 29 0 30 0 31 0 32 0 33 0 34 0;
-	setAttr -s 27 ".kit[0:26]"  1 18 18 18 18 18 18 18 
-		18 18 18 18 18 18 18 18 18 18 18 18 18 18 1 9 18 
-		18 1;
-	setAttr -s 27 ".kot[0:26]"  5 18 18 18 18 18 18 18 
-		18 18 18 18 18 18 18 18 18 18 18 18 18 18 5 5 1 
-		18 5;
-	setAttr -s 27 ".kix[0:26]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1;
-	setAttr -s 27 ".kiy[0:26]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0;
-	setAttr -s 27 ".kox[24:26]"  1 1 0;
-	setAttr -s 27 ".koy[24:26]"  0 0 0;
+	setAttr -s 31 ".ktv[0:30]"  0 0 1 0 2 0 4 0 5 0 6 0 7 0 8 0 10 0 11 0
+		 12 0 13 0 14 0 16 0 17 0 18 0 19 0 20 0 22 0 23 0 24 0 25 0 26 0 27 0 28 0 29 0 30 0
+		 31 0 32 0 33 0 34 0;
+	setAttr -s 31 ".kit[0:30]"  1 18 18 18 18 18 18 18 
+		18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+		18 1 9 18 18 1;
+	setAttr -s 31 ".kot[0:30]"  5 5 5 5 5 18 5 5 
+		5 5 18 5 5 5 5 18 5 5 5 5 18 5 5 5 5 
+		5 5 5 5 5 5;
+	setAttr -s 31 ".kix[0:30]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 1 1 1 1 1 1;
+	setAttr -s 31 ".kiy[0:30]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+		0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTL -n "L_Finger_01_Knuckle_02_Ctrl_translateY";
 	rename -uid "E2E54B87-4322-1FAE-3A63-89AC59BE1C06";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 27 ".ktv[0:26]"  0 0 1 0 2 0 4 0 5 0 7 0 8 0 10 0 11 0 13 0
-		 14 0 16 0 17 0 19 0 20 0 22 0 23 0 25 0 26 0 27 0 28 0 29 0 30 0 31 0 32 0 33 0 34 0;
-	setAttr -s 27 ".kit[0:26]"  1 18 18 18 18 18 18 18 
-		18 18 18 18 18 18 18 18 18 18 18 18 18 18 1 9 18 
-		18 1;
-	setAttr -s 27 ".kot[0:26]"  5 18 18 18 18 18 18 18 
-		18 18 18 18 18 18 18 18 18 18 18 18 18 18 5 5 1 
-		18 5;
-	setAttr -s 27 ".kix[0:26]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1;
-	setAttr -s 27 ".kiy[0:26]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0;
-	setAttr -s 27 ".kox[24:26]"  1 1 0;
-	setAttr -s 27 ".koy[24:26]"  0 0 0;
+	setAttr -s 31 ".ktv[0:30]"  0 0 1 0 2 0 4 0 5 0 6 0 7 0 8 0 10 0 11 0
+		 12 0 13 0 14 0 16 0 17 0 18 0 19 0 20 0 22 0 23 0 24 0 25 0 26 0 27 0 28 0 29 0 30 0
+		 31 0 32 0 33 0 34 0;
+	setAttr -s 31 ".kit[0:30]"  1 18 18 18 18 18 18 18 
+		18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+		18 1 9 18 18 1;
+	setAttr -s 31 ".kot[0:30]"  5 5 5 5 5 18 5 5 
+		5 5 18 5 5 5 5 18 5 5 5 5 18 5 5 5 5 
+		5 5 5 5 5 5;
+	setAttr -s 31 ".kix[0:30]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 1 1 1 1 1 1;
+	setAttr -s 31 ".kiy[0:30]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+		0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTL -n "L_Finger_01_Knuckle_02_Ctrl_translateZ";
 	rename -uid "E8BB478C-48A7-3327-D9E8-B18B71453F19";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 27 ".ktv[0:26]"  0 0 1 0 2 0 4 0 5 0 7 0 8 0 10 0 11 0 13 0
-		 14 0 16 0 17 0 19 0 20 0 22 0 23 0 25 0 26 0 27 0 28 0 29 0 30 0 31 0 32 0 33 0 34 0;
-	setAttr -s 27 ".kit[0:26]"  1 18 18 18 18 18 18 18 
-		18 18 18 18 18 18 18 18 18 18 18 18 18 18 1 9 18 
-		18 1;
-	setAttr -s 27 ".kot[0:26]"  5 18 18 18 18 18 18 18 
-		18 18 18 18 18 18 18 18 18 18 18 18 18 18 5 5 1 
-		18 5;
-	setAttr -s 27 ".kix[0:26]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1;
-	setAttr -s 27 ".kiy[0:26]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0;
-	setAttr -s 27 ".kox[24:26]"  1 1 0;
-	setAttr -s 27 ".koy[24:26]"  0 0 0;
+	setAttr -s 31 ".ktv[0:30]"  0 0 1 0 2 0 4 0 5 0 6 0 7 0 8 0 10 0 11 0
+		 12 0 13 0 14 0 16 0 17 0 18 0 19 0 20 0 22 0 23 0 24 0 25 0 26 0 27 0 28 0 29 0 30 0
+		 31 0 32 0 33 0 34 0;
+	setAttr -s 31 ".kit[0:30]"  1 18 18 18 18 18 18 18 
+		18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+		18 1 9 18 18 1;
+	setAttr -s 31 ".kot[0:30]"  5 5 5 5 5 18 5 5 
+		5 5 18 5 5 5 5 18 5 5 5 5 18 5 5 5 5 
+		5 5 5 5 5 5;
+	setAttr -s 31 ".kix[0:30]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 1 1 1 1 1 1;
+	setAttr -s 31 ".kiy[0:30]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+		0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTL -n "L_MetCarp_01_Ctrl_translateX";
 	rename -uid "9EABABAC-43CE-C835-0873-579E673FCF30";
-	setAttr ".tan" 18;
+	setAttr ".tan" 5;
 	setAttr ".wgt" no;
 	setAttr -s 35 ".ktv[0:34]"  0 0 1 0 2 0 3 0 4 0 5 0 6 0 7 0 8 0 9 0
 		 10 0 11 0 12 0 13 0 14 0 15 0 16 0 17 0 18 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0 26 0
@@ -6456,20 +6453,13 @@ createNode animCurveTL -n "L_MetCarp_01_Ctrl_translateX";
 	setAttr -s 35 ".kit[0:34]"  1 18 18 1 18 18 1 18 
 		18 1 18 18 1 18 18 1 18 18 1 18 18 1 18 18 1 
 		18 18 18 18 18 1 1 1 18 1;
-	setAttr -s 35 ".kot[0:34]"  1 18 18 1 18 18 1 18 
-		18 1 18 18 1 18 18 1 18 18 1 18 18 1 18 18 1 
-		18 18 18 18 18 1 1 1 18 1;
 	setAttr -s 35 ".kix[0:34]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 		1 1 1 1 1 1 1 1 1 1 1 0.083333333333333037 1 1 1;
 	setAttr -s 35 ".kiy[0:34]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
-	setAttr -s 35 ".kox[0:34]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 0.083333333333333037 1 1 1;
-	setAttr -s 35 ".koy[0:34]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 		0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTL -n "L_MetCarp_01_Ctrl_translateY";
 	rename -uid "0E0D4E3C-43E0-B007-E15D-CDAED361C412";
-	setAttr ".tan" 18;
+	setAttr ".tan" 5;
 	setAttr ".wgt" no;
 	setAttr -s 35 ".ktv[0:34]"  0 0 1 0 2 0 3 0 4 0 5 0 6 0 7 0 8 0 9 0
 		 10 0 11 0 12 0 13 0 14 0 15 0 16 0 17 0 18 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0 26 0
@@ -6477,20 +6467,13 @@ createNode animCurveTL -n "L_MetCarp_01_Ctrl_translateY";
 	setAttr -s 35 ".kit[0:34]"  1 18 18 1 18 18 1 18 
 		18 1 18 18 1 18 18 1 18 18 1 18 18 1 18 18 1 
 		18 18 18 18 18 1 1 1 18 1;
-	setAttr -s 35 ".kot[0:34]"  1 18 18 1 18 18 1 18 
-		18 1 18 18 1 18 18 1 18 18 1 18 18 1 18 18 1 
-		18 18 18 18 18 1 1 1 18 1;
 	setAttr -s 35 ".kix[0:34]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 		1 1 1 1 1 1 1 1 1 1 1 0.083333333333333037 1 1 1;
 	setAttr -s 35 ".kiy[0:34]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
-	setAttr -s 35 ".kox[0:34]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 0.083333333333333037 1 1 1;
-	setAttr -s 35 ".koy[0:34]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 		0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTL -n "L_MetCarp_01_Ctrl_translateZ";
 	rename -uid "17552EA0-41E6-C436-C9D4-6DB471D89123";
-	setAttr ".tan" 18;
+	setAttr ".tan" 5;
 	setAttr ".wgt" no;
 	setAttr -s 35 ".ktv[0:34]"  0 0 1 0 2 0 3 0 4 0 5 0 6 0 7 0 8 0 9 0
 		 10 0 11 0 12 0 13 0 14 0 15 0 16 0 17 0 18 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0 26 0
@@ -6498,16 +6481,9 @@ createNode animCurveTL -n "L_MetCarp_01_Ctrl_translateZ";
 	setAttr -s 35 ".kit[0:34]"  1 18 18 1 18 18 1 18 
 		18 1 18 18 1 18 18 1 18 18 1 18 18 1 18 18 1 
 		18 18 18 18 18 1 1 1 18 1;
-	setAttr -s 35 ".kot[0:34]"  1 18 18 1 18 18 1 18 
-		18 1 18 18 1 18 18 1 18 18 1 18 18 1 18 18 1 
-		18 18 18 18 18 1 1 1 18 1;
 	setAttr -s 35 ".kix[0:34]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 		1 1 1 1 1 1 1 1 1 1 1 0.083333333333333037 1 1 1;
 	setAttr -s 35 ".kiy[0:34]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
-	setAttr -s 35 ".kox[0:34]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 0.083333333333333037 1 1 1;
-	setAttr -s 35 ".koy[0:34]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 		0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTL -n "L_Finger_02_Knuckle_01_Ctrl_translateX";
 	rename -uid "4A529AE7-42B3-3F45-1ADF-7C93B2318087";
@@ -12266,9 +12242,6 @@ createNode animCurveTL -n "L_Brow_Ctrl_translateX";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -12306,9 +12279,6 @@ createNode animCurveTL -n "L_Brow_Ctrl_translateZ";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -12603,9 +12573,6 @@ createNode animCurveTL -n "L_Socket_Lower_Ctrl_translateX";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -12643,9 +12610,6 @@ createNode animCurveTL -n "L_Socket_Lower_Ctrl_translateZ";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -12778,9 +12742,6 @@ createNode animCurveTL -n "Nose_Ctrl_translateX";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -12817,9 +12778,6 @@ createNode animCurveTL -n "Nose_Ctrl_translateZ";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -12838,9 +12796,6 @@ createNode animCurveTL -n "R_Brow_Ctrl_translateX";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -12885,9 +12840,6 @@ createNode animCurveTL -n "R_Brow_Ctrl_translateZ";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -13182,9 +13134,6 @@ createNode animCurveTL -n "R_Socket_Lower_Ctrl_translateX";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -13222,9 +13171,6 @@ createNode animCurveTL -n "R_Socket_Lower_Ctrl_translateZ";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -14318,35 +14264,6 @@ createNode animCurveTA -n "L_MetCarp_02_Ctrl_rotateY";
 		-0.120930904072789 0 0.1209309040727895 0.120930904072789 0 -0.1209309040727895 -0.120930904072789 
 		0 0.12093090407278934 0.12093090407278884 0 -0.0522421505594447 -0.07836322583916755 
 		-0.07836322583916755 -0.052242150559444867 0 -0.54676874330803993 0 0 0 0;
-createNode animCurveTA -n "L_MetCarp_02_Ctrl_rotateZ";
-	rename -uid "A1C9043E-4F5B-7973-88E1-DA80B7A4BFE7";
-	setAttr ".tan" 5;
-	setAttr ".wgt" no;
-	setAttr -s 35 ".ktv[0:34]"  0 0 1 25.768142163105384 2 51.536284326210762
-		 3 63.249076218531393 4 46.851167569282502 5 16.39790864924888 6 0 7 16.397908649248855
-		 8 46.851167569282495 9 63.249076218531393 10 46.851167569282524 11 16.397908649248873
-		 12 0 13 16.397908649248933 14 46.851167569282531 15 63.249076218531393 16 46.85116756928246
-		 17 16.397908649248862 18 0 19 16.397908649248933 20 46.851167569282531 21 63.249076218531393
-		 22 46.851167569282481 23 16.397908649248873 24 0 25 6.5779039267272257 26 22.26367482892303
-		 27 40.985401389608384 28 56.671172291804126 29 63.249076218531393 30 63.249076218531393
-		 31 63.249076218531393 32 63.249076218531393 33 63.249076218531393 34 63.249076218531393;
-	setAttr -s 35 ".kit[0:34]"  1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kix[0:34]"  0.2208755137922189 0.083333333333333287 
-		0.083333333333333287 1 0.08333333333333337 0.08333333333333337 1 0.08333333333333337 
-		0.08333333333333337 1 0.083333333333333037 0.08333333333333337 1 0.083333333333333037 
-		0.083333333333333037 1 0.083333333333333037 0.083333333333333037 1 0.083333333333333037 
-		0.083333333333333037 1 0.083333333333333703 0.083333333333333703 1 0.083333333333333037 
-		0.08333333333333437 0.08333333333333437 0.083333333333333037 1 0.35313060921888551 
-		1 1 1 1;
-	setAttr -s 35 ".kiy[0:34]"  0.9753020083066698 0.49062427949254106 
-		0.36796820961940579 0 -0.49062427949254106 -0.49062427949254073 0 0.49062427949254023 
-		0.49062427949254139 0 -0.49062427949254073 -0.49062427949254139 0 0.49062427949254217 
-		0.49062427949254039 0 -0.49062427949254206 -0.49062427949254039 0 0.49062427949254217 
-		0.49062427949254039 0 -0.49062427949254173 -0.49062427949253973 0 0.21194968874077658 
-		0.3179245331111672 0.3179245331111672 0.21194968874077691 0 0.9355740338598002 0 
-		0 0 0;
 createNode animCurveTU -n "L_MetCarp_02_Ctrl_scaleX";
 	rename -uid "6BBFB92D-4478-CAB3-8DBF-BBA8AFA2BA6F";
 	setAttr ".tan" 5;
@@ -14909,146 +14826,165 @@ createNode animCurveTU -n "L_Arm_03_FK_Ctrl_visibility";
 	rename -uid "BAF50195-4AE8-4556-8126-E3B9973DEBDF";
 	setAttr ".tan" 5;
 	setAttr ".wgt" no;
-	setAttr -s 31 ".ktv[0:30]"  0 1 1 1 2 1 4 1 5 1 6 1 7 1 8 1 10 1 11 1
-		 12 1 13 1 14 1 16 1 17 1 18 1 19 1 20 1 22 1 23 1 24 1 25 1 26 1 27 1 28 1 29 1 30 1
-		 31 1 32 1 33 1 34 1;
-	setAttr -s 31 ".kit[0:30]"  1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 9 1 1 18;
-	setAttr -s 31 ".kix[0:30]"  1 0.083333333333333287 0.083333333333333287 
-		0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
-		0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
-		0.16666666666666674 0.083333333333333037 1 0.083333333333333037 0.083333333333333703 
+	setAttr -s 34 ".ktv[0:33]"  0 1 1 1 2 1 3 1 4 1 5 1 6 1 7 1 8 1 9 1
+		 10 1 11 1 12 1 13 1 14 1 15 1 16 1 17 1 18 1 19 1 20 1 22 1 23 1 24 1 25 1 26 1 27 1
+		 28 1 29 1 30 1 31 1 32 1 33 1 34 1;
+	setAttr -s 34 ".kit[0:33]"  1 1 1 9 1 1 1 1 
+		1 9 1 1 1 1 1 9 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 9 1 1 18;
+	setAttr -s 34 ".kix[0:33]"  1 0.083333333333333287 0.083333333333333287 
+		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
+		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
+		1 0.16666666666666674 0.083333333333333037 1 0.083333333333333037 0.083333333333333703 
 		0.16666666666666674 0.083333333333333703 1 0.083333333333333037 0.08333333333333437 
 		0.08333333333333437 0.083333333333333037 1 1 1 1 1 1;
-	setAttr -s 31 ".kiy[0:30]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0 0 0 0 0;
+	setAttr -s 34 ".kiy[0:33]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+		0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTA -n "L_Arm_03_FK_Ctrl_rotateX";
 	rename -uid "A1CF58BF-44AE-74D0-0B9A-01991E2D2BC2";
 	setAttr ".tan" 5;
 	setAttr ".wgt" no;
-	setAttr -s 31 ".ktv[0:30]"  0 24.610493694629291 1 24.610493694629291
-		 2 24.610493694629291 4 24.610493694629291 5 24.610493694629291 6 24.610493694629291
-		 7 24.610493694629291 8 24.610493694629291 10 24.610493694629291 11 24.610493694629291
-		 12 24.610493694629291 13 24.610493694629291 14 24.610493694629291 16 24.610493694629291
-		 17 24.610493694629291 18 24.610493694629291 19 24.610493694629291 20 24.610493694629291
-		 22 24.610493694629291 23 24.610493694629291 24 24.610493694629291 25 24.610493694629291
-		 26 24.610493694629291 27 24.610493694629291 28 24.610493694629291 29 24.610493694629291
-		 30 24.610493694629291 31 24.610493694629291 32 24.610493694629291 33 24.610493694629291
-		 34 24.610493694629291;
-	setAttr -s 31 ".kit[0:30]"  1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 9 1 1 18;
-	setAttr -s 31 ".kix[0:30]"  1 0.083333333333333287 0.083333333333333287 
-		0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
-		0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
-		0.16666666666666674 0.083333333333333037 1 0.083333333333333037 0.083333333333333703 
-		0.16666666666666674 0.083333333333333703 1 0.083333333333333037 0.08333333333333437 
-		0.08333333333333437 0.083333333333333037 1 1 1 1 1 1;
-	setAttr -s 31 ".kiy[0:30]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0 0 0 0 0;
+	setAttr -s 32 ".ktv[0:31]"  0 29.449430558309835 1 26.940352184549553
+		 2 22.424011111781052 3 19.771556830948754 4 22.459855088549055 5 26.895547213589552
+		 6 29.449430558309835 7 26.940352184549553 8 22.549465030469069 9 19.771556830948754
+		 10 22.280635204709036 11 26.67152235878952 12 29.449430558309835 13 26.940352184549557
+		 14 22.549465030469058 15 19.771556830948754 16 22.280635204709029 17 26.671522358789527
+		 18 29.449430558309835 19 26.940352184549557 20 22.549465030469058 21 19.771556830948754
+		 22 22.280635204709029 23 26.671522358789527 24 29.449430558309835 25 28.732551022949757
+		 26 26.768301096063144 27 24.6669479580389 28 22.620356451188002 29 20.788007380477538
+		 30 19.771556830948754 34 19.771556830948754;
+	setAttr -s 32 ".kit[0:31]"  1 18 18 10 18 18 10 18 
+		18 1 18 18 1 18 18 1 18 18 1 18 18 1 18 18 1 
+		18 18 18 18 18 1 1;
+	setAttr -s 32 ".kix[0:31]"  1 0.80549487269193298 0.7997256448389225 
+		1 0.8015276638027593 0.80693828648516175 1 0.81054821842920255 0.79972564483892239 
+		1 0.81054821842920255 0.79972564483892239 1 0.81054821842920233 0.7997256448389225 
+		1 0.81054821842920244 0.79972564483892228 1 0.81054821842920233 0.7997256448389225 
+		1 0.81054821842920244 0.79972564483892228 1 0.96277198788887075 0.92008267099442564 
+		0.9172077985939574 0.92648217797490495 0.9582667659546823 1 1;
+	setAttr -s 32 ".kiy[0:31]"  0 -0.59260274220341436 -0.60036563274971833 
+		0 0.59795769428856005 0.59063576068876078 0 -0.58567190952037795 -0.60036563274971844 
+		0 0.58567190952037795 0.60036563274971844 0 -0.58567190952037829 -0.60036563274971844 
+		0 0.58567190952037806 0.60036563274971855 0 -0.58567190952037829 -0.60036563274971844 
+		0 0.58567190952037806 0.60036563274971855 0 -0.27031481523681267 -0.39172423787118849 
+		-0.39840915426032353 -0.37633864257457872 -0.28587550658766486 0 0;
 createNode animCurveTA -n "L_Arm_03_FK_Ctrl_rotateY";
 	rename -uid "5C348B8E-464F-A797-6EC8-40A9922482E6";
 	setAttr ".tan" 5;
 	setAttr ".wgt" no;
-	setAttr -s 31 ".ktv[0:30]"  0 -12.794899586369906 1 -12.794899586369906
-		 2 -12.794899586369906 4 -12.794899586369906 5 -12.794899586369906 6 -12.794899586369906
-		 7 -12.794899586369906 8 -12.794899586369906 10 -12.794899586369906 11 -12.794899586369906
-		 12 -12.794899586369906 13 -12.794899586369906 14 -12.794899586369906 16 -12.794899586369906
-		 17 -12.794899586369906 18 -12.794899586369906 19 -12.794899586369906 20 -12.794899586369906
-		 22 -12.794899586369906 23 -12.794899586369906 24 -12.794899586369906 25 -12.794899586369906
-		 26 -12.794899586369906 27 -12.794899586369906 28 -12.794899586369906 29 -12.794899586369906
-		 30 -12.794899586369906 31 -12.794899586369906 32 -12.794899586369906 33 -12.794899586369906
-		 34 -12.794899586369906;
-	setAttr -s 31 ".kit[0:30]"  1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 9 1 1 18;
-	setAttr -s 31 ".kix[0:30]"  1 0.083333333333333287 0.083333333333333287 
-		0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
-		0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
-		0.16666666666666674 0.083333333333333037 1 0.083333333333333037 0.083333333333333703 
+	setAttr -s 34 ".ktv[0:33]"  0 -12.794899586369906 1 -12.794899586369906
+		 2 -12.794899586369906 3 -12.794899586369906 4 -12.794899586369906 5 -12.794899586369906
+		 6 -12.794899586369906 7 -12.794899586369906 8 -12.794899586369906 9 -12.794899586369906
+		 10 -12.794899586369906 11 -12.794899586369906 12 -12.794899586369906 13 -12.794899586369906
+		 14 -12.794899586369906 15 -12.794899586369906 16 -12.794899586369906 17 -12.794899586369906
+		 18 -12.794899586369906 19 -12.794899586369906 20 -12.794899586369906 22 -12.794899586369906
+		 23 -12.794899586369906 24 -12.794899586369906 25 -12.794899586369906 26 -12.794899586369906
+		 27 -12.794899586369906 28 -12.794899586369906 29 -12.794899586369906 30 -12.794899586369906
+		 31 -12.794899586369906 32 -12.794899586369906 33 -12.794899586369906 34 -12.794899586369906;
+	setAttr -s 34 ".kit[0:33]"  1 1 1 18 1 1 1 1 
+		1 18 1 1 1 1 1 18 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 9 1 1 18;
+	setAttr -s 34 ".kot[3:33]"  18 5 5 5 5 5 18 5 
+		5 5 5 5 18 5 5 5 5 5 5 5 5 5 5 5 5 
+		5 5 5 5 5 5;
+	setAttr -s 34 ".kix[0:33]"  1 0.083333333333333287 0.083333333333333287 
+		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
+		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
+		1 0.16666666666666674 0.083333333333333037 1 0.083333333333333037 0.083333333333333703 
 		0.16666666666666674 0.083333333333333703 1 0.083333333333333037 0.08333333333333437 
 		0.08333333333333437 0.083333333333333037 1 1 1 1 1 1;
-	setAttr -s 31 ".kiy[0:30]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0 0 0 0 0;
+	setAttr -s 34 ".kiy[0:33]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+		0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTA -n "L_Arm_03_FK_Ctrl_rotateZ";
 	rename -uid "B89687FB-46AD-6E14-D53E-3791E842BEA9";
 	setAttr ".tan" 5;
 	setAttr ".wgt" no;
-	setAttr -s 31 ".ktv[0:30]"  0 -82.652606783622829 1 -82.652606783622829
-		 2 -82.652606783622829 4 -82.652606783622829 5 -82.652606783622829 6 -82.652606783622829
-		 7 -82.652606783622829 8 -82.652606783622829 10 -82.652606783622829 11 -82.652606783622829
-		 12 -82.652606783622829 13 -82.652606783622829 14 -82.652606783622829 16 -82.652606783622829
-		 17 -82.652606783622829 18 -82.652606783622829 19 -82.652606783622829 20 -82.652606783622829
-		 22 -82.652606783622829 23 -82.652606783622829 24 -82.652606783622829 25 -82.652606783622829
-		 26 -82.652606783622829 27 -82.652606783622829 28 -82.652606783622829 29 -82.652606783622829
-		 30 -82.652606783622829 31 -82.652606783622829 32 -82.652606783622829 33 -82.652606783622829
-		 34 -82.652606783622829;
-	setAttr -s 31 ".kit[0:30]"  1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 9 1 1 18;
-	setAttr -s 31 ".kix[0:30]"  1 0.083333333333333287 0.083333333333333287 
-		0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
-		0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
-		0.16666666666666674 0.083333333333333037 1 0.083333333333333037 0.083333333333333703 
+	setAttr -s 34 ".ktv[0:33]"  0 -82.652606783622829 1 -82.652606783622829
+		 2 -82.652606783622829 3 -82.652606783622829 4 -82.652606783622829 5 -82.652606783622829
+		 6 -82.652606783622829 7 -82.652606783622829 8 -82.652606783622829 9 -82.652606783622829
+		 10 -82.652606783622829 11 -82.652606783622829 12 -82.652606783622829 13 -82.652606783622829
+		 14 -82.652606783622829 15 -82.652606783622829 16 -82.652606783622829 17 -82.652606783622829
+		 18 -82.652606783622829 19 -82.652606783622829 20 -82.652606783622829 22 -82.652606783622829
+		 23 -82.652606783622829 24 -82.652606783622829 25 -82.652606783622829 26 -82.652606783622829
+		 27 -82.652606783622829 28 -82.652606783622829 29 -82.652606783622829 30 -82.652606783622829
+		 31 -82.652606783622829 32 -82.652606783622829 33 -82.652606783622829 34 -82.652606783622829;
+	setAttr -s 34 ".kit[0:33]"  1 1 1 18 1 1 1 1 
+		1 18 1 1 1 1 1 18 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 9 1 1 18;
+	setAttr -s 34 ".kot[3:33]"  18 5 5 5 5 5 18 5 
+		5 5 5 5 18 5 5 5 5 5 5 5 5 5 5 5 5 
+		5 5 5 5 5 5;
+	setAttr -s 34 ".kix[0:33]"  1 0.083333333333333287 0.083333333333333287 
+		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
+		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
+		1 0.16666666666666674 0.083333333333333037 1 0.083333333333333037 0.083333333333333703 
 		0.16666666666666674 0.083333333333333703 1 0.083333333333333037 0.08333333333333437 
 		0.08333333333333437 0.083333333333333037 1 1 1 1 1 1;
-	setAttr -s 31 ".kiy[0:30]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0 0 0 0 0;
+	setAttr -s 34 ".kiy[0:33]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+		0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTU -n "L_Arm_03_FK_Ctrl_scaleX";
 	rename -uid "8ACB8284-4D84-DD43-3480-14A5F933FDDF";
 	setAttr ".tan" 5;
 	setAttr ".wgt" no;
-	setAttr -s 31 ".ktv[0:30]"  0 1 1 1 2 1 4 1 5 1 6 1 7 1 8 1 10 1 11 1
-		 12 1 13 1 14 1 16 1 17 1 18 1 19 1 20 1 22 1 23 1 24 1 25 1 26 1 27 1 28 1 29 1 30 1
-		 31 1 32 1 33 1 34 1;
-	setAttr -s 31 ".kit[0:30]"  1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 9 1 1 18;
-	setAttr -s 31 ".kix[0:30]"  1 0.083333333333333287 0.083333333333333287 
-		0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
-		0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
-		0.16666666666666674 0.083333333333333037 1 0.083333333333333037 0.083333333333333703 
+	setAttr -s 34 ".ktv[0:33]"  0 1 1 1 2 1 3 1 4 1 5 1 6 1 7 1 8 1 9 1
+		 10 1 11 1 12 1 13 1 14 1 15 1 16 1 17 1 18 1 19 1 20 1 22 1 23 1 24 1 25 1 26 1 27 1
+		 28 1 29 1 30 1 31 1 32 1 33 1 34 1;
+	setAttr -s 34 ".kit[0:33]"  1 1 1 18 1 1 1 1 
+		1 18 1 1 1 1 1 18 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 9 1 1 18;
+	setAttr -s 34 ".kot[3:33]"  18 5 5 5 5 5 18 5 
+		5 5 5 5 18 5 5 5 5 5 5 5 5 5 5 5 5 
+		5 5 5 5 5 5;
+	setAttr -s 34 ".kix[0:33]"  1 0.083333333333333287 0.083333333333333287 
+		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
+		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
+		1 0.16666666666666674 0.083333333333333037 1 0.083333333333333037 0.083333333333333703 
 		0.16666666666666674 0.083333333333333703 1 0.083333333333333037 0.08333333333333437 
 		0.08333333333333437 0.083333333333333037 1 1 1 1 1 1;
-	setAttr -s 31 ".kiy[0:30]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0 0 0 0 0;
+	setAttr -s 34 ".kiy[0:33]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+		0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTU -n "L_Arm_03_FK_Ctrl_scaleY";
 	rename -uid "C76D7B31-4711-F2FE-F5B4-B0B03CFBB02D";
 	setAttr ".tan" 5;
 	setAttr ".wgt" no;
-	setAttr -s 31 ".ktv[0:30]"  0 1 1 1 2 1 4 1 5 1 6 1 7 1 8 1 10 1 11 1
-		 12 1 13 1 14 1 16 1 17 1 18 1 19 1 20 1 22 1 23 1 24 1 25 1 26 1 27 1 28 1 29 1 30 1
-		 31 1 32 1 33 1 34 1;
-	setAttr -s 31 ".kit[0:30]"  1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 9 1 1 18;
-	setAttr -s 31 ".kix[0:30]"  1 0.083333333333333287 0.083333333333333287 
-		0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
-		0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
-		0.16666666666666674 0.083333333333333037 1 0.083333333333333037 0.083333333333333703 
+	setAttr -s 34 ".ktv[0:33]"  0 1 1 1 2 1 3 1 4 1 5 1 6 1 7 1 8 1 9 1
+		 10 1 11 1 12 1 13 1 14 1 15 1 16 1 17 1 18 1 19 1 20 1 22 1 23 1 24 1 25 1 26 1 27 1
+		 28 1 29 1 30 1 31 1 32 1 33 1 34 1;
+	setAttr -s 34 ".kit[0:33]"  1 1 1 18 1 1 1 1 
+		1 18 1 1 1 1 1 18 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 9 1 1 18;
+	setAttr -s 34 ".kot[3:33]"  18 5 5 5 5 5 18 5 
+		5 5 5 5 18 5 5 5 5 5 5 5 5 5 5 5 5 
+		5 5 5 5 5 5;
+	setAttr -s 34 ".kix[0:33]"  1 0.083333333333333287 0.083333333333333287 
+		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
+		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
+		1 0.16666666666666674 0.083333333333333037 1 0.083333333333333037 0.083333333333333703 
 		0.16666666666666674 0.083333333333333703 1 0.083333333333333037 0.08333333333333437 
 		0.08333333333333437 0.083333333333333037 1 1 1 1 1 1;
-	setAttr -s 31 ".kiy[0:30]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0 0 0 0 0;
+	setAttr -s 34 ".kiy[0:33]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+		0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTU -n "L_Arm_03_FK_Ctrl_scaleZ";
 	rename -uid "A329E90F-48FC-DE55-CB4C-F79F41B51A56";
 	setAttr ".tan" 5;
 	setAttr ".wgt" no;
-	setAttr -s 31 ".ktv[0:30]"  0 1 1 1 2 1 4 1 5 1 6 1 7 1 8 1 10 1 11 1
-		 12 1 13 1 14 1 16 1 17 1 18 1 19 1 20 1 22 1 23 1 24 1 25 1 26 1 27 1 28 1 29 1 30 1
-		 31 1 32 1 33 1 34 1;
-	setAttr -s 31 ".kit[0:30]"  1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 9 1 1 18;
-	setAttr -s 31 ".kix[0:30]"  1 0.083333333333333287 0.083333333333333287 
-		0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
-		0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
-		0.16666666666666674 0.083333333333333037 1 0.083333333333333037 0.083333333333333703 
+	setAttr -s 34 ".ktv[0:33]"  0 1 1 1 2 1 3 1 4 1 5 1 6 1 7 1 8 1 9 1
+		 10 1 11 1 12 1 13 1 14 1 15 1 16 1 17 1 18 1 19 1 20 1 22 1 23 1 24 1 25 1 26 1 27 1
+		 28 1 29 1 30 1 31 1 32 1 33 1 34 1;
+	setAttr -s 34 ".kit[0:33]"  1 1 1 18 1 1 1 1 
+		1 18 1 1 1 1 1 18 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 9 1 1 18;
+	setAttr -s 34 ".kot[3:33]"  18 5 5 5 5 5 18 5 
+		5 5 5 5 18 5 5 5 5 5 5 5 5 5 5 5 5 
+		5 5 5 5 5 5;
+	setAttr -s 34 ".kix[0:33]"  1 0.083333333333333287 0.083333333333333287 
+		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
+		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
+		1 0.16666666666666674 0.083333333333333037 1 0.083333333333333037 0.083333333333333703 
 		0.16666666666666674 0.083333333333333703 1 0.083333333333333037 0.08333333333333437 
 		0.08333333333333437 0.083333333333333037 1 1 1 1 1 1;
-	setAttr -s 31 ".kiy[0:30]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0 0 0 0 0;
+	setAttr -s 34 ".kiy[0:33]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+		0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTU -n "L_Foot_IK_In_Ctrl_visibility";
 	rename -uid "802942CB-4EF0-379D-BFA2-DEB549738689";
 	setAttr ".tan" 5;
@@ -16398,9 +16334,6 @@ createNode animCurveTA -n "L_Socket_Lower_Ctrl_rotateX";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -16419,9 +16352,6 @@ createNode animCurveTA -n "L_Socket_Lower_Ctrl_rotateY";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -16440,9 +16370,6 @@ createNode animCurveTA -n "L_Socket_Lower_Ctrl_rotateZ";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -16461,9 +16388,6 @@ createNode animCurveTU -n "L_Socket_Lower_Ctrl_scaleX";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -16482,9 +16406,6 @@ createNode animCurveTU -n "L_Socket_Lower_Ctrl_scaleY";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -16503,9 +16424,6 @@ createNode animCurveTU -n "L_Socket_Lower_Ctrl_scaleZ";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -22019,93 +21937,78 @@ createNode animCurveTU -n "L_MetCarp_05_Ctrl_visibility";
 		0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTA -n "L_MetCarp_05_Ctrl_rotateX";
 	rename -uid "BD76CBF5-49CD-68A8-50D6-53B213DBA0C6";
-	setAttr ".tan" 5;
+	setAttr ".tan" 1;
 	setAttr ".wgt" no;
-	setAttr -s 35 ".ktv[0:34]"  0 0 1 -8.6006624690299187 2 -17.20132493805983
-		 3 -21.110716969437057 4 -15.637568125508929 5 -5.4731488439281293 6 0 7 -5.4731488439281204
-		 8 -15.637568125508929 9 -21.110716969437057 10 -15.63756812550894 11 -5.4731488439281266
-		 12 0 13 -5.4731488439281453 14 -15.63756812550894 15 -21.110716969437057 16 -15.637568125508917
-		 17 -5.4731488439281231 18 0 19 -5.4731488439281453 20 -15.63756812550894 21 -21.110716969437057
-		 22 -15.637568125508924 23 -5.4731488439281266 24 0 25 -2.1955145648214431 26 -7.4309723732418389
-		 27 -13.679744596195233 28 -18.915202404615606 29 -21.110716969437057 30 -21.110716969437057
-		 31 -21.110716969437057 32 -21.110716969437057 33 -21.110716969437057 34 -21.110716969437057;
-	setAttr -s 35 ".kit[0:34]"  1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kix[0:34]"  0.56146962671623257 0.083333333333333287 
-		0.083333333333333287 1 0.08333333333333337 0.08333333333333337 1 0.08333333333333337 
-		0.08333333333333337 1 0.083333333333333037 0.08333333333333337 1 0.083333333333333037 
-		0.083333333333333037 1 0.083333333333333037 0.083333333333333037 1 0.083333333333333037 
-		0.083333333333333037 1 0.083333333333333703 0.083333333333333703 1 0.083333333333333037 
-		0.08333333333333437 0.08333333333333437 0.083333333333333037 1 0.74911987798723123 
-		1 1 1 1;
-	setAttr -s 35 ".kiy[0:34]"  -0.8274973463855545 -0.16375623047702917 
-		-0.12281717285777194 0 0.16375623047702925 0.16375623047702917 0 -0.16375623047702903 
-		-0.16375623047702934 0 0.16375623047702925 0.16375623047702936 0 -0.16375623047702967 
-		-0.16375623047702917 0 0.16375623047702959 0.16375623047702909 0 -0.16375623047702967 
-		-0.16375623047702917 0 0.16375623047702942 0.16375623047702881 0 -0.07074269156607621 
-		-0.10611403734911515 -0.10611403734911515 -0.070742691566076321 0 -0.66243445593084593 
-		0 0 0 0;
+	setAttr -s 35 ".ktv[0:34]"  0 -5.8914192433505139 1 -5.8914192433505139
+		 2 -5.8914192433505139 3 -5.8914192433505139 4 -5.8914192433505139 5 -5.8914192433505139
+		 6 -5.8914192433505139 7 -5.8914192433505139 8 -5.8914192433505139 9 -5.8914192433505139
+		 10 -5.8914192433505139 11 -5.8914192433505139 12 -5.8914192433505139 13 -5.8914192433505139
+		 14 -5.8914192433505139 15 -5.8914192433505139 16 -5.8914192433505139 17 -5.8914192433505139
+		 18 -5.8914192433505139 19 -5.8914192433505139 20 -5.8914192433505139 21 -5.8914192433505139
+		 22 -5.8914192433505139 23 -5.8914192433505139 24 -5.8914192433505139 25 -5.8914192433505139
+		 26 -5.8914192433505139 27 -5.8914192433505139 28 -5.8914192433505139 29 -5.8914192433505139
+		 30 -5.8914192433505139 31 -5.8914192433505139 32 -5.8914192433505139 33 -5.8914192433505139
+		 34 -5.8914192433505139;
+	setAttr -s 35 ".kot[0:34]"  5 5 5 5 5 5 5 5 
+		5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+		5 5 5 5 5 5 5 5 5 5;
+	setAttr -s 35 ".kix[0:34]"  0.083333333333333287 0.083333333333333287 
+		0.083333333333333287 0.083333333333333287 0.083333333333333287 0.083333333333333287 
+		0.083333333333333287 0.083333333333333287 0.083333333333333287 0.083333333333333287 
+		0.083333333333333287 0.083333333333333287 0.083333333333333287 0.083333333333333287 
+		0.083333333333333287 0.083333333333333287 0.083333333333333287 0.083333333333333287 
+		0.083333333333333287 0.083333333333333287 0.083333333333333287 0.083333333333333287 
+		0.083333333333333287 0.083333333333333287 0.083333333333333287 0.083333333333333287 
+		0.083333333333333287 0.083333333333333287 0.083333333333333287 0.083333333333333287 
+		0.083333333333333287 0.083333333333333287 0.083333333333333287 0.083333333333333287 
+		0.083333333333333287;
+	setAttr -s 35 ".kiy[0:34]"  -0.12281717285777194 -0.12281717285777194 
+		-0.12281717285777194 -0.12281717285777194 -0.12281717285777194 -0.12281717285777194 
+		-0.12281717285777194 -0.12281717285777194 -0.12281717285777194 -0.12281717285777194 
+		-0.12281717285777194 -0.12281717285777194 -0.12281717285777194 -0.12281717285777194 
+		-0.12281717285777194 -0.12281717285777194 -0.12281717285777194 -0.12281717285777194 
+		-0.12281717285777194 -0.12281717285777194 -0.12281717285777194 -0.12281717285777194 
+		-0.12281717285777194 -0.12281717285777194 -0.12281717285777194 -0.12281717285777194 
+		-0.12281717285777194 -0.12281717285777194 -0.12281717285777194 -0.12281717285777194 
+		-0.12281717285777194 -0.12281717285777194 -0.12281717285777194 -0.12281717285777194 
+		-0.12281717285777194;
 createNode animCurveTA -n "L_MetCarp_05_Ctrl_rotateY";
 	rename -uid "92133DFF-40DA-70C4-00F7-4A9F18B6732C";
-	setAttr ".tan" 5;
+	setAttr ".tan" 1;
 	setAttr ".wgt" no;
-	setAttr -s 35 ".ktv[0:34]"  0 -24.090995757898998 1 -19.116907362420047
-		 2 -14.142818966941091 3 -11.881869696268836 4 -15.047198675209993 5 -20.925666778957844
-		 6 -24.090995757898998 7 -20.925666778957847 8 -15.047198675209993 9 -11.881869696268836
-		 10 -15.047198675209986 11 -20.925666778957847 12 -24.090995757898998 13 -20.925666778957837
-		 14 -15.047198675209993 15 -11.881869696268836 16 -15.047198675209998 17 -20.925666778957847
-		 18 -24.090995757898998 19 -20.925666778957837 20 -15.047198675209993 21 -11.881869696268836
-		 22 -15.047198675209998 23 -20.925666778957847 24 -24.090995757898998 25 -22.821246647489467
-		 26 -19.793383384205185 27 -16.179482069962646 28 -13.15161880667838 29 -11.881869696268836
-		 30 -11.881869696268836 31 -11.881869696268836 32 -11.881869696268836 33 -11.881869696268836
-		 34 -11.881869696268836;
-	setAttr -s 35 ".kit[0:34]"  1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kix[0:34]"  0.7610531219005956 0.083333333333333287 
-		0.083333333333333287 1 0.08333333333333337 0.08333333333333337 1 0.08333333333333337 
-		0.08333333333333337 1 0.083333333333333037 0.08333333333333337 1 0.083333333333333037 
-		0.083333333333333037 1 0.083333333333333037 0.083333333333333037 1 0.083333333333333037 
-		0.083333333333333037 1 0.083333333333333703 0.083333333333333703 1 0.083333333333333037 
-		0.08333333333333437 0.08333333333333437 0.083333333333333037 1 0.89032512960329591 
-		1 1 1 1;
-	setAttr -s 35 ".kiy[0:34]"  0.64868956030242797 0.094706421585108558 
-		0.071029816188831502 0 -0.094706421585108724 -0.094706421585108558 0 0.094706421585108558 
-		0.094706421585108724 0 -0.094706421585108641 -0.094706421585108724 0 0.094706421585108891 
-		0.094706421585108558 0 -0.094706421585108974 -0.094706421585108558 0 0.094706421585108891 
-		0.094706421585108558 0 -0.094706421585108724 -0.094706421585108391 0 0.040913174124766749 
-		0.06136976118715054 0.06136976118715054 0.040913174124766749 0 0.45532533818894183 
-		0 0 0 0;
-createNode animCurveTA -n "L_MetCarp_05_Ctrl_rotateZ";
-	rename -uid "BB668C8D-49A9-3061-F0CF-D794477A5A9C";
-	setAttr ".tan" 5;
-	setAttr ".wgt" no;
-	setAttr -s 35 ".ktv[0:34]"  0 0 1 25.230494042241652 2 50.460988084483304
-		 3 61.929394467320414 4 45.873625531348445 5 16.055768935971972 6 0 7 16.055768935971937
-		 8 45.873625531348445 9 61.929394467320414 10 45.873625531348466 11 16.055768935971948
-		 12 0 13 16.055768935972008 14 45.873625531348466 15 61.929394467320414 16 45.873625531348409
-		 17 16.055768935971948 18 0 19 16.055768935972008 20 45.873625531348466 21 61.929394467320414
-		 22 45.873625531348431 23 16.055768935971955 24 0 25 6.4406570246012853 26 21.799146852496762
-		 27 40.130247614823666 28 55.488737442719085 29 61.929394467320414 30 61.929394467320414
-		 31 61.929394467320414 32 61.929394467320414 33 61.929394467320414 34 61.929394467320414;
-	setAttr -s 35 ".kit[0:34]"  1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kix[0:34]"  0.22534560919265584 0.083333333333333287 
-		0.083333333333333287 1 0.08333333333333337 0.08333333333333337 1 0.08333333333333337 
-		0.08333333333333337 1 0.083333333333333037 0.08333333333333337 1 0.083333333333333037 
-		0.083333333333333037 1 0.083333333333333037 0.083333333333333037 1 0.083333333333333037 
-		0.083333333333333037 1 0.083333333333333703 0.083333333333333703 1 0.083333333333333037 
-		0.08333333333333437 0.08333333333333437 0.083333333333333037 1 0.35969092817078169 
-		1 1 1 1;
-	setAttr -s 35 ".kiy[0:34]"  0.9742788904710965 0.48038748320937807 
-		0.36029061240703397 0 -0.48038748320937841 -0.48038748320937807 0 0.48038748320937763 
-		0.48038748320937874 0 -0.48038748320937807 -0.48038748320937841 0 0.48038748320937941 
-		0.48038748320937774 0 -0.48038748320937941 -0.48038748320937774 0 0.48038748320937941 
-		0.48038748320937774 0 -0.48038748320937874 -0.48038748320937708 0 0.20752739274645027 
-		0.31129108911967757 0.31129108911967773 0.2075273927464506 0 0.93307150647291848 
-		0 0 0 0;
+	setAttr -s 35 ".ktv[0:34]"  0 -22.669342577918027 1 -22.669342577918027
+		 2 -22.669342577918027 3 -22.669342577918027 4 -22.669342577918027 5 -22.669342577918027
+		 6 -22.669342577918027 7 -22.669342577918027 8 -22.669342577918027 9 -22.669342577918027
+		 10 -22.669342577918027 11 -22.669342577918027 12 -22.669342577918027 13 -22.669342577918027
+		 14 -22.669342577918027 15 -22.669342577918027 16 -22.669342577918027 17 -22.669342577918027
+		 18 -22.669342577918027 19 -22.669342577918027 20 -22.669342577918027 21 -22.669342577918027
+		 22 -22.669342577918027 23 -22.669342577918027 24 -22.669342577918027 25 -22.669342577918027
+		 26 -22.669342577918027 27 -22.669342577918027 28 -22.669342577918027 29 -22.669342577918027
+		 30 -22.669342577918027 31 -22.669342577918027 32 -22.669342577918027 33 -22.669342577918027
+		 34 -22.669342577918027;
+	setAttr -s 35 ".kot[0:34]"  5 5 5 5 5 5 5 5 
+		5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+		5 5 5 5 5 5 5 5 5 5;
+	setAttr -s 35 ".kix[0:34]"  0.083333333333333287 0.083333333333333287 
+		0.083333333333333287 0.083333333333333287 0.083333333333333287 0.083333333333333287 
+		0.083333333333333287 0.083333333333333287 0.083333333333333287 0.083333333333333287 
+		0.083333333333333287 0.083333333333333287 0.083333333333333287 0.083333333333333287 
+		0.083333333333333287 0.083333333333333287 0.083333333333333287 0.083333333333333287 
+		0.083333333333333287 0.083333333333333287 0.083333333333333287 0.083333333333333287 
+		0.083333333333333287 0.083333333333333287 0.083333333333333287 0.083333333333333287 
+		0.083333333333333287 0.083333333333333287 0.083333333333333287 0.083333333333333287 
+		0.083333333333333287 0.083333333333333287 0.083333333333333287 0.083333333333333287 
+		0.083333333333333287;
+	setAttr -s 35 ".kiy[0:34]"  0.071029816188831502 0.071029816188831502 
+		0.071029816188831502 0.071029816188831502 0.071029816188831502 0.071029816188831502 
+		0.071029816188831502 0.071029816188831502 0.071029816188831502 0.071029816188831502 
+		0.071029816188831502 0.071029816188831502 0.071029816188831502 0.071029816188831502 
+		0.071029816188831502 0.071029816188831502 0.071029816188831502 0.071029816188831502 
+		0.071029816188831502 0.071029816188831502 0.071029816188831502 0.071029816188831502 
+		0.071029816188831502 0.071029816188831502 0.071029816188831502 0.071029816188831502 
+		0.071029816188831502 0.071029816188831502 0.071029816188831502 0.071029816188831502 
+		0.071029816188831502 0.071029816188831502 0.071029816188831502 0.071029816188831502 
+		0.071029816188831502;
 createNode animCurveTU -n "L_MetCarp_05_Ctrl_scaleX";
 	rename -uid "22A1208F-4736-7853-7609-B3881CC5B948";
 	setAttr ".tan" 5;
@@ -23251,35 +23154,6 @@ createNode animCurveTA -n "L_Finger_03_Knuckle_03_Ctrl_rotateY";
 		0.08333333333333437 0.083333333333333037 1 1 1 1 1 1;
 	setAttr -s 35 ".kiy[0:34]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 		0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
-createNode animCurveTA -n "L_Finger_03_Knuckle_03_Ctrl_rotateZ";
-	rename -uid "EAB0FD80-4DA9-80EF-0B72-098F113CEA53";
-	setAttr ".tan" 5;
-	setAttr ".wgt" no;
-	setAttr -s 35 ".ktv[0:34]"  0 0 1 34.750148020142596 2 69.500296040285207
-		 3 78.130969166742432 4 63.182087309350173 5 38.490527588856132 6 0 7 22.113730558272522
-		 8 44.758190649943657 9 85.295817867622759 10 52.946589165235451 11 29.278579259152853
-		 12 0 13 35.419878145621787 14 63.182087309350194 15 85.295817867622759 16 63.182087309350109
-		 17 22.113730558272536 18 0 19 22.113730558272621 20 63.182087309350194 21 93.484216382914553
-		 22 49.875939722000993 23 22.113730558272557 24 0 25 8.8707650582327027 26 30.024127889403172
-		 27 45.036191834104876 28 76.425052809389982 29 85.295817867622759 30 85.295817867622759
-		 31 85.295817867622759 32 85.295817867622759 33 85.295817867622759 34 85.295817867622759;
-	setAttr -s 35 ".kit[0:34]"  1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kix[0:34]"  0.16561353210496105 0.083333333333333287 
-		0.083333333333333287 1 0.08333333333333337 0.08333333333333337 1 0.08333333333333337 
-		0.08333333333333337 1 0.083333333333333037 0.08333333333333337 1 0.083333333333333037 
-		0.083333333333333037 1 0.083333333333333037 0.083333333333333037 1 0.083333333333333037 
-		0.083333333333333037 1 0.083333333333333703 0.083333333333333703 1 0.083333333333333037 
-		0.08333333333333437 0.08333333333333437 0.083333333333333037 1 0.26952954981604815 
-		1 1 1 1;
-	setAttr -s 35 ".kiy[0:34]"  0.98619073103721622 0.66164127109841153 
-		0.49623095332380873 0 -0.66164127109841187 -0.66164127109841153 0 0.66164127109841075 
-		0.66164127109841187 0 -0.6616412710984112 -0.6616412710984122 0 0.66164127109841342 
-		0.66164127109841053 0 -0.6616412710984132 -0.66164127109841087 0 0.66164127109841342 
-		0.66164127109841053 0 -0.66164127109841253 -0.66164127109841009 0 0.28582902911451225 
-		0.42874354367177137 0.4287435436717717 0.28582902911451269 0 0.96299211926991302 
-		0 0 0 0;
 createNode animCurveTU -n "L_Finger_03_Knuckle_03_Ctrl_scaleX";
 	rename -uid "86158888-489F-A7F4-5E8A-258071D10BDC";
 	setAttr ".tan" 5;
@@ -24842,9 +24716,6 @@ createNode animCurveTA -n "R_Brow_Ctrl_rotateX";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -24863,9 +24734,6 @@ createNode animCurveTA -n "R_Brow_Ctrl_rotateY";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -24884,9 +24752,6 @@ createNode animCurveTA -n "R_Brow_Ctrl_rotateZ";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -25025,35 +24890,6 @@ createNode animCurveTA -n "L_MetCarp_03_Ctrl_rotateY";
 		0 0.021585739205689784 0.021585739205689722 0 -0.021585739205689805 -0.021585739205689722 
 		0 0.021585739205689763 0.02158573920568968 0 -0.0093250393368579099 -0.01398755900528699 
 		-0.01398755900528699 -0.0093250393368579307 0 0 0 0 0 0;
-createNode animCurveTA -n "L_MetCarp_03_Ctrl_rotateZ";
-	rename -uid "5379B91F-498E-F324-16F7-619A4F5898D9";
-	setAttr ".tan" 5;
-	setAttr ".wgt" no;
-	setAttr -s 35 ".ktv[0:34]"  0 0 1 24.374063545223688 2 48.748127090447376
-		 3 59.827246883730865 4 44.316479173133963 5 15.5107677105969 6 0 7 15.510767710596868
-		 8 44.316479173133963 9 59.827246883730865 10 44.316479173133985 11 15.510767710596888
-		 12 0 13 15.510767710596943 14 44.316479173133992 15 59.827246883730865 16 44.316479173133928
-		 17 15.510767710596875 18 0 19 15.510767710596943 20 44.316479173133992 21 59.827246883730865
-		 22 44.316479173133949 23 15.510767710596888 24 0 25 6.2220336759079746 26 21.059190903073247
-		 27 38.76805598065765 28 53.605213207822857 29 59.827246883730865 30 59.827246883730865
-		 31 59.827246883730865 32 59.827246883730865 33 59.827246883730865 34 59.827246883730865;
-	setAttr -s 35 ".kit[0:34]"  1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kix[0:34]"  0.23284119976046577 0.083333333333333287 
-		0.083333333333333287 1 0.08333333333333337 0.08333333333333337 1 0.08333333333333337 
-		0.08333333333333337 1 0.083333333333333037 0.08333333333333337 1 0.083333333333333037 
-		0.083333333333333037 1 0.083333333333333037 0.083333333333333037 1 0.083333333333333037 
-		0.083333333333333037 1 0.083333333333333703 0.083333333333333703 1 0.083333333333333037 
-		0.08333333333333437 0.08333333333333437 0.083333333333333037 1 0.37061891220337034 
-		1 1 1 1;
-	setAttr -s 35 ".kiy[0:34]"  0.97251476888225552 0.46408108467760911 
-		0.34806081350820717 0 -0.46408108467760945 -0.46408108467760895 0 0.46408108467760861 
-		0.46408108467760945 0 -0.46408108467760911 -0.46408108467760961 0 0.46408108467761028 
-		0.46408108467760845 0 -0.46408108467761044 -0.46408108467760878 0 0.46408108467761028 
-		0.46408108467760845 0 -0.46408108467760978 -0.46408108467760811 0 0.20048302858072606 
-		0.30072454287109129 0.30072454287109129 0.20048302858072631 0 0.9287850245978293 
-		0 0 0 0;
 createNode animCurveTU -n "L_MetCarp_03_Ctrl_scaleX";
 	rename -uid "42BB48DB-47F6-EB8E-C840-DBA1592A0369";
 	setAttr ".tan" 5;
@@ -25616,136 +25452,130 @@ createNode animCurveTU -n "L_Finger_01_Knuckle_02_Ctrl_visibility";
 	rename -uid "70A4668E-4718-CCA7-2EE8-828C678ECD3B";
 	setAttr ".tan" 5;
 	setAttr ".wgt" no;
-	setAttr -s 27 ".ktv[0:26]"  0 1 1 1 2 1 4 1 5 1 7 1 8 1 10 1 11 1 13 1
-		 14 1 16 1 17 1 19 1 20 1 22 1 23 1 25 1 26 1 27 1 28 1 29 1 30 1 31 1 32 1 33 1 34 1;
-	setAttr -s 27 ".kit[0:26]"  1 9 9 9 9 9 9 9 
-		9 9 9 9 9 9 9 9 9 9 9 9 9 9 1 9 9 
-		9 1;
-	setAttr -s 27 ".kix[0:26]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1;
-	setAttr -s 27 ".kiy[0:26]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0;
+	setAttr -s 31 ".ktv[0:30]"  0 1 1 1 2 1 4 1 5 1 6 1 7 1 8 1 10 1 11 1
+		 12 1 13 1 14 1 16 1 17 1 18 1 19 1 20 1 22 1 23 1 24 1 25 1 26 1 27 1 28 1 29 1 30 1
+		 31 1 32 1 33 1 34 1;
+	setAttr -s 31 ".kit[0:30]"  1 9 9 9 9 9 9 9 
+		9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
+		9 1 9 9 9 1;
+	setAttr -s 31 ".kix[0:30]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 1 1 1 1 1 1;
+	setAttr -s 31 ".kiy[0:30]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+		0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTA -n "L_Finger_01_Knuckle_02_Ctrl_rotateX";
 	rename -uid "CD6CEA6E-4F53-2B5B-8CD3-D3AA50515D90";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 27 ".ktv[0:26]"  0 0 1 0 2 0 4 0 5 0 7 0 8 0 10 0 11 0 13 0
-		 14 0 16 0 17 0 19 0 20 0 22 0 23 0 25 0 26 0 27 0 28 0 29 0 30 0 31 0 32 0 33 0 34 0;
-	setAttr -s 27 ".kit[0:26]"  1 18 18 18 18 18 18 18 
-		18 18 18 18 18 18 18 18 18 18 18 18 18 18 1 9 18 
-		18 1;
-	setAttr -s 27 ".kot[0:26]"  5 18 18 18 18 18 18 18 
-		18 18 18 18 18 18 18 18 18 18 18 18 18 18 5 5 1 
-		18 5;
-	setAttr -s 27 ".kix[0:26]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1;
-	setAttr -s 27 ".kiy[0:26]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0;
-	setAttr -s 27 ".kox[24:26]"  1 1 0;
-	setAttr -s 27 ".koy[24:26]"  0 0 0;
+	setAttr -s 31 ".ktv[0:30]"  0 0 1 0 2 0 4 0 5 0 6 0 7 0 8 0 10 0 11 0
+		 12 0 13 0 14 0 16 0 17 0 18 0 19 0 20 0 22 0 23 0 24 0 25 0 26 0 27 0 28 0 29 0 30 0
+		 31 0 32 0 33 0 34 0;
+	setAttr -s 31 ".kit[0:30]"  1 18 18 18 18 18 18 18 
+		18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+		18 1 9 18 18 1;
+	setAttr -s 31 ".kot[0:30]"  5 5 5 5 5 18 5 5 
+		5 5 18 5 5 5 5 18 5 5 5 5 18 5 5 5 5 
+		5 5 5 5 5 5;
+	setAttr -s 31 ".kix[0:30]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 1 1 1 1 1 1;
+	setAttr -s 31 ".kiy[0:30]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+		0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTA -n "L_Finger_01_Knuckle_02_Ctrl_rotateY";
 	rename -uid "95DE3120-48D5-5385-D9C6-5F8E24E88EDE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 27 ".ktv[0:26]"  0 0 1 0 2 0 4 0 5 0 7 0 8 0 10 0 11 0 13 0
-		 14 0 16 0 17 0 19 0 20 0 22 0 23 0 25 0 26 0 27 0 28 0 29 0 30 0 31 0 32 0 33 0 34 0;
-	setAttr -s 27 ".kit[0:26]"  1 18 18 18 18 18 18 18 
-		18 18 18 18 18 18 18 18 18 18 18 18 18 18 1 9 18 
-		18 1;
-	setAttr -s 27 ".kot[0:26]"  5 18 18 18 18 18 18 18 
-		18 18 18 18 18 18 18 18 18 18 18 18 18 18 5 5 1 
-		18 5;
-	setAttr -s 27 ".kix[0:26]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1;
-	setAttr -s 27 ".kiy[0:26]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0;
-	setAttr -s 27 ".kox[24:26]"  1 1 0;
-	setAttr -s 27 ".koy[24:26]"  0 0 0;
+	setAttr -s 31 ".ktv[0:30]"  0 0 1 0 2 0 4 0 5 0 6 0 7 0 8 0 10 0 11 0
+		 12 0 13 0 14 0 16 0 17 0 18 0 19 0 20 0 22 0 23 0 24 0 25 0 26 0 27 0 28 0 29 0 30 0
+		 31 0 32 0 33 0 34 0;
+	setAttr -s 31 ".kit[0:30]"  1 18 18 18 18 18 18 18 
+		18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+		18 1 9 18 18 1;
+	setAttr -s 31 ".kot[0:30]"  5 5 5 5 5 18 5 5 
+		5 5 18 5 5 5 5 18 5 5 5 5 18 5 5 5 5 
+		5 5 5 5 5 5;
+	setAttr -s 31 ".kix[0:30]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 1 1 1 1 1 1;
+	setAttr -s 31 ".kiy[0:30]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+		0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTA -n "L_Finger_01_Knuckle_02_Ctrl_rotateZ";
 	rename -uid "9C85A3F6-4AEA-37CF-2616-E2AFD1875938";
-	setAttr ".tan" 18;
+	setAttr ".tan" 5;
 	setAttr ".wgt" no;
-	setAttr -s 27 ".ktv[0:26]"  0 0 1 0 2 -0.94660439964068122 4 -4.7043892849489675
-		 5 -5.7355241821001304 7 -9.8164567579376367 8 -10.944825187094963 10 -15.389406000637958
-		 11 -16.628349923370699 13 -21.469996719973942 14 -22.82995146196167 16 -28.068463704594677
-		 17 -29.545094317733152 19 -35.064783015477403 20 -36.597844659604398 22 -41.889889387551968
-		 23 -43.199676562687671 25 -46.240182376758533 26 -45.980313695848849 27 -43.688349898563828
-		 28 -35.623997666824529 29 -21.279287830833848 30 0 31 0 32 0 33 -7.1079848223019102
-		 34 0;
-	setAttr -s 27 ".kit[0:26]"  1 18 18 18 18 18 18 18 
-		18 18 18 18 18 18 18 18 18 18 18 18 18 18 1 9 18 
-		18 1;
-	setAttr -s 27 ".kot[0:26]"  5 18 18 18 18 18 18 18 
-		18 18 18 18 18 18 18 18 18 18 18 18 18 18 5 5 1 
-		18 5;
-	setAttr -s 27 ".kix[0:26]"  0.16561353210496105 1 0.95007205921890681 
-		0.94839943896841294 0.94181742707001703 0.93978091107807293 0.93194913862634454 0.92950362237879325 
-		0.92049475608713383 0.9176827572161681 0.90826276277937623 0.90543965405761484 0.8985451443114677 
-		0.89714679633146488 0.90275822710655373 0.90818167052125143 0.95684431453396934 1 
-		0.98693052619225774 0.67788216002381285 0.39202524236394554 0.25891707595718139 0.16561353210496105 
-		1 1 1 0.16561353210496105;
-	setAttr -s 27 ".kiy[0:26]"  0.98619073103721622 0 -0.31203057909689874 
-		-0.31707807266413024 -0.33612487867935809 -0.34177747025406324 -0.36258902770714735 
-		-0.36881298239717902 -0.39075491553669311 -0.3973139276543568 -0.41840023153480038 
-		-0.42447500852232345 -0.43888110421193083 -0.44173252747809855 -0.4301483271982256 
-		-0.41857622164813563 -0.29060102846345587 0 0.16114632006308136 0.73517057688773824 
-		0.91995446047589202 0.96589955366890146 0.98619073103721622 0 0 0 0.98619073103721622;
-	setAttr -s 27 ".kox[24:26]"  1 1 0;
-	setAttr -s 27 ".koy[24:26]"  0 0 0;
+	setAttr -s 36 ".ktv[0:35]"  0 -15.516020697226811 1 -22.32141120619222
+		 2 -15.516020697226811 3 -6.5687368916423612 4 2.8207259519299748 5 -7.135852767389478
+		 6 -16.933810386594608 7 -22.32141120619222 8 -14.665346883606141 9 -6.8522948295159223
+		 10 2.8207259519299748 11 -7.135852767389478 12 -16.933810386594608 13 -22.32141120619222
+		 14 -14.665346883606141 15 -6.8522948295159223 16 2.8207259519299748 17 -7.135852767389478
+		 18 -16.933810386594608 19 -22.32141120619222 20 -14.665346883606141 21 -6.8522948295159223
+		 22 2.8207259519299748 23 -7.135852767389478 24 -16.933810386594608 25 -22.32141120619222
+		 26 -14.665346883606141 27 -6.8522948295159223 28 2.8207259519299748 29 -5.7180630780216877
+		 30 -5.7180630780216877 31 -5.7180630780216877 32 -5.7180630780216877 33 -5.7180630780216877
+		 34 -5.7180630780216877 35 -5.7180630780216877;
+	setAttr -s 36 ".kit[0:35]"  1 1 18 1 9 18 1 18 
+		1 18 9 18 1 18 1 18 9 18 1 18 1 18 9 18 1 
+		18 1 18 1 18 1 1 1 1 1 1;
+	setAttr -s 36 ".kix[0:35]"  0.51838990234938487 1 0.51838990234938487 
+		1 0.99824116986518019 0.43521560544397037 1 1 1 0.47929454874581873 0.99955942101944706 
+		0.43521560544397031 1 1 1 0.47929454874581823 0.99955942101944706 0.43521560544397042 
+		1 1 1 0.47929454874581823 0.99955942101944706 0.43521560544397042 1 1 1 0.47929454874581923 
+		1 1 0.52837396645465562 0.52837396645465562 0.52837396645465562 0.52837396645465562 
+		0.52837396645465562 0.52837396645465562;
+	setAttr -s 36 ".kiy[0:35]"  0.85514437912097352 0 0.85514437912097352 
+		0 -0.059283781814224855 -0.90032626129533633 0 0 0 0.87765410928368703 -0.029681035212198534 
+		-0.90032626129533644 0 0 0 0.87765410928368726 -0.029681035212198514 -0.90032626129533622 
+		0 0 0 0.87765410928368726 -0.029681035212198514 -0.90032626129533622 0 0 0 0.8776541092836867 
+		0 0 -0.84901174996166839 -0.84901174996166839 -0.84901174996166839 -0.84901174996166839 
+		-0.84901174996166839 -0.84901174996166839;
 createNode animCurveTU -n "L_Finger_01_Knuckle_02_Ctrl_scaleX";
 	rename -uid "FEE0B054-490B-D4B7-BED0-2189A5D92539";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 27 ".ktv[0:26]"  0 1 1 1 2 1 4 1 5 1 7 1 8 1 10 1 11 1 13 1
-		 14 1 16 1 17 1 19 1 20 1 22 1 23 1 25 1 26 1 27 1 28 1 29 1 30 1 31 1 32 1 33 1 34 1;
-	setAttr -s 27 ".kit[0:26]"  1 18 18 18 18 18 18 18 
-		18 18 18 18 18 18 18 18 18 18 18 18 18 18 1 9 18 
-		18 1;
-	setAttr -s 27 ".kot[0:26]"  5 18 18 18 18 18 18 18 
-		18 18 18 18 18 18 18 18 18 18 18 18 18 18 5 5 1 
-		18 5;
-	setAttr -s 27 ".kix[0:26]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1;
-	setAttr -s 27 ".kiy[0:26]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0;
-	setAttr -s 27 ".kox[24:26]"  1 1 0;
-	setAttr -s 27 ".koy[24:26]"  0 0 0;
+	setAttr -s 31 ".ktv[0:30]"  0 1 1 1 2 1 4 1 5 1 6 1 7 1 8 1 10 1 11 1
+		 12 1 13 1 14 1 16 1 17 1 18 1 19 1 20 1 22 1 23 1 24 1 25 1 26 1 27 1 28 1 29 1 30 1
+		 31 1 32 1 33 1 34 1;
+	setAttr -s 31 ".kit[0:30]"  1 18 18 18 18 18 18 18 
+		18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+		18 1 9 18 18 1;
+	setAttr -s 31 ".kot[0:30]"  5 5 5 5 5 18 5 5 
+		5 5 18 5 5 5 5 18 5 5 5 5 18 5 5 5 5 
+		5 5 5 5 5 5;
+	setAttr -s 31 ".kix[0:30]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 1 1 1 1 1 1;
+	setAttr -s 31 ".kiy[0:30]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+		0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTU -n "L_Finger_01_Knuckle_02_Ctrl_scaleY";
 	rename -uid "96B6CB5D-4BE1-E53B-DF67-789437D55B6F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 27 ".ktv[0:26]"  0 1 1 1 2 1 4 1 5 1 7 1 8 1 10 1 11 1 13 1
-		 14 1 16 1 17 1 19 1 20 1 22 1 23 1 25 1 26 1 27 1 28 1 29 1 30 1 31 1 32 1 33 1 34 1;
-	setAttr -s 27 ".kit[0:26]"  1 18 18 18 18 18 18 18 
-		18 18 18 18 18 18 18 18 18 18 18 18 18 18 1 9 18 
-		18 1;
-	setAttr -s 27 ".kot[0:26]"  5 18 18 18 18 18 18 18 
-		18 18 18 18 18 18 18 18 18 18 18 18 18 18 5 5 1 
-		18 5;
-	setAttr -s 27 ".kix[0:26]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1;
-	setAttr -s 27 ".kiy[0:26]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0;
-	setAttr -s 27 ".kox[24:26]"  1 1 0;
-	setAttr -s 27 ".koy[24:26]"  0 0 0;
+	setAttr -s 31 ".ktv[0:30]"  0 1 1 1 2 1 4 1 5 1 6 1 7 1 8 1 10 1 11 1
+		 12 1 13 1 14 1 16 1 17 1 18 1 19 1 20 1 22 1 23 1 24 1 25 1 26 1 27 1 28 1 29 1 30 1
+		 31 1 32 1 33 1 34 1;
+	setAttr -s 31 ".kit[0:30]"  1 18 18 18 18 18 18 18 
+		18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+		18 1 9 18 18 1;
+	setAttr -s 31 ".kot[0:30]"  5 5 5 5 5 18 5 5 
+		5 5 18 5 5 5 5 18 5 5 5 5 18 5 5 5 5 
+		5 5 5 5 5 5;
+	setAttr -s 31 ".kix[0:30]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 1 1 1 1 1 1;
+	setAttr -s 31 ".kiy[0:30]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+		0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTU -n "L_Finger_01_Knuckle_02_Ctrl_scaleZ";
 	rename -uid "2DFD8832-4CF9-1A03-3F0C-D2A462AB9ADD";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 27 ".ktv[0:26]"  0 1 1 1 2 1 4 1 5 1 7 1 8 1 10 1 11 1 13 1
-		 14 1 16 1 17 1 19 1 20 1 22 1 23 1 25 1 26 1 27 1 28 1 29 1 30 1 31 1 32 1 33 1 34 1;
-	setAttr -s 27 ".kit[0:26]"  1 18 18 18 18 18 18 18 
-		18 18 18 18 18 18 18 18 18 18 18 18 18 18 1 9 18 
-		18 1;
-	setAttr -s 27 ".kot[0:26]"  5 18 18 18 18 18 18 18 
-		18 18 18 18 18 18 18 18 18 18 18 18 18 18 5 5 1 
-		18 5;
-	setAttr -s 27 ".kix[0:26]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1;
-	setAttr -s 27 ".kiy[0:26]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0;
-	setAttr -s 27 ".kox[24:26]"  1 1 0;
-	setAttr -s 27 ".koy[24:26]"  0 0 0;
+	setAttr -s 31 ".ktv[0:30]"  0 1 1 1 2 1 4 1 5 1 6 1 7 1 8 1 10 1 11 1
+		 12 1 13 1 14 1 16 1 17 1 18 1 19 1 20 1 22 1 23 1 24 1 25 1 26 1 27 1 28 1 29 1 30 1
+		 31 1 32 1 33 1 34 1;
+	setAttr -s 31 ".kit[0:30]"  1 18 18 18 18 18 18 18 
+		18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+		18 1 9 18 18 1;
+	setAttr -s 31 ".kot[0:30]"  5 5 5 5 5 18 5 5 
+		5 5 18 5 5 5 5 18 5 5 5 5 18 5 5 5 5 
+		5 5 5 5 5 5;
+	setAttr -s 31 ".kix[0:30]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 1 1 1 1 1 1;
+	setAttr -s 31 ".kiy[0:30]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+		0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTU -n "Spine_03_Redundancy_Ctrl_visibility";
 	rename -uid "5FD9F38A-477B-3F2F-6CF9-0E9FE64CEE05";
 	setAttr ".tan" 5;
@@ -26094,35 +25924,6 @@ createNode animCurveTA -n "L_MetCarp_04_Ctrl_rotateY";
 		0.029419720009770473 0 -0.029419720009770556 -0.029419720009770431 0 0.012709319044220818 
 		0.019063978566331352 0.01906397856633131 0.012709319044220818 0 0.15689887471235267 
 		0 0 0 0;
-createNode animCurveTA -n "L_MetCarp_04_Ctrl_rotateZ";
-	rename -uid "CD3F1899-4A34-32BE-036D-578FE201D98A";
-	setAttr ".tan" 5;
-	setAttr ".wgt" no;
-	setAttr -s 35 ".ktv[0:34]"  0 0 1 24.415691881889298 2 48.831383763778597
-		 3 59.929425528273725 4 44.392167057980529 5 15.537258470293192 6 0 7 15.537258470293168
-		 8 44.392167057980522 9 59.929425528273725 10 44.392167057980551 11 15.53725847029318
-		 12 0 13 15.537258470293233 14 44.392167057980551 15 59.929425528273725 16 44.392167057980487
-		 17 15.537258470293168 18 0 19 15.537258470293233 20 44.392167057980551 21 59.929425528273725
-		 22 44.392167057980522 23 15.537258470293187 24 0 25 6.2326602549404306 26 21.095157785952335
-		 27 38.834267742321416 28 53.696765273333256 29 59.929425528273725 30 59.929425528273725
-		 31 59.929425528273725 32 59.929425528273725 33 59.929425528273725 34 59.929425528273725;
-	setAttr -s 35 ".kit[0:34]"  1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kix[0:34]"  0.23246568029933384 0.083333333333333287 
-		0.083333333333333287 1 0.08333333333333337 0.08333333333333337 1 0.08333333333333337 
-		0.08333333333333337 1 0.083333333333333037 0.08333333333333337 1 0.083333333333333037 
-		0.083333333333333037 1 0.083333333333333037 0.083333333333333037 1 0.083333333333333037 
-		0.083333333333333037 1 0.083333333333333703 0.083333333333333703 1 0.083333333333333037 
-		0.08333333333333437 0.08333333333333437 0.083333333333333037 1 0.3700736184559516 
-		1 1 1 1;
-	setAttr -s 35 ".kiy[0:34]"  0.97260459976445102 0.4648736863542749 
-		0.3486552647657063 0 -0.46487368635427506 -0.46487368635427473 0 0.46487368635427428 
-		0.46487368635427506 0 -0.46487368635427473 -0.46487368635427539 0 0.46487368635427606 
-		0.4648736863542744 0 -0.46487368635427639 -0.4648736863542744 0 0.46487368635427606 
-		0.4648736863542744 0 -0.46487368635427539 -0.46487368635427373 0 0.20082543250504564 
-		0.30123814875757071 0.30123814875757071 0.20082543250504581 0 0.929002431064052 0 
-		0 0 0;
 createNode animCurveTU -n "L_MetCarp_04_Ctrl_scaleX";
 	rename -uid "BFD47E31-413E-6C12-FE07-BFA09A8F472E";
 	setAttr ".tan" 5;
@@ -27161,35 +26962,6 @@ createNode animCurveTA -n "L_Finger_05_Knuckle_03_Ctrl_rotateY";
 		0.08333333333333437 0.083333333333333037 1 1 1 1 1 1;
 	setAttr -s 35 ".kiy[0:34]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 		0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
-createNode animCurveTA -n "L_Finger_05_Knuckle_03_Ctrl_rotateZ";
-	rename -uid "06AE12A5-49E7-AE9B-BEF1-AFA1CCB67D31";
-	setAttr ".tan" 5;
-	setAttr ".wgt" no;
-	setAttr -s 35 ".ktv[0:34]"  0 0 1 13.25560191750165 2 69.500296040285207
-		 3 85.295817867622759 4 37.59334194906333 5 22.113730558272561 6 0 7 22.113730558272522
-		 8 37.59334194906333 9 70.96612046586209 10 39.6404415778863 11 22.113730558272547
-		 12 0 13 51.796675176205348 14 63.182087309350194 15 75.060319723508002 16 63.182087309350109
-		 17 35.419878145621681 18 0 19 22.113730558272621 20 70.34693601023055 21 85.295817867622759
-		 22 63.182087309350145 23 22.113730558272557 24 0 25 19.106263202347431 26 30.024127889403172
-		 27 39.918442762047519 28 53.906956892337575 29 85.295817867622759 30 85.295817867622759
-		 31 85.295817867622759 32 85.295817867622759 33 85.295817867622759 34 85.295817867622759;
-	setAttr -s 35 ".kit[0:34]"  1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kix[0:34]"  0.16561353210496105 0.083333333333333287 
-		0.083333333333333287 1 0.08333333333333337 0.08333333333333337 1 0.08333333333333337 
-		0.08333333333333337 1 0.083333333333333037 0.08333333333333337 1 0.083333333333333037 
-		0.083333333333333037 1 0.083333333333333037 0.083333333333333037 1 0.083333333333333037 
-		0.083333333333333037 1 0.083333333333333703 0.083333333333333703 1 0.083333333333333037 
-		0.08333333333333437 0.08333333333333437 0.083333333333333037 1 0.26952954981604815 
-		1 1 1 1;
-	setAttr -s 35 ".kiy[0:34]"  0.98619073103721622 0.66164127109841153 
-		0.49623095332380873 0 -0.66164127109841187 -0.66164127109841153 0 0.66164127109841075 
-		0.66164127109841187 0 -0.6616412710984112 -0.6616412710984122 0 0.66164127109841342 
-		0.66164127109841053 0 -0.6616412710984132 -0.66164127109841087 0 0.66164127109841342 
-		0.66164127109841053 0 -0.66164127109841253 -0.66164127109841009 0 0.28582902911451225 
-		0.42874354367177137 0.4287435436717717 0.28582902911451269 0 0.96299211926991302 
-		0 0 0 0;
 createNode animCurveTU -n "L_Finger_05_Knuckle_03_Ctrl_scaleX";
 	rename -uid "5AF631CB-4577-A254-52F8-23BAB6CADB2B";
 	setAttr ".tan" 5;
@@ -27844,35 +27616,6 @@ createNode animCurveTA -n "L_Finger_02_Knuckle_03_Ctrl_rotateY";
 		0.08333333333333437 0.083333333333333037 1 1 1 1 1 1;
 	setAttr -s 35 ".kiy[0:34]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 		0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
-createNode animCurveTA -n "L_Finger_02_Knuckle_03_Ctrl_rotateZ";
-	rename -uid "793F9015-4C64-1DAA-7184-CEA1F5C7043E";
-	setAttr ".tan" 5;
-	setAttr ".wgt" no;
-	setAttr -s 35 ".ktv[0:34]"  0 0 1 34.750148020142596 2 57.217698267347494
-		 3 85.295817867622759 4 63.182087309350173 5 22.113730558272561 6 0 7 29.278579259152831
-		 8 63.182087309350159 9 85.295817867622759 10 56.017238608469867 11 22.113730558272547
-		 12 0 13 22.113730558272621 14 63.182087309350194 15 78.130969166742432 16 63.182087309350109
-		 17 28.255029444741371 18 0 19 22.113730558272621 20 53.970138979646926 21 85.295817867622759
-		 22 56.017238608469818 23 22.113730558272557 24 0 25 8.8707650582327027 26 38.21252640469497
-		 27 55.271689978219598 28 68.236654294098173 29 85.295817867622759 30 85.295817867622759
-		 31 85.295817867622759 32 85.295817867622759 33 85.295817867622759 34 85.295817867622759;
-	setAttr -s 35 ".kit[0:34]"  1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kix[0:34]"  0.16561353210496105 0.083333333333333287 
-		0.083333333333333287 1 0.08333333333333337 0.08333333333333337 1 0.08333333333333337 
-		0.08333333333333337 1 0.083333333333333037 0.08333333333333337 1 0.083333333333333037 
-		0.083333333333333037 1 0.083333333333333037 0.083333333333333037 1 0.083333333333333037 
-		0.083333333333333037 1 0.083333333333333703 0.083333333333333703 1 0.083333333333333037 
-		0.08333333333333437 0.08333333333333437 0.083333333333333037 1 0.26952954981604815 
-		1 1 1 1;
-	setAttr -s 35 ".kiy[0:34]"  0.98619073103721622 0.66164127109841153 
-		0.49623095332380873 0 -0.66164127109841187 -0.66164127109841153 0 0.66164127109841075 
-		0.66164127109841187 0 -0.6616412710984112 -0.6616412710984122 0 0.66164127109841342 
-		0.66164127109841053 0 -0.6616412710984132 -0.66164127109841087 0 0.66164127109841342 
-		0.66164127109841053 0 -0.66164127109841253 -0.66164127109841009 0 0.28582902911451225 
-		0.42874354367177137 0.4287435436717717 0.28582902911451269 0 0.96299211926991302 
-		0 0 0 0;
 createNode animCurveTU -n "L_Finger_02_Knuckle_03_Ctrl_scaleX";
 	rename -uid "DE6511E5-4BBE-FE6E-DB52-458921A2AFF2";
 	setAttr ".tan" 5;
@@ -29089,9 +28832,6 @@ createNode animCurveTA -n "COG_Ctrl_rotateX";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -29117,9 +28857,6 @@ createNode animCurveTA -n "COG_Ctrl_rotateY";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -29144,9 +28881,6 @@ createNode animCurveTA -n "COG_Ctrl_rotateZ";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -29165,9 +28899,6 @@ createNode animCurveTU -n "COG_Ctrl_scaleX";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -29186,9 +28917,6 @@ createNode animCurveTU -n "COG_Ctrl_scaleY";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -29207,9 +28935,6 @@ createNode animCurveTU -n "COG_Ctrl_scaleZ";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -29936,9 +29661,6 @@ createNode animCurveTA -n "Nose_Ctrl_rotateX";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -29957,9 +29679,6 @@ createNode animCurveTA -n "Nose_Ctrl_rotateY";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -29978,9 +29697,6 @@ createNode animCurveTA -n "Nose_Ctrl_rotateZ";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -29999,9 +29715,6 @@ createNode animCurveTU -n "Nose_Ctrl_scaleX";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -30020,9 +29733,6 @@ createNode animCurveTU -n "Nose_Ctrl_scaleY";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -30041,9 +29751,6 @@ createNode animCurveTU -n "Nose_Ctrl_scaleZ";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -30206,9 +29913,6 @@ createNode animCurveTA -n "R_Socket_Lower_Ctrl_rotateX";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -30227,9 +29931,6 @@ createNode animCurveTA -n "R_Socket_Lower_Ctrl_rotateY";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -30248,9 +29949,6 @@ createNode animCurveTA -n "R_Socket_Lower_Ctrl_rotateZ";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -30269,9 +29967,6 @@ createNode animCurveTU -n "R_Socket_Lower_Ctrl_scaleX";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -30290,9 +29985,6 @@ createNode animCurveTU -n "R_Socket_Lower_Ctrl_scaleY";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -30311,9 +30003,6 @@ createNode animCurveTU -n "R_Socket_Lower_Ctrl_scaleZ";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -30368,32 +30057,32 @@ createNode animCurveTA -n "L_Finger_01_Knuckle_01_Ctrl_rotateZ";
 	rename -uid "A03509E0-47C2-0A1D-E5FF-EEBD65BC94CA";
 	setAttr ".tan" 5;
 	setAttr ".wgt" no;
-	setAttr -s 35 ".ktv[0:34]"  0 3.8574394316067653 1 6.8780269783619792
-		 2 12.131669966074961 3 15.397242075004394 4 12.34786766681928 5 7.1410033289298873
-		 6 3.8574394316067653 7 6.8492401169320738 8 12.234481350517637 9 15.397242075004394
-		 10 12.405441389679085 11 7.1697901903597874 12 3.8574394316067653 13 6.878026978361989
-		 14 12.131669966074966 15 15.397242075004394 16 12.347867666819273 17 7.1410033289298838
-		 18 3.8574394316067653 19 6.878026978361989 20 12.131669966074966 21 15.397242075004394
-		 22 12.347867666819278 23 7.1410033289298918 24 3.8574394316067653 25 6.8780269783619614
-		 26 12.131669966074954 27 15.397242075004394 28 15.368455213574494 29 15.415233863398083
-		 30 15.397242075004394 31 15.397242075004394 32 15.397242075004394 33 15.444020724827983
-		 34 15.426028936434294;
+	setAttr -s 35 ".ktv[0:34]"  0 19.363080904857149 1 22.383668451612376
+		 2 27.637311439325391 3 30.902883548254835 4 27.853509140069708 5 22.646644802180283
+		 6 19.363080904857149 7 22.354881590182472 8 27.740122823768068 9 30.902883548254835
+		 10 27.911082862929515 11 22.675431663610183 12 19.363080904857149 13 22.383668451612387
+		 14 27.637311439325394 15 30.902883548254835 16 27.853509140069704 17 22.64664480218028
+		 18 19.363080904857149 19 22.383668451612387 20 27.637311439325394 21 30.902883548254835
+		 22 27.853509140069708 23 22.64664480218029 24 19.363080904857149 25 22.383668451612362
+		 26 27.637311439325384 27 30.902883548254835 28 30.874096686824938 29 30.920875336648525
+		 30 30.902883548254835 31 30.902883548254835 32 30.902883548254835 33 30.949662198078428
+		 34 30.931670409684738;
 	setAttr -s 35 ".kit[0:34]"  1 18 18 1 18 18 1 18 
 		18 10 18 18 1 18 18 1 18 18 1 18 18 1 18 18 1 
 		18 18 1 18 18 1 9 18 18 1;
-	setAttr -s 35 ".kix[0:34]"  1 0.75576062215354545 0.7462071231914591 
-		0.99963215808517625 0.75646555352033185 0.7473251962067875 1 0.7517409279645384 0.74509029442262842 
-		0.99983978171638022 0.75759434758076905 0.74509029442262853 1 0.75576062215354545 
-		0.74620712319145965 0.99963215808517625 0.75646555352033185 0.74732519620678795 1 
-		0.75576062215354545 0.74620712319145965 0.99963215808517625 0.75646555352033207 0.74732519620678761 
-		1 0.75576062215354556 0.7462071231914581 0.99963215808517625 1 1 0.99963215808517625 
-		1 1 1 0.99963215808517625;
-	setAttr -s 35 ".kiy[0:34]"  0 0.65484798388792931 0.66571384941153688 
-		-0.027120997805631274 -0.65403353609518988 -0.66445846455176305 0 0.65945854852523877 
-		0.66696360707103119 0.017900025065376114 -0.6527256732454062 -0.66696360707103097 
-		0 0.65484798388792942 0.66571384941153633 -0.027120997805631274 -0.65403353609518988 
-		-0.66445846455176261 0 0.65484798388792942 0.66571384941153633 -0.027120997805631274 
-		-0.65403353609518955 -0.66445846455176283 0 0.65484798388792931 0.66571384941153811 
+	setAttr -s 35 ".kix[0:34]"  1 0.75576062215354378 0.74620712319145732 
+		0.99963215808517625 0.75646555352033007 0.74732519620678572 1 0.75174092796453651 
+		0.74509029442262675 0.99983978171638022 0.75759434758076727 0.74509029442262675 1 
+		0.75576062215354378 0.74620712319145799 0.99963215808517625 0.75646555352032996 0.74732519620678617 
+		1 0.75576062215354378 0.74620712319145799 0.99963215808517625 0.7564655535203304 
+		0.74732519620678584 1 0.75576062215354389 0.74620712319145643 0.99963215808517625 
+		1 1 0.99963215808517625 1 1 1 0.99963215808517625;
+	setAttr -s 35 ".kiy[0:34]"  0 0.65484798388793131 0.66571384941153877 
+		-0.027120997805631274 -0.65403353609519188 -0.66445846455176494 0 0.65945854852524088 
+		0.66696360707103297 0.017900025065376114 -0.6527256732454082 -0.66696360707103308 
+		0 0.65484798388793142 0.66571384941153833 -0.027120997805631274 -0.65403353609519188 
+		-0.6644584645517646 0 0.65484798388793142 0.66571384941153833 -0.027120997805631274 
+		-0.65403353609519144 -0.66445846455176483 0 0.65484798388793142 0.66571384941153988 
 		-0.027120997805631274 0 0 -0.027120997805631274 0 0 0 -0.027120997805631274;
 createNode animCurveTU -n "L_Finger_01_Knuckle_01_Ctrl_scaleX";
 	rename -uid "53F5696D-41F1-5DF5-D613-A89B3F0A1D14";
@@ -31504,35 +31193,6 @@ createNode animCurveTA -n "L_Finger_04_Knuckle_03_Ctrl_rotateY";
 		0.08333333333333437 0.083333333333333037 1 1 1 1 1 1;
 	setAttr -s 35 ".kiy[0:34]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 		0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
-createNode animCurveTA -n "L_Finger_04_Knuckle_03_Ctrl_rotateZ";
-	rename -uid "8D8123C1-4FF4-94B7-6E12-28ACB9CB85BE";
-	setAttr ".tan" 5;
-	setAttr ".wgt" no;
-	setAttr -s 35 ".ktv[0:34]"  0 0 1 21.444000432793441 2 69.500296040285207
-		 3 85.295817867622759 4 63.182087309350173 5 38.490527588856146 6 0 7 38.490527588856111
-		 8 63.182087309350159 9 74.03676990909652 10 37.593341949063351 11 22.113730558272547
-		 12 0 13 22.113730558272621 14 40.663991392297788 15 85.295817867622759 16 63.182087309350109
-		 17 45.655376289736438 18 0 19 36.443427960033254 20 63.182087309350194 21 85.295817867622759
-		 22 36.569792134651827 23 22.113730558272557 24 0 25 8.8707650582327027 26 39.236076219106451
-		 27 55.271689978219598 28 64.824821579393259 29 85.295817867622759 30 85.295817867622759
-		 31 85.295817867622759 32 85.295817867622759 33 85.295817867622759 34 85.295817867622759;
-	setAttr -s 35 ".kit[0:34]"  1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kix[0:34]"  0.16561353210496105 0.083333333333333287 
-		0.083333333333333287 1 0.08333333333333337 0.08333333333333337 1 0.08333333333333337 
-		0.08333333333333337 1 0.083333333333333037 0.08333333333333337 1 0.083333333333333037 
-		0.083333333333333037 1 0.083333333333333037 0.083333333333333037 1 0.083333333333333037 
-		0.083333333333333037 1 0.083333333333333703 0.083333333333333703 1 0.083333333333333037 
-		0.08333333333333437 0.08333333333333437 0.083333333333333037 1 0.26952954981604815 
-		1 1 1 1;
-	setAttr -s 35 ".kiy[0:34]"  0.98619073103721622 0.66164127109841153 
-		0.49623095332380873 0 -0.66164127109841187 -0.66164127109841153 0 0.66164127109841075 
-		0.66164127109841187 0 -0.6616412710984112 -0.6616412710984122 0 0.66164127109841342 
-		0.66164127109841053 0 -0.6616412710984132 -0.66164127109841087 0 0.66164127109841342 
-		0.66164127109841053 0 -0.66164127109841253 -0.66164127109841009 0 0.28582902911451225 
-		0.42874354367177137 0.4287435436717717 0.28582902911451269 0 0.96299211926991302 
-		0 0 0 0;
 createNode animCurveTU -n "L_Finger_04_Knuckle_03_Ctrl_scaleX";
 	rename -uid "B0B81BFF-4601-3F9B-C66E-18A9ADF1C8B2";
 	setAttr ".tan" 5;
@@ -31747,145 +31407,94 @@ createNode animCurveTU -n "L_MetCarp_01_Ctrl_visibility";
 		0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTA -n "L_MetCarp_01_Ctrl_rotateX";
 	rename -uid "36314F72-4DDA-0ADB-6F83-E6ADBA260461";
-	setAttr ".tan" 18;
+	setAttr ".tan" 5;
 	setAttr ".wgt" no;
-	setAttr -s 35 ".ktv[0:34]"  0 -58.254197014239288 1 -59.343586708743004
-		 2 -61.250018674124547 3 -62.456128693039396 4 -61.366738998535681 5 -59.460307033154137
-		 6 -58.254197014239288 7 -59.343586708743004 8 -61.250018674124547 9 -62.456128693039396
-		 10 -61.366738998535681 11 -59.460307033154137 12 -58.254197014239288 13 -59.343586708743032
-		 14 -61.250018674124547 15 -62.456128693039396 16 -61.366738998535652 17 -59.460307033154137
-		 18 -58.254197014239288 19 -59.343586708743032 20 -61.250018674124547 21 -62.456128693039396
-		 22 -61.366738998535652 23 -59.460307033154137 24 -58.254197014239288 25 -58.565451212668904
-		 26 -59.418287716366116 27 -60.33065158551301 28 -61.219239092279828 29 -62.014806984953495
-		 30 -62.456128693039396 31 -62.456128693039396 32 -62.456128693039396 33 -62.456128693039396
-		 34 -62.456128693039396;
-	setAttr -s 35 ".kit[0:34]"  1 18 18 1 18 18 1 18 
-		18 1 18 18 1 18 18 1 18 18 1 18 18 1 18 18 1 
-		18 18 18 18 18 1 1 1 18 1;
-	setAttr -s 35 ".kot[0:34]"  1 18 18 1 18 18 1 18 
-		18 1 18 18 1 18 18 1 18 18 1 18 18 1 18 18 1 
-		18 18 18 18 18 1 1 1 18 1;
-	setAttr -s 35 ".kix[0:34]"  1 0.95414751758917171 0.95076971531399723 
-		1 0.95414751758917171 0.95076971531399723 1 0.95414751758917182 0.95076971531399723 
-		1 0.95414751758917182 0.95076971531399723 1 0.95414751758917182 0.95076971531399812 
-		1 0.95414751758917182 0.95076971531399812 1 0.95414751758917182 0.95076971531399812 
-		1 0.95414751758917182 0.95076971531399812 1 0.99265159313985363 0.98334072942403961 
-		0.98267670004245999 0.98480146048070638 0.99171550548180987 1 0.083333333333333037 
-		1 1 1;
-	setAttr -s 35 ".kiy[0:34]"  0 -0.29933679138792985 -0.30989828725202823 
-		0 0.29933679138792979 0.30989828725202823 0 -0.2993367913879299 -0.30989828725202828 
-		0 0.2993367913879299 0.30989828725202828 0 -0.29933679138792968 -0.30989828725202584 
-		0 0.29933679138792968 0.30989828725202584 0 -0.29933679138792968 -0.30989828725202584 
-		0 0.29933679138792968 0.30989828725202584 0 -0.12100749826730024 -0.18177186211236832 
-		-0.18532809607196882 -0.17368386060618218 -0.12845371223502328 0 0 0 0 0;
-	setAttr -s 35 ".kox[0:34]"  1 0.95414751758917171 0.95076971531399723 
-		1 0.95414751758917182 0.95076971531399723 1 0.95414751758917182 0.95076971531399723 
-		1 0.95414751758917182 0.95076971531399723 1 0.95414751758917182 0.95076971531399801 
-		1 0.95414751758917182 0.95076971531399801 1 0.95414751758917182 0.95076971531399801 
-		1 0.95414751758917182 0.95076971531399801 1 0.99265159313985363 0.98334072942403949 
-		0.98267670004245999 0.98480146048070638 0.99171550548180998 1 0.083333333333333037 
-		1 1 1;
-	setAttr -s 35 ".koy[0:34]"  0 -0.29933679138792985 -0.30989828725202823 
-		0 0.29933679138792979 0.30989828725202823 0 -0.29933679138792996 -0.30989828725202834 
-		0 0.29933679138792996 0.30989828725202834 0 -0.29933679138792968 -0.30989828725202578 
-		0 0.29933679138792968 0.30989828725202578 0 -0.29933679138792968 -0.30989828725202578 
-		0 0.29933679138792968 0.30989828725202578 0 -0.12100749826730024 -0.18177186211236832 
-		-0.18532809607196882 -0.17368386060618216 -0.1284537122350233 0 0 0 0 0;
+	setAttr -s 35 ".ktv[0:34]"  0 -61.59141747354429 1 -65.879732491889499
+		 2 -61.395752909969616 3 -58.069455329199947 4 -61.395752909969616 5 -65.879732491889499
+		 6 -68.635341762232983 7 -65.879732491889499 8 -61.395752909969616 9 -58.069455329199947
+		 10 -61.395752909969616 11 -65.879732491889499 12 -68.635341762232983 13 -65.879732491889499
+		 14 -61.395752909969616 15 -58.069455329199947 16 -61.395752909969616 17 -65.879732491889499
+		 18 -68.635341762232983 19 -65.879732491889499 20 -61.395752909969616 21 -58.069455329199947
+		 22 -61.395752909969616 23 -65.879732491889499 24 -68.635341762232983 25 -65.879732491889499
+		 26 -61.59141747354429 27 -61.59141747354429 28 -61.395752909969616 29 -58.069455329199947
+		 30 -58.069455329199947 31 -58.069455329199947 32 -58.069455329199947 33 -58.069455329199947
+		 34 -58.069455329199947;
+	setAttr -s 35 ".kit[0:34]"  10 1 1 10 18 18 10 1 
+		1 10 1 1 10 1 1 10 1 1 10 1 1 10 1 1 10 
+		1 10 10 1 10 10 10 10 10 10;
+	setAttr -s 35 ".kix[1:34]"  0.79688029042393849 0.77406787611214278 
+		1 0.77406787611214278 0.79688029042393849 1 0.79688029042393849 0.77406787611214278 
+		1 0.77406787611214278 0.79688029042393849 1 0.79688029042393849 0.77406787611214278 
+		1 0.77406787611214278 0.79688029042393849 1 0.79688029042393849 0.77406787611214278 
+		1 0.77406787611214278 0.79688029042393849 1 0.79688029042393849 1 1 0.77406787611214278 
+		1 1 1 1 1 1;
+	setAttr -s 35 ".kiy[1:34]"  -0.6041372383274014 -0.63310261662011502 
+		0 -0.63310261662011502 -0.6041372383274014 0 -0.6041372383274014 -0.63310261662011502 
+		0 -0.63310261662011502 -0.6041372383274014 0 -0.6041372383274014 -0.63310261662011502 
+		0 -0.63310261662011502 -0.6041372383274014 0 -0.6041372383274014 -0.63310261662011502 
+		0 -0.63310261662011502 -0.6041372383274014 0 -0.6041372383274014 0 0 -0.63310261662011502 
+		0 0 0 0 0 0;
 createNode animCurveTA -n "L_MetCarp_01_Ctrl_rotateY";
 	rename -uid "F42EECA9-41C2-1141-83D1-6A8586603413";
-	setAttr ".tan" 18;
+	setAttr ".tan" 5;
 	setAttr ".wgt" no;
-	setAttr -s 35 ".ktv[0:34]"  0 -29.419824220554933 1 -23.778391457465265
-		 2 -13.905884122058335 3 -7.6600121343519181 4 -13.301444897441591 5 -23.17395223284851
-		 6 -29.419824220554933 7 -23.778391457465268 8 -13.905884122058342 9 -7.6600121343519181
-		 10 -13.301444897441582 11 -23.173952232848517 12 -29.419824220554933 13 -23.778391457465258
-		 14 -13.905884122058335 15 -7.6600121343519181 16 -13.301444897441607 17 -23.173952232848521
-		 18 -29.419824220554933 19 -23.778391457465258 20 -13.905884122058335 21 -7.6600121343519181
-		 22 -13.301444897441595 23 -23.173952232848503 24 -29.419824220554933 25 -27.807986288243615
-		 26 -23.391550353710546 27 -18.666850414622939 28 -14.065276984253583 29 -9.94540803594683
-		 30 -7.6600121343519181 31 -7.6600121343519181 32 -7.6600121343519181 33 -7.6600121343518923
-		 34 -7.6600121343518799;
-	setAttr -s 35 ".kit[0:34]"  1 18 18 1 18 18 1 18 
-		18 1 18 18 1 18 18 1 18 18 1 18 18 1 18 18 1 
-		18 18 18 18 18 1 1 1 18 1;
-	setAttr -s 35 ".kot[0:34]"  1 18 18 1 18 18 1 18 
-		18 1 18 18 1 18 18 1 18 18 1 18 18 1 18 18 1 
-		18 18 18 18 18 1 1 1 18 1;
-	setAttr -s 35 ".kix[0:34]"  1 0.52418726611076727 0.50971012114558434 
-		1 0.52418726611076749 0.50971012114558423 1 0.52418726611076738 0.50971012114558401 
-		1 0.52418726611076716 0.50971012114558401 1 0.52418726611076738 0.50971012114558456 
-		1 0.52418726611076727 0.50971012114558489 1 0.52418726611076738 0.50971012114558456 
-		1 0.52418726611076771 0.50971012114558456 1 0.84560325810243975 0.72237631438891503 
-		0.71541162520796997 0.73838848272978408 0.83047885946269795 1 0.083333333333333037 
-		1 1 1;
-	setAttr -s 35 ".kiy[0:34]"  0 0.85160302374247099 0.86034620496736891 
-		0 -0.85160302374247088 -0.8603462049673688 0 0.85160302374247099 0.86034620496736902 
-		0 -0.8516030237424711 -0.86034620496736902 0 0.85160302374247088 0.86034620496736869 
-		0 -0.8516030237424711 -0.86034620496736847 0 0.85160302374247088 0.86034620496736869 
-		0 -0.85160302374247077 -0.86034620496736869 0 0.53381188623572118 0.69150015214017657 
-		0.69870323207874974 0.67437559903365973 0.55705014494705629 0 0 0 0 0;
-	setAttr -s 35 ".kox[0:34]"  1 0.52418726611076727 0.50971012114558434 
-		1 0.52418726611076749 0.50971012114558434 1 0.52418726611076738 0.50971012114558401 
-		1 0.52418726611076716 0.50971012114558401 1 0.52418726611076738 0.50971012114558456 
-		1 0.52418726611076727 0.509710121145585 1 0.52418726611076738 0.50971012114558456 
-		1 0.52418726611076771 0.50971012114558456 1 0.84560325810243975 0.72237631438891503 
-		0.71541162520796997 0.73838848272978408 0.83047885946269795 1 0.083333333333333037 
-		1 1 1;
-	setAttr -s 35 ".koy[0:34]"  0 0.85160302374247099 0.86034620496736891 
-		0 -0.85160302374247088 -0.8603462049673688 0 0.85160302374247099 0.86034620496736902 
-		0 -0.8516030237424711 -0.86034620496736902 0 0.85160302374247088 0.86034620496736869 
-		0 -0.8516030237424711 -0.86034620496736858 0 0.85160302374247088 0.86034620496736869 
-		0 -0.85160302374247077 -0.86034620496736869 0 0.53381188623572129 0.69150015214017657 
-		0.69870323207874974 0.67437559903365973 0.55705014494705629 0 0 0 0 0;
+	setAttr -s 35 ".ktv[0:34]"  0 -22.967733649048839 1 -27.256048667394008
+		 2 -22.772069085474147 3 -19.445771504704506 4 -22.772069085474147 5 -27.256048667394008
+		 6 -30.011657937737489 7 -27.256048667394008 8 -22.772069085474147 9 -19.445771504704506
+		 10 -22.772069085474147 11 -27.256048667394008 12 -30.011657937737489 13 -27.256048667394008
+		 14 -22.772069085474147 15 -19.445771504704506 16 -22.772069085474147 17 -27.256048667394008
+		 18 -30.011657937737489 19 -27.256048667394008 20 -22.772069085474147 21 -19.445771504704506
+		 22 -22.772069085474147 23 -27.256048667394008 24 -30.011657937737489 25 -27.256048667394008
+		 26 -22.967733649048839 27 -22.967733649048839 28 -22.772069085474147 29 -19.445771504704506
+		 30 -19.445771504704506 31 -19.445771504704506 32 -19.445771504704506 33 -19.445771504704506
+		 34 -19.445771504704506;
+	setAttr -s 35 ".kit[0:34]"  10 1 1 10 18 18 10 1 
+		1 10 1 1 10 1 1 10 1 1 10 1 1 10 1 1 10 
+		1 10 10 1 10 10 10 10 10 10;
+	setAttr -s 35 ".kix[1:34]"  0.79688029042393971 0.77406787611214445 
+		1 0.77406787611214445 0.79688029042393971 1 0.79688029042393971 0.77406787611214445 
+		1 0.77406787611214445 0.79688029042393971 1 0.79688029042393971 0.77406787611214445 
+		1 0.77406787611214445 0.79688029042393971 1 0.79688029042393971 0.77406787611214445 
+		1 0.77406787611214445 0.79688029042393971 1 0.79688029042393971 1 1 0.77406787611214445 
+		1 1 1 1 1 1;
+	setAttr -s 35 ".kiy[1:34]"  -0.60413723832739974 -0.63310261662011302 
+		0 -0.63310261662011302 -0.60413723832739974 0 -0.60413723832739974 -0.63310261662011302 
+		0 -0.63310261662011302 -0.60413723832739974 0 -0.60413723832739974 -0.63310261662011302 
+		0 -0.63310261662011302 -0.60413723832739974 0 -0.60413723832739974 -0.63310261662011302 
+		0 -0.63310261662011302 -0.60413723832739974 0 -0.60413723832739974 0 0 -0.63310261662011302 
+		0 0 0 0 0 0;
 createNode animCurveTA -n "L_MetCarp_01_Ctrl_rotateZ";
 	rename -uid "2779E0BC-406E-0973-D4A0-5AAB244B7F0D";
-	setAttr ".tan" 18;
+	setAttr ".tan" 5;
 	setAttr ".wgt" no;
-	setAttr -s 35 ".ktv[0:34]"  0 -16.204437493049049 1 -12.85267916254702
-		 2 -6.987102084168483 3 -3.276226789684094 4 -6.6279851201861222 5 -12.493562198564657
-		 6 -16.204437493049049 7 -12.852679162547027 8 -6.987102084168483 9 -3.276226789684094
-		 10 -6.627985120186116 11 -12.493562198564664 12 -16.204437493049049 13 -12.852679162547007
-		 14 -6.987102084168475 15 -3.276226789684094 16 -6.627985120186132 17 -12.493562198564664
-		 18 -16.204437493049049 19 -12.852679162547007 20 -6.987102084168475 21 -3.276226789684094
-		 22 -6.6279851201861257 23 -12.493562198564653 24 -16.204437493049049 25 -15.246792255762758
-		 26 -12.622844305598312 27 -9.8157467038028621 28 -7.0818025576334662 29 -4.6340546808155532
-		 30 -3.276226789684094 31 -3.2762267896840935 32 -3.2762267896840935 33 -3.2762267896840913
-		 34 -3.2762267896840904;
-	setAttr -s 35 ".kit[0:34]"  1 18 18 1 18 18 1 18 
-		18 1 18 18 1 18 18 1 18 18 1 18 18 1 18 18 1 
-		18 18 18 18 18 1 1 1 18 1;
-	setAttr -s 35 ".kot[0:34]"  1 18 18 1 18 18 1 18 
-		18 1 18 18 1 18 18 1 18 18 1 18 18 1 18 18 1 
-		18 18 18 18 18 1 1 1 18 1;
-	setAttr -s 35 ".kix[0:34]"  1 0.71950216972925995 0.70610208045014566 
-		1 0.71950216972926018 0.70610208045014566 1 0.71950216972925984 0.70610208045014522 
-		1 0.71950216972925973 0.70610208045014522 1 0.71950216972925984 0.70610208045014622 
-		1 0.71950216972925995 0.706102080450146 1 0.71950216972925984 0.70610208045014622 
-		1 0.7195021697292604 0.70610208045014577 1 0.9363096101088797 0.86924891436768714 
-		0.86493487439280592 0.87893877849496682 0.92895035069812226 1 0.083333333333333037 
-		1 1 1;
-	setAttr -s 35 ".kiy[0:34]"  0 0.69449019269885104 0.70811005640647129 
-		0 -0.69449019269885082 -0.7081100564064714 0 0.69449019269885115 0.70811005640647173 
-		0 -0.69449019269885115 -0.70811005640647184 0 0.69449019269885115 0.70811005640647073 
-		0 -0.69449019269885082 -0.70811005640647096 0 0.69449019269885115 0.70811005640647073 
-		0 -0.69449019269885059 -0.70811005640647118 0 0.35117561706040751 0.49437468065283985 
-		0.50188411317663872 0.47693461151165745 0.37020432998255931 0 0 0 0 0;
-	setAttr -s 35 ".kox[0:34]"  1 0.71950216972925995 0.70610208045014566 
-		1 0.71950216972926018 0.70610208045014555 1 0.71950216972925984 0.70610208045014533 
-		1 0.71950216972925984 0.70610208045014522 1 0.71950216972925984 0.70610208045014622 
-		1 0.71950216972926007 0.70610208045014611 1 0.71950216972925984 0.70610208045014622 
-		1 0.7195021697292604 0.70610208045014589 1 0.93630961010887948 0.86924891436768714 
-		0.86493487439280592 0.87893877849496682 0.92895035069812226 1 0.083333333333333037 
-		1 1 1;
-	setAttr -s 35 ".koy[0:34]"  0 0.69449019269885104 0.70811005640647129 
-		0 -0.69449019269885082 -0.7081100564064714 0 0.69449019269885104 0.70811005640647173 
-		0 -0.69449019269885115 -0.70811005640647173 0 0.69449019269885115 0.70811005640647084 
-		0 -0.69449019269885093 -0.70811005640647096 0 0.69449019269885115 0.70811005640647084 
-		0 -0.69449019269885059 -0.70811005640647118 0 0.35117561706040745 0.49437468065283979 
-		0.50188411317663872 0.4769346115116575 0.37020432998255937 0 0 0 0 0;
+	setAttr -s 35 ".ktv[0:34]"  0 -4.7398607963680703 1 -1.9842515260245945
+		 2 2.4997280558952655 3 5.8260256366649026 4 2.4997280558952655 5 -1.9842515260245945
+		 6 -4.7398607963680703 7 -1.9842515260245945 8 2.4997280558952655 9 5.8260256366649026
+		 10 2.4997280558952655 11 -1.9842515260245945 12 -4.7398607963680703 13 -1.9842515260245945
+		 14 2.4997280558952655 15 5.8260256366649026 16 2.4997280558952655 17 -1.9842515260245945
+		 18 -4.7398607963680703 19 -1.9842515260245945 20 2.4997280558952655 21 5.8260256366649026
+		 22 2.4997280558952655 23 -1.9842515260245945 24 -4.7398607963680703 25 -1.9842515260245945
+		 26 2.3040634923205729 27 2.3040634923205729 28 2.4997280558952655 29 5.8260256366649026
+		 30 5.8260256366649026 31 5.8260256366649026 32 5.8260256366649026 33 5.8260256366649026
+		 34 5.8260256366649026;
+	setAttr -s 35 ".kit[0:34]"  1 1 1 10 18 18 10 1 
+		1 10 1 1 10 1 1 10 1 1 10 1 1 10 1 1 10 
+		1 10 10 1 10 10 10 10 10 10;
+	setAttr -s 35 ".kix[0:34]"  1 0.79688029042394004 0.77406787611214445 
+		1 0.77406787611214445 0.79688029042394004 1 0.79688029042394004 0.77406787611214445 
+		1 0.77406787611214445 0.79688029042394004 1 0.79688029042394004 0.77406787611214445 
+		1 0.77406787611214445 0.79688029042394004 1 0.79688029042394004 0.77406787611214445 
+		1 0.77406787611214445 0.79688029042394004 1 0.79688029042394004 1 1 0.77406787611214445 
+		1 1 1 1 1 1;
+	setAttr -s 35 ".kiy[0:34]"  0 -0.60413723832739941 -0.6331026166201128 
+		0 -0.6331026166201128 -0.60413723832739941 0 -0.60413723832739941 -0.6331026166201128 
+		0 -0.6331026166201128 -0.60413723832739941 0 -0.60413723832739941 -0.6331026166201128 
+		0 -0.6331026166201128 -0.60413723832739941 0 -0.60413723832739941 -0.6331026166201128 
+		0 -0.6331026166201128 -0.60413723832739941 0 -0.60413723832739941 0 0 -0.6331026166201128 
+		0 0 0 0 0 0;
 createNode animCurveTU -n "L_MetCarp_01_Ctrl_scaleX";
 	rename -uid "C2A83461-4C17-7001-A645-BFAD6441C9B0";
-	setAttr ".tan" 18;
+	setAttr ".tan" 5;
 	setAttr ".wgt" no;
 	setAttr -s 35 ".ktv[0:34]"  0 1 1 1 2 1 3 1 4 1 5 1 6 1 7 1 8 1 9 1
 		 10 1 11 1 12 1 13 1 14 1 15 1 16 1 17 1 18 1 19 1 20 1 21 1 22 1 23 1 24 1 25 1 26 1
@@ -31893,20 +31502,13 @@ createNode animCurveTU -n "L_MetCarp_01_Ctrl_scaleX";
 	setAttr -s 35 ".kit[0:34]"  1 18 18 1 18 18 1 18 
 		18 1 18 18 1 18 18 1 18 18 1 18 18 1 18 18 1 
 		18 18 18 18 18 1 1 1 18 1;
-	setAttr -s 35 ".kot[0:34]"  1 18 18 1 18 18 1 18 
-		18 1 18 18 1 18 18 1 18 18 1 18 18 1 18 18 1 
-		18 18 18 18 18 1 1 1 18 1;
 	setAttr -s 35 ".kix[0:34]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 		1 1 1 1 1 1 1 1 1 1 1 0.083333333333333037 1 1 1;
 	setAttr -s 35 ".kiy[0:34]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
-	setAttr -s 35 ".kox[0:34]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 0.083333333333333037 1 1 1;
-	setAttr -s 35 ".koy[0:34]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 		0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTU -n "L_MetCarp_01_Ctrl_scaleY";
 	rename -uid "0B175DF3-4EE0-D3D8-6E8E-AF96ADF9BB46";
-	setAttr ".tan" 18;
+	setAttr ".tan" 5;
 	setAttr ".wgt" no;
 	setAttr -s 35 ".ktv[0:34]"  0 1 1 1 2 1 3 1 4 1 5 1 6 1 7 1 8 1 9 1
 		 10 1 11 1 12 1 13 1 14 1 15 1 16 1 17 1 18 1 19 1 20 1 21 1 22 1 23 1 24 1 25 1 26 1
@@ -31914,20 +31516,13 @@ createNode animCurveTU -n "L_MetCarp_01_Ctrl_scaleY";
 	setAttr -s 35 ".kit[0:34]"  1 18 18 1 18 18 1 18 
 		18 1 18 18 1 18 18 1 18 18 1 18 18 1 18 18 1 
 		18 18 18 18 18 1 1 1 18 1;
-	setAttr -s 35 ".kot[0:34]"  1 18 18 1 18 18 1 18 
-		18 1 18 18 1 18 18 1 18 18 1 18 18 1 18 18 1 
-		18 18 18 18 18 1 1 1 18 1;
 	setAttr -s 35 ".kix[0:34]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 		1 1 1 1 1 1 1 1 1 1 1 0.083333333333333037 1 1 1;
 	setAttr -s 35 ".kiy[0:34]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
-	setAttr -s 35 ".kox[0:34]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 0.083333333333333037 1 1 1;
-	setAttr -s 35 ".koy[0:34]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 		0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTU -n "L_MetCarp_01_Ctrl_scaleZ";
 	rename -uid "5AB3586D-414A-2D19-4B45-5BB51783317D";
-	setAttr ".tan" 18;
+	setAttr ".tan" 5;
 	setAttr ".wgt" no;
 	setAttr -s 35 ".ktv[0:34]"  0 1 1 1 2 1 3 1 4 1 5 1 6 1 7 1 8 1 9 1
 		 10 1 11 1 12 1 13 1 14 1 15 1 16 1 17 1 18 1 19 1 20 1 21 1 22 1 23 1 24 1 25 1 26 1
@@ -31935,16 +31530,9 @@ createNode animCurveTU -n "L_MetCarp_01_Ctrl_scaleZ";
 	setAttr -s 35 ".kit[0:34]"  1 18 18 1 18 18 1 18 
 		18 1 18 18 1 18 18 1 18 18 1 18 18 1 18 18 1 
 		18 18 18 18 18 1 1 1 18 1;
-	setAttr -s 35 ".kot[0:34]"  1 18 18 1 18 18 1 18 
-		18 1 18 18 1 18 18 1 18 18 1 18 18 1 18 18 1 
-		18 18 18 18 18 1 1 1 18 1;
 	setAttr -s 35 ".kix[0:34]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 		1 1 1 1 1 1 1 1 1 1 1 0.083333333333333037 1 1 1;
 	setAttr -s 35 ".kiy[0:34]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-		0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
-	setAttr -s 35 ".kox[0:34]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-		1 1 1 1 1 1 1 1 1 1 1 0.083333333333333037 1 1 1;
-	setAttr -s 35 ".koy[0:34]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 		0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTU -n "R_Brow_Outer_Ctrl_visibility";
 	rename -uid "3F29C503-46BF-CAC2-B3C4-EFA89677F147";
@@ -32514,9 +32102,6 @@ createNode animCurveTA -n "L_Brow_Ctrl_rotateX";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -32535,9 +32120,6 @@ createNode animCurveTA -n "L_Brow_Ctrl_rotateY";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -32556,9 +32138,6 @@ createNode animCurveTA -n "L_Brow_Ctrl_rotateZ";
 	setAttr -s 35 ".kit[0:34]"  1 1 1 18 1 1 1 1 
 		1 18 1 1 1 1 1 18 1 1 1 1 1 18 1 1 1 
 		1 1 1 1 1 1 9 1 1 18;
-	setAttr -s 35 ".kot[3:34]"  18 5 5 5 5 5 18 5 
-		5 5 5 5 18 5 5 5 5 5 18 5 5 5 5 5 5 
-		5 5 5 5 5 5 5;
 	setAttr -s 35 ".kix[0:34]"  1 0.083333333333333287 0.083333333333333287 
 		1 0.16666666666666657 0.08333333333333337 1 0.083333333333333037 0.08333333333333337 
 		1 0.16666666666666641 0.08333333333333337 1 0.083333333333333037 0.083333333333333703 
@@ -34186,9 +33765,111 @@ createNode animCurveTU -n "ffd1_envelope";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 3 ".ktv[0:2]"  31 0 32 1 33 0;
+createNode animCurveTA -n "L_Finger_02_Knuckle_03_Ctrl_rotateZ";
+	rename -uid "793F9015-4C64-1DAA-7184-CEA1F5C7043E";
+	setAttr ".tan" 5;
+	setAttr ".wgt" no;
+	setAttr -s 35 ".ktv[0:34]"  0 0 1 0 2 0 3 0 4 0 5 0 6 0 7 0 8 0 9 0
+		 10 0 11 0 12 0 13 0 14 0 15 0 16 0 17 0 18 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0 26 0
+		 27 0 28 0 29 0 30 0 31 0 32 0 33 0 34 0;
+	setAttr -s 35 ".kit[0:34]"  1 1 1 1 1 1 1 1 
+		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 1 9 1 1 18;
+	setAttr -s 35 ".kix[0:34]"  0.16561353210496105 0.083333333333333287 
+		0.083333333333333287 1 0.08333333333333337 0.08333333333333337 1 0.08333333333333337 
+		0.08333333333333337 1 0.083333333333333037 0.08333333333333337 1 0.083333333333333037 
+		0.083333333333333037 1 0.083333333333333037 0.083333333333333037 1 0.083333333333333037 
+		0.083333333333333037 1 0.083333333333333703 0.083333333333333703 1 0.083333333333333037 
+		0.08333333333333437 0.08333333333333437 0.083333333333333037 1 0.26952954981604815 
+		1 1 1 1;
+	setAttr -s 35 ".kiy[0:34]"  0.98619073103721622 0.66164127109841153 
+		0.49623095332380873 0 -0.66164127109841187 -0.66164127109841153 0 0.66164127109841075 
+		0.66164127109841187 0 -0.6616412710984112 -0.6616412710984122 0 0.66164127109841342 
+		0.66164127109841053 0 -0.6616412710984132 -0.66164127109841087 0 0.66164127109841342 
+		0.66164127109841053 0 -0.66164127109841253 -0.66164127109841009 0 0.28582902911451225 
+		0.42874354367177137 0.4287435436717717 0.28582902911451269 0 0.96299211926991302 
+		0 0 0 0;
+createNode animCurveTA -n "L_Finger_03_Knuckle_03_Ctrl_rotateZ";
+	rename -uid "EAB0FD80-4DA9-80EF-0B72-098F113CEA53";
+	setAttr ".tan" 5;
+	setAttr ".wgt" no;
+	setAttr -s 35 ".ktv[0:34]"  0 0 1 0 2 0 3 0 4 0 5 0 6 0 7 0 8 0 9 0
+		 10 0 11 0 12 0 13 0 14 0 15 0 16 0 17 0 18 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0 26 0
+		 27 0 28 0 29 0 30 0 31 0 32 0 33 0 34 0;
+	setAttr -s 35 ".kit[0:34]"  1 1 1 1 1 1 1 1 
+		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 1 9 1 1 18;
+	setAttr -s 35 ".kix[0:34]"  0.16561353210496105 0.083333333333333287 
+		0.083333333333333287 1 0.08333333333333337 0.08333333333333337 1 0.08333333333333337 
+		0.08333333333333337 1 0.083333333333333037 0.08333333333333337 1 0.083333333333333037 
+		0.083333333333333037 1 0.083333333333333037 0.083333333333333037 1 0.083333333333333037 
+		0.083333333333333037 1 0.083333333333333703 0.083333333333333703 1 0.083333333333333037 
+		0.08333333333333437 0.08333333333333437 0.083333333333333037 1 0.26952954981604815 
+		1 1 1 1;
+	setAttr -s 35 ".kiy[0:34]"  0.98619073103721622 0.66164127109841153 
+		0.49623095332380873 0 -0.66164127109841187 -0.66164127109841153 0 0.66164127109841075 
+		0.66164127109841187 0 -0.6616412710984112 -0.6616412710984122 0 0.66164127109841342 
+		0.66164127109841053 0 -0.6616412710984132 -0.66164127109841087 0 0.66164127109841342 
+		0.66164127109841053 0 -0.66164127109841253 -0.66164127109841009 0 0.28582902911451225 
+		0.42874354367177137 0.4287435436717717 0.28582902911451269 0 0.96299211926991302 
+		0 0 0 0;
+createNode animCurveTA -n "L_Finger_04_Knuckle_03_Ctrl_rotateZ";
+	rename -uid "8D8123C1-4FF4-94B7-6E12-28ACB9CB85BE";
+	setAttr ".tan" 5;
+	setAttr ".wgt" no;
+	setAttr -s 35 ".ktv[0:34]"  0 0 1 0 2 0 3 0 4 0 5 0 6 0 7 0 8 0 9 0
+		 10 0 11 0 12 0 13 0 14 0 15 0 16 0 17 0 18 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0 26 0
+		 27 0 28 0 29 0 30 0 31 0 32 0 33 0 34 0;
+	setAttr -s 35 ".kit[0:34]"  1 1 1 1 1 1 1 1 
+		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 1 9 1 1 18;
+	setAttr -s 35 ".kix[0:34]"  0.16561353210496105 0.083333333333333287 
+		0.083333333333333287 1 0.08333333333333337 0.08333333333333337 1 0.08333333333333337 
+		0.08333333333333337 1 0.083333333333333037 0.08333333333333337 1 0.083333333333333037 
+		0.083333333333333037 1 0.083333333333333037 0.083333333333333037 1 0.083333333333333037 
+		0.083333333333333037 1 0.083333333333333703 0.083333333333333703 1 0.083333333333333037 
+		0.08333333333333437 0.08333333333333437 0.083333333333333037 1 0.26952954981604815 
+		1 1 1 1;
+	setAttr -s 35 ".kiy[0:34]"  0.98619073103721622 0.66164127109841153 
+		0.49623095332380873 0 -0.66164127109841187 -0.66164127109841153 0 0.66164127109841075 
+		0.66164127109841187 0 -0.6616412710984112 -0.6616412710984122 0 0.66164127109841342 
+		0.66164127109841053 0 -0.6616412710984132 -0.66164127109841087 0 0.66164127109841342 
+		0.66164127109841053 0 -0.66164127109841253 -0.66164127109841009 0 0.28582902911451225 
+		0.42874354367177137 0.4287435436717717 0.28582902911451269 0 0.96299211926991302 
+		0 0 0 0;
+createNode animCurveTA -n "L_Finger_05_Knuckle_03_Ctrl_rotateZ";
+	rename -uid "06AE12A5-49E7-AE9B-BEF1-AFA1CCB67D31";
+	setAttr ".tan" 5;
+	setAttr ".wgt" no;
+	setAttr -s 35 ".ktv[0:34]"  0 0 1 0 2 0 3 0 4 0 5 0 6 0 7 0 8 0 9 0
+		 10 0 11 0 12 0 13 0 14 0 15 0 16 0 17 0 18 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0 26 0
+		 27 0 28 0 29 0 30 0 31 0 32 0 33 0 34 0;
+	setAttr -s 35 ".kit[0:34]"  1 1 1 1 1 1 1 1 
+		1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+		1 1 1 1 1 1 9 1 1 18;
+	setAttr -s 35 ".kix[0:34]"  0.16561353210496105 0.083333333333333287 
+		0.083333333333333287 1 0.08333333333333337 0.08333333333333337 1 0.08333333333333337 
+		0.08333333333333337 1 0.083333333333333037 0.08333333333333337 1 0.083333333333333037 
+		0.083333333333333037 1 0.083333333333333037 0.083333333333333037 1 0.083333333333333037 
+		0.083333333333333037 1 0.083333333333333703 0.083333333333333703 1 0.083333333333333037 
+		0.08333333333333437 0.08333333333333437 0.083333333333333037 1 0.26952954981604815 
+		1 1 1 1;
+	setAttr -s 35 ".kiy[0:34]"  0.98619073103721622 0.66164127109841153 
+		0.49623095332380873 0 -0.66164127109841187 -0.66164127109841153 0 0.66164127109841075 
+		0.66164127109841187 0 -0.6616412710984112 -0.6616412710984122 0 0.66164127109841342 
+		0.66164127109841053 0 -0.6616412710984132 -0.66164127109841087 0 0.66164127109841342 
+		0.66164127109841053 0 -0.66164127109841253 -0.66164127109841009 0 0.28582902911451225 
+		0.42874354367177137 0.4287435436717717 0.28582902911451269 0 0.96299211926991302 
+		0 0 0 0;
+createNode animCurveTA -n "L_MetCarp_05_Ctrl_rotateZ";
+	rename -uid "9374AC38-4C71-BB1A-6AA2-9288CBE55736";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  2 16.541932981242628;
+	setAttr ".kot[0]"  5;
 select -ne :time1;
-	setAttr ".o" 11;
-	setAttr ".unw" 11;
+	setAttr ".o" 45;
+	setAttr ".unw" 45;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -34638,1078 +34319,1075 @@ connectAttr "L_MetCarp_02_Ctrl_translateY.o" "SkeletonRN.phl[527]";
 connectAttr "L_MetCarp_02_Ctrl_translateZ.o" "SkeletonRN.phl[528]";
 connectAttr "L_MetCarp_02_Ctrl_rotateX.o" "SkeletonRN.phl[529]";
 connectAttr "L_MetCarp_02_Ctrl_rotateY.o" "SkeletonRN.phl[530]";
-connectAttr "L_MetCarp_02_Ctrl_rotateZ.o" "SkeletonRN.phl[531]";
-connectAttr "L_MetCarp_02_Ctrl_scaleX.o" "SkeletonRN.phl[532]";
-connectAttr "L_MetCarp_02_Ctrl_scaleY.o" "SkeletonRN.phl[533]";
-connectAttr "L_MetCarp_02_Ctrl_scaleZ.o" "SkeletonRN.phl[534]";
-connectAttr "L_MetCarp_02_Ctrl_visibility.o" "SkeletonRN.phl[535]";
-connectAttr "L_Finger_02_Knuckle_01_Ctrl_translateX.o" "SkeletonRN.phl[536]";
-connectAttr "L_Finger_02_Knuckle_01_Ctrl_translateY.o" "SkeletonRN.phl[537]";
-connectAttr "L_Finger_02_Knuckle_01_Ctrl_translateZ.o" "SkeletonRN.phl[538]";
-connectAttr "L_Finger_02_Knuckle_01_Ctrl_rotateX.o" "SkeletonRN.phl[539]";
-connectAttr "L_Finger_02_Knuckle_01_Ctrl_rotateY.o" "SkeletonRN.phl[540]";
-connectAttr "L_Finger_02_Knuckle_01_Ctrl_rotateZ.o" "SkeletonRN.phl[541]";
-connectAttr "L_Finger_02_Knuckle_01_Ctrl_scaleX.o" "SkeletonRN.phl[542]";
-connectAttr "L_Finger_02_Knuckle_01_Ctrl_scaleY.o" "SkeletonRN.phl[543]";
-connectAttr "L_Finger_02_Knuckle_01_Ctrl_scaleZ.o" "SkeletonRN.phl[544]";
-connectAttr "L_Finger_02_Knuckle_01_Ctrl_visibility.o" "SkeletonRN.phl[545]";
-connectAttr "L_Finger_02_Knuckle_02_Ctrl_translateX.o" "SkeletonRN.phl[546]";
-connectAttr "L_Finger_02_Knuckle_02_Ctrl_translateY.o" "SkeletonRN.phl[547]";
-connectAttr "L_Finger_02_Knuckle_02_Ctrl_translateZ.o" "SkeletonRN.phl[548]";
-connectAttr "L_Finger_02_Knuckle_02_Ctrl_rotateX.o" "SkeletonRN.phl[549]";
-connectAttr "L_Finger_02_Knuckle_02_Ctrl_rotateY.o" "SkeletonRN.phl[550]";
-connectAttr "L_Finger_02_Knuckle_02_Ctrl_rotateZ.o" "SkeletonRN.phl[551]";
-connectAttr "L_Finger_02_Knuckle_02_Ctrl_scaleX.o" "SkeletonRN.phl[552]";
-connectAttr "L_Finger_02_Knuckle_02_Ctrl_scaleY.o" "SkeletonRN.phl[553]";
-connectAttr "L_Finger_02_Knuckle_02_Ctrl_scaleZ.o" "SkeletonRN.phl[554]";
-connectAttr "L_Finger_02_Knuckle_02_Ctrl_visibility.o" "SkeletonRN.phl[555]";
-connectAttr "L_Finger_02_Knuckle_03_Ctrl_translateX.o" "SkeletonRN.phl[556]";
-connectAttr "L_Finger_02_Knuckle_03_Ctrl_translateY.o" "SkeletonRN.phl[557]";
-connectAttr "L_Finger_02_Knuckle_03_Ctrl_translateZ.o" "SkeletonRN.phl[558]";
-connectAttr "L_Finger_02_Knuckle_03_Ctrl_rotateX.o" "SkeletonRN.phl[559]";
-connectAttr "L_Finger_02_Knuckle_03_Ctrl_rotateY.o" "SkeletonRN.phl[560]";
-connectAttr "L_Finger_02_Knuckle_03_Ctrl_rotateZ.o" "SkeletonRN.phl[561]";
-connectAttr "L_Finger_02_Knuckle_03_Ctrl_scaleX.o" "SkeletonRN.phl[562]";
-connectAttr "L_Finger_02_Knuckle_03_Ctrl_scaleY.o" "SkeletonRN.phl[563]";
-connectAttr "L_Finger_02_Knuckle_03_Ctrl_scaleZ.o" "SkeletonRN.phl[564]";
-connectAttr "L_Finger_02_Knuckle_03_Ctrl_visibility.o" "SkeletonRN.phl[565]";
-connectAttr "L_MetCarp_03_Ctrl_translateX.o" "SkeletonRN.phl[566]";
-connectAttr "L_MetCarp_03_Ctrl_translateY.o" "SkeletonRN.phl[567]";
-connectAttr "L_MetCarp_03_Ctrl_translateZ.o" "SkeletonRN.phl[568]";
-connectAttr "L_MetCarp_03_Ctrl_rotateX.o" "SkeletonRN.phl[569]";
-connectAttr "L_MetCarp_03_Ctrl_rotateY.o" "SkeletonRN.phl[570]";
-connectAttr "L_MetCarp_03_Ctrl_rotateZ.o" "SkeletonRN.phl[571]";
-connectAttr "L_MetCarp_03_Ctrl_scaleX.o" "SkeletonRN.phl[572]";
-connectAttr "L_MetCarp_03_Ctrl_scaleY.o" "SkeletonRN.phl[573]";
-connectAttr "L_MetCarp_03_Ctrl_scaleZ.o" "SkeletonRN.phl[574]";
-connectAttr "L_MetCarp_03_Ctrl_visibility.o" "SkeletonRN.phl[575]";
-connectAttr "L_Finger_03_Knuckle_01_Ctrl_translateX.o" "SkeletonRN.phl[576]";
-connectAttr "L_Finger_03_Knuckle_01_Ctrl_translateY.o" "SkeletonRN.phl[577]";
-connectAttr "L_Finger_03_Knuckle_01_Ctrl_translateZ.o" "SkeletonRN.phl[578]";
-connectAttr "L_Finger_03_Knuckle_01_Ctrl_rotateX.o" "SkeletonRN.phl[579]";
-connectAttr "L_Finger_03_Knuckle_01_Ctrl_rotateY.o" "SkeletonRN.phl[580]";
-connectAttr "L_Finger_03_Knuckle_01_Ctrl_rotateZ.o" "SkeletonRN.phl[581]";
-connectAttr "L_Finger_03_Knuckle_01_Ctrl_scaleX.o" "SkeletonRN.phl[582]";
-connectAttr "L_Finger_03_Knuckle_01_Ctrl_scaleY.o" "SkeletonRN.phl[583]";
-connectAttr "L_Finger_03_Knuckle_01_Ctrl_scaleZ.o" "SkeletonRN.phl[584]";
-connectAttr "L_Finger_03_Knuckle_01_Ctrl_visibility.o" "SkeletonRN.phl[585]";
-connectAttr "L_Finger_03_Knuckle_02_Ctrl_translateX.o" "SkeletonRN.phl[586]";
-connectAttr "L_Finger_03_Knuckle_02_Ctrl_translateY.o" "SkeletonRN.phl[587]";
-connectAttr "L_Finger_03_Knuckle_02_Ctrl_translateZ.o" "SkeletonRN.phl[588]";
-connectAttr "L_Finger_03_Knuckle_02_Ctrl_rotateX.o" "SkeletonRN.phl[589]";
-connectAttr "L_Finger_03_Knuckle_02_Ctrl_rotateY.o" "SkeletonRN.phl[590]";
-connectAttr "L_Finger_03_Knuckle_02_Ctrl_rotateZ.o" "SkeletonRN.phl[591]";
-connectAttr "L_Finger_03_Knuckle_02_Ctrl_scaleX.o" "SkeletonRN.phl[592]";
-connectAttr "L_Finger_03_Knuckle_02_Ctrl_scaleY.o" "SkeletonRN.phl[593]";
-connectAttr "L_Finger_03_Knuckle_02_Ctrl_scaleZ.o" "SkeletonRN.phl[594]";
-connectAttr "L_Finger_03_Knuckle_02_Ctrl_visibility.o" "SkeletonRN.phl[595]";
-connectAttr "L_Finger_03_Knuckle_03_Ctrl_translateX.o" "SkeletonRN.phl[596]";
-connectAttr "L_Finger_03_Knuckle_03_Ctrl_translateY.o" "SkeletonRN.phl[597]";
-connectAttr "L_Finger_03_Knuckle_03_Ctrl_translateZ.o" "SkeletonRN.phl[598]";
-connectAttr "L_Finger_03_Knuckle_03_Ctrl_rotateX.o" "SkeletonRN.phl[599]";
-connectAttr "L_Finger_03_Knuckle_03_Ctrl_rotateY.o" "SkeletonRN.phl[600]";
-connectAttr "L_Finger_03_Knuckle_03_Ctrl_rotateZ.o" "SkeletonRN.phl[601]";
-connectAttr "L_Finger_03_Knuckle_03_Ctrl_scaleX.o" "SkeletonRN.phl[602]";
-connectAttr "L_Finger_03_Knuckle_03_Ctrl_scaleY.o" "SkeletonRN.phl[603]";
-connectAttr "L_Finger_03_Knuckle_03_Ctrl_scaleZ.o" "SkeletonRN.phl[604]";
-connectAttr "L_Finger_03_Knuckle_03_Ctrl_visibility.o" "SkeletonRN.phl[605]";
-connectAttr "L_MetCarp_04_Ctrl_translateX.o" "SkeletonRN.phl[606]";
-connectAttr "L_MetCarp_04_Ctrl_translateY.o" "SkeletonRN.phl[607]";
-connectAttr "L_MetCarp_04_Ctrl_translateZ.o" "SkeletonRN.phl[608]";
-connectAttr "L_MetCarp_04_Ctrl_rotateX.o" "SkeletonRN.phl[609]";
-connectAttr "L_MetCarp_04_Ctrl_rotateY.o" "SkeletonRN.phl[610]";
-connectAttr "L_MetCarp_04_Ctrl_rotateZ.o" "SkeletonRN.phl[611]";
-connectAttr "L_MetCarp_04_Ctrl_scaleX.o" "SkeletonRN.phl[612]";
-connectAttr "L_MetCarp_04_Ctrl_scaleY.o" "SkeletonRN.phl[613]";
-connectAttr "L_MetCarp_04_Ctrl_scaleZ.o" "SkeletonRN.phl[614]";
-connectAttr "L_MetCarp_04_Ctrl_visibility.o" "SkeletonRN.phl[615]";
-connectAttr "L_Finger_04_Knuckle_01_Ctrl_translateX.o" "SkeletonRN.phl[616]";
-connectAttr "L_Finger_04_Knuckle_01_Ctrl_translateY.o" "SkeletonRN.phl[617]";
-connectAttr "L_Finger_04_Knuckle_01_Ctrl_translateZ.o" "SkeletonRN.phl[618]";
-connectAttr "L_Finger_04_Knuckle_01_Ctrl_rotateX.o" "SkeletonRN.phl[619]";
-connectAttr "L_Finger_04_Knuckle_01_Ctrl_rotateY.o" "SkeletonRN.phl[620]";
-connectAttr "L_Finger_04_Knuckle_01_Ctrl_rotateZ.o" "SkeletonRN.phl[621]";
-connectAttr "L_Finger_04_Knuckle_01_Ctrl_scaleX.o" "SkeletonRN.phl[622]";
-connectAttr "L_Finger_04_Knuckle_01_Ctrl_scaleY.o" "SkeletonRN.phl[623]";
-connectAttr "L_Finger_04_Knuckle_01_Ctrl_scaleZ.o" "SkeletonRN.phl[624]";
-connectAttr "L_Finger_04_Knuckle_01_Ctrl_visibility.o" "SkeletonRN.phl[625]";
-connectAttr "L_Finger_04_Knuckle_02_Ctrl_translateX.o" "SkeletonRN.phl[626]";
-connectAttr "L_Finger_04_Knuckle_02_Ctrl_translateY.o" "SkeletonRN.phl[627]";
-connectAttr "L_Finger_04_Knuckle_02_Ctrl_translateZ.o" "SkeletonRN.phl[628]";
-connectAttr "L_Finger_04_Knuckle_02_Ctrl_rotateX.o" "SkeletonRN.phl[629]";
-connectAttr "L_Finger_04_Knuckle_02_Ctrl_rotateY.o" "SkeletonRN.phl[630]";
-connectAttr "L_Finger_04_Knuckle_02_Ctrl_rotateZ.o" "SkeletonRN.phl[631]";
-connectAttr "L_Finger_04_Knuckle_02_Ctrl_scaleX.o" "SkeletonRN.phl[632]";
-connectAttr "L_Finger_04_Knuckle_02_Ctrl_scaleY.o" "SkeletonRN.phl[633]";
-connectAttr "L_Finger_04_Knuckle_02_Ctrl_scaleZ.o" "SkeletonRN.phl[634]";
-connectAttr "L_Finger_04_Knuckle_02_Ctrl_visibility.o" "SkeletonRN.phl[635]";
-connectAttr "L_Finger_04_Knuckle_03_Ctrl_translateX.o" "SkeletonRN.phl[636]";
-connectAttr "L_Finger_04_Knuckle_03_Ctrl_translateY.o" "SkeletonRN.phl[637]";
-connectAttr "L_Finger_04_Knuckle_03_Ctrl_translateZ.o" "SkeletonRN.phl[638]";
-connectAttr "L_Finger_04_Knuckle_03_Ctrl_rotateX.o" "SkeletonRN.phl[639]";
-connectAttr "L_Finger_04_Knuckle_03_Ctrl_rotateY.o" "SkeletonRN.phl[640]";
-connectAttr "L_Finger_04_Knuckle_03_Ctrl_rotateZ.o" "SkeletonRN.phl[641]";
-connectAttr "L_Finger_04_Knuckle_03_Ctrl_scaleX.o" "SkeletonRN.phl[642]";
-connectAttr "L_Finger_04_Knuckle_03_Ctrl_scaleY.o" "SkeletonRN.phl[643]";
-connectAttr "L_Finger_04_Knuckle_03_Ctrl_scaleZ.o" "SkeletonRN.phl[644]";
-connectAttr "L_Finger_04_Knuckle_03_Ctrl_visibility.o" "SkeletonRN.phl[645]";
-connectAttr "L_MetCarp_05_Ctrl_translateX.o" "SkeletonRN.phl[646]";
-connectAttr "L_MetCarp_05_Ctrl_translateY.o" "SkeletonRN.phl[647]";
-connectAttr "L_MetCarp_05_Ctrl_translateZ.o" "SkeletonRN.phl[648]";
-connectAttr "L_MetCarp_05_Ctrl_rotateX.o" "SkeletonRN.phl[649]";
-connectAttr "L_MetCarp_05_Ctrl_rotateY.o" "SkeletonRN.phl[650]";
-connectAttr "L_MetCarp_05_Ctrl_rotateZ.o" "SkeletonRN.phl[651]";
-connectAttr "L_MetCarp_05_Ctrl_scaleX.o" "SkeletonRN.phl[652]";
-connectAttr "L_MetCarp_05_Ctrl_scaleY.o" "SkeletonRN.phl[653]";
-connectAttr "L_MetCarp_05_Ctrl_scaleZ.o" "SkeletonRN.phl[654]";
-connectAttr "L_MetCarp_05_Ctrl_visibility.o" "SkeletonRN.phl[655]";
-connectAttr "L_Finger_05_Knuckle_01_Ctrl_translateX.o" "SkeletonRN.phl[656]";
-connectAttr "L_Finger_05_Knuckle_01_Ctrl_translateY.o" "SkeletonRN.phl[657]";
-connectAttr "L_Finger_05_Knuckle_01_Ctrl_translateZ.o" "SkeletonRN.phl[658]";
-connectAttr "L_Finger_05_Knuckle_01_Ctrl_rotateX.o" "SkeletonRN.phl[659]";
-connectAttr "L_Finger_05_Knuckle_01_Ctrl_rotateY.o" "SkeletonRN.phl[660]";
-connectAttr "L_Finger_05_Knuckle_01_Ctrl_rotateZ.o" "SkeletonRN.phl[661]";
-connectAttr "L_Finger_05_Knuckle_01_Ctrl_scaleX.o" "SkeletonRN.phl[662]";
-connectAttr "L_Finger_05_Knuckle_01_Ctrl_scaleY.o" "SkeletonRN.phl[663]";
-connectAttr "L_Finger_05_Knuckle_01_Ctrl_scaleZ.o" "SkeletonRN.phl[664]";
-connectAttr "L_Finger_05_Knuckle_01_Ctrl_visibility.o" "SkeletonRN.phl[665]";
-connectAttr "L_Finger_05_Knuckle_02_Ctrl_translateX.o" "SkeletonRN.phl[666]";
-connectAttr "L_Finger_05_Knuckle_02_Ctrl_translateY.o" "SkeletonRN.phl[667]";
-connectAttr "L_Finger_05_Knuckle_02_Ctrl_translateZ.o" "SkeletonRN.phl[668]";
-connectAttr "L_Finger_05_Knuckle_02_Ctrl_rotateX.o" "SkeletonRN.phl[669]";
-connectAttr "L_Finger_05_Knuckle_02_Ctrl_rotateY.o" "SkeletonRN.phl[670]";
-connectAttr "L_Finger_05_Knuckle_02_Ctrl_rotateZ.o" "SkeletonRN.phl[671]";
-connectAttr "L_Finger_05_Knuckle_02_Ctrl_scaleX.o" "SkeletonRN.phl[672]";
-connectAttr "L_Finger_05_Knuckle_02_Ctrl_scaleY.o" "SkeletonRN.phl[673]";
-connectAttr "L_Finger_05_Knuckle_02_Ctrl_scaleZ.o" "SkeletonRN.phl[674]";
-connectAttr "L_Finger_05_Knuckle_02_Ctrl_visibility.o" "SkeletonRN.phl[675]";
-connectAttr "L_Finger_05_Knuckle_03_Ctrl_translateX.o" "SkeletonRN.phl[676]";
-connectAttr "L_Finger_05_Knuckle_03_Ctrl_translateY.o" "SkeletonRN.phl[677]";
-connectAttr "L_Finger_05_Knuckle_03_Ctrl_translateZ.o" "SkeletonRN.phl[678]";
-connectAttr "L_Finger_05_Knuckle_03_Ctrl_rotateX.o" "SkeletonRN.phl[679]";
-connectAttr "L_Finger_05_Knuckle_03_Ctrl_rotateY.o" "SkeletonRN.phl[680]";
-connectAttr "L_Finger_05_Knuckle_03_Ctrl_rotateZ.o" "SkeletonRN.phl[681]";
-connectAttr "L_Finger_05_Knuckle_03_Ctrl_scaleX.o" "SkeletonRN.phl[682]";
-connectAttr "L_Finger_05_Knuckle_03_Ctrl_scaleY.o" "SkeletonRN.phl[683]";
-connectAttr "L_Finger_05_Knuckle_03_Ctrl_scaleZ.o" "SkeletonRN.phl[684]";
-connectAttr "L_Finger_05_Knuckle_03_Ctrl_visibility.o" "SkeletonRN.phl[685]";
-connectAttr "L_Leg_Pivot_Ctrl_Follow_Translate.o" "SkeletonRN.phl[686]";
-connectAttr "L_Leg_Pivot_Ctrl_Follow_Rotate.o" "SkeletonRN.phl[687]";
-connectAttr "L_Leg_Pivot_Ctrl_translateX.o" "SkeletonRN.phl[688]";
-connectAttr "L_Leg_Pivot_Ctrl_translateY.o" "SkeletonRN.phl[689]";
-connectAttr "L_Leg_Pivot_Ctrl_translateZ.o" "SkeletonRN.phl[690]";
-connectAttr "L_Leg_Pivot_Ctrl_rotateX.o" "SkeletonRN.phl[691]";
-connectAttr "L_Leg_Pivot_Ctrl_rotateY.o" "SkeletonRN.phl[692]";
-connectAttr "L_Leg_Pivot_Ctrl_rotateZ.o" "SkeletonRN.phl[693]";
-connectAttr "L_Leg_Pivot_Ctrl_scaleX.o" "SkeletonRN.phl[694]";
-connectAttr "L_Leg_Pivot_Ctrl_scaleY.o" "SkeletonRN.phl[695]";
-connectAttr "L_Leg_Pivot_Ctrl_scaleZ.o" "SkeletonRN.phl[696]";
-connectAttr "L_Leg_Pivot_Ctrl_visibility.o" "SkeletonRN.phl[697]";
-connectAttr "L_Leg_IK_Base_Ctrl_translateX.o" "SkeletonRN.phl[698]";
-connectAttr "L_Leg_IK_Base_Ctrl_translateY.o" "SkeletonRN.phl[699]";
-connectAttr "L_Leg_IK_Base_Ctrl_translateZ.o" "SkeletonRN.phl[700]";
-connectAttr "L_Leg_IK_Base_Ctrl_Operating_Space.o" "SkeletonRN.phl[701]";
-connectAttr "L_Leg_IK_Base_Ctrl_visibility.o" "SkeletonRN.phl[702]";
-connectAttr "L_Leg_IK_Base_Ctrl_rotateX.o" "SkeletonRN.phl[703]";
-connectAttr "L_Leg_IK_Base_Ctrl_rotateY.o" "SkeletonRN.phl[704]";
-connectAttr "L_Leg_IK_Base_Ctrl_rotateZ.o" "SkeletonRN.phl[705]";
-connectAttr "L_Leg_IK_Base_Ctrl_scaleX.o" "SkeletonRN.phl[706]";
-connectAttr "L_Leg_IK_Base_Ctrl_scaleY.o" "SkeletonRN.phl[707]";
-connectAttr "L_Leg_IK_Base_Ctrl_scaleZ.o" "SkeletonRN.phl[708]";
-connectAttr "L_Leg_PV_Ctrl_translateX.o" "SkeletonRN.phl[709]";
-connectAttr "L_Leg_PV_Ctrl_translateY.o" "SkeletonRN.phl[710]";
-connectAttr "L_Leg_PV_Ctrl_translateZ.o" "SkeletonRN.phl[711]";
-connectAttr "L_Leg_PV_Ctrl_Operating_Space.o" "SkeletonRN.phl[712]";
-connectAttr "L_Leg_PV_Ctrl_visibility.o" "SkeletonRN.phl[713]";
-connectAttr "L_Leg_PV_Ctrl_rotateX.o" "SkeletonRN.phl[714]";
-connectAttr "L_Leg_PV_Ctrl_rotateY.o" "SkeletonRN.phl[715]";
-connectAttr "L_Leg_PV_Ctrl_rotateZ.o" "SkeletonRN.phl[716]";
-connectAttr "L_Leg_PV_Ctrl_scaleX.o" "SkeletonRN.phl[717]";
-connectAttr "L_Leg_PV_Ctrl_scaleY.o" "SkeletonRN.phl[718]";
-connectAttr "L_Leg_PV_Ctrl_scaleZ.o" "SkeletonRN.phl[719]";
-connectAttr "L_Leg_IK_End_Ctrl_rotateX.o" "SkeletonRN.phl[720]";
-connectAttr "L_Leg_IK_End_Ctrl_rotateY.o" "SkeletonRN.phl[721]";
-connectAttr "L_Leg_IK_End_Ctrl_rotateZ.o" "SkeletonRN.phl[722]";
-connectAttr "L_Leg_IK_End_Ctrl_Operating_Space.o" "SkeletonRN.phl[723]";
-connectAttr "L_Leg_IK_End_Ctrl_translateX.o" "SkeletonRN.phl[724]";
-connectAttr "L_Leg_IK_End_Ctrl_translateY.o" "SkeletonRN.phl[725]";
-connectAttr "L_Leg_IK_End_Ctrl_translateZ.o" "SkeletonRN.phl[726]";
-connectAttr "L_Leg_IK_End_Ctrl_visibility.o" "SkeletonRN.phl[727]";
-connectAttr "L_Leg_IK_End_Ctrl_scaleX.o" "SkeletonRN.phl[728]";
-connectAttr "L_Leg_IK_End_Ctrl_scaleY.o" "SkeletonRN.phl[729]";
-connectAttr "L_Leg_IK_End_Ctrl_scaleZ.o" "SkeletonRN.phl[730]";
-connectAttr "L_Foot_IK_Out_Ctrl_translateX.o" "SkeletonRN.phl[731]";
-connectAttr "L_Foot_IK_Out_Ctrl_translateY.o" "SkeletonRN.phl[732]";
-connectAttr "L_Foot_IK_Out_Ctrl_translateZ.o" "SkeletonRN.phl[733]";
-connectAttr "L_Foot_IK_Out_Ctrl_visibility.o" "SkeletonRN.phl[734]";
-connectAttr "L_Foot_IK_Out_Ctrl_rotateX.o" "SkeletonRN.phl[735]";
-connectAttr "L_Foot_IK_Out_Ctrl_rotateY.o" "SkeletonRN.phl[736]";
-connectAttr "L_Foot_IK_Out_Ctrl_rotateZ.o" "SkeletonRN.phl[737]";
-connectAttr "L_Foot_IK_Out_Ctrl_scaleX.o" "SkeletonRN.phl[738]";
-connectAttr "L_Foot_IK_Out_Ctrl_scaleY.o" "SkeletonRN.phl[739]";
-connectAttr "L_Foot_IK_Out_Ctrl_scaleZ.o" "SkeletonRN.phl[740]";
-connectAttr "L_Foot_IK_In_Ctrl_translateX.o" "SkeletonRN.phl[741]";
-connectAttr "L_Foot_IK_In_Ctrl_translateY.o" "SkeletonRN.phl[742]";
-connectAttr "L_Foot_IK_In_Ctrl_translateZ.o" "SkeletonRN.phl[743]";
-connectAttr "L_Foot_IK_In_Ctrl_visibility.o" "SkeletonRN.phl[744]";
-connectAttr "L_Foot_IK_In_Ctrl_rotateX.o" "SkeletonRN.phl[745]";
-connectAttr "L_Foot_IK_In_Ctrl_rotateY.o" "SkeletonRN.phl[746]";
-connectAttr "L_Foot_IK_In_Ctrl_rotateZ.o" "SkeletonRN.phl[747]";
-connectAttr "L_Foot_IK_In_Ctrl_scaleX.o" "SkeletonRN.phl[748]";
-connectAttr "L_Foot_IK_In_Ctrl_scaleY.o" "SkeletonRN.phl[749]";
-connectAttr "L_Foot_IK_In_Ctrl_scaleZ.o" "SkeletonRN.phl[750]";
-connectAttr "L_Foot_IK_Heel_Ctrl_translateX.o" "SkeletonRN.phl[751]";
-connectAttr "L_Foot_IK_Heel_Ctrl_translateY.o" "SkeletonRN.phl[752]";
-connectAttr "L_Foot_IK_Heel_Ctrl_translateZ.o" "SkeletonRN.phl[753]";
-connectAttr "L_Foot_IK_Heel_Ctrl_visibility.o" "SkeletonRN.phl[754]";
-connectAttr "L_Foot_IK_Heel_Ctrl_rotateX.o" "SkeletonRN.phl[755]";
-connectAttr "L_Foot_IK_Heel_Ctrl_rotateY.o" "SkeletonRN.phl[756]";
-connectAttr "L_Foot_IK_Heel_Ctrl_rotateZ.o" "SkeletonRN.phl[757]";
-connectAttr "L_Foot_IK_Heel_Ctrl_scaleX.o" "SkeletonRN.phl[758]";
-connectAttr "L_Foot_IK_Heel_Ctrl_scaleY.o" "SkeletonRN.phl[759]";
-connectAttr "L_Foot_IK_Heel_Ctrl_scaleZ.o" "SkeletonRN.phl[760]";
-connectAttr "L_Foot_IK_Toe_Ctrl_scaleX.o" "SkeletonRN.phl[761]";
-connectAttr "L_Foot_IK_Toe_Ctrl_scaleY.o" "SkeletonRN.phl[762]";
-connectAttr "L_Foot_IK_Toe_Ctrl_scaleZ.o" "SkeletonRN.phl[763]";
-connectAttr "L_Foot_IK_Toe_Ctrl_translateX.o" "SkeletonRN.phl[764]";
-connectAttr "L_Foot_IK_Toe_Ctrl_translateY.o" "SkeletonRN.phl[765]";
-connectAttr "L_Foot_IK_Toe_Ctrl_translateZ.o" "SkeletonRN.phl[766]";
-connectAttr "L_Foot_IK_Toe_Ctrl_visibility.o" "SkeletonRN.phl[767]";
-connectAttr "L_Foot_IK_Toe_Ctrl_rotateX.o" "SkeletonRN.phl[768]";
-connectAttr "L_Foot_IK_Toe_Ctrl_rotateY.o" "SkeletonRN.phl[769]";
-connectAttr "L_Foot_IK_Toe_Ctrl_rotateZ.o" "SkeletonRN.phl[770]";
-connectAttr "L_Foot_IK_Ball_Ctrl_translateX.o" "SkeletonRN.phl[771]";
-connectAttr "L_Foot_IK_Ball_Ctrl_translateY.o" "SkeletonRN.phl[772]";
-connectAttr "L_Foot_IK_Ball_Ctrl_translateZ.o" "SkeletonRN.phl[773]";
-connectAttr "L_Foot_IK_Ball_Ctrl_visibility.o" "SkeletonRN.phl[774]";
-connectAttr "L_Foot_IK_Ball_Ctrl_rotateX.o" "SkeletonRN.phl[775]";
-connectAttr "L_Foot_IK_Ball_Ctrl_rotateY.o" "SkeletonRN.phl[776]";
-connectAttr "L_Foot_IK_Ball_Ctrl_rotateZ.o" "SkeletonRN.phl[777]";
-connectAttr "L_Foot_IK_Ball_Ctrl_scaleX.o" "SkeletonRN.phl[778]";
-connectAttr "L_Foot_IK_Ball_Ctrl_scaleY.o" "SkeletonRN.phl[779]";
-connectAttr "L_Foot_IK_Ball_Ctrl_scaleZ.o" "SkeletonRN.phl[780]";
-connectAttr "L_Foot_IK_Tap_Ctrl_translateX.o" "SkeletonRN.phl[781]";
-connectAttr "L_Foot_IK_Tap_Ctrl_translateY.o" "SkeletonRN.phl[782]";
-connectAttr "L_Foot_IK_Tap_Ctrl_translateZ.o" "SkeletonRN.phl[783]";
-connectAttr "L_Foot_IK_Tap_Ctrl_visibility.o" "SkeletonRN.phl[784]";
-connectAttr "L_Foot_IK_Tap_Ctrl_rotateX.o" "SkeletonRN.phl[785]";
-connectAttr "L_Foot_IK_Tap_Ctrl_rotateY.o" "SkeletonRN.phl[786]";
-connectAttr "L_Foot_IK_Tap_Ctrl_rotateZ.o" "SkeletonRN.phl[787]";
-connectAttr "L_Foot_IK_Tap_Ctrl_scaleX.o" "SkeletonRN.phl[788]";
-connectAttr "L_Foot_IK_Tap_Ctrl_scaleY.o" "SkeletonRN.phl[789]";
-connectAttr "L_Foot_IK_Tap_Ctrl_scaleZ.o" "SkeletonRN.phl[790]";
-connectAttr "L_MetTars_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[791]";
-connectAttr "L_MetTars_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[792]";
-connectAttr "L_MetTars_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[793]";
-connectAttr "L_MetTars_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[794]";
-connectAttr "L_MetTars_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[795]";
-connectAttr "L_MetTars_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[796]";
-connectAttr "L_MetTars_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[797]";
-connectAttr "L_MetTars_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[798]";
-connectAttr "L_MetTars_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[799]";
-connectAttr "L_MetTars_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[800]";
-connectAttr "L_Toe_01_Knuckle_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[801]";
-connectAttr "L_Toe_01_Knuckle_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[802]";
-connectAttr "L_Toe_01_Knuckle_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[803]";
-connectAttr "L_Toe_01_Knuckle_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[804]";
-connectAttr "L_Toe_01_Knuckle_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[805]";
-connectAttr "L_Toe_01_Knuckle_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[806]";
-connectAttr "L_Toe_01_Knuckle_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[807]";
-connectAttr "L_Toe_01_Knuckle_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[808]";
-connectAttr "L_Toe_01_Knuckle_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[809]";
-connectAttr "L_Toe_01_Knuckle_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[810]";
-connectAttr "L_Toe_01_Knuckle_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[811]";
-connectAttr "L_Toe_01_Knuckle_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[812]";
-connectAttr "L_Toe_01_Knuckle_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[813]";
-connectAttr "L_Toe_01_Knuckle_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[814]";
-connectAttr "L_Toe_01_Knuckle_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[815]";
-connectAttr "L_Toe_01_Knuckle_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[816]";
-connectAttr "L_Toe_01_Knuckle_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[817]";
-connectAttr "L_Toe_01_Knuckle_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[818]";
-connectAttr "L_Toe_01_Knuckle_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[819]";
-connectAttr "L_Toe_01_Knuckle_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[820]";
-connectAttr "L_MetTars_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[821]";
-connectAttr "L_MetTars_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[822]";
-connectAttr "L_MetTars_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[823]";
-connectAttr "L_MetTars_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[824]";
-connectAttr "L_MetTars_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[825]";
-connectAttr "L_MetTars_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[826]";
-connectAttr "L_MetTars_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[827]";
-connectAttr "L_MetTars_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[828]";
-connectAttr "L_MetTars_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[829]";
-connectAttr "L_MetTars_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[830]";
-connectAttr "L_Toe_02_Knuckle_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[831]";
-connectAttr "L_Toe_02_Knuckle_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[832]";
-connectAttr "L_Toe_02_Knuckle_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[833]";
-connectAttr "L_Toe_02_Knuckle_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[834]";
-connectAttr "L_Toe_02_Knuckle_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[835]";
-connectAttr "L_Toe_02_Knuckle_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[836]";
-connectAttr "L_Toe_02_Knuckle_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[837]";
-connectAttr "L_Toe_02_Knuckle_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[838]";
-connectAttr "L_Toe_02_Knuckle_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[839]";
-connectAttr "L_Toe_02_Knuckle_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[840]";
-connectAttr "L_Toe_02_Knuckle_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[841]";
-connectAttr "L_Toe_02_Knuckle_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[842]";
-connectAttr "L_Toe_02_Knuckle_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[843]";
-connectAttr "L_Toe_02_Knuckle_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[844]";
-connectAttr "L_Toe_02_Knuckle_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[845]";
-connectAttr "L_Toe_02_Knuckle_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[846]";
-connectAttr "L_Toe_02_Knuckle_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[847]";
-connectAttr "L_Toe_02_Knuckle_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[848]";
-connectAttr "L_Toe_02_Knuckle_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[849]";
-connectAttr "L_Toe_02_Knuckle_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[850]";
-connectAttr "L_Toe_02_Knuckle_03_IK_Ctrl_translateX.o" "SkeletonRN.phl[851]";
-connectAttr "L_Toe_02_Knuckle_03_IK_Ctrl_translateY.o" "SkeletonRN.phl[852]";
-connectAttr "L_Toe_02_Knuckle_03_IK_Ctrl_translateZ.o" "SkeletonRN.phl[853]";
-connectAttr "L_Toe_02_Knuckle_03_IK_Ctrl_visibility.o" "SkeletonRN.phl[854]";
-connectAttr "L_Toe_02_Knuckle_03_IK_Ctrl_rotateX.o" "SkeletonRN.phl[855]";
-connectAttr "L_Toe_02_Knuckle_03_IK_Ctrl_rotateY.o" "SkeletonRN.phl[856]";
-connectAttr "L_Toe_02_Knuckle_03_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[857]";
-connectAttr "L_Toe_02_Knuckle_03_IK_Ctrl_scaleX.o" "SkeletonRN.phl[858]";
-connectAttr "L_Toe_02_Knuckle_03_IK_Ctrl_scaleY.o" "SkeletonRN.phl[859]";
-connectAttr "L_Toe_02_Knuckle_03_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[860]";
-connectAttr "L_MetTars_03_IK_Ctrl_translateX.o" "SkeletonRN.phl[861]";
-connectAttr "L_MetTars_03_IK_Ctrl_translateY.o" "SkeletonRN.phl[862]";
-connectAttr "L_MetTars_03_IK_Ctrl_translateZ.o" "SkeletonRN.phl[863]";
-connectAttr "L_MetTars_03_IK_Ctrl_visibility.o" "SkeletonRN.phl[864]";
-connectAttr "L_MetTars_03_IK_Ctrl_rotateX.o" "SkeletonRN.phl[865]";
-connectAttr "L_MetTars_03_IK_Ctrl_rotateY.o" "SkeletonRN.phl[866]";
-connectAttr "L_MetTars_03_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[867]";
-connectAttr "L_MetTars_03_IK_Ctrl_scaleX.o" "SkeletonRN.phl[868]";
-connectAttr "L_MetTars_03_IK_Ctrl_scaleY.o" "SkeletonRN.phl[869]";
-connectAttr "L_MetTars_03_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[870]";
-connectAttr "L_Toe_03_Knuckle_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[871]";
-connectAttr "L_Toe_03_Knuckle_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[872]";
-connectAttr "L_Toe_03_Knuckle_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[873]";
-connectAttr "L_Toe_03_Knuckle_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[874]";
-connectAttr "L_Toe_03_Knuckle_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[875]";
-connectAttr "L_Toe_03_Knuckle_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[876]";
-connectAttr "L_Toe_03_Knuckle_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[877]";
-connectAttr "L_Toe_03_Knuckle_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[878]";
-connectAttr "L_Toe_03_Knuckle_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[879]";
-connectAttr "L_Toe_03_Knuckle_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[880]";
-connectAttr "L_Toe_03_Knuckle_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[881]";
-connectAttr "L_Toe_03_Knuckle_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[882]";
-connectAttr "L_Toe_03_Knuckle_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[883]";
-connectAttr "L_Toe_03_Knuckle_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[884]";
-connectAttr "L_Toe_03_Knuckle_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[885]";
-connectAttr "L_Toe_03_Knuckle_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[886]";
-connectAttr "L_Toe_03_Knuckle_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[887]";
-connectAttr "L_Toe_03_Knuckle_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[888]";
-connectAttr "L_Toe_03_Knuckle_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[889]";
-connectAttr "L_Toe_03_Knuckle_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[890]";
-connectAttr "L_Toe_03_Knuckle_03_IK_Ctrl_translateX.o" "SkeletonRN.phl[891]";
-connectAttr "L_Toe_03_Knuckle_03_IK_Ctrl_translateY.o" "SkeletonRN.phl[892]";
-connectAttr "L_Toe_03_Knuckle_03_IK_Ctrl_translateZ.o" "SkeletonRN.phl[893]";
-connectAttr "L_Toe_03_Knuckle_03_IK_Ctrl_visibility.o" "SkeletonRN.phl[894]";
-connectAttr "L_Toe_03_Knuckle_03_IK_Ctrl_rotateX.o" "SkeletonRN.phl[895]";
-connectAttr "L_Toe_03_Knuckle_03_IK_Ctrl_rotateY.o" "SkeletonRN.phl[896]";
-connectAttr "L_Toe_03_Knuckle_03_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[897]";
-connectAttr "L_Toe_03_Knuckle_03_IK_Ctrl_scaleX.o" "SkeletonRN.phl[898]";
-connectAttr "L_Toe_03_Knuckle_03_IK_Ctrl_scaleY.o" "SkeletonRN.phl[899]";
-connectAttr "L_Toe_03_Knuckle_03_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[900]";
-connectAttr "L_MetTars_04_IK_Ctrl_translateX.o" "SkeletonRN.phl[901]";
-connectAttr "L_MetTars_04_IK_Ctrl_translateY.o" "SkeletonRN.phl[902]";
-connectAttr "L_MetTars_04_IK_Ctrl_translateZ.o" "SkeletonRN.phl[903]";
-connectAttr "L_MetTars_04_IK_Ctrl_visibility.o" "SkeletonRN.phl[904]";
-connectAttr "L_MetTars_04_IK_Ctrl_rotateX.o" "SkeletonRN.phl[905]";
-connectAttr "L_MetTars_04_IK_Ctrl_rotateY.o" "SkeletonRN.phl[906]";
-connectAttr "L_MetTars_04_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[907]";
-connectAttr "L_MetTars_04_IK_Ctrl_scaleX.o" "SkeletonRN.phl[908]";
-connectAttr "L_MetTars_04_IK_Ctrl_scaleY.o" "SkeletonRN.phl[909]";
-connectAttr "L_MetTars_04_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[910]";
-connectAttr "L_Toe_04_Knuckle_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[911]";
-connectAttr "L_Toe_04_Knuckle_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[912]";
-connectAttr "L_Toe_04_Knuckle_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[913]";
-connectAttr "L_Toe_04_Knuckle_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[914]";
-connectAttr "L_Toe_04_Knuckle_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[915]";
-connectAttr "L_Toe_04_Knuckle_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[916]";
-connectAttr "L_Toe_04_Knuckle_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[917]";
-connectAttr "L_Toe_04_Knuckle_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[918]";
-connectAttr "L_Toe_04_Knuckle_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[919]";
-connectAttr "L_Toe_04_Knuckle_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[920]";
-connectAttr "L_Toe_04_Knuckle_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[921]";
-connectAttr "L_Toe_04_Knuckle_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[922]";
-connectAttr "L_Toe_04_Knuckle_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[923]";
-connectAttr "L_Toe_04_Knuckle_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[924]";
-connectAttr "L_Toe_04_Knuckle_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[925]";
-connectAttr "L_Toe_04_Knuckle_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[926]";
-connectAttr "L_Toe_04_Knuckle_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[927]";
-connectAttr "L_Toe_04_Knuckle_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[928]";
-connectAttr "L_Toe_04_Knuckle_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[929]";
-connectAttr "L_Toe_04_Knuckle_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[930]";
-connectAttr "L_Toe_04_Knuckle_03_IK_Ctrl_translateX.o" "SkeletonRN.phl[931]";
-connectAttr "L_Toe_04_Knuckle_03_IK_Ctrl_translateY.o" "SkeletonRN.phl[932]";
-connectAttr "L_Toe_04_Knuckle_03_IK_Ctrl_translateZ.o" "SkeletonRN.phl[933]";
-connectAttr "L_Toe_04_Knuckle_03_IK_Ctrl_visibility.o" "SkeletonRN.phl[934]";
-connectAttr "L_Toe_04_Knuckle_03_IK_Ctrl_rotateX.o" "SkeletonRN.phl[935]";
-connectAttr "L_Toe_04_Knuckle_03_IK_Ctrl_rotateY.o" "SkeletonRN.phl[936]";
-connectAttr "L_Toe_04_Knuckle_03_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[937]";
-connectAttr "L_Toe_04_Knuckle_03_IK_Ctrl_scaleX.o" "SkeletonRN.phl[938]";
-connectAttr "L_Toe_04_Knuckle_03_IK_Ctrl_scaleY.o" "SkeletonRN.phl[939]";
-connectAttr "L_Toe_04_Knuckle_03_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[940]";
-connectAttr "L_MetTars_05_IK_Ctrl_translateX.o" "SkeletonRN.phl[941]";
-connectAttr "L_MetTars_05_IK_Ctrl_translateY.o" "SkeletonRN.phl[942]";
-connectAttr "L_MetTars_05_IK_Ctrl_translateZ.o" "SkeletonRN.phl[943]";
-connectAttr "L_MetTars_05_IK_Ctrl_visibility.o" "SkeletonRN.phl[944]";
-connectAttr "L_MetTars_05_IK_Ctrl_rotateX.o" "SkeletonRN.phl[945]";
-connectAttr "L_MetTars_05_IK_Ctrl_rotateY.o" "SkeletonRN.phl[946]";
-connectAttr "L_MetTars_05_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[947]";
-connectAttr "L_MetTars_05_IK_Ctrl_scaleX.o" "SkeletonRN.phl[948]";
-connectAttr "L_MetTars_05_IK_Ctrl_scaleY.o" "SkeletonRN.phl[949]";
-connectAttr "L_MetTars_05_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[950]";
-connectAttr "L_Toe_05_Knuckle_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[951]";
-connectAttr "L_Toe_05_Knuckle_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[952]";
-connectAttr "L_Toe_05_Knuckle_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[953]";
-connectAttr "L_Toe_05_Knuckle_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[954]";
-connectAttr "L_Toe_05_Knuckle_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[955]";
-connectAttr "L_Toe_05_Knuckle_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[956]";
-connectAttr "L_Toe_05_Knuckle_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[957]";
-connectAttr "L_Toe_05_Knuckle_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[958]";
-connectAttr "L_Toe_05_Knuckle_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[959]";
-connectAttr "L_Toe_05_Knuckle_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[960]";
-connectAttr "L_Toe_05_Knuckle_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[961]";
-connectAttr "L_Toe_05_Knuckle_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[962]";
-connectAttr "L_Toe_05_Knuckle_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[963]";
-connectAttr "L_Toe_05_Knuckle_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[964]";
-connectAttr "L_Toe_05_Knuckle_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[965]";
-connectAttr "L_Toe_05_Knuckle_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[966]";
-connectAttr "L_Toe_05_Knuckle_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[967]";
-connectAttr "L_Toe_05_Knuckle_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[968]";
-connectAttr "L_Toe_05_Knuckle_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[969]";
-connectAttr "L_Toe_05_Knuckle_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[970]";
-connectAttr "L_Toe_05_Knuckle_03_IK_Ctrl_translateX.o" "SkeletonRN.phl[971]";
-connectAttr "L_Toe_05_Knuckle_03_IK_Ctrl_translateY.o" "SkeletonRN.phl[972]";
-connectAttr "L_Toe_05_Knuckle_03_IK_Ctrl_translateZ.o" "SkeletonRN.phl[973]";
-connectAttr "L_Toe_05_Knuckle_03_IK_Ctrl_visibility.o" "SkeletonRN.phl[974]";
-connectAttr "L_Toe_05_Knuckle_03_IK_Ctrl_rotateX.o" "SkeletonRN.phl[975]";
-connectAttr "L_Toe_05_Knuckle_03_IK_Ctrl_rotateY.o" "SkeletonRN.phl[976]";
-connectAttr "L_Toe_05_Knuckle_03_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[977]";
-connectAttr "L_Toe_05_Knuckle_03_IK_Ctrl_scaleX.o" "SkeletonRN.phl[978]";
-connectAttr "L_Toe_05_Knuckle_03_IK_Ctrl_scaleY.o" "SkeletonRN.phl[979]";
-connectAttr "L_Toe_05_Knuckle_03_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[980]";
-connectAttr "L_Leg_IKFK_Ctrl_IKFK_Switch.o" "SkeletonRN.phl[981]";
-connectAttr "R_Scap_Ctrl_Follow_Translate.o" "SkeletonRN.phl[982]";
-connectAttr "R_Scap_Ctrl_Follow_Rotate.o" "SkeletonRN.phl[983]";
-connectAttr "R_Scap_Ctrl_translateX.o" "SkeletonRN.phl[984]";
-connectAttr "R_Scap_Ctrl_translateY.o" "SkeletonRN.phl[985]";
-connectAttr "R_Scap_Ctrl_translateZ.o" "SkeletonRN.phl[986]";
-connectAttr "R_Scap_Ctrl_rotateY.o" "SkeletonRN.phl[987]";
-connectAttr "R_Scap_Ctrl_rotateX.o" "SkeletonRN.phl[988]";
-connectAttr "R_Scap_Ctrl_rotateZ.o" "SkeletonRN.phl[989]";
-connectAttr "R_Scap_Ctrl_scaleX.o" "SkeletonRN.phl[990]";
-connectAttr "R_Scap_Ctrl_scaleY.o" "SkeletonRN.phl[991]";
-connectAttr "R_Scap_Ctrl_scaleZ.o" "SkeletonRN.phl[992]";
-connectAttr "R_Scap_Ctrl_visibility.o" "SkeletonRN.phl[993]";
-connectAttr "R_Arm_IKFK_Ctrl_Reg_Arm.o" "SkeletonRN.phl[994]";
-connectAttr "R_Arm_IKFK_Ctrl_Rev_FK_Arm.o" "SkeletonRN.phl[995]";
-connectAttr "R_Arm_IKFK_Ctrl_IKFK_Switch.o" "SkeletonRN.phl[996]";
-connectAttr "R_Arm_01_FK_Ctrl_Follow_Translate.o" "SkeletonRN.phl[997]";
-connectAttr "R_Arm_01_FK_Ctrl_Follow_Rotate.o" "SkeletonRN.phl[998]";
-connectAttr "R_Arm_01_FK_Ctrl_translateX.o" "SkeletonRN.phl[999]";
-connectAttr "R_Arm_01_FK_Ctrl_translateY.o" "SkeletonRN.phl[1000]";
-connectAttr "R_Arm_01_FK_Ctrl_translateZ.o" "SkeletonRN.phl[1001]";
-connectAttr "R_Arm_01_FK_Ctrl_rotateZ.o" "SkeletonRN.phl[1002]";
-connectAttr "R_Arm_01_FK_Ctrl_rotateX.o" "SkeletonRN.phl[1003]";
-connectAttr "R_Arm_01_FK_Ctrl_rotateY.o" "SkeletonRN.phl[1004]";
-connectAttr "R_Arm_01_FK_Ctrl_scaleX.o" "SkeletonRN.phl[1005]";
-connectAttr "R_Arm_01_FK_Ctrl_scaleY.o" "SkeletonRN.phl[1006]";
-connectAttr "R_Arm_01_FK_Ctrl_scaleZ.o" "SkeletonRN.phl[1007]";
-connectAttr "R_Arm_01_FK_Ctrl_Operating_Space.o" "SkeletonRN.phl[1008]";
-connectAttr "R_Arm_01_FK_Ctrl_visibility.o" "SkeletonRN.phl[1009]";
-connectAttr "R_Arm_02_FK_Ctrl_translateX.o" "SkeletonRN.phl[1010]";
-connectAttr "R_Arm_02_FK_Ctrl_translateY.o" "SkeletonRN.phl[1011]";
-connectAttr "R_Arm_02_FK_Ctrl_translateZ.o" "SkeletonRN.phl[1012]";
-connectAttr "R_Arm_02_FK_Ctrl_rotateZ.o" "SkeletonRN.phl[1013]";
-connectAttr "R_Arm_02_FK_Ctrl_rotateY.o" "SkeletonRN.phl[1014]";
-connectAttr "R_Arm_02_FK_Ctrl_rotateX.o" "SkeletonRN.phl[1015]";
-connectAttr "R_Arm_02_FK_Ctrl_scaleX.o" "SkeletonRN.phl[1016]";
-connectAttr "R_Arm_02_FK_Ctrl_scaleY.o" "SkeletonRN.phl[1017]";
-connectAttr "R_Arm_02_FK_Ctrl_scaleZ.o" "SkeletonRN.phl[1018]";
-connectAttr "R_Arm_02_FK_Ctrl_visibility.o" "SkeletonRN.phl[1019]";
-connectAttr "R_Arm_03_FK_Ctrl_translateX.o" "SkeletonRN.phl[1020]";
-connectAttr "R_Arm_03_FK_Ctrl_translateY.o" "SkeletonRN.phl[1021]";
-connectAttr "R_Arm_03_FK_Ctrl_translateZ.o" "SkeletonRN.phl[1022]";
-connectAttr "R_Arm_03_FK_Ctrl_rotateX.o" "SkeletonRN.phl[1023]";
-connectAttr "R_Arm_03_FK_Ctrl_rotateY.o" "SkeletonRN.phl[1024]";
-connectAttr "R_Arm_03_FK_Ctrl_rotateZ.o" "SkeletonRN.phl[1025]";
-connectAttr "R_Arm_03_FK_Ctrl_scaleX.o" "SkeletonRN.phl[1026]";
-connectAttr "R_Arm_03_FK_Ctrl_scaleY.o" "SkeletonRN.phl[1027]";
-connectAttr "R_Arm_03_FK_Ctrl_scaleZ.o" "SkeletonRN.phl[1028]";
-connectAttr "R_Arm_03_FK_Ctrl_visibility.o" "SkeletonRN.phl[1029]";
-connectAttr "R_Arm_Wrist_Ctrl_translateX.o" "SkeletonRN.phl[1030]";
-connectAttr "R_Arm_Wrist_Ctrl_translateY.o" "SkeletonRN.phl[1031]";
-connectAttr "R_Arm_Wrist_Ctrl_translateZ.o" "SkeletonRN.phl[1032]";
-connectAttr "R_Arm_Wrist_Ctrl_rotateX.o" "SkeletonRN.phl[1033]";
-connectAttr "R_Arm_Wrist_Ctrl_rotateY.o" "SkeletonRN.phl[1034]";
-connectAttr "R_Arm_Wrist_Ctrl_rotateZ.o" "SkeletonRN.phl[1035]";
-connectAttr "R_Arm_Wrist_Ctrl_scaleX.o" "SkeletonRN.phl[1036]";
-connectAttr "R_Arm_Wrist_Ctrl_scaleY.o" "SkeletonRN.phl[1037]";
-connectAttr "R_Arm_Wrist_Ctrl_scaleZ.o" "SkeletonRN.phl[1038]";
-connectAttr "R_Arm_Wrist_Ctrl_visibility.o" "SkeletonRN.phl[1039]";
-connectAttr "R_MetCarp_01_Ctrl_translateX.o" "SkeletonRN.phl[1040]";
-connectAttr "R_MetCarp_01_Ctrl_translateY.o" "SkeletonRN.phl[1041]";
-connectAttr "R_MetCarp_01_Ctrl_translateZ.o" "SkeletonRN.phl[1042]";
-connectAttr "R_MetCarp_01_Ctrl_rotateY.o" "SkeletonRN.phl[1043]";
-connectAttr "R_MetCarp_01_Ctrl_rotateX.o" "SkeletonRN.phl[1044]";
-connectAttr "R_MetCarp_01_Ctrl_rotateZ.o" "SkeletonRN.phl[1045]";
-connectAttr "R_MetCarp_01_Ctrl_scaleX.o" "SkeletonRN.phl[1046]";
-connectAttr "R_MetCarp_01_Ctrl_scaleY.o" "SkeletonRN.phl[1047]";
-connectAttr "R_MetCarp_01_Ctrl_scaleZ.o" "SkeletonRN.phl[1048]";
-connectAttr "R_MetCarp_01_Ctrl_visibility.o" "SkeletonRN.phl[1049]";
-connectAttr "R_Finger_01_Knuckle_01_Ctrl_translateX.o" "SkeletonRN.phl[1050]";
-connectAttr "R_Finger_01_Knuckle_01_Ctrl_translateY.o" "SkeletonRN.phl[1051]";
-connectAttr "R_Finger_01_Knuckle_01_Ctrl_translateZ.o" "SkeletonRN.phl[1052]";
-connectAttr "R_Finger_01_Knuckle_01_Ctrl_rotateZ.o" "SkeletonRN.phl[1053]";
-connectAttr "R_Finger_01_Knuckle_01_Ctrl_rotateX.o" "SkeletonRN.phl[1054]";
-connectAttr "R_Finger_01_Knuckle_01_Ctrl_rotateY.o" "SkeletonRN.phl[1055]";
-connectAttr "R_Finger_01_Knuckle_01_Ctrl_scaleX.o" "SkeletonRN.phl[1056]";
-connectAttr "R_Finger_01_Knuckle_01_Ctrl_scaleY.o" "SkeletonRN.phl[1057]";
-connectAttr "R_Finger_01_Knuckle_01_Ctrl_scaleZ.o" "SkeletonRN.phl[1058]";
-connectAttr "R_Finger_01_Knuckle_01_Ctrl_visibility.o" "SkeletonRN.phl[1059]";
-connectAttr "R_Finger_01_Knuckle_02_Ctrl_translateX.o" "SkeletonRN.phl[1060]";
-connectAttr "R_Finger_01_Knuckle_02_Ctrl_translateY.o" "SkeletonRN.phl[1061]";
-connectAttr "R_Finger_01_Knuckle_02_Ctrl_translateZ.o" "SkeletonRN.phl[1062]";
-connectAttr "R_Finger_01_Knuckle_02_Ctrl_rotateZ.o" "SkeletonRN.phl[1063]";
-connectAttr "R_Finger_01_Knuckle_02_Ctrl_rotateX.o" "SkeletonRN.phl[1064]";
-connectAttr "R_Finger_01_Knuckle_02_Ctrl_rotateY.o" "SkeletonRN.phl[1065]";
-connectAttr "R_Finger_01_Knuckle_02_Ctrl_scaleX.o" "SkeletonRN.phl[1066]";
-connectAttr "R_Finger_01_Knuckle_02_Ctrl_scaleY.o" "SkeletonRN.phl[1067]";
-connectAttr "R_Finger_01_Knuckle_02_Ctrl_scaleZ.o" "SkeletonRN.phl[1068]";
-connectAttr "R_Finger_01_Knuckle_02_Ctrl_visibility.o" "SkeletonRN.phl[1069]";
-connectAttr "R_MetCarp_02_Ctrl_translateX.o" "SkeletonRN.phl[1070]";
-connectAttr "R_MetCarp_02_Ctrl_translateY.o" "SkeletonRN.phl[1071]";
-connectAttr "R_MetCarp_02_Ctrl_translateZ.o" "SkeletonRN.phl[1072]";
-connectAttr "R_MetCarp_02_Ctrl_rotateX.o" "SkeletonRN.phl[1073]";
-connectAttr "R_MetCarp_02_Ctrl_rotateY.o" "SkeletonRN.phl[1074]";
-connectAttr "R_MetCarp_02_Ctrl_rotateZ.o" "SkeletonRN.phl[1075]";
-connectAttr "R_MetCarp_02_Ctrl_scaleX.o" "SkeletonRN.phl[1076]";
-connectAttr "R_MetCarp_02_Ctrl_scaleY.o" "SkeletonRN.phl[1077]";
-connectAttr "R_MetCarp_02_Ctrl_scaleZ.o" "SkeletonRN.phl[1078]";
-connectAttr "R_MetCarp_02_Ctrl_visibility.o" "SkeletonRN.phl[1079]";
-connectAttr "R_Finger_02_Knuckle_01_Ctrl_translateX.o" "SkeletonRN.phl[1080]";
-connectAttr "R_Finger_02_Knuckle_01_Ctrl_translateY.o" "SkeletonRN.phl[1081]";
-connectAttr "R_Finger_02_Knuckle_01_Ctrl_translateZ.o" "SkeletonRN.phl[1082]";
-connectAttr "R_Finger_02_Knuckle_01_Ctrl_rotateZ.o" "SkeletonRN.phl[1083]";
-connectAttr "R_Finger_02_Knuckle_01_Ctrl_rotateX.o" "SkeletonRN.phl[1084]";
-connectAttr "R_Finger_02_Knuckle_01_Ctrl_rotateY.o" "SkeletonRN.phl[1085]";
-connectAttr "R_Finger_02_Knuckle_01_Ctrl_scaleX.o" "SkeletonRN.phl[1086]";
-connectAttr "R_Finger_02_Knuckle_01_Ctrl_scaleY.o" "SkeletonRN.phl[1087]";
-connectAttr "R_Finger_02_Knuckle_01_Ctrl_scaleZ.o" "SkeletonRN.phl[1088]";
-connectAttr "R_Finger_02_Knuckle_01_Ctrl_visibility.o" "SkeletonRN.phl[1089]";
-connectAttr "R_Finger_02_Knuckle_02_Ctrl_translateX.o" "SkeletonRN.phl[1090]";
-connectAttr "R_Finger_02_Knuckle_02_Ctrl_translateY.o" "SkeletonRN.phl[1091]";
-connectAttr "R_Finger_02_Knuckle_02_Ctrl_translateZ.o" "SkeletonRN.phl[1092]";
-connectAttr "R_Finger_02_Knuckle_02_Ctrl_rotateZ.o" "SkeletonRN.phl[1093]";
-connectAttr "R_Finger_02_Knuckle_02_Ctrl_rotateX.o" "SkeletonRN.phl[1094]";
-connectAttr "R_Finger_02_Knuckle_02_Ctrl_rotateY.o" "SkeletonRN.phl[1095]";
-connectAttr "R_Finger_02_Knuckle_02_Ctrl_scaleX.o" "SkeletonRN.phl[1096]";
-connectAttr "R_Finger_02_Knuckle_02_Ctrl_scaleY.o" "SkeletonRN.phl[1097]";
-connectAttr "R_Finger_02_Knuckle_02_Ctrl_scaleZ.o" "SkeletonRN.phl[1098]";
-connectAttr "R_Finger_02_Knuckle_02_Ctrl_visibility.o" "SkeletonRN.phl[1099]";
-connectAttr "R_Finger_02_Knuckle_03_Ctrl_translateX.o" "SkeletonRN.phl[1100]";
-connectAttr "R_Finger_02_Knuckle_03_Ctrl_translateY.o" "SkeletonRN.phl[1101]";
-connectAttr "R_Finger_02_Knuckle_03_Ctrl_translateZ.o" "SkeletonRN.phl[1102]";
-connectAttr "R_Finger_02_Knuckle_03_Ctrl_rotateZ.o" "SkeletonRN.phl[1103]";
-connectAttr "R_Finger_02_Knuckle_03_Ctrl_rotateX.o" "SkeletonRN.phl[1104]";
-connectAttr "R_Finger_02_Knuckle_03_Ctrl_rotateY.o" "SkeletonRN.phl[1105]";
-connectAttr "R_Finger_02_Knuckle_03_Ctrl_scaleX.o" "SkeletonRN.phl[1106]";
-connectAttr "R_Finger_02_Knuckle_03_Ctrl_scaleY.o" "SkeletonRN.phl[1107]";
-connectAttr "R_Finger_02_Knuckle_03_Ctrl_scaleZ.o" "SkeletonRN.phl[1108]";
-connectAttr "R_Finger_02_Knuckle_03_Ctrl_visibility.o" "SkeletonRN.phl[1109]";
-connectAttr "R_MetCarp_03_Ctrl_translateX.o" "SkeletonRN.phl[1110]";
-connectAttr "R_MetCarp_03_Ctrl_translateY.o" "SkeletonRN.phl[1111]";
-connectAttr "R_MetCarp_03_Ctrl_translateZ.o" "SkeletonRN.phl[1112]";
-connectAttr "R_MetCarp_03_Ctrl_rotateX.o" "SkeletonRN.phl[1113]";
-connectAttr "R_MetCarp_03_Ctrl_rotateY.o" "SkeletonRN.phl[1114]";
-connectAttr "R_MetCarp_03_Ctrl_rotateZ.o" "SkeletonRN.phl[1115]";
-connectAttr "R_MetCarp_03_Ctrl_scaleX.o" "SkeletonRN.phl[1116]";
-connectAttr "R_MetCarp_03_Ctrl_scaleY.o" "SkeletonRN.phl[1117]";
-connectAttr "R_MetCarp_03_Ctrl_scaleZ.o" "SkeletonRN.phl[1118]";
-connectAttr "R_MetCarp_03_Ctrl_visibility.o" "SkeletonRN.phl[1119]";
-connectAttr "R_Finger_03_Knuckle_01_Ctrl_translateX.o" "SkeletonRN.phl[1120]";
-connectAttr "R_Finger_03_Knuckle_01_Ctrl_translateY.o" "SkeletonRN.phl[1121]";
-connectAttr "R_Finger_03_Knuckle_01_Ctrl_translateZ.o" "SkeletonRN.phl[1122]";
-connectAttr "R_Finger_03_Knuckle_01_Ctrl_rotateZ.o" "SkeletonRN.phl[1123]";
-connectAttr "R_Finger_03_Knuckle_01_Ctrl_rotateX.o" "SkeletonRN.phl[1124]";
-connectAttr "R_Finger_03_Knuckle_01_Ctrl_rotateY.o" "SkeletonRN.phl[1125]";
-connectAttr "R_Finger_03_Knuckle_01_Ctrl_scaleX.o" "SkeletonRN.phl[1126]";
-connectAttr "R_Finger_03_Knuckle_01_Ctrl_scaleY.o" "SkeletonRN.phl[1127]";
-connectAttr "R_Finger_03_Knuckle_01_Ctrl_scaleZ.o" "SkeletonRN.phl[1128]";
-connectAttr "R_Finger_03_Knuckle_01_Ctrl_visibility.o" "SkeletonRN.phl[1129]";
-connectAttr "R_Finger_03_Knuckle_02_Ctrl_translateX.o" "SkeletonRN.phl[1130]";
-connectAttr "R_Finger_03_Knuckle_02_Ctrl_translateY.o" "SkeletonRN.phl[1131]";
-connectAttr "R_Finger_03_Knuckle_02_Ctrl_translateZ.o" "SkeletonRN.phl[1132]";
-connectAttr "R_Finger_03_Knuckle_02_Ctrl_rotateZ.o" "SkeletonRN.phl[1133]";
-connectAttr "R_Finger_03_Knuckle_02_Ctrl_rotateX.o" "SkeletonRN.phl[1134]";
-connectAttr "R_Finger_03_Knuckle_02_Ctrl_rotateY.o" "SkeletonRN.phl[1135]";
-connectAttr "R_Finger_03_Knuckle_02_Ctrl_scaleX.o" "SkeletonRN.phl[1136]";
-connectAttr "R_Finger_03_Knuckle_02_Ctrl_scaleY.o" "SkeletonRN.phl[1137]";
-connectAttr "R_Finger_03_Knuckle_02_Ctrl_scaleZ.o" "SkeletonRN.phl[1138]";
-connectAttr "R_Finger_03_Knuckle_02_Ctrl_visibility.o" "SkeletonRN.phl[1139]";
-connectAttr "R_Finger_03_Knuckle_03_Ctrl_translateX.o" "SkeletonRN.phl[1140]";
-connectAttr "R_Finger_03_Knuckle_03_Ctrl_translateY.o" "SkeletonRN.phl[1141]";
-connectAttr "R_Finger_03_Knuckle_03_Ctrl_translateZ.o" "SkeletonRN.phl[1142]";
-connectAttr "R_Finger_03_Knuckle_03_Ctrl_rotateZ.o" "SkeletonRN.phl[1143]";
-connectAttr "R_Finger_03_Knuckle_03_Ctrl_rotateX.o" "SkeletonRN.phl[1144]";
-connectAttr "R_Finger_03_Knuckle_03_Ctrl_rotateY.o" "SkeletonRN.phl[1145]";
-connectAttr "R_Finger_03_Knuckle_03_Ctrl_scaleX.o" "SkeletonRN.phl[1146]";
-connectAttr "R_Finger_03_Knuckle_03_Ctrl_scaleY.o" "SkeletonRN.phl[1147]";
-connectAttr "R_Finger_03_Knuckle_03_Ctrl_scaleZ.o" "SkeletonRN.phl[1148]";
-connectAttr "R_Finger_03_Knuckle_03_Ctrl_visibility.o" "SkeletonRN.phl[1149]";
-connectAttr "R_MetCarp_04_Ctrl_translateX.o" "SkeletonRN.phl[1150]";
-connectAttr "R_MetCarp_04_Ctrl_translateY.o" "SkeletonRN.phl[1151]";
-connectAttr "R_MetCarp_04_Ctrl_translateZ.o" "SkeletonRN.phl[1152]";
-connectAttr "R_MetCarp_04_Ctrl_rotateX.o" "SkeletonRN.phl[1153]";
-connectAttr "R_MetCarp_04_Ctrl_rotateY.o" "SkeletonRN.phl[1154]";
-connectAttr "R_MetCarp_04_Ctrl_rotateZ.o" "SkeletonRN.phl[1155]";
-connectAttr "R_MetCarp_04_Ctrl_scaleX.o" "SkeletonRN.phl[1156]";
-connectAttr "R_MetCarp_04_Ctrl_scaleY.o" "SkeletonRN.phl[1157]";
-connectAttr "R_MetCarp_04_Ctrl_scaleZ.o" "SkeletonRN.phl[1158]";
-connectAttr "R_MetCarp_04_Ctrl_visibility.o" "SkeletonRN.phl[1159]";
-connectAttr "R_Finger_04_Knuckle_01_Ctrl_translateX.o" "SkeletonRN.phl[1160]";
-connectAttr "R_Finger_04_Knuckle_01_Ctrl_translateY.o" "SkeletonRN.phl[1161]";
-connectAttr "R_Finger_04_Knuckle_01_Ctrl_translateZ.o" "SkeletonRN.phl[1162]";
-connectAttr "R_Finger_04_Knuckle_01_Ctrl_rotateZ.o" "SkeletonRN.phl[1163]";
-connectAttr "R_Finger_04_Knuckle_01_Ctrl_rotateX.o" "SkeletonRN.phl[1164]";
-connectAttr "R_Finger_04_Knuckle_01_Ctrl_rotateY.o" "SkeletonRN.phl[1165]";
-connectAttr "R_Finger_04_Knuckle_01_Ctrl_scaleX.o" "SkeletonRN.phl[1166]";
-connectAttr "R_Finger_04_Knuckle_01_Ctrl_scaleY.o" "SkeletonRN.phl[1167]";
-connectAttr "R_Finger_04_Knuckle_01_Ctrl_scaleZ.o" "SkeletonRN.phl[1168]";
-connectAttr "R_Finger_04_Knuckle_01_Ctrl_visibility.o" "SkeletonRN.phl[1169]";
-connectAttr "R_Finger_04_Knuckle_02_Ctrl_translateX.o" "SkeletonRN.phl[1170]";
-connectAttr "R_Finger_04_Knuckle_02_Ctrl_translateY.o" "SkeletonRN.phl[1171]";
-connectAttr "R_Finger_04_Knuckle_02_Ctrl_translateZ.o" "SkeletonRN.phl[1172]";
-connectAttr "R_Finger_04_Knuckle_02_Ctrl_rotateZ.o" "SkeletonRN.phl[1173]";
-connectAttr "R_Finger_04_Knuckle_02_Ctrl_rotateX.o" "SkeletonRN.phl[1174]";
-connectAttr "R_Finger_04_Knuckle_02_Ctrl_rotateY.o" "SkeletonRN.phl[1175]";
-connectAttr "R_Finger_04_Knuckle_02_Ctrl_scaleX.o" "SkeletonRN.phl[1176]";
-connectAttr "R_Finger_04_Knuckle_02_Ctrl_scaleY.o" "SkeletonRN.phl[1177]";
-connectAttr "R_Finger_04_Knuckle_02_Ctrl_scaleZ.o" "SkeletonRN.phl[1178]";
-connectAttr "R_Finger_04_Knuckle_02_Ctrl_visibility.o" "SkeletonRN.phl[1179]";
-connectAttr "R_Finger_04_Knuckle_03_Ctrl_translateX.o" "SkeletonRN.phl[1180]";
-connectAttr "R_Finger_04_Knuckle_03_Ctrl_translateY.o" "SkeletonRN.phl[1181]";
-connectAttr "R_Finger_04_Knuckle_03_Ctrl_translateZ.o" "SkeletonRN.phl[1182]";
-connectAttr "R_Finger_04_Knuckle_03_Ctrl_rotateZ.o" "SkeletonRN.phl[1183]";
-connectAttr "R_Finger_04_Knuckle_03_Ctrl_rotateX.o" "SkeletonRN.phl[1184]";
-connectAttr "R_Finger_04_Knuckle_03_Ctrl_rotateY.o" "SkeletonRN.phl[1185]";
-connectAttr "R_Finger_04_Knuckle_03_Ctrl_scaleX.o" "SkeletonRN.phl[1186]";
-connectAttr "R_Finger_04_Knuckle_03_Ctrl_scaleY.o" "SkeletonRN.phl[1187]";
-connectAttr "R_Finger_04_Knuckle_03_Ctrl_scaleZ.o" "SkeletonRN.phl[1188]";
-connectAttr "R_Finger_04_Knuckle_03_Ctrl_visibility.o" "SkeletonRN.phl[1189]";
-connectAttr "R_MetCarp_05_Ctrl_translateX.o" "SkeletonRN.phl[1190]";
-connectAttr "R_MetCarp_05_Ctrl_translateY.o" "SkeletonRN.phl[1191]";
-connectAttr "R_MetCarp_05_Ctrl_translateZ.o" "SkeletonRN.phl[1192]";
-connectAttr "R_MetCarp_05_Ctrl_rotateX.o" "SkeletonRN.phl[1193]";
-connectAttr "R_MetCarp_05_Ctrl_rotateY.o" "SkeletonRN.phl[1194]";
-connectAttr "R_MetCarp_05_Ctrl_rotateZ.o" "SkeletonRN.phl[1195]";
-connectAttr "R_MetCarp_05_Ctrl_scaleX.o" "SkeletonRN.phl[1196]";
-connectAttr "R_MetCarp_05_Ctrl_scaleY.o" "SkeletonRN.phl[1197]";
-connectAttr "R_MetCarp_05_Ctrl_scaleZ.o" "SkeletonRN.phl[1198]";
-connectAttr "R_MetCarp_05_Ctrl_visibility.o" "SkeletonRN.phl[1199]";
-connectAttr "R_Finger_05_Knuckle_01_Ctrl_translateX.o" "SkeletonRN.phl[1200]";
-connectAttr "R_Finger_05_Knuckle_01_Ctrl_translateY.o" "SkeletonRN.phl[1201]";
-connectAttr "R_Finger_05_Knuckle_01_Ctrl_translateZ.o" "SkeletonRN.phl[1202]";
-connectAttr "R_Finger_05_Knuckle_01_Ctrl_rotateZ.o" "SkeletonRN.phl[1203]";
-connectAttr "R_Finger_05_Knuckle_01_Ctrl_rotateX.o" "SkeletonRN.phl[1204]";
-connectAttr "R_Finger_05_Knuckle_01_Ctrl_rotateY.o" "SkeletonRN.phl[1205]";
-connectAttr "R_Finger_05_Knuckle_01_Ctrl_scaleX.o" "SkeletonRN.phl[1206]";
-connectAttr "R_Finger_05_Knuckle_01_Ctrl_scaleY.o" "SkeletonRN.phl[1207]";
-connectAttr "R_Finger_05_Knuckle_01_Ctrl_scaleZ.o" "SkeletonRN.phl[1208]";
-connectAttr "R_Finger_05_Knuckle_01_Ctrl_visibility.o" "SkeletonRN.phl[1209]";
-connectAttr "R_Finger_05_Knuckle_02_Ctrl_translateX.o" "SkeletonRN.phl[1210]";
-connectAttr "R_Finger_05_Knuckle_02_Ctrl_translateY.o" "SkeletonRN.phl[1211]";
-connectAttr "R_Finger_05_Knuckle_02_Ctrl_translateZ.o" "SkeletonRN.phl[1212]";
-connectAttr "R_Finger_05_Knuckle_02_Ctrl_rotateZ.o" "SkeletonRN.phl[1213]";
-connectAttr "R_Finger_05_Knuckle_02_Ctrl_rotateX.o" "SkeletonRN.phl[1214]";
-connectAttr "R_Finger_05_Knuckle_02_Ctrl_rotateY.o" "SkeletonRN.phl[1215]";
-connectAttr "R_Finger_05_Knuckle_02_Ctrl_scaleX.o" "SkeletonRN.phl[1216]";
-connectAttr "R_Finger_05_Knuckle_02_Ctrl_scaleY.o" "SkeletonRN.phl[1217]";
-connectAttr "R_Finger_05_Knuckle_02_Ctrl_scaleZ.o" "SkeletonRN.phl[1218]";
-connectAttr "R_Finger_05_Knuckle_02_Ctrl_visibility.o" "SkeletonRN.phl[1219]";
-connectAttr "R_Finger_05_Knuckle_03_Ctrl_translateX.o" "SkeletonRN.phl[1220]";
-connectAttr "R_Finger_05_Knuckle_03_Ctrl_translateY.o" "SkeletonRN.phl[1221]";
-connectAttr "R_Finger_05_Knuckle_03_Ctrl_translateZ.o" "SkeletonRN.phl[1222]";
-connectAttr "R_Finger_05_Knuckle_03_Ctrl_rotateZ.o" "SkeletonRN.phl[1223]";
-connectAttr "R_Finger_05_Knuckle_03_Ctrl_rotateX.o" "SkeletonRN.phl[1224]";
-connectAttr "R_Finger_05_Knuckle_03_Ctrl_rotateY.o" "SkeletonRN.phl[1225]";
-connectAttr "R_Finger_05_Knuckle_03_Ctrl_scaleX.o" "SkeletonRN.phl[1226]";
-connectAttr "R_Finger_05_Knuckle_03_Ctrl_scaleY.o" "SkeletonRN.phl[1227]";
-connectAttr "R_Finger_05_Knuckle_03_Ctrl_scaleZ.o" "SkeletonRN.phl[1228]";
-connectAttr "R_Finger_05_Knuckle_03_Ctrl_visibility.o" "SkeletonRN.phl[1229]";
-connectAttr "R_Leg_Pivot_Ctrl_Follow_Translate.o" "SkeletonRN.phl[1230]";
-connectAttr "R_Leg_Pivot_Ctrl_Follow_Rotate.o" "SkeletonRN.phl[1231]";
-connectAttr "R_Leg_Pivot_Ctrl_translateX.o" "SkeletonRN.phl[1232]";
-connectAttr "R_Leg_Pivot_Ctrl_translateY.o" "SkeletonRN.phl[1233]";
-connectAttr "R_Leg_Pivot_Ctrl_translateZ.o" "SkeletonRN.phl[1234]";
-connectAttr "R_Leg_Pivot_Ctrl_rotateX.o" "SkeletonRN.phl[1235]";
-connectAttr "R_Leg_Pivot_Ctrl_rotateY.o" "SkeletonRN.phl[1236]";
-connectAttr "R_Leg_Pivot_Ctrl_rotateZ.o" "SkeletonRN.phl[1237]";
-connectAttr "R_Leg_Pivot_Ctrl_scaleX.o" "SkeletonRN.phl[1238]";
-connectAttr "R_Leg_Pivot_Ctrl_scaleY.o" "SkeletonRN.phl[1239]";
-connectAttr "R_Leg_Pivot_Ctrl_scaleZ.o" "SkeletonRN.phl[1240]";
-connectAttr "R_Leg_Pivot_Ctrl_visibility.o" "SkeletonRN.phl[1241]";
-connectAttr "R_Leg_IK_Base_Ctrl_translateX.o" "SkeletonRN.phl[1242]";
-connectAttr "R_Leg_IK_Base_Ctrl_translateY.o" "SkeletonRN.phl[1243]";
-connectAttr "R_Leg_IK_Base_Ctrl_translateZ.o" "SkeletonRN.phl[1244]";
-connectAttr "R_Leg_IK_Base_Ctrl_Operating_Space.o" "SkeletonRN.phl[1245]";
-connectAttr "R_Leg_IK_Base_Ctrl_visibility.o" "SkeletonRN.phl[1246]";
-connectAttr "R_Leg_IK_Base_Ctrl_rotateX.o" "SkeletonRN.phl[1247]";
-connectAttr "R_Leg_IK_Base_Ctrl_rotateY.o" "SkeletonRN.phl[1248]";
-connectAttr "R_Leg_IK_Base_Ctrl_rotateZ.o" "SkeletonRN.phl[1249]";
-connectAttr "R_Leg_IK_Base_Ctrl_scaleX.o" "SkeletonRN.phl[1250]";
-connectAttr "R_Leg_IK_Base_Ctrl_scaleY.o" "SkeletonRN.phl[1251]";
-connectAttr "R_Leg_IK_Base_Ctrl_scaleZ.o" "SkeletonRN.phl[1252]";
-connectAttr "R_Leg_PV_Ctrl_translateX.o" "SkeletonRN.phl[1253]";
-connectAttr "R_Leg_PV_Ctrl_translateY.o" "SkeletonRN.phl[1254]";
-connectAttr "R_Leg_PV_Ctrl_translateZ.o" "SkeletonRN.phl[1255]";
-connectAttr "R_Leg_PV_Ctrl_Operating_Space.o" "SkeletonRN.phl[1256]";
-connectAttr "R_Leg_PV_Ctrl_rotateX.o" "SkeletonRN.phl[1257]";
-connectAttr "R_Leg_PV_Ctrl_rotateY.o" "SkeletonRN.phl[1258]";
-connectAttr "R_Leg_PV_Ctrl_rotateZ.o" "SkeletonRN.phl[1259]";
-connectAttr "R_Leg_PV_Ctrl_visibility.o" "SkeletonRN.phl[1260]";
-connectAttr "R_Leg_PV_Ctrl_scaleX.o" "SkeletonRN.phl[1261]";
-connectAttr "R_Leg_PV_Ctrl_scaleY.o" "SkeletonRN.phl[1262]";
-connectAttr "R_Leg_PV_Ctrl_scaleZ.o" "SkeletonRN.phl[1263]";
-connectAttr "R_Leg_IK_End_Ctrl_Operating_Space.o" "SkeletonRN.phl[1264]";
-connectAttr "R_Leg_IK_End_Ctrl_translateX.o" "SkeletonRN.phl[1265]";
-connectAttr "R_Leg_IK_End_Ctrl_translateY.o" "SkeletonRN.phl[1266]";
-connectAttr "R_Leg_IK_End_Ctrl_translateZ.o" "SkeletonRN.phl[1267]";
-connectAttr "R_Leg_IK_End_Ctrl_visibility.o" "SkeletonRN.phl[1268]";
-connectAttr "R_Leg_IK_End_Ctrl_rotateX.o" "SkeletonRN.phl[1269]";
-connectAttr "R_Leg_IK_End_Ctrl_rotateY.o" "SkeletonRN.phl[1270]";
-connectAttr "R_Leg_IK_End_Ctrl_rotateZ.o" "SkeletonRN.phl[1271]";
-connectAttr "R_Leg_IK_End_Ctrl_scaleX.o" "SkeletonRN.phl[1272]";
-connectAttr "R_Leg_IK_End_Ctrl_scaleY.o" "SkeletonRN.phl[1273]";
-connectAttr "R_Leg_IK_End_Ctrl_scaleZ.o" "SkeletonRN.phl[1274]";
-connectAttr "R_Foot_IK_Out_Ctrl_translateX.o" "SkeletonRN.phl[1275]";
-connectAttr "R_Foot_IK_Out_Ctrl_translateY.o" "SkeletonRN.phl[1276]";
-connectAttr "R_Foot_IK_Out_Ctrl_translateZ.o" "SkeletonRN.phl[1277]";
-connectAttr "R_Foot_IK_Out_Ctrl_visibility.o" "SkeletonRN.phl[1278]";
-connectAttr "R_Foot_IK_Out_Ctrl_rotateX.o" "SkeletonRN.phl[1279]";
-connectAttr "R_Foot_IK_Out_Ctrl_rotateY.o" "SkeletonRN.phl[1280]";
-connectAttr "R_Foot_IK_Out_Ctrl_rotateZ.o" "SkeletonRN.phl[1281]";
-connectAttr "R_Foot_IK_Out_Ctrl_scaleX.o" "SkeletonRN.phl[1282]";
-connectAttr "R_Foot_IK_Out_Ctrl_scaleY.o" "SkeletonRN.phl[1283]";
-connectAttr "R_Foot_IK_Out_Ctrl_scaleZ.o" "SkeletonRN.phl[1284]";
-connectAttr "R_Foot_IK_In_Ctrl_translateX.o" "SkeletonRN.phl[1285]";
-connectAttr "R_Foot_IK_In_Ctrl_translateY.o" "SkeletonRN.phl[1286]";
-connectAttr "R_Foot_IK_In_Ctrl_translateZ.o" "SkeletonRN.phl[1287]";
-connectAttr "R_Foot_IK_In_Ctrl_visibility.o" "SkeletonRN.phl[1288]";
-connectAttr "R_Foot_IK_In_Ctrl_rotateX.o" "SkeletonRN.phl[1289]";
-connectAttr "R_Foot_IK_In_Ctrl_rotateY.o" "SkeletonRN.phl[1290]";
-connectAttr "R_Foot_IK_In_Ctrl_rotateZ.o" "SkeletonRN.phl[1291]";
-connectAttr "R_Foot_IK_In_Ctrl_scaleX.o" "SkeletonRN.phl[1292]";
-connectAttr "R_Foot_IK_In_Ctrl_scaleY.o" "SkeletonRN.phl[1293]";
-connectAttr "R_Foot_IK_In_Ctrl_scaleZ.o" "SkeletonRN.phl[1294]";
-connectAttr "R_Foot_IK_Heel_Ctrl_translateX.o" "SkeletonRN.phl[1295]";
-connectAttr "R_Foot_IK_Heel_Ctrl_translateY.o" "SkeletonRN.phl[1296]";
-connectAttr "R_Foot_IK_Heel_Ctrl_translateZ.o" "SkeletonRN.phl[1297]";
-connectAttr "R_Foot_IK_Heel_Ctrl_visibility.o" "SkeletonRN.phl[1298]";
-connectAttr "R_Foot_IK_Heel_Ctrl_rotateX.o" "SkeletonRN.phl[1299]";
-connectAttr "R_Foot_IK_Heel_Ctrl_rotateY.o" "SkeletonRN.phl[1300]";
-connectAttr "R_Foot_IK_Heel_Ctrl_rotateZ.o" "SkeletonRN.phl[1301]";
-connectAttr "R_Foot_IK_Heel_Ctrl_scaleX.o" "SkeletonRN.phl[1302]";
-connectAttr "R_Foot_IK_Heel_Ctrl_scaleY.o" "SkeletonRN.phl[1303]";
-connectAttr "R_Foot_IK_Heel_Ctrl_scaleZ.o" "SkeletonRN.phl[1304]";
-connectAttr "R_Foot_IK_Toe_Ctrl_translateX.o" "SkeletonRN.phl[1305]";
-connectAttr "R_Foot_IK_Toe_Ctrl_translateY.o" "SkeletonRN.phl[1306]";
-connectAttr "R_Foot_IK_Toe_Ctrl_translateZ.o" "SkeletonRN.phl[1307]";
-connectAttr "R_Foot_IK_Toe_Ctrl_visibility.o" "SkeletonRN.phl[1308]";
-connectAttr "R_Foot_IK_Toe_Ctrl_rotateX.o" "SkeletonRN.phl[1309]";
-connectAttr "R_Foot_IK_Toe_Ctrl_rotateY.o" "SkeletonRN.phl[1310]";
-connectAttr "R_Foot_IK_Toe_Ctrl_rotateZ.o" "SkeletonRN.phl[1311]";
-connectAttr "R_Foot_IK_Toe_Ctrl_scaleX.o" "SkeletonRN.phl[1312]";
-connectAttr "R_Foot_IK_Toe_Ctrl_scaleY.o" "SkeletonRN.phl[1313]";
-connectAttr "R_Foot_IK_Toe_Ctrl_scaleZ.o" "SkeletonRN.phl[1314]";
-connectAttr "R_Foot_IK_Ball_Ctrl_translateX.o" "SkeletonRN.phl[1315]";
-connectAttr "R_Foot_IK_Ball_Ctrl_translateY.o" "SkeletonRN.phl[1316]";
-connectAttr "R_Foot_IK_Ball_Ctrl_translateZ.o" "SkeletonRN.phl[1317]";
-connectAttr "R_Foot_IK_Ball_Ctrl_visibility.o" "SkeletonRN.phl[1318]";
-connectAttr "R_Foot_IK_Ball_Ctrl_rotateX.o" "SkeletonRN.phl[1319]";
-connectAttr "R_Foot_IK_Ball_Ctrl_rotateY.o" "SkeletonRN.phl[1320]";
-connectAttr "R_Foot_IK_Ball_Ctrl_rotateZ.o" "SkeletonRN.phl[1321]";
-connectAttr "R_Foot_IK_Ball_Ctrl_scaleX.o" "SkeletonRN.phl[1322]";
-connectAttr "R_Foot_IK_Ball_Ctrl_scaleY.o" "SkeletonRN.phl[1323]";
-connectAttr "R_Foot_IK_Ball_Ctrl_scaleZ.o" "SkeletonRN.phl[1324]";
-connectAttr "R_Foot_IK_Tap_Ctrl_translateX.o" "SkeletonRN.phl[1325]";
-connectAttr "R_Foot_IK_Tap_Ctrl_translateY.o" "SkeletonRN.phl[1326]";
-connectAttr "R_Foot_IK_Tap_Ctrl_translateZ.o" "SkeletonRN.phl[1327]";
-connectAttr "R_Foot_IK_Tap_Ctrl_visibility.o" "SkeletonRN.phl[1328]";
-connectAttr "R_Foot_IK_Tap_Ctrl_rotateX.o" "SkeletonRN.phl[1329]";
-connectAttr "R_Foot_IK_Tap_Ctrl_rotateY.o" "SkeletonRN.phl[1330]";
-connectAttr "R_Foot_IK_Tap_Ctrl_rotateZ.o" "SkeletonRN.phl[1331]";
-connectAttr "R_Foot_IK_Tap_Ctrl_scaleX.o" "SkeletonRN.phl[1332]";
-connectAttr "R_Foot_IK_Tap_Ctrl_scaleY.o" "SkeletonRN.phl[1333]";
-connectAttr "R_Foot_IK_Tap_Ctrl_scaleZ.o" "SkeletonRN.phl[1334]";
-connectAttr "R_MetTars_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[1335]";
-connectAttr "R_MetTars_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[1336]";
-connectAttr "R_MetTars_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1337]";
-connectAttr "R_MetTars_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[1338]";
-connectAttr "R_MetTars_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1339]";
-connectAttr "R_MetTars_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1340]";
-connectAttr "R_MetTars_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1341]";
-connectAttr "R_MetTars_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1342]";
-connectAttr "R_MetTars_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1343]";
-connectAttr "R_MetTars_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1344]";
-connectAttr "R_Toe_01_Knuckle_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[1345]";
-connectAttr "R_Toe_01_Knuckle_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[1346]";
-connectAttr "R_Toe_01_Knuckle_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1347]";
-connectAttr "R_Toe_01_Knuckle_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[1348]";
-connectAttr "R_Toe_01_Knuckle_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1349]";
-connectAttr "R_Toe_01_Knuckle_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1350]";
-connectAttr "R_Toe_01_Knuckle_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1351]";
-connectAttr "R_Toe_01_Knuckle_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1352]";
-connectAttr "R_Toe_01_Knuckle_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1353]";
-connectAttr "R_Toe_01_Knuckle_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1354]";
-connectAttr "R_Toe_01_Knuckle_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[1355]";
-connectAttr "R_Toe_01_Knuckle_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[1356]";
-connectAttr "R_Toe_01_Knuckle_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1357]";
-connectAttr "R_Toe_01_Knuckle_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[1358]";
-connectAttr "R_Toe_01_Knuckle_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1359]";
-connectAttr "R_Toe_01_Knuckle_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1360]";
-connectAttr "R_Toe_01_Knuckle_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1361]";
-connectAttr "R_Toe_01_Knuckle_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1362]";
-connectAttr "R_Toe_01_Knuckle_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1363]";
-connectAttr "R_Toe_01_Knuckle_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1364]";
-connectAttr "R_MetTars_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[1365]";
-connectAttr "R_MetTars_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[1366]";
-connectAttr "R_MetTars_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1367]";
-connectAttr "R_MetTars_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[1368]";
-connectAttr "R_MetTars_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1369]";
-connectAttr "R_MetTars_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1370]";
-connectAttr "R_MetTars_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1371]";
-connectAttr "R_MetTars_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1372]";
-connectAttr "R_MetTars_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1373]";
-connectAttr "R_MetTars_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1374]";
-connectAttr "R_Toe_02_Knuckle_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[1375]";
-connectAttr "R_Toe_02_Knuckle_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[1376]";
-connectAttr "R_Toe_02_Knuckle_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1377]";
-connectAttr "R_Toe_02_Knuckle_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[1378]";
-connectAttr "R_Toe_02_Knuckle_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1379]";
-connectAttr "R_Toe_02_Knuckle_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1380]";
-connectAttr "R_Toe_02_Knuckle_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1381]";
-connectAttr "R_Toe_02_Knuckle_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1382]";
-connectAttr "R_Toe_02_Knuckle_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1383]";
-connectAttr "R_Toe_02_Knuckle_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1384]";
-connectAttr "R_Toe_02_Knuckle_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[1385]";
-connectAttr "R_Toe_02_Knuckle_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[1386]";
-connectAttr "R_Toe_02_Knuckle_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1387]";
-connectAttr "R_Toe_02_Knuckle_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[1388]";
-connectAttr "R_Toe_02_Knuckle_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1389]";
-connectAttr "R_Toe_02_Knuckle_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1390]";
-connectAttr "R_Toe_02_Knuckle_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1391]";
-connectAttr "R_Toe_02_Knuckle_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1392]";
-connectAttr "R_Toe_02_Knuckle_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1393]";
-connectAttr "R_Toe_02_Knuckle_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1394]";
-connectAttr "R_Toe_02_Knuckle_03_IK_Ctrl_translateX.o" "SkeletonRN.phl[1395]";
-connectAttr "R_Toe_02_Knuckle_03_IK_Ctrl_translateY.o" "SkeletonRN.phl[1396]";
-connectAttr "R_Toe_02_Knuckle_03_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1397]";
-connectAttr "R_Toe_02_Knuckle_03_IK_Ctrl_visibility.o" "SkeletonRN.phl[1398]";
-connectAttr "R_Toe_02_Knuckle_03_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1399]";
-connectAttr "R_Toe_02_Knuckle_03_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1400]";
-connectAttr "R_Toe_02_Knuckle_03_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1401]";
-connectAttr "R_Toe_02_Knuckle_03_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1402]";
-connectAttr "R_Toe_02_Knuckle_03_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1403]";
-connectAttr "R_Toe_02_Knuckle_03_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1404]";
-connectAttr "R_MetTars_03_IK_Ctrl_translateX.o" "SkeletonRN.phl[1405]";
-connectAttr "R_MetTars_03_IK_Ctrl_translateY.o" "SkeletonRN.phl[1406]";
-connectAttr "R_MetTars_03_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1407]";
-connectAttr "R_MetTars_03_IK_Ctrl_visibility.o" "SkeletonRN.phl[1408]";
-connectAttr "R_MetTars_03_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1409]";
-connectAttr "R_MetTars_03_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1410]";
-connectAttr "R_MetTars_03_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1411]";
-connectAttr "R_MetTars_03_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1412]";
-connectAttr "R_MetTars_03_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1413]";
-connectAttr "R_MetTars_03_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1414]";
-connectAttr "R_Toe_03_Knuckle_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[1415]";
-connectAttr "R_Toe_03_Knuckle_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[1416]";
-connectAttr "R_Toe_03_Knuckle_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1417]";
-connectAttr "R_Toe_03_Knuckle_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[1418]";
-connectAttr "R_Toe_03_Knuckle_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1419]";
-connectAttr "R_Toe_03_Knuckle_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1420]";
-connectAttr "R_Toe_03_Knuckle_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1421]";
-connectAttr "R_Toe_03_Knuckle_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1422]";
-connectAttr "R_Toe_03_Knuckle_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1423]";
-connectAttr "R_Toe_03_Knuckle_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1424]";
-connectAttr "R_Toe_03_Knuckle_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[1425]";
-connectAttr "R_Toe_03_Knuckle_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[1426]";
-connectAttr "R_Toe_03_Knuckle_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1427]";
-connectAttr "R_Toe_03_Knuckle_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[1428]";
-connectAttr "R_Toe_03_Knuckle_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1429]";
-connectAttr "R_Toe_03_Knuckle_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1430]";
-connectAttr "R_Toe_03_Knuckle_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1431]";
-connectAttr "R_Toe_03_Knuckle_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1432]";
-connectAttr "R_Toe_03_Knuckle_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1433]";
-connectAttr "R_Toe_03_Knuckle_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1434]";
-connectAttr "R_Toe_03_Knuckle_03_IK_Ctrl_translateX.o" "SkeletonRN.phl[1435]";
-connectAttr "R_Toe_03_Knuckle_03_IK_Ctrl_translateY.o" "SkeletonRN.phl[1436]";
-connectAttr "R_Toe_03_Knuckle_03_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1437]";
-connectAttr "R_Toe_03_Knuckle_03_IK_Ctrl_visibility.o" "SkeletonRN.phl[1438]";
-connectAttr "R_Toe_03_Knuckle_03_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1439]";
-connectAttr "R_Toe_03_Knuckle_03_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1440]";
-connectAttr "R_Toe_03_Knuckle_03_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1441]";
-connectAttr "R_Toe_03_Knuckle_03_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1442]";
-connectAttr "R_Toe_03_Knuckle_03_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1443]";
-connectAttr "R_Toe_03_Knuckle_03_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1444]";
-connectAttr "R_MetTars_04_IK_Ctrl_translateX.o" "SkeletonRN.phl[1445]";
-connectAttr "R_MetTars_04_IK_Ctrl_translateY.o" "SkeletonRN.phl[1446]";
-connectAttr "R_MetTars_04_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1447]";
-connectAttr "R_MetTars_04_IK_Ctrl_visibility.o" "SkeletonRN.phl[1448]";
-connectAttr "R_MetTars_04_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1449]";
-connectAttr "R_MetTars_04_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1450]";
-connectAttr "R_MetTars_04_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1451]";
-connectAttr "R_MetTars_04_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1452]";
-connectAttr "R_MetTars_04_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1453]";
-connectAttr "R_MetTars_04_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1454]";
-connectAttr "R_Toe_04_Knuckle_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[1455]";
-connectAttr "R_Toe_04_Knuckle_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[1456]";
-connectAttr "R_Toe_04_Knuckle_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1457]";
-connectAttr "R_Toe_04_Knuckle_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[1458]";
-connectAttr "R_Toe_04_Knuckle_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1459]";
-connectAttr "R_Toe_04_Knuckle_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1460]";
-connectAttr "R_Toe_04_Knuckle_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1461]";
-connectAttr "R_Toe_04_Knuckle_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1462]";
-connectAttr "R_Toe_04_Knuckle_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1463]";
-connectAttr "R_Toe_04_Knuckle_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1464]";
-connectAttr "R_Toe_04_Knuckle_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[1465]";
-connectAttr "R_Toe_04_Knuckle_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[1466]";
-connectAttr "R_Toe_04_Knuckle_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1467]";
-connectAttr "R_Toe_04_Knuckle_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[1468]";
-connectAttr "R_Toe_04_Knuckle_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1469]";
-connectAttr "R_Toe_04_Knuckle_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1470]";
-connectAttr "R_Toe_04_Knuckle_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1471]";
-connectAttr "R_Toe_04_Knuckle_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1472]";
-connectAttr "R_Toe_04_Knuckle_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1473]";
-connectAttr "R_Toe_04_Knuckle_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1474]";
-connectAttr "R_Toe_04_Knuckle_03_IK_Ctrl_translateX.o" "SkeletonRN.phl[1475]";
-connectAttr "R_Toe_04_Knuckle_03_IK_Ctrl_translateY.o" "SkeletonRN.phl[1476]";
-connectAttr "R_Toe_04_Knuckle_03_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1477]";
-connectAttr "R_Toe_04_Knuckle_03_IK_Ctrl_visibility.o" "SkeletonRN.phl[1478]";
-connectAttr "R_Toe_04_Knuckle_03_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1479]";
-connectAttr "R_Toe_04_Knuckle_03_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1480]";
-connectAttr "R_Toe_04_Knuckle_03_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1481]";
-connectAttr "R_Toe_04_Knuckle_03_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1482]";
-connectAttr "R_Toe_04_Knuckle_03_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1483]";
-connectAttr "R_Toe_04_Knuckle_03_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1484]";
-connectAttr "R_MetTars_05_IK_Ctrl_translateX.o" "SkeletonRN.phl[1485]";
-connectAttr "R_MetTars_05_IK_Ctrl_translateY.o" "SkeletonRN.phl[1486]";
-connectAttr "R_MetTars_05_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1487]";
-connectAttr "R_MetTars_05_IK_Ctrl_visibility.o" "SkeletonRN.phl[1488]";
-connectAttr "R_MetTars_05_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1489]";
-connectAttr "R_MetTars_05_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1490]";
-connectAttr "R_MetTars_05_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1491]";
-connectAttr "R_MetTars_05_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1492]";
-connectAttr "R_MetTars_05_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1493]";
-connectAttr "R_MetTars_05_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1494]";
-connectAttr "R_Toe_05_Knuckle_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[1495]";
-connectAttr "R_Toe_05_Knuckle_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[1496]";
-connectAttr "R_Toe_05_Knuckle_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1497]";
-connectAttr "R_Toe_05_Knuckle_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[1498]";
-connectAttr "R_Toe_05_Knuckle_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1499]";
-connectAttr "R_Toe_05_Knuckle_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1500]";
-connectAttr "R_Toe_05_Knuckle_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1501]";
-connectAttr "R_Toe_05_Knuckle_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1502]";
-connectAttr "R_Toe_05_Knuckle_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1503]";
-connectAttr "R_Toe_05_Knuckle_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1504]";
-connectAttr "R_Toe_05_Knuckle_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[1505]";
-connectAttr "R_Toe_05_Knuckle_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[1506]";
-connectAttr "R_Toe_05_Knuckle_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1507]";
-connectAttr "R_Toe_05_Knuckle_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[1508]";
-connectAttr "R_Toe_05_Knuckle_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1509]";
-connectAttr "R_Toe_05_Knuckle_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1510]";
-connectAttr "R_Toe_05_Knuckle_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1511]";
-connectAttr "R_Toe_05_Knuckle_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1512]";
-connectAttr "R_Toe_05_Knuckle_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1513]";
-connectAttr "R_Toe_05_Knuckle_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1514]";
-connectAttr "R_Toe_05_Knuckle_03_IK_Ctrl_translateX.o" "SkeletonRN.phl[1515]";
-connectAttr "R_Toe_05_Knuckle_03_IK_Ctrl_translateY.o" "SkeletonRN.phl[1516]";
-connectAttr "R_Toe_05_Knuckle_03_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1517]";
-connectAttr "R_Toe_05_Knuckle_03_IK_Ctrl_visibility.o" "SkeletonRN.phl[1518]";
-connectAttr "R_Toe_05_Knuckle_03_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1519]";
-connectAttr "R_Toe_05_Knuckle_03_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1520]";
-connectAttr "R_Toe_05_Knuckle_03_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1521]";
-connectAttr "R_Toe_05_Knuckle_03_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1522]";
-connectAttr "R_Toe_05_Knuckle_03_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1523]";
-connectAttr "R_Toe_05_Knuckle_03_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1524]";
-connectAttr "R_Leg_IKFK_Ctrl_IKFK_Switch.o" "SkeletonRN.phl[1525]";
-connectAttr "Space_Controllers_Ctrl_L_Space_Ctrl_01.o" "SkeletonRN.phl[1526]";
-connectAttr "Space_Controllers_Ctrl_L_Space_Ctrl_02.o" "SkeletonRN.phl[1527]";
-connectAttr "Space_Controllers_Ctrl_L_Space_Ctrl_03.o" "SkeletonRN.phl[1528]";
-connectAttr "Space_Controllers_Ctrl_R_Space_Ctrl_01.o" "SkeletonRN.phl[1529]";
-connectAttr "Space_Controllers_Ctrl_R_Space_Ctrl_02.o" "SkeletonRN.phl[1530]";
-connectAttr "Space_Controllers_Ctrl_R_Space_Ctrl_03.o" "SkeletonRN.phl[1531]";
-connectAttr "Space_Controllers_Ctrl_Mid_Space_Ctrl_01.o" "SkeletonRN.phl[1532]";
-connectAttr "Space_Controllers_Ctrl_Mid_Space_Ctrl_02.o" "SkeletonRN.phl[1533]";
-connectAttr "Spine_01_Redundancy_Ctrl_translateX.o" "SkeletonRN.phl[1534]";
-connectAttr "Spine_01_Redundancy_Ctrl_translateY.o" "SkeletonRN.phl[1535]";
-connectAttr "Spine_01_Redundancy_Ctrl_translateZ.o" "SkeletonRN.phl[1536]";
-connectAttr "Spine_01_Redundancy_Ctrl_rotateX.o" "SkeletonRN.phl[1537]";
-connectAttr "Spine_01_Redundancy_Ctrl_rotateY.o" "SkeletonRN.phl[1538]";
-connectAttr "Spine_01_Redundancy_Ctrl_rotateZ.o" "SkeletonRN.phl[1539]";
-connectAttr "Spine_01_Redundancy_Ctrl_scaleX.o" "SkeletonRN.phl[1540]";
-connectAttr "Spine_01_Redundancy_Ctrl_scaleY.o" "SkeletonRN.phl[1541]";
-connectAttr "Spine_01_Redundancy_Ctrl_scaleZ.o" "SkeletonRN.phl[1542]";
-connectAttr "Spine_01_Redundancy_Ctrl_Operating_Space.o" "SkeletonRN.phl[1543]";
-connectAttr "Spine_01_Redundancy_Ctrl_visibility.o" "SkeletonRN.phl[1544]";
-connectAttr "Spine_02_Redundancy_Ctrl_translateX.o" "SkeletonRN.phl[1545]";
-connectAttr "Spine_02_Redundancy_Ctrl_translateY.o" "SkeletonRN.phl[1546]";
-connectAttr "Spine_02_Redundancy_Ctrl_translateZ.o" "SkeletonRN.phl[1547]";
-connectAttr "Spine_02_Redundancy_Ctrl_rotateX.o" "SkeletonRN.phl[1548]";
-connectAttr "Spine_02_Redundancy_Ctrl_rotateY.o" "SkeletonRN.phl[1549]";
-connectAttr "Spine_02_Redundancy_Ctrl_rotateZ.o" "SkeletonRN.phl[1550]";
-connectAttr "Spine_02_Redundancy_Ctrl_scaleX.o" "SkeletonRN.phl[1551]";
-connectAttr "Spine_02_Redundancy_Ctrl_scaleY.o" "SkeletonRN.phl[1552]";
-connectAttr "Spine_02_Redundancy_Ctrl_scaleZ.o" "SkeletonRN.phl[1553]";
-connectAttr "Spine_02_Redundancy_Ctrl_Operating_Space.o" "SkeletonRN.phl[1554]";
-connectAttr "Spine_02_Redundancy_Ctrl_visibility.o" "SkeletonRN.phl[1555]";
-connectAttr "Spine_03_Redundancy_Ctrl_translateX.o" "SkeletonRN.phl[1556]";
-connectAttr "Spine_03_Redundancy_Ctrl_translateY.o" "SkeletonRN.phl[1557]";
-connectAttr "Spine_03_Redundancy_Ctrl_translateZ.o" "SkeletonRN.phl[1558]";
-connectAttr "Spine_03_Redundancy_Ctrl_rotateX.o" "SkeletonRN.phl[1559]";
-connectAttr "Spine_03_Redundancy_Ctrl_rotateY.o" "SkeletonRN.phl[1560]";
-connectAttr "Spine_03_Redundancy_Ctrl_rotateZ.o" "SkeletonRN.phl[1561]";
-connectAttr "Spine_03_Redundancy_Ctrl_scaleX.o" "SkeletonRN.phl[1562]";
-connectAttr "Spine_03_Redundancy_Ctrl_scaleY.o" "SkeletonRN.phl[1563]";
-connectAttr "Spine_03_Redundancy_Ctrl_scaleZ.o" "SkeletonRN.phl[1564]";
-connectAttr "Spine_03_Redundancy_Ctrl_Operating_Space.o" "SkeletonRN.phl[1565]";
-connectAttr "Spine_03_Redundancy_Ctrl_visibility.o" "SkeletonRN.phl[1566]";
-connectAttr "Chest_Redundancy_Ctrl_translateX.o" "SkeletonRN.phl[1567]";
-connectAttr "Chest_Redundancy_Ctrl_translateY.o" "SkeletonRN.phl[1568]";
-connectAttr "Chest_Redundancy_Ctrl_translateZ.o" "SkeletonRN.phl[1569]";
-connectAttr "Chest_Redundancy_Ctrl_rotateX.o" "SkeletonRN.phl[1570]";
-connectAttr "Chest_Redundancy_Ctrl_rotateY.o" "SkeletonRN.phl[1571]";
-connectAttr "Chest_Redundancy_Ctrl_rotateZ.o" "SkeletonRN.phl[1572]";
-connectAttr "Chest_Redundancy_Ctrl_scaleX.o" "SkeletonRN.phl[1573]";
-connectAttr "Chest_Redundancy_Ctrl_scaleY.o" "SkeletonRN.phl[1574]";
-connectAttr "Chest_Redundancy_Ctrl_scaleZ.o" "SkeletonRN.phl[1575]";
-connectAttr "Chest_Redundancy_Ctrl_Operating_Space.o" "SkeletonRN.phl[1576]";
-connectAttr "Chest_Redundancy_Ctrl_visibility.o" "SkeletonRN.phl[1577]";
-connectAttr "Neck_01_Redundancy_Ctrl_translateX.o" "SkeletonRN.phl[1578]";
-connectAttr "Neck_01_Redundancy_Ctrl_translateY.o" "SkeletonRN.phl[1579]";
-connectAttr "Neck_01_Redundancy_Ctrl_translateZ.o" "SkeletonRN.phl[1580]";
-connectAttr "Neck_01_Redundancy_Ctrl_rotateX.o" "SkeletonRN.phl[1581]";
-connectAttr "Neck_01_Redundancy_Ctrl_rotateY.o" "SkeletonRN.phl[1582]";
-connectAttr "Neck_01_Redundancy_Ctrl_rotateZ.o" "SkeletonRN.phl[1583]";
-connectAttr "Neck_01_Redundancy_Ctrl_scaleX.o" "SkeletonRN.phl[1584]";
-connectAttr "Neck_01_Redundancy_Ctrl_scaleY.o" "SkeletonRN.phl[1585]";
-connectAttr "Neck_01_Redundancy_Ctrl_scaleZ.o" "SkeletonRN.phl[1586]";
-connectAttr "Neck_01_Redundancy_Ctrl_Operating_Space.o" "SkeletonRN.phl[1587]";
-connectAttr "Neck_01_Redundancy_Ctrl_visibility.o" "SkeletonRN.phl[1588]";
-connectAttr "Neck_02_Redundancy_Ctrl_translateX.o" "SkeletonRN.phl[1589]";
-connectAttr "Neck_02_Redundancy_Ctrl_translateY.o" "SkeletonRN.phl[1590]";
-connectAttr "Neck_02_Redundancy_Ctrl_translateZ.o" "SkeletonRN.phl[1591]";
-connectAttr "Neck_02_Redundancy_Ctrl_rotateX.o" "SkeletonRN.phl[1592]";
-connectAttr "Neck_02_Redundancy_Ctrl_rotateY.o" "SkeletonRN.phl[1593]";
-connectAttr "Neck_02_Redundancy_Ctrl_rotateZ.o" "SkeletonRN.phl[1594]";
-connectAttr "Neck_02_Redundancy_Ctrl_scaleX.o" "SkeletonRN.phl[1595]";
-connectAttr "Neck_02_Redundancy_Ctrl_scaleY.o" "SkeletonRN.phl[1596]";
-connectAttr "Neck_02_Redundancy_Ctrl_scaleZ.o" "SkeletonRN.phl[1597]";
-connectAttr "Neck_02_Redundancy_Ctrl_Operating_Space.o" "SkeletonRN.phl[1598]";
-connectAttr "Neck_02_Redundancy_Ctrl_visibility.o" "SkeletonRN.phl[1599]";
-connectAttr "L_Skeleton_Reg_Arms_GeoShapeDeformed.iog" "SkeletonRN.phl[1600]";
-connectAttr "Skeleton_Smooth_GeoShapeDeformed.iog" "SkeletonRN.phl[1601]";
-connectAttr "R_Skeleton_Reg_Arms_GeoShapeDeformed.iog" "SkeletonRN.phl[1602]";
+connectAttr "L_MetCarp_02_Ctrl_scaleX.o" "SkeletonRN.phl[531]";
+connectAttr "L_MetCarp_02_Ctrl_scaleY.o" "SkeletonRN.phl[532]";
+connectAttr "L_MetCarp_02_Ctrl_scaleZ.o" "SkeletonRN.phl[533]";
+connectAttr "L_MetCarp_02_Ctrl_visibility.o" "SkeletonRN.phl[534]";
+connectAttr "L_Finger_02_Knuckle_01_Ctrl_translateX.o" "SkeletonRN.phl[535]";
+connectAttr "L_Finger_02_Knuckle_01_Ctrl_translateY.o" "SkeletonRN.phl[536]";
+connectAttr "L_Finger_02_Knuckle_01_Ctrl_translateZ.o" "SkeletonRN.phl[537]";
+connectAttr "L_Finger_02_Knuckle_01_Ctrl_rotateX.o" "SkeletonRN.phl[538]";
+connectAttr "L_Finger_02_Knuckle_01_Ctrl_rotateY.o" "SkeletonRN.phl[539]";
+connectAttr "L_Finger_02_Knuckle_01_Ctrl_rotateZ.o" "SkeletonRN.phl[540]";
+connectAttr "L_Finger_02_Knuckle_01_Ctrl_scaleX.o" "SkeletonRN.phl[541]";
+connectAttr "L_Finger_02_Knuckle_01_Ctrl_scaleY.o" "SkeletonRN.phl[542]";
+connectAttr "L_Finger_02_Knuckle_01_Ctrl_scaleZ.o" "SkeletonRN.phl[543]";
+connectAttr "L_Finger_02_Knuckle_01_Ctrl_visibility.o" "SkeletonRN.phl[544]";
+connectAttr "L_Finger_02_Knuckle_02_Ctrl_translateX.o" "SkeletonRN.phl[545]";
+connectAttr "L_Finger_02_Knuckle_02_Ctrl_translateY.o" "SkeletonRN.phl[546]";
+connectAttr "L_Finger_02_Knuckle_02_Ctrl_translateZ.o" "SkeletonRN.phl[547]";
+connectAttr "L_Finger_02_Knuckle_02_Ctrl_rotateX.o" "SkeletonRN.phl[548]";
+connectAttr "L_Finger_02_Knuckle_02_Ctrl_rotateY.o" "SkeletonRN.phl[549]";
+connectAttr "L_Finger_02_Knuckle_02_Ctrl_rotateZ.o" "SkeletonRN.phl[550]";
+connectAttr "L_Finger_02_Knuckle_02_Ctrl_scaleX.o" "SkeletonRN.phl[551]";
+connectAttr "L_Finger_02_Knuckle_02_Ctrl_scaleY.o" "SkeletonRN.phl[552]";
+connectAttr "L_Finger_02_Knuckle_02_Ctrl_scaleZ.o" "SkeletonRN.phl[553]";
+connectAttr "L_Finger_02_Knuckle_02_Ctrl_visibility.o" "SkeletonRN.phl[554]";
+connectAttr "L_Finger_02_Knuckle_03_Ctrl_translateX.o" "SkeletonRN.phl[555]";
+connectAttr "L_Finger_02_Knuckle_03_Ctrl_translateY.o" "SkeletonRN.phl[556]";
+connectAttr "L_Finger_02_Knuckle_03_Ctrl_translateZ.o" "SkeletonRN.phl[557]";
+connectAttr "L_Finger_02_Knuckle_03_Ctrl_rotateX.o" "SkeletonRN.phl[558]";
+connectAttr "L_Finger_02_Knuckle_03_Ctrl_rotateY.o" "SkeletonRN.phl[559]";
+connectAttr "L_Finger_02_Knuckle_03_Ctrl_rotateZ.o" "SkeletonRN.phl[560]";
+connectAttr "L_Finger_02_Knuckle_03_Ctrl_scaleX.o" "SkeletonRN.phl[561]";
+connectAttr "L_Finger_02_Knuckle_03_Ctrl_scaleY.o" "SkeletonRN.phl[562]";
+connectAttr "L_Finger_02_Knuckle_03_Ctrl_scaleZ.o" "SkeletonRN.phl[563]";
+connectAttr "L_Finger_02_Knuckle_03_Ctrl_visibility.o" "SkeletonRN.phl[564]";
+connectAttr "L_MetCarp_03_Ctrl_translateX.o" "SkeletonRN.phl[565]";
+connectAttr "L_MetCarp_03_Ctrl_translateY.o" "SkeletonRN.phl[566]";
+connectAttr "L_MetCarp_03_Ctrl_translateZ.o" "SkeletonRN.phl[567]";
+connectAttr "L_MetCarp_03_Ctrl_rotateX.o" "SkeletonRN.phl[568]";
+connectAttr "L_MetCarp_03_Ctrl_rotateY.o" "SkeletonRN.phl[569]";
+connectAttr "L_MetCarp_03_Ctrl_scaleX.o" "SkeletonRN.phl[570]";
+connectAttr "L_MetCarp_03_Ctrl_scaleY.o" "SkeletonRN.phl[571]";
+connectAttr "L_MetCarp_03_Ctrl_scaleZ.o" "SkeletonRN.phl[572]";
+connectAttr "L_MetCarp_03_Ctrl_visibility.o" "SkeletonRN.phl[573]";
+connectAttr "L_Finger_03_Knuckle_01_Ctrl_translateX.o" "SkeletonRN.phl[574]";
+connectAttr "L_Finger_03_Knuckle_01_Ctrl_translateY.o" "SkeletonRN.phl[575]";
+connectAttr "L_Finger_03_Knuckle_01_Ctrl_translateZ.o" "SkeletonRN.phl[576]";
+connectAttr "L_Finger_03_Knuckle_01_Ctrl_rotateX.o" "SkeletonRN.phl[577]";
+connectAttr "L_Finger_03_Knuckle_01_Ctrl_rotateY.o" "SkeletonRN.phl[578]";
+connectAttr "L_Finger_03_Knuckle_01_Ctrl_rotateZ.o" "SkeletonRN.phl[579]";
+connectAttr "L_Finger_03_Knuckle_01_Ctrl_scaleX.o" "SkeletonRN.phl[580]";
+connectAttr "L_Finger_03_Knuckle_01_Ctrl_scaleY.o" "SkeletonRN.phl[581]";
+connectAttr "L_Finger_03_Knuckle_01_Ctrl_scaleZ.o" "SkeletonRN.phl[582]";
+connectAttr "L_Finger_03_Knuckle_01_Ctrl_visibility.o" "SkeletonRN.phl[583]";
+connectAttr "L_Finger_03_Knuckle_02_Ctrl_translateX.o" "SkeletonRN.phl[584]";
+connectAttr "L_Finger_03_Knuckle_02_Ctrl_translateY.o" "SkeletonRN.phl[585]";
+connectAttr "L_Finger_03_Knuckle_02_Ctrl_translateZ.o" "SkeletonRN.phl[586]";
+connectAttr "L_Finger_03_Knuckle_02_Ctrl_rotateX.o" "SkeletonRN.phl[587]";
+connectAttr "L_Finger_03_Knuckle_02_Ctrl_rotateY.o" "SkeletonRN.phl[588]";
+connectAttr "L_Finger_03_Knuckle_02_Ctrl_rotateZ.o" "SkeletonRN.phl[589]";
+connectAttr "L_Finger_03_Knuckle_02_Ctrl_scaleX.o" "SkeletonRN.phl[590]";
+connectAttr "L_Finger_03_Knuckle_02_Ctrl_scaleY.o" "SkeletonRN.phl[591]";
+connectAttr "L_Finger_03_Knuckle_02_Ctrl_scaleZ.o" "SkeletonRN.phl[592]";
+connectAttr "L_Finger_03_Knuckle_02_Ctrl_visibility.o" "SkeletonRN.phl[593]";
+connectAttr "L_Finger_03_Knuckle_03_Ctrl_translateX.o" "SkeletonRN.phl[594]";
+connectAttr "L_Finger_03_Knuckle_03_Ctrl_translateY.o" "SkeletonRN.phl[595]";
+connectAttr "L_Finger_03_Knuckle_03_Ctrl_translateZ.o" "SkeletonRN.phl[596]";
+connectAttr "L_Finger_03_Knuckle_03_Ctrl_rotateX.o" "SkeletonRN.phl[597]";
+connectAttr "L_Finger_03_Knuckle_03_Ctrl_rotateY.o" "SkeletonRN.phl[598]";
+connectAttr "L_Finger_03_Knuckle_03_Ctrl_rotateZ.o" "SkeletonRN.phl[599]";
+connectAttr "L_Finger_03_Knuckle_03_Ctrl_scaleX.o" "SkeletonRN.phl[600]";
+connectAttr "L_Finger_03_Knuckle_03_Ctrl_scaleY.o" "SkeletonRN.phl[601]";
+connectAttr "L_Finger_03_Knuckle_03_Ctrl_scaleZ.o" "SkeletonRN.phl[602]";
+connectAttr "L_Finger_03_Knuckle_03_Ctrl_visibility.o" "SkeletonRN.phl[603]";
+connectAttr "L_MetCarp_04_Ctrl_translateX.o" "SkeletonRN.phl[604]";
+connectAttr "L_MetCarp_04_Ctrl_translateY.o" "SkeletonRN.phl[605]";
+connectAttr "L_MetCarp_04_Ctrl_translateZ.o" "SkeletonRN.phl[606]";
+connectAttr "L_MetCarp_04_Ctrl_rotateX.o" "SkeletonRN.phl[607]";
+connectAttr "L_MetCarp_04_Ctrl_rotateY.o" "SkeletonRN.phl[608]";
+connectAttr "L_MetCarp_04_Ctrl_scaleX.o" "SkeletonRN.phl[609]";
+connectAttr "L_MetCarp_04_Ctrl_scaleY.o" "SkeletonRN.phl[610]";
+connectAttr "L_MetCarp_04_Ctrl_scaleZ.o" "SkeletonRN.phl[611]";
+connectAttr "L_MetCarp_04_Ctrl_visibility.o" "SkeletonRN.phl[612]";
+connectAttr "L_Finger_04_Knuckle_01_Ctrl_translateX.o" "SkeletonRN.phl[613]";
+connectAttr "L_Finger_04_Knuckle_01_Ctrl_translateY.o" "SkeletonRN.phl[614]";
+connectAttr "L_Finger_04_Knuckle_01_Ctrl_translateZ.o" "SkeletonRN.phl[615]";
+connectAttr "L_Finger_04_Knuckle_01_Ctrl_rotateX.o" "SkeletonRN.phl[616]";
+connectAttr "L_Finger_04_Knuckle_01_Ctrl_rotateY.o" "SkeletonRN.phl[617]";
+connectAttr "L_Finger_04_Knuckle_01_Ctrl_rotateZ.o" "SkeletonRN.phl[618]";
+connectAttr "L_Finger_04_Knuckle_01_Ctrl_scaleX.o" "SkeletonRN.phl[619]";
+connectAttr "L_Finger_04_Knuckle_01_Ctrl_scaleY.o" "SkeletonRN.phl[620]";
+connectAttr "L_Finger_04_Knuckle_01_Ctrl_scaleZ.o" "SkeletonRN.phl[621]";
+connectAttr "L_Finger_04_Knuckle_01_Ctrl_visibility.o" "SkeletonRN.phl[622]";
+connectAttr "L_Finger_04_Knuckle_02_Ctrl_translateX.o" "SkeletonRN.phl[623]";
+connectAttr "L_Finger_04_Knuckle_02_Ctrl_translateY.o" "SkeletonRN.phl[624]";
+connectAttr "L_Finger_04_Knuckle_02_Ctrl_translateZ.o" "SkeletonRN.phl[625]";
+connectAttr "L_Finger_04_Knuckle_02_Ctrl_rotateX.o" "SkeletonRN.phl[626]";
+connectAttr "L_Finger_04_Knuckle_02_Ctrl_rotateY.o" "SkeletonRN.phl[627]";
+connectAttr "L_Finger_04_Knuckle_02_Ctrl_rotateZ.o" "SkeletonRN.phl[628]";
+connectAttr "L_Finger_04_Knuckle_02_Ctrl_scaleX.o" "SkeletonRN.phl[629]";
+connectAttr "L_Finger_04_Knuckle_02_Ctrl_scaleY.o" "SkeletonRN.phl[630]";
+connectAttr "L_Finger_04_Knuckle_02_Ctrl_scaleZ.o" "SkeletonRN.phl[631]";
+connectAttr "L_Finger_04_Knuckle_02_Ctrl_visibility.o" "SkeletonRN.phl[632]";
+connectAttr "L_Finger_04_Knuckle_03_Ctrl_translateX.o" "SkeletonRN.phl[633]";
+connectAttr "L_Finger_04_Knuckle_03_Ctrl_translateY.o" "SkeletonRN.phl[634]";
+connectAttr "L_Finger_04_Knuckle_03_Ctrl_translateZ.o" "SkeletonRN.phl[635]";
+connectAttr "L_Finger_04_Knuckle_03_Ctrl_rotateX.o" "SkeletonRN.phl[636]";
+connectAttr "L_Finger_04_Knuckle_03_Ctrl_rotateY.o" "SkeletonRN.phl[637]";
+connectAttr "L_Finger_04_Knuckle_03_Ctrl_rotateZ.o" "SkeletonRN.phl[638]";
+connectAttr "L_Finger_04_Knuckle_03_Ctrl_scaleX.o" "SkeletonRN.phl[639]";
+connectAttr "L_Finger_04_Knuckle_03_Ctrl_scaleY.o" "SkeletonRN.phl[640]";
+connectAttr "L_Finger_04_Knuckle_03_Ctrl_scaleZ.o" "SkeletonRN.phl[641]";
+connectAttr "L_Finger_04_Knuckle_03_Ctrl_visibility.o" "SkeletonRN.phl[642]";
+connectAttr "L_MetCarp_05_Ctrl_translateX.o" "SkeletonRN.phl[643]";
+connectAttr "L_MetCarp_05_Ctrl_translateY.o" "SkeletonRN.phl[644]";
+connectAttr "L_MetCarp_05_Ctrl_translateZ.o" "SkeletonRN.phl[645]";
+connectAttr "L_MetCarp_05_Ctrl_rotateX.o" "SkeletonRN.phl[646]";
+connectAttr "L_MetCarp_05_Ctrl_rotateY.o" "SkeletonRN.phl[647]";
+connectAttr "L_MetCarp_05_Ctrl_rotateZ.o" "SkeletonRN.phl[648]";
+connectAttr "L_MetCarp_05_Ctrl_scaleX.o" "SkeletonRN.phl[649]";
+connectAttr "L_MetCarp_05_Ctrl_scaleY.o" "SkeletonRN.phl[650]";
+connectAttr "L_MetCarp_05_Ctrl_scaleZ.o" "SkeletonRN.phl[651]";
+connectAttr "L_MetCarp_05_Ctrl_visibility.o" "SkeletonRN.phl[652]";
+connectAttr "L_Finger_05_Knuckle_01_Ctrl_translateX.o" "SkeletonRN.phl[653]";
+connectAttr "L_Finger_05_Knuckle_01_Ctrl_translateY.o" "SkeletonRN.phl[654]";
+connectAttr "L_Finger_05_Knuckle_01_Ctrl_translateZ.o" "SkeletonRN.phl[655]";
+connectAttr "L_Finger_05_Knuckle_01_Ctrl_rotateX.o" "SkeletonRN.phl[656]";
+connectAttr "L_Finger_05_Knuckle_01_Ctrl_rotateY.o" "SkeletonRN.phl[657]";
+connectAttr "L_Finger_05_Knuckle_01_Ctrl_rotateZ.o" "SkeletonRN.phl[658]";
+connectAttr "L_Finger_05_Knuckle_01_Ctrl_scaleX.o" "SkeletonRN.phl[659]";
+connectAttr "L_Finger_05_Knuckle_01_Ctrl_scaleY.o" "SkeletonRN.phl[660]";
+connectAttr "L_Finger_05_Knuckle_01_Ctrl_scaleZ.o" "SkeletonRN.phl[661]";
+connectAttr "L_Finger_05_Knuckle_01_Ctrl_visibility.o" "SkeletonRN.phl[662]";
+connectAttr "L_Finger_05_Knuckle_02_Ctrl_translateX.o" "SkeletonRN.phl[663]";
+connectAttr "L_Finger_05_Knuckle_02_Ctrl_translateY.o" "SkeletonRN.phl[664]";
+connectAttr "L_Finger_05_Knuckle_02_Ctrl_translateZ.o" "SkeletonRN.phl[665]";
+connectAttr "L_Finger_05_Knuckle_02_Ctrl_rotateX.o" "SkeletonRN.phl[666]";
+connectAttr "L_Finger_05_Knuckle_02_Ctrl_rotateY.o" "SkeletonRN.phl[667]";
+connectAttr "L_Finger_05_Knuckle_02_Ctrl_rotateZ.o" "SkeletonRN.phl[668]";
+connectAttr "L_Finger_05_Knuckle_02_Ctrl_scaleX.o" "SkeletonRN.phl[669]";
+connectAttr "L_Finger_05_Knuckle_02_Ctrl_scaleY.o" "SkeletonRN.phl[670]";
+connectAttr "L_Finger_05_Knuckle_02_Ctrl_scaleZ.o" "SkeletonRN.phl[671]";
+connectAttr "L_Finger_05_Knuckle_02_Ctrl_visibility.o" "SkeletonRN.phl[672]";
+connectAttr "L_Finger_05_Knuckle_03_Ctrl_translateX.o" "SkeletonRN.phl[673]";
+connectAttr "L_Finger_05_Knuckle_03_Ctrl_translateY.o" "SkeletonRN.phl[674]";
+connectAttr "L_Finger_05_Knuckle_03_Ctrl_translateZ.o" "SkeletonRN.phl[675]";
+connectAttr "L_Finger_05_Knuckle_03_Ctrl_rotateX.o" "SkeletonRN.phl[676]";
+connectAttr "L_Finger_05_Knuckle_03_Ctrl_rotateY.o" "SkeletonRN.phl[677]";
+connectAttr "L_Finger_05_Knuckle_03_Ctrl_rotateZ.o" "SkeletonRN.phl[678]";
+connectAttr "L_Finger_05_Knuckle_03_Ctrl_scaleX.o" "SkeletonRN.phl[679]";
+connectAttr "L_Finger_05_Knuckle_03_Ctrl_scaleY.o" "SkeletonRN.phl[680]";
+connectAttr "L_Finger_05_Knuckle_03_Ctrl_scaleZ.o" "SkeletonRN.phl[681]";
+connectAttr "L_Finger_05_Knuckle_03_Ctrl_visibility.o" "SkeletonRN.phl[682]";
+connectAttr "L_Leg_Pivot_Ctrl_Follow_Translate.o" "SkeletonRN.phl[683]";
+connectAttr "L_Leg_Pivot_Ctrl_Follow_Rotate.o" "SkeletonRN.phl[684]";
+connectAttr "L_Leg_Pivot_Ctrl_translateX.o" "SkeletonRN.phl[685]";
+connectAttr "L_Leg_Pivot_Ctrl_translateY.o" "SkeletonRN.phl[686]";
+connectAttr "L_Leg_Pivot_Ctrl_translateZ.o" "SkeletonRN.phl[687]";
+connectAttr "L_Leg_Pivot_Ctrl_rotateX.o" "SkeletonRN.phl[688]";
+connectAttr "L_Leg_Pivot_Ctrl_rotateY.o" "SkeletonRN.phl[689]";
+connectAttr "L_Leg_Pivot_Ctrl_rotateZ.o" "SkeletonRN.phl[690]";
+connectAttr "L_Leg_Pivot_Ctrl_scaleX.o" "SkeletonRN.phl[691]";
+connectAttr "L_Leg_Pivot_Ctrl_scaleY.o" "SkeletonRN.phl[692]";
+connectAttr "L_Leg_Pivot_Ctrl_scaleZ.o" "SkeletonRN.phl[693]";
+connectAttr "L_Leg_Pivot_Ctrl_visibility.o" "SkeletonRN.phl[694]";
+connectAttr "L_Leg_IK_Base_Ctrl_translateX.o" "SkeletonRN.phl[695]";
+connectAttr "L_Leg_IK_Base_Ctrl_translateY.o" "SkeletonRN.phl[696]";
+connectAttr "L_Leg_IK_Base_Ctrl_translateZ.o" "SkeletonRN.phl[697]";
+connectAttr "L_Leg_IK_Base_Ctrl_Operating_Space.o" "SkeletonRN.phl[698]";
+connectAttr "L_Leg_IK_Base_Ctrl_visibility.o" "SkeletonRN.phl[699]";
+connectAttr "L_Leg_IK_Base_Ctrl_rotateX.o" "SkeletonRN.phl[700]";
+connectAttr "L_Leg_IK_Base_Ctrl_rotateY.o" "SkeletonRN.phl[701]";
+connectAttr "L_Leg_IK_Base_Ctrl_rotateZ.o" "SkeletonRN.phl[702]";
+connectAttr "L_Leg_IK_Base_Ctrl_scaleX.o" "SkeletonRN.phl[703]";
+connectAttr "L_Leg_IK_Base_Ctrl_scaleY.o" "SkeletonRN.phl[704]";
+connectAttr "L_Leg_IK_Base_Ctrl_scaleZ.o" "SkeletonRN.phl[705]";
+connectAttr "L_Leg_PV_Ctrl_translateX.o" "SkeletonRN.phl[706]";
+connectAttr "L_Leg_PV_Ctrl_translateY.o" "SkeletonRN.phl[707]";
+connectAttr "L_Leg_PV_Ctrl_translateZ.o" "SkeletonRN.phl[708]";
+connectAttr "L_Leg_PV_Ctrl_Operating_Space.o" "SkeletonRN.phl[709]";
+connectAttr "L_Leg_PV_Ctrl_visibility.o" "SkeletonRN.phl[710]";
+connectAttr "L_Leg_PV_Ctrl_rotateX.o" "SkeletonRN.phl[711]";
+connectAttr "L_Leg_PV_Ctrl_rotateY.o" "SkeletonRN.phl[712]";
+connectAttr "L_Leg_PV_Ctrl_rotateZ.o" "SkeletonRN.phl[713]";
+connectAttr "L_Leg_PV_Ctrl_scaleX.o" "SkeletonRN.phl[714]";
+connectAttr "L_Leg_PV_Ctrl_scaleY.o" "SkeletonRN.phl[715]";
+connectAttr "L_Leg_PV_Ctrl_scaleZ.o" "SkeletonRN.phl[716]";
+connectAttr "L_Leg_IK_End_Ctrl_rotateX.o" "SkeletonRN.phl[717]";
+connectAttr "L_Leg_IK_End_Ctrl_rotateY.o" "SkeletonRN.phl[718]";
+connectAttr "L_Leg_IK_End_Ctrl_rotateZ.o" "SkeletonRN.phl[719]";
+connectAttr "L_Leg_IK_End_Ctrl_Operating_Space.o" "SkeletonRN.phl[720]";
+connectAttr "L_Leg_IK_End_Ctrl_translateX.o" "SkeletonRN.phl[721]";
+connectAttr "L_Leg_IK_End_Ctrl_translateY.o" "SkeletonRN.phl[722]";
+connectAttr "L_Leg_IK_End_Ctrl_translateZ.o" "SkeletonRN.phl[723]";
+connectAttr "L_Leg_IK_End_Ctrl_visibility.o" "SkeletonRN.phl[724]";
+connectAttr "L_Leg_IK_End_Ctrl_scaleX.o" "SkeletonRN.phl[725]";
+connectAttr "L_Leg_IK_End_Ctrl_scaleY.o" "SkeletonRN.phl[726]";
+connectAttr "L_Leg_IK_End_Ctrl_scaleZ.o" "SkeletonRN.phl[727]";
+connectAttr "L_Foot_IK_Out_Ctrl_translateX.o" "SkeletonRN.phl[728]";
+connectAttr "L_Foot_IK_Out_Ctrl_translateY.o" "SkeletonRN.phl[729]";
+connectAttr "L_Foot_IK_Out_Ctrl_translateZ.o" "SkeletonRN.phl[730]";
+connectAttr "L_Foot_IK_Out_Ctrl_visibility.o" "SkeletonRN.phl[731]";
+connectAttr "L_Foot_IK_Out_Ctrl_rotateX.o" "SkeletonRN.phl[732]";
+connectAttr "L_Foot_IK_Out_Ctrl_rotateY.o" "SkeletonRN.phl[733]";
+connectAttr "L_Foot_IK_Out_Ctrl_rotateZ.o" "SkeletonRN.phl[734]";
+connectAttr "L_Foot_IK_Out_Ctrl_scaleX.o" "SkeletonRN.phl[735]";
+connectAttr "L_Foot_IK_Out_Ctrl_scaleY.o" "SkeletonRN.phl[736]";
+connectAttr "L_Foot_IK_Out_Ctrl_scaleZ.o" "SkeletonRN.phl[737]";
+connectAttr "L_Foot_IK_In_Ctrl_translateX.o" "SkeletonRN.phl[738]";
+connectAttr "L_Foot_IK_In_Ctrl_translateY.o" "SkeletonRN.phl[739]";
+connectAttr "L_Foot_IK_In_Ctrl_translateZ.o" "SkeletonRN.phl[740]";
+connectAttr "L_Foot_IK_In_Ctrl_visibility.o" "SkeletonRN.phl[741]";
+connectAttr "L_Foot_IK_In_Ctrl_rotateX.o" "SkeletonRN.phl[742]";
+connectAttr "L_Foot_IK_In_Ctrl_rotateY.o" "SkeletonRN.phl[743]";
+connectAttr "L_Foot_IK_In_Ctrl_rotateZ.o" "SkeletonRN.phl[744]";
+connectAttr "L_Foot_IK_In_Ctrl_scaleX.o" "SkeletonRN.phl[745]";
+connectAttr "L_Foot_IK_In_Ctrl_scaleY.o" "SkeletonRN.phl[746]";
+connectAttr "L_Foot_IK_In_Ctrl_scaleZ.o" "SkeletonRN.phl[747]";
+connectAttr "L_Foot_IK_Heel_Ctrl_translateX.o" "SkeletonRN.phl[748]";
+connectAttr "L_Foot_IK_Heel_Ctrl_translateY.o" "SkeletonRN.phl[749]";
+connectAttr "L_Foot_IK_Heel_Ctrl_translateZ.o" "SkeletonRN.phl[750]";
+connectAttr "L_Foot_IK_Heel_Ctrl_visibility.o" "SkeletonRN.phl[751]";
+connectAttr "L_Foot_IK_Heel_Ctrl_rotateX.o" "SkeletonRN.phl[752]";
+connectAttr "L_Foot_IK_Heel_Ctrl_rotateY.o" "SkeletonRN.phl[753]";
+connectAttr "L_Foot_IK_Heel_Ctrl_rotateZ.o" "SkeletonRN.phl[754]";
+connectAttr "L_Foot_IK_Heel_Ctrl_scaleX.o" "SkeletonRN.phl[755]";
+connectAttr "L_Foot_IK_Heel_Ctrl_scaleY.o" "SkeletonRN.phl[756]";
+connectAttr "L_Foot_IK_Heel_Ctrl_scaleZ.o" "SkeletonRN.phl[757]";
+connectAttr "L_Foot_IK_Toe_Ctrl_scaleX.o" "SkeletonRN.phl[758]";
+connectAttr "L_Foot_IK_Toe_Ctrl_scaleY.o" "SkeletonRN.phl[759]";
+connectAttr "L_Foot_IK_Toe_Ctrl_scaleZ.o" "SkeletonRN.phl[760]";
+connectAttr "L_Foot_IK_Toe_Ctrl_translateX.o" "SkeletonRN.phl[761]";
+connectAttr "L_Foot_IK_Toe_Ctrl_translateY.o" "SkeletonRN.phl[762]";
+connectAttr "L_Foot_IK_Toe_Ctrl_translateZ.o" "SkeletonRN.phl[763]";
+connectAttr "L_Foot_IK_Toe_Ctrl_visibility.o" "SkeletonRN.phl[764]";
+connectAttr "L_Foot_IK_Toe_Ctrl_rotateX.o" "SkeletonRN.phl[765]";
+connectAttr "L_Foot_IK_Toe_Ctrl_rotateY.o" "SkeletonRN.phl[766]";
+connectAttr "L_Foot_IK_Toe_Ctrl_rotateZ.o" "SkeletonRN.phl[767]";
+connectAttr "L_Foot_IK_Ball_Ctrl_translateX.o" "SkeletonRN.phl[768]";
+connectAttr "L_Foot_IK_Ball_Ctrl_translateY.o" "SkeletonRN.phl[769]";
+connectAttr "L_Foot_IK_Ball_Ctrl_translateZ.o" "SkeletonRN.phl[770]";
+connectAttr "L_Foot_IK_Ball_Ctrl_visibility.o" "SkeletonRN.phl[771]";
+connectAttr "L_Foot_IK_Ball_Ctrl_rotateX.o" "SkeletonRN.phl[772]";
+connectAttr "L_Foot_IK_Ball_Ctrl_rotateY.o" "SkeletonRN.phl[773]";
+connectAttr "L_Foot_IK_Ball_Ctrl_rotateZ.o" "SkeletonRN.phl[774]";
+connectAttr "L_Foot_IK_Ball_Ctrl_scaleX.o" "SkeletonRN.phl[775]";
+connectAttr "L_Foot_IK_Ball_Ctrl_scaleY.o" "SkeletonRN.phl[776]";
+connectAttr "L_Foot_IK_Ball_Ctrl_scaleZ.o" "SkeletonRN.phl[777]";
+connectAttr "L_Foot_IK_Tap_Ctrl_translateX.o" "SkeletonRN.phl[778]";
+connectAttr "L_Foot_IK_Tap_Ctrl_translateY.o" "SkeletonRN.phl[779]";
+connectAttr "L_Foot_IK_Tap_Ctrl_translateZ.o" "SkeletonRN.phl[780]";
+connectAttr "L_Foot_IK_Tap_Ctrl_visibility.o" "SkeletonRN.phl[781]";
+connectAttr "L_Foot_IK_Tap_Ctrl_rotateX.o" "SkeletonRN.phl[782]";
+connectAttr "L_Foot_IK_Tap_Ctrl_rotateY.o" "SkeletonRN.phl[783]";
+connectAttr "L_Foot_IK_Tap_Ctrl_rotateZ.o" "SkeletonRN.phl[784]";
+connectAttr "L_Foot_IK_Tap_Ctrl_scaleX.o" "SkeletonRN.phl[785]";
+connectAttr "L_Foot_IK_Tap_Ctrl_scaleY.o" "SkeletonRN.phl[786]";
+connectAttr "L_Foot_IK_Tap_Ctrl_scaleZ.o" "SkeletonRN.phl[787]";
+connectAttr "L_MetTars_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[788]";
+connectAttr "L_MetTars_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[789]";
+connectAttr "L_MetTars_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[790]";
+connectAttr "L_MetTars_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[791]";
+connectAttr "L_MetTars_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[792]";
+connectAttr "L_MetTars_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[793]";
+connectAttr "L_MetTars_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[794]";
+connectAttr "L_MetTars_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[795]";
+connectAttr "L_MetTars_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[796]";
+connectAttr "L_MetTars_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[797]";
+connectAttr "L_Toe_01_Knuckle_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[798]";
+connectAttr "L_Toe_01_Knuckle_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[799]";
+connectAttr "L_Toe_01_Knuckle_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[800]";
+connectAttr "L_Toe_01_Knuckle_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[801]";
+connectAttr "L_Toe_01_Knuckle_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[802]";
+connectAttr "L_Toe_01_Knuckle_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[803]";
+connectAttr "L_Toe_01_Knuckle_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[804]";
+connectAttr "L_Toe_01_Knuckle_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[805]";
+connectAttr "L_Toe_01_Knuckle_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[806]";
+connectAttr "L_Toe_01_Knuckle_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[807]";
+connectAttr "L_Toe_01_Knuckle_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[808]";
+connectAttr "L_Toe_01_Knuckle_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[809]";
+connectAttr "L_Toe_01_Knuckle_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[810]";
+connectAttr "L_Toe_01_Knuckle_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[811]";
+connectAttr "L_Toe_01_Knuckle_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[812]";
+connectAttr "L_Toe_01_Knuckle_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[813]";
+connectAttr "L_Toe_01_Knuckle_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[814]";
+connectAttr "L_Toe_01_Knuckle_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[815]";
+connectAttr "L_Toe_01_Knuckle_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[816]";
+connectAttr "L_Toe_01_Knuckle_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[817]";
+connectAttr "L_MetTars_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[818]";
+connectAttr "L_MetTars_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[819]";
+connectAttr "L_MetTars_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[820]";
+connectAttr "L_MetTars_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[821]";
+connectAttr "L_MetTars_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[822]";
+connectAttr "L_MetTars_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[823]";
+connectAttr "L_MetTars_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[824]";
+connectAttr "L_MetTars_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[825]";
+connectAttr "L_MetTars_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[826]";
+connectAttr "L_MetTars_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[827]";
+connectAttr "L_Toe_02_Knuckle_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[828]";
+connectAttr "L_Toe_02_Knuckle_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[829]";
+connectAttr "L_Toe_02_Knuckle_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[830]";
+connectAttr "L_Toe_02_Knuckle_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[831]";
+connectAttr "L_Toe_02_Knuckle_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[832]";
+connectAttr "L_Toe_02_Knuckle_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[833]";
+connectAttr "L_Toe_02_Knuckle_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[834]";
+connectAttr "L_Toe_02_Knuckle_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[835]";
+connectAttr "L_Toe_02_Knuckle_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[836]";
+connectAttr "L_Toe_02_Knuckle_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[837]";
+connectAttr "L_Toe_02_Knuckle_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[838]";
+connectAttr "L_Toe_02_Knuckle_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[839]";
+connectAttr "L_Toe_02_Knuckle_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[840]";
+connectAttr "L_Toe_02_Knuckle_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[841]";
+connectAttr "L_Toe_02_Knuckle_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[842]";
+connectAttr "L_Toe_02_Knuckle_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[843]";
+connectAttr "L_Toe_02_Knuckle_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[844]";
+connectAttr "L_Toe_02_Knuckle_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[845]";
+connectAttr "L_Toe_02_Knuckle_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[846]";
+connectAttr "L_Toe_02_Knuckle_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[847]";
+connectAttr "L_Toe_02_Knuckle_03_IK_Ctrl_translateX.o" "SkeletonRN.phl[848]";
+connectAttr "L_Toe_02_Knuckle_03_IK_Ctrl_translateY.o" "SkeletonRN.phl[849]";
+connectAttr "L_Toe_02_Knuckle_03_IK_Ctrl_translateZ.o" "SkeletonRN.phl[850]";
+connectAttr "L_Toe_02_Knuckle_03_IK_Ctrl_visibility.o" "SkeletonRN.phl[851]";
+connectAttr "L_Toe_02_Knuckle_03_IK_Ctrl_rotateX.o" "SkeletonRN.phl[852]";
+connectAttr "L_Toe_02_Knuckle_03_IK_Ctrl_rotateY.o" "SkeletonRN.phl[853]";
+connectAttr "L_Toe_02_Knuckle_03_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[854]";
+connectAttr "L_Toe_02_Knuckle_03_IK_Ctrl_scaleX.o" "SkeletonRN.phl[855]";
+connectAttr "L_Toe_02_Knuckle_03_IK_Ctrl_scaleY.o" "SkeletonRN.phl[856]";
+connectAttr "L_Toe_02_Knuckle_03_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[857]";
+connectAttr "L_MetTars_03_IK_Ctrl_translateX.o" "SkeletonRN.phl[858]";
+connectAttr "L_MetTars_03_IK_Ctrl_translateY.o" "SkeletonRN.phl[859]";
+connectAttr "L_MetTars_03_IK_Ctrl_translateZ.o" "SkeletonRN.phl[860]";
+connectAttr "L_MetTars_03_IK_Ctrl_visibility.o" "SkeletonRN.phl[861]";
+connectAttr "L_MetTars_03_IK_Ctrl_rotateX.o" "SkeletonRN.phl[862]";
+connectAttr "L_MetTars_03_IK_Ctrl_rotateY.o" "SkeletonRN.phl[863]";
+connectAttr "L_MetTars_03_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[864]";
+connectAttr "L_MetTars_03_IK_Ctrl_scaleX.o" "SkeletonRN.phl[865]";
+connectAttr "L_MetTars_03_IK_Ctrl_scaleY.o" "SkeletonRN.phl[866]";
+connectAttr "L_MetTars_03_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[867]";
+connectAttr "L_Toe_03_Knuckle_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[868]";
+connectAttr "L_Toe_03_Knuckle_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[869]";
+connectAttr "L_Toe_03_Knuckle_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[870]";
+connectAttr "L_Toe_03_Knuckle_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[871]";
+connectAttr "L_Toe_03_Knuckle_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[872]";
+connectAttr "L_Toe_03_Knuckle_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[873]";
+connectAttr "L_Toe_03_Knuckle_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[874]";
+connectAttr "L_Toe_03_Knuckle_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[875]";
+connectAttr "L_Toe_03_Knuckle_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[876]";
+connectAttr "L_Toe_03_Knuckle_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[877]";
+connectAttr "L_Toe_03_Knuckle_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[878]";
+connectAttr "L_Toe_03_Knuckle_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[879]";
+connectAttr "L_Toe_03_Knuckle_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[880]";
+connectAttr "L_Toe_03_Knuckle_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[881]";
+connectAttr "L_Toe_03_Knuckle_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[882]";
+connectAttr "L_Toe_03_Knuckle_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[883]";
+connectAttr "L_Toe_03_Knuckle_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[884]";
+connectAttr "L_Toe_03_Knuckle_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[885]";
+connectAttr "L_Toe_03_Knuckle_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[886]";
+connectAttr "L_Toe_03_Knuckle_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[887]";
+connectAttr "L_Toe_03_Knuckle_03_IK_Ctrl_translateX.o" "SkeletonRN.phl[888]";
+connectAttr "L_Toe_03_Knuckle_03_IK_Ctrl_translateY.o" "SkeletonRN.phl[889]";
+connectAttr "L_Toe_03_Knuckle_03_IK_Ctrl_translateZ.o" "SkeletonRN.phl[890]";
+connectAttr "L_Toe_03_Knuckle_03_IK_Ctrl_visibility.o" "SkeletonRN.phl[891]";
+connectAttr "L_Toe_03_Knuckle_03_IK_Ctrl_rotateX.o" "SkeletonRN.phl[892]";
+connectAttr "L_Toe_03_Knuckle_03_IK_Ctrl_rotateY.o" "SkeletonRN.phl[893]";
+connectAttr "L_Toe_03_Knuckle_03_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[894]";
+connectAttr "L_Toe_03_Knuckle_03_IK_Ctrl_scaleX.o" "SkeletonRN.phl[895]";
+connectAttr "L_Toe_03_Knuckle_03_IK_Ctrl_scaleY.o" "SkeletonRN.phl[896]";
+connectAttr "L_Toe_03_Knuckle_03_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[897]";
+connectAttr "L_MetTars_04_IK_Ctrl_translateX.o" "SkeletonRN.phl[898]";
+connectAttr "L_MetTars_04_IK_Ctrl_translateY.o" "SkeletonRN.phl[899]";
+connectAttr "L_MetTars_04_IK_Ctrl_translateZ.o" "SkeletonRN.phl[900]";
+connectAttr "L_MetTars_04_IK_Ctrl_visibility.o" "SkeletonRN.phl[901]";
+connectAttr "L_MetTars_04_IK_Ctrl_rotateX.o" "SkeletonRN.phl[902]";
+connectAttr "L_MetTars_04_IK_Ctrl_rotateY.o" "SkeletonRN.phl[903]";
+connectAttr "L_MetTars_04_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[904]";
+connectAttr "L_MetTars_04_IK_Ctrl_scaleX.o" "SkeletonRN.phl[905]";
+connectAttr "L_MetTars_04_IK_Ctrl_scaleY.o" "SkeletonRN.phl[906]";
+connectAttr "L_MetTars_04_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[907]";
+connectAttr "L_Toe_04_Knuckle_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[908]";
+connectAttr "L_Toe_04_Knuckle_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[909]";
+connectAttr "L_Toe_04_Knuckle_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[910]";
+connectAttr "L_Toe_04_Knuckle_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[911]";
+connectAttr "L_Toe_04_Knuckle_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[912]";
+connectAttr "L_Toe_04_Knuckle_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[913]";
+connectAttr "L_Toe_04_Knuckle_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[914]";
+connectAttr "L_Toe_04_Knuckle_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[915]";
+connectAttr "L_Toe_04_Knuckle_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[916]";
+connectAttr "L_Toe_04_Knuckle_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[917]";
+connectAttr "L_Toe_04_Knuckle_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[918]";
+connectAttr "L_Toe_04_Knuckle_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[919]";
+connectAttr "L_Toe_04_Knuckle_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[920]";
+connectAttr "L_Toe_04_Knuckle_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[921]";
+connectAttr "L_Toe_04_Knuckle_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[922]";
+connectAttr "L_Toe_04_Knuckle_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[923]";
+connectAttr "L_Toe_04_Knuckle_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[924]";
+connectAttr "L_Toe_04_Knuckle_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[925]";
+connectAttr "L_Toe_04_Knuckle_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[926]";
+connectAttr "L_Toe_04_Knuckle_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[927]";
+connectAttr "L_Toe_04_Knuckle_03_IK_Ctrl_translateX.o" "SkeletonRN.phl[928]";
+connectAttr "L_Toe_04_Knuckle_03_IK_Ctrl_translateY.o" "SkeletonRN.phl[929]";
+connectAttr "L_Toe_04_Knuckle_03_IK_Ctrl_translateZ.o" "SkeletonRN.phl[930]";
+connectAttr "L_Toe_04_Knuckle_03_IK_Ctrl_visibility.o" "SkeletonRN.phl[931]";
+connectAttr "L_Toe_04_Knuckle_03_IK_Ctrl_rotateX.o" "SkeletonRN.phl[932]";
+connectAttr "L_Toe_04_Knuckle_03_IK_Ctrl_rotateY.o" "SkeletonRN.phl[933]";
+connectAttr "L_Toe_04_Knuckle_03_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[934]";
+connectAttr "L_Toe_04_Knuckle_03_IK_Ctrl_scaleX.o" "SkeletonRN.phl[935]";
+connectAttr "L_Toe_04_Knuckle_03_IK_Ctrl_scaleY.o" "SkeletonRN.phl[936]";
+connectAttr "L_Toe_04_Knuckle_03_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[937]";
+connectAttr "L_MetTars_05_IK_Ctrl_translateX.o" "SkeletonRN.phl[938]";
+connectAttr "L_MetTars_05_IK_Ctrl_translateY.o" "SkeletonRN.phl[939]";
+connectAttr "L_MetTars_05_IK_Ctrl_translateZ.o" "SkeletonRN.phl[940]";
+connectAttr "L_MetTars_05_IK_Ctrl_visibility.o" "SkeletonRN.phl[941]";
+connectAttr "L_MetTars_05_IK_Ctrl_rotateX.o" "SkeletonRN.phl[942]";
+connectAttr "L_MetTars_05_IK_Ctrl_rotateY.o" "SkeletonRN.phl[943]";
+connectAttr "L_MetTars_05_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[944]";
+connectAttr "L_MetTars_05_IK_Ctrl_scaleX.o" "SkeletonRN.phl[945]";
+connectAttr "L_MetTars_05_IK_Ctrl_scaleY.o" "SkeletonRN.phl[946]";
+connectAttr "L_MetTars_05_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[947]";
+connectAttr "L_Toe_05_Knuckle_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[948]";
+connectAttr "L_Toe_05_Knuckle_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[949]";
+connectAttr "L_Toe_05_Knuckle_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[950]";
+connectAttr "L_Toe_05_Knuckle_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[951]";
+connectAttr "L_Toe_05_Knuckle_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[952]";
+connectAttr "L_Toe_05_Knuckle_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[953]";
+connectAttr "L_Toe_05_Knuckle_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[954]";
+connectAttr "L_Toe_05_Knuckle_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[955]";
+connectAttr "L_Toe_05_Knuckle_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[956]";
+connectAttr "L_Toe_05_Knuckle_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[957]";
+connectAttr "L_Toe_05_Knuckle_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[958]";
+connectAttr "L_Toe_05_Knuckle_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[959]";
+connectAttr "L_Toe_05_Knuckle_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[960]";
+connectAttr "L_Toe_05_Knuckle_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[961]";
+connectAttr "L_Toe_05_Knuckle_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[962]";
+connectAttr "L_Toe_05_Knuckle_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[963]";
+connectAttr "L_Toe_05_Knuckle_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[964]";
+connectAttr "L_Toe_05_Knuckle_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[965]";
+connectAttr "L_Toe_05_Knuckle_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[966]";
+connectAttr "L_Toe_05_Knuckle_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[967]";
+connectAttr "L_Toe_05_Knuckle_03_IK_Ctrl_translateX.o" "SkeletonRN.phl[968]";
+connectAttr "L_Toe_05_Knuckle_03_IK_Ctrl_translateY.o" "SkeletonRN.phl[969]";
+connectAttr "L_Toe_05_Knuckle_03_IK_Ctrl_translateZ.o" "SkeletonRN.phl[970]";
+connectAttr "L_Toe_05_Knuckle_03_IK_Ctrl_visibility.o" "SkeletonRN.phl[971]";
+connectAttr "L_Toe_05_Knuckle_03_IK_Ctrl_rotateX.o" "SkeletonRN.phl[972]";
+connectAttr "L_Toe_05_Knuckle_03_IK_Ctrl_rotateY.o" "SkeletonRN.phl[973]";
+connectAttr "L_Toe_05_Knuckle_03_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[974]";
+connectAttr "L_Toe_05_Knuckle_03_IK_Ctrl_scaleX.o" "SkeletonRN.phl[975]";
+connectAttr "L_Toe_05_Knuckle_03_IK_Ctrl_scaleY.o" "SkeletonRN.phl[976]";
+connectAttr "L_Toe_05_Knuckle_03_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[977]";
+connectAttr "L_Leg_IKFK_Ctrl_IKFK_Switch.o" "SkeletonRN.phl[978]";
+connectAttr "R_Scap_Ctrl_Follow_Translate.o" "SkeletonRN.phl[979]";
+connectAttr "R_Scap_Ctrl_Follow_Rotate.o" "SkeletonRN.phl[980]";
+connectAttr "R_Scap_Ctrl_translateX.o" "SkeletonRN.phl[981]";
+connectAttr "R_Scap_Ctrl_translateY.o" "SkeletonRN.phl[982]";
+connectAttr "R_Scap_Ctrl_translateZ.o" "SkeletonRN.phl[983]";
+connectAttr "R_Scap_Ctrl_rotateY.o" "SkeletonRN.phl[984]";
+connectAttr "R_Scap_Ctrl_rotateX.o" "SkeletonRN.phl[985]";
+connectAttr "R_Scap_Ctrl_rotateZ.o" "SkeletonRN.phl[986]";
+connectAttr "R_Scap_Ctrl_scaleX.o" "SkeletonRN.phl[987]";
+connectAttr "R_Scap_Ctrl_scaleY.o" "SkeletonRN.phl[988]";
+connectAttr "R_Scap_Ctrl_scaleZ.o" "SkeletonRN.phl[989]";
+connectAttr "R_Scap_Ctrl_visibility.o" "SkeletonRN.phl[990]";
+connectAttr "R_Arm_IKFK_Ctrl_Reg_Arm.o" "SkeletonRN.phl[991]";
+connectAttr "R_Arm_IKFK_Ctrl_Rev_FK_Arm.o" "SkeletonRN.phl[992]";
+connectAttr "R_Arm_IKFK_Ctrl_IKFK_Switch.o" "SkeletonRN.phl[993]";
+connectAttr "R_Arm_01_FK_Ctrl_Follow_Translate.o" "SkeletonRN.phl[994]";
+connectAttr "R_Arm_01_FK_Ctrl_Follow_Rotate.o" "SkeletonRN.phl[995]";
+connectAttr "R_Arm_01_FK_Ctrl_translateX.o" "SkeletonRN.phl[996]";
+connectAttr "R_Arm_01_FK_Ctrl_translateY.o" "SkeletonRN.phl[997]";
+connectAttr "R_Arm_01_FK_Ctrl_translateZ.o" "SkeletonRN.phl[998]";
+connectAttr "R_Arm_01_FK_Ctrl_rotateZ.o" "SkeletonRN.phl[999]";
+connectAttr "R_Arm_01_FK_Ctrl_rotateX.o" "SkeletonRN.phl[1000]";
+connectAttr "R_Arm_01_FK_Ctrl_rotateY.o" "SkeletonRN.phl[1001]";
+connectAttr "R_Arm_01_FK_Ctrl_scaleX.o" "SkeletonRN.phl[1002]";
+connectAttr "R_Arm_01_FK_Ctrl_scaleY.o" "SkeletonRN.phl[1003]";
+connectAttr "R_Arm_01_FK_Ctrl_scaleZ.o" "SkeletonRN.phl[1004]";
+connectAttr "R_Arm_01_FK_Ctrl_Operating_Space.o" "SkeletonRN.phl[1005]";
+connectAttr "R_Arm_01_FK_Ctrl_visibility.o" "SkeletonRN.phl[1006]";
+connectAttr "R_Arm_02_FK_Ctrl_translateX.o" "SkeletonRN.phl[1007]";
+connectAttr "R_Arm_02_FK_Ctrl_translateY.o" "SkeletonRN.phl[1008]";
+connectAttr "R_Arm_02_FK_Ctrl_translateZ.o" "SkeletonRN.phl[1009]";
+connectAttr "R_Arm_02_FK_Ctrl_rotateZ.o" "SkeletonRN.phl[1010]";
+connectAttr "R_Arm_02_FK_Ctrl_rotateY.o" "SkeletonRN.phl[1011]";
+connectAttr "R_Arm_02_FK_Ctrl_rotateX.o" "SkeletonRN.phl[1012]";
+connectAttr "R_Arm_02_FK_Ctrl_scaleX.o" "SkeletonRN.phl[1013]";
+connectAttr "R_Arm_02_FK_Ctrl_scaleY.o" "SkeletonRN.phl[1014]";
+connectAttr "R_Arm_02_FK_Ctrl_scaleZ.o" "SkeletonRN.phl[1015]";
+connectAttr "R_Arm_02_FK_Ctrl_visibility.o" "SkeletonRN.phl[1016]";
+connectAttr "R_Arm_03_FK_Ctrl_translateX.o" "SkeletonRN.phl[1017]";
+connectAttr "R_Arm_03_FK_Ctrl_translateY.o" "SkeletonRN.phl[1018]";
+connectAttr "R_Arm_03_FK_Ctrl_translateZ.o" "SkeletonRN.phl[1019]";
+connectAttr "R_Arm_03_FK_Ctrl_rotateX.o" "SkeletonRN.phl[1020]";
+connectAttr "R_Arm_03_FK_Ctrl_rotateY.o" "SkeletonRN.phl[1021]";
+connectAttr "R_Arm_03_FK_Ctrl_rotateZ.o" "SkeletonRN.phl[1022]";
+connectAttr "R_Arm_03_FK_Ctrl_scaleX.o" "SkeletonRN.phl[1023]";
+connectAttr "R_Arm_03_FK_Ctrl_scaleY.o" "SkeletonRN.phl[1024]";
+connectAttr "R_Arm_03_FK_Ctrl_scaleZ.o" "SkeletonRN.phl[1025]";
+connectAttr "R_Arm_03_FK_Ctrl_visibility.o" "SkeletonRN.phl[1026]";
+connectAttr "R_Arm_Wrist_Ctrl_translateX.o" "SkeletonRN.phl[1027]";
+connectAttr "R_Arm_Wrist_Ctrl_translateY.o" "SkeletonRN.phl[1028]";
+connectAttr "R_Arm_Wrist_Ctrl_translateZ.o" "SkeletonRN.phl[1029]";
+connectAttr "R_Arm_Wrist_Ctrl_rotateX.o" "SkeletonRN.phl[1030]";
+connectAttr "R_Arm_Wrist_Ctrl_rotateY.o" "SkeletonRN.phl[1031]";
+connectAttr "R_Arm_Wrist_Ctrl_rotateZ.o" "SkeletonRN.phl[1032]";
+connectAttr "R_Arm_Wrist_Ctrl_scaleX.o" "SkeletonRN.phl[1033]";
+connectAttr "R_Arm_Wrist_Ctrl_scaleY.o" "SkeletonRN.phl[1034]";
+connectAttr "R_Arm_Wrist_Ctrl_scaleZ.o" "SkeletonRN.phl[1035]";
+connectAttr "R_Arm_Wrist_Ctrl_visibility.o" "SkeletonRN.phl[1036]";
+connectAttr "R_MetCarp_01_Ctrl_translateX.o" "SkeletonRN.phl[1037]";
+connectAttr "R_MetCarp_01_Ctrl_translateY.o" "SkeletonRN.phl[1038]";
+connectAttr "R_MetCarp_01_Ctrl_translateZ.o" "SkeletonRN.phl[1039]";
+connectAttr "R_MetCarp_01_Ctrl_rotateY.o" "SkeletonRN.phl[1040]";
+connectAttr "R_MetCarp_01_Ctrl_rotateX.o" "SkeletonRN.phl[1041]";
+connectAttr "R_MetCarp_01_Ctrl_rotateZ.o" "SkeletonRN.phl[1042]";
+connectAttr "R_MetCarp_01_Ctrl_scaleX.o" "SkeletonRN.phl[1043]";
+connectAttr "R_MetCarp_01_Ctrl_scaleY.o" "SkeletonRN.phl[1044]";
+connectAttr "R_MetCarp_01_Ctrl_scaleZ.o" "SkeletonRN.phl[1045]";
+connectAttr "R_MetCarp_01_Ctrl_visibility.o" "SkeletonRN.phl[1046]";
+connectAttr "R_Finger_01_Knuckle_01_Ctrl_translateX.o" "SkeletonRN.phl[1047]";
+connectAttr "R_Finger_01_Knuckle_01_Ctrl_translateY.o" "SkeletonRN.phl[1048]";
+connectAttr "R_Finger_01_Knuckle_01_Ctrl_translateZ.o" "SkeletonRN.phl[1049]";
+connectAttr "R_Finger_01_Knuckle_01_Ctrl_rotateZ.o" "SkeletonRN.phl[1050]";
+connectAttr "R_Finger_01_Knuckle_01_Ctrl_rotateX.o" "SkeletonRN.phl[1051]";
+connectAttr "R_Finger_01_Knuckle_01_Ctrl_rotateY.o" "SkeletonRN.phl[1052]";
+connectAttr "R_Finger_01_Knuckle_01_Ctrl_scaleX.o" "SkeletonRN.phl[1053]";
+connectAttr "R_Finger_01_Knuckle_01_Ctrl_scaleY.o" "SkeletonRN.phl[1054]";
+connectAttr "R_Finger_01_Knuckle_01_Ctrl_scaleZ.o" "SkeletonRN.phl[1055]";
+connectAttr "R_Finger_01_Knuckle_01_Ctrl_visibility.o" "SkeletonRN.phl[1056]";
+connectAttr "R_Finger_01_Knuckle_02_Ctrl_translateX.o" "SkeletonRN.phl[1057]";
+connectAttr "R_Finger_01_Knuckle_02_Ctrl_translateY.o" "SkeletonRN.phl[1058]";
+connectAttr "R_Finger_01_Knuckle_02_Ctrl_translateZ.o" "SkeletonRN.phl[1059]";
+connectAttr "R_Finger_01_Knuckle_02_Ctrl_rotateZ.o" "SkeletonRN.phl[1060]";
+connectAttr "R_Finger_01_Knuckle_02_Ctrl_rotateX.o" "SkeletonRN.phl[1061]";
+connectAttr "R_Finger_01_Knuckle_02_Ctrl_rotateY.o" "SkeletonRN.phl[1062]";
+connectAttr "R_Finger_01_Knuckle_02_Ctrl_scaleX.o" "SkeletonRN.phl[1063]";
+connectAttr "R_Finger_01_Knuckle_02_Ctrl_scaleY.o" "SkeletonRN.phl[1064]";
+connectAttr "R_Finger_01_Knuckle_02_Ctrl_scaleZ.o" "SkeletonRN.phl[1065]";
+connectAttr "R_Finger_01_Knuckle_02_Ctrl_visibility.o" "SkeletonRN.phl[1066]";
+connectAttr "R_MetCarp_02_Ctrl_translateX.o" "SkeletonRN.phl[1067]";
+connectAttr "R_MetCarp_02_Ctrl_translateY.o" "SkeletonRN.phl[1068]";
+connectAttr "R_MetCarp_02_Ctrl_translateZ.o" "SkeletonRN.phl[1069]";
+connectAttr "R_MetCarp_02_Ctrl_rotateX.o" "SkeletonRN.phl[1070]";
+connectAttr "R_MetCarp_02_Ctrl_rotateY.o" "SkeletonRN.phl[1071]";
+connectAttr "R_MetCarp_02_Ctrl_rotateZ.o" "SkeletonRN.phl[1072]";
+connectAttr "R_MetCarp_02_Ctrl_scaleX.o" "SkeletonRN.phl[1073]";
+connectAttr "R_MetCarp_02_Ctrl_scaleY.o" "SkeletonRN.phl[1074]";
+connectAttr "R_MetCarp_02_Ctrl_scaleZ.o" "SkeletonRN.phl[1075]";
+connectAttr "R_MetCarp_02_Ctrl_visibility.o" "SkeletonRN.phl[1076]";
+connectAttr "R_Finger_02_Knuckle_01_Ctrl_translateX.o" "SkeletonRN.phl[1077]";
+connectAttr "R_Finger_02_Knuckle_01_Ctrl_translateY.o" "SkeletonRN.phl[1078]";
+connectAttr "R_Finger_02_Knuckle_01_Ctrl_translateZ.o" "SkeletonRN.phl[1079]";
+connectAttr "R_Finger_02_Knuckle_01_Ctrl_rotateZ.o" "SkeletonRN.phl[1080]";
+connectAttr "R_Finger_02_Knuckle_01_Ctrl_rotateX.o" "SkeletonRN.phl[1081]";
+connectAttr "R_Finger_02_Knuckle_01_Ctrl_rotateY.o" "SkeletonRN.phl[1082]";
+connectAttr "R_Finger_02_Knuckle_01_Ctrl_scaleX.o" "SkeletonRN.phl[1083]";
+connectAttr "R_Finger_02_Knuckle_01_Ctrl_scaleY.o" "SkeletonRN.phl[1084]";
+connectAttr "R_Finger_02_Knuckle_01_Ctrl_scaleZ.o" "SkeletonRN.phl[1085]";
+connectAttr "R_Finger_02_Knuckle_01_Ctrl_visibility.o" "SkeletonRN.phl[1086]";
+connectAttr "R_Finger_02_Knuckle_02_Ctrl_translateX.o" "SkeletonRN.phl[1087]";
+connectAttr "R_Finger_02_Knuckle_02_Ctrl_translateY.o" "SkeletonRN.phl[1088]";
+connectAttr "R_Finger_02_Knuckle_02_Ctrl_translateZ.o" "SkeletonRN.phl[1089]";
+connectAttr "R_Finger_02_Knuckle_02_Ctrl_rotateZ.o" "SkeletonRN.phl[1090]";
+connectAttr "R_Finger_02_Knuckle_02_Ctrl_rotateX.o" "SkeletonRN.phl[1091]";
+connectAttr "R_Finger_02_Knuckle_02_Ctrl_rotateY.o" "SkeletonRN.phl[1092]";
+connectAttr "R_Finger_02_Knuckle_02_Ctrl_scaleX.o" "SkeletonRN.phl[1093]";
+connectAttr "R_Finger_02_Knuckle_02_Ctrl_scaleY.o" "SkeletonRN.phl[1094]";
+connectAttr "R_Finger_02_Knuckle_02_Ctrl_scaleZ.o" "SkeletonRN.phl[1095]";
+connectAttr "R_Finger_02_Knuckle_02_Ctrl_visibility.o" "SkeletonRN.phl[1096]";
+connectAttr "R_Finger_02_Knuckle_03_Ctrl_translateX.o" "SkeletonRN.phl[1097]";
+connectAttr "R_Finger_02_Knuckle_03_Ctrl_translateY.o" "SkeletonRN.phl[1098]";
+connectAttr "R_Finger_02_Knuckle_03_Ctrl_translateZ.o" "SkeletonRN.phl[1099]";
+connectAttr "R_Finger_02_Knuckle_03_Ctrl_rotateZ.o" "SkeletonRN.phl[1100]";
+connectAttr "R_Finger_02_Knuckle_03_Ctrl_rotateX.o" "SkeletonRN.phl[1101]";
+connectAttr "R_Finger_02_Knuckle_03_Ctrl_rotateY.o" "SkeletonRN.phl[1102]";
+connectAttr "R_Finger_02_Knuckle_03_Ctrl_scaleX.o" "SkeletonRN.phl[1103]";
+connectAttr "R_Finger_02_Knuckle_03_Ctrl_scaleY.o" "SkeletonRN.phl[1104]";
+connectAttr "R_Finger_02_Knuckle_03_Ctrl_scaleZ.o" "SkeletonRN.phl[1105]";
+connectAttr "R_Finger_02_Knuckle_03_Ctrl_visibility.o" "SkeletonRN.phl[1106]";
+connectAttr "R_MetCarp_03_Ctrl_translateX.o" "SkeletonRN.phl[1107]";
+connectAttr "R_MetCarp_03_Ctrl_translateY.o" "SkeletonRN.phl[1108]";
+connectAttr "R_MetCarp_03_Ctrl_translateZ.o" "SkeletonRN.phl[1109]";
+connectAttr "R_MetCarp_03_Ctrl_rotateX.o" "SkeletonRN.phl[1110]";
+connectAttr "R_MetCarp_03_Ctrl_rotateY.o" "SkeletonRN.phl[1111]";
+connectAttr "R_MetCarp_03_Ctrl_rotateZ.o" "SkeletonRN.phl[1112]";
+connectAttr "R_MetCarp_03_Ctrl_scaleX.o" "SkeletonRN.phl[1113]";
+connectAttr "R_MetCarp_03_Ctrl_scaleY.o" "SkeletonRN.phl[1114]";
+connectAttr "R_MetCarp_03_Ctrl_scaleZ.o" "SkeletonRN.phl[1115]";
+connectAttr "R_MetCarp_03_Ctrl_visibility.o" "SkeletonRN.phl[1116]";
+connectAttr "R_Finger_03_Knuckle_01_Ctrl_translateX.o" "SkeletonRN.phl[1117]";
+connectAttr "R_Finger_03_Knuckle_01_Ctrl_translateY.o" "SkeletonRN.phl[1118]";
+connectAttr "R_Finger_03_Knuckle_01_Ctrl_translateZ.o" "SkeletonRN.phl[1119]";
+connectAttr "R_Finger_03_Knuckle_01_Ctrl_rotateZ.o" "SkeletonRN.phl[1120]";
+connectAttr "R_Finger_03_Knuckle_01_Ctrl_rotateX.o" "SkeletonRN.phl[1121]";
+connectAttr "R_Finger_03_Knuckle_01_Ctrl_rotateY.o" "SkeletonRN.phl[1122]";
+connectAttr "R_Finger_03_Knuckle_01_Ctrl_scaleX.o" "SkeletonRN.phl[1123]";
+connectAttr "R_Finger_03_Knuckle_01_Ctrl_scaleY.o" "SkeletonRN.phl[1124]";
+connectAttr "R_Finger_03_Knuckle_01_Ctrl_scaleZ.o" "SkeletonRN.phl[1125]";
+connectAttr "R_Finger_03_Knuckle_01_Ctrl_visibility.o" "SkeletonRN.phl[1126]";
+connectAttr "R_Finger_03_Knuckle_02_Ctrl_translateX.o" "SkeletonRN.phl[1127]";
+connectAttr "R_Finger_03_Knuckle_02_Ctrl_translateY.o" "SkeletonRN.phl[1128]";
+connectAttr "R_Finger_03_Knuckle_02_Ctrl_translateZ.o" "SkeletonRN.phl[1129]";
+connectAttr "R_Finger_03_Knuckle_02_Ctrl_rotateZ.o" "SkeletonRN.phl[1130]";
+connectAttr "R_Finger_03_Knuckle_02_Ctrl_rotateX.o" "SkeletonRN.phl[1131]";
+connectAttr "R_Finger_03_Knuckle_02_Ctrl_rotateY.o" "SkeletonRN.phl[1132]";
+connectAttr "R_Finger_03_Knuckle_02_Ctrl_scaleX.o" "SkeletonRN.phl[1133]";
+connectAttr "R_Finger_03_Knuckle_02_Ctrl_scaleY.o" "SkeletonRN.phl[1134]";
+connectAttr "R_Finger_03_Knuckle_02_Ctrl_scaleZ.o" "SkeletonRN.phl[1135]";
+connectAttr "R_Finger_03_Knuckle_02_Ctrl_visibility.o" "SkeletonRN.phl[1136]";
+connectAttr "R_Finger_03_Knuckle_03_Ctrl_translateX.o" "SkeletonRN.phl[1137]";
+connectAttr "R_Finger_03_Knuckle_03_Ctrl_translateY.o" "SkeletonRN.phl[1138]";
+connectAttr "R_Finger_03_Knuckle_03_Ctrl_translateZ.o" "SkeletonRN.phl[1139]";
+connectAttr "R_Finger_03_Knuckle_03_Ctrl_rotateZ.o" "SkeletonRN.phl[1140]";
+connectAttr "R_Finger_03_Knuckle_03_Ctrl_rotateX.o" "SkeletonRN.phl[1141]";
+connectAttr "R_Finger_03_Knuckle_03_Ctrl_rotateY.o" "SkeletonRN.phl[1142]";
+connectAttr "R_Finger_03_Knuckle_03_Ctrl_scaleX.o" "SkeletonRN.phl[1143]";
+connectAttr "R_Finger_03_Knuckle_03_Ctrl_scaleY.o" "SkeletonRN.phl[1144]";
+connectAttr "R_Finger_03_Knuckle_03_Ctrl_scaleZ.o" "SkeletonRN.phl[1145]";
+connectAttr "R_Finger_03_Knuckle_03_Ctrl_visibility.o" "SkeletonRN.phl[1146]";
+connectAttr "R_MetCarp_04_Ctrl_translateX.o" "SkeletonRN.phl[1147]";
+connectAttr "R_MetCarp_04_Ctrl_translateY.o" "SkeletonRN.phl[1148]";
+connectAttr "R_MetCarp_04_Ctrl_translateZ.o" "SkeletonRN.phl[1149]";
+connectAttr "R_MetCarp_04_Ctrl_rotateX.o" "SkeletonRN.phl[1150]";
+connectAttr "R_MetCarp_04_Ctrl_rotateY.o" "SkeletonRN.phl[1151]";
+connectAttr "R_MetCarp_04_Ctrl_rotateZ.o" "SkeletonRN.phl[1152]";
+connectAttr "R_MetCarp_04_Ctrl_scaleX.o" "SkeletonRN.phl[1153]";
+connectAttr "R_MetCarp_04_Ctrl_scaleY.o" "SkeletonRN.phl[1154]";
+connectAttr "R_MetCarp_04_Ctrl_scaleZ.o" "SkeletonRN.phl[1155]";
+connectAttr "R_MetCarp_04_Ctrl_visibility.o" "SkeletonRN.phl[1156]";
+connectAttr "R_Finger_04_Knuckle_01_Ctrl_translateX.o" "SkeletonRN.phl[1157]";
+connectAttr "R_Finger_04_Knuckle_01_Ctrl_translateY.o" "SkeletonRN.phl[1158]";
+connectAttr "R_Finger_04_Knuckle_01_Ctrl_translateZ.o" "SkeletonRN.phl[1159]";
+connectAttr "R_Finger_04_Knuckle_01_Ctrl_rotateZ.o" "SkeletonRN.phl[1160]";
+connectAttr "R_Finger_04_Knuckle_01_Ctrl_rotateX.o" "SkeletonRN.phl[1161]";
+connectAttr "R_Finger_04_Knuckle_01_Ctrl_rotateY.o" "SkeletonRN.phl[1162]";
+connectAttr "R_Finger_04_Knuckle_01_Ctrl_scaleX.o" "SkeletonRN.phl[1163]";
+connectAttr "R_Finger_04_Knuckle_01_Ctrl_scaleY.o" "SkeletonRN.phl[1164]";
+connectAttr "R_Finger_04_Knuckle_01_Ctrl_scaleZ.o" "SkeletonRN.phl[1165]";
+connectAttr "R_Finger_04_Knuckle_01_Ctrl_visibility.o" "SkeletonRN.phl[1166]";
+connectAttr "R_Finger_04_Knuckle_02_Ctrl_translateX.o" "SkeletonRN.phl[1167]";
+connectAttr "R_Finger_04_Knuckle_02_Ctrl_translateY.o" "SkeletonRN.phl[1168]";
+connectAttr "R_Finger_04_Knuckle_02_Ctrl_translateZ.o" "SkeletonRN.phl[1169]";
+connectAttr "R_Finger_04_Knuckle_02_Ctrl_rotateZ.o" "SkeletonRN.phl[1170]";
+connectAttr "R_Finger_04_Knuckle_02_Ctrl_rotateX.o" "SkeletonRN.phl[1171]";
+connectAttr "R_Finger_04_Knuckle_02_Ctrl_rotateY.o" "SkeletonRN.phl[1172]";
+connectAttr "R_Finger_04_Knuckle_02_Ctrl_scaleX.o" "SkeletonRN.phl[1173]";
+connectAttr "R_Finger_04_Knuckle_02_Ctrl_scaleY.o" "SkeletonRN.phl[1174]";
+connectAttr "R_Finger_04_Knuckle_02_Ctrl_scaleZ.o" "SkeletonRN.phl[1175]";
+connectAttr "R_Finger_04_Knuckle_02_Ctrl_visibility.o" "SkeletonRN.phl[1176]";
+connectAttr "R_Finger_04_Knuckle_03_Ctrl_translateX.o" "SkeletonRN.phl[1177]";
+connectAttr "R_Finger_04_Knuckle_03_Ctrl_translateY.o" "SkeletonRN.phl[1178]";
+connectAttr "R_Finger_04_Knuckle_03_Ctrl_translateZ.o" "SkeletonRN.phl[1179]";
+connectAttr "R_Finger_04_Knuckle_03_Ctrl_rotateZ.o" "SkeletonRN.phl[1180]";
+connectAttr "R_Finger_04_Knuckle_03_Ctrl_rotateX.o" "SkeletonRN.phl[1181]";
+connectAttr "R_Finger_04_Knuckle_03_Ctrl_rotateY.o" "SkeletonRN.phl[1182]";
+connectAttr "R_Finger_04_Knuckle_03_Ctrl_scaleX.o" "SkeletonRN.phl[1183]";
+connectAttr "R_Finger_04_Knuckle_03_Ctrl_scaleY.o" "SkeletonRN.phl[1184]";
+connectAttr "R_Finger_04_Knuckle_03_Ctrl_scaleZ.o" "SkeletonRN.phl[1185]";
+connectAttr "R_Finger_04_Knuckle_03_Ctrl_visibility.o" "SkeletonRN.phl[1186]";
+connectAttr "R_MetCarp_05_Ctrl_translateX.o" "SkeletonRN.phl[1187]";
+connectAttr "R_MetCarp_05_Ctrl_translateY.o" "SkeletonRN.phl[1188]";
+connectAttr "R_MetCarp_05_Ctrl_translateZ.o" "SkeletonRN.phl[1189]";
+connectAttr "R_MetCarp_05_Ctrl_rotateX.o" "SkeletonRN.phl[1190]";
+connectAttr "R_MetCarp_05_Ctrl_rotateY.o" "SkeletonRN.phl[1191]";
+connectAttr "R_MetCarp_05_Ctrl_rotateZ.o" "SkeletonRN.phl[1192]";
+connectAttr "R_MetCarp_05_Ctrl_scaleX.o" "SkeletonRN.phl[1193]";
+connectAttr "R_MetCarp_05_Ctrl_scaleY.o" "SkeletonRN.phl[1194]";
+connectAttr "R_MetCarp_05_Ctrl_scaleZ.o" "SkeletonRN.phl[1195]";
+connectAttr "R_MetCarp_05_Ctrl_visibility.o" "SkeletonRN.phl[1196]";
+connectAttr "R_Finger_05_Knuckle_01_Ctrl_translateX.o" "SkeletonRN.phl[1197]";
+connectAttr "R_Finger_05_Knuckle_01_Ctrl_translateY.o" "SkeletonRN.phl[1198]";
+connectAttr "R_Finger_05_Knuckle_01_Ctrl_translateZ.o" "SkeletonRN.phl[1199]";
+connectAttr "R_Finger_05_Knuckle_01_Ctrl_rotateZ.o" "SkeletonRN.phl[1200]";
+connectAttr "R_Finger_05_Knuckle_01_Ctrl_rotateX.o" "SkeletonRN.phl[1201]";
+connectAttr "R_Finger_05_Knuckle_01_Ctrl_rotateY.o" "SkeletonRN.phl[1202]";
+connectAttr "R_Finger_05_Knuckle_01_Ctrl_scaleX.o" "SkeletonRN.phl[1203]";
+connectAttr "R_Finger_05_Knuckle_01_Ctrl_scaleY.o" "SkeletonRN.phl[1204]";
+connectAttr "R_Finger_05_Knuckle_01_Ctrl_scaleZ.o" "SkeletonRN.phl[1205]";
+connectAttr "R_Finger_05_Knuckle_01_Ctrl_visibility.o" "SkeletonRN.phl[1206]";
+connectAttr "R_Finger_05_Knuckle_02_Ctrl_translateX.o" "SkeletonRN.phl[1207]";
+connectAttr "R_Finger_05_Knuckle_02_Ctrl_translateY.o" "SkeletonRN.phl[1208]";
+connectAttr "R_Finger_05_Knuckle_02_Ctrl_translateZ.o" "SkeletonRN.phl[1209]";
+connectAttr "R_Finger_05_Knuckle_02_Ctrl_rotateZ.o" "SkeletonRN.phl[1210]";
+connectAttr "R_Finger_05_Knuckle_02_Ctrl_rotateX.o" "SkeletonRN.phl[1211]";
+connectAttr "R_Finger_05_Knuckle_02_Ctrl_rotateY.o" "SkeletonRN.phl[1212]";
+connectAttr "R_Finger_05_Knuckle_02_Ctrl_scaleX.o" "SkeletonRN.phl[1213]";
+connectAttr "R_Finger_05_Knuckle_02_Ctrl_scaleY.o" "SkeletonRN.phl[1214]";
+connectAttr "R_Finger_05_Knuckle_02_Ctrl_scaleZ.o" "SkeletonRN.phl[1215]";
+connectAttr "R_Finger_05_Knuckle_02_Ctrl_visibility.o" "SkeletonRN.phl[1216]";
+connectAttr "R_Finger_05_Knuckle_03_Ctrl_translateX.o" "SkeletonRN.phl[1217]";
+connectAttr "R_Finger_05_Knuckle_03_Ctrl_translateY.o" "SkeletonRN.phl[1218]";
+connectAttr "R_Finger_05_Knuckle_03_Ctrl_translateZ.o" "SkeletonRN.phl[1219]";
+connectAttr "R_Finger_05_Knuckle_03_Ctrl_rotateZ.o" "SkeletonRN.phl[1220]";
+connectAttr "R_Finger_05_Knuckle_03_Ctrl_rotateX.o" "SkeletonRN.phl[1221]";
+connectAttr "R_Finger_05_Knuckle_03_Ctrl_rotateY.o" "SkeletonRN.phl[1222]";
+connectAttr "R_Finger_05_Knuckle_03_Ctrl_scaleX.o" "SkeletonRN.phl[1223]";
+connectAttr "R_Finger_05_Knuckle_03_Ctrl_scaleY.o" "SkeletonRN.phl[1224]";
+connectAttr "R_Finger_05_Knuckle_03_Ctrl_scaleZ.o" "SkeletonRN.phl[1225]";
+connectAttr "R_Finger_05_Knuckle_03_Ctrl_visibility.o" "SkeletonRN.phl[1226]";
+connectAttr "R_Leg_Pivot_Ctrl_Follow_Translate.o" "SkeletonRN.phl[1227]";
+connectAttr "R_Leg_Pivot_Ctrl_Follow_Rotate.o" "SkeletonRN.phl[1228]";
+connectAttr "R_Leg_Pivot_Ctrl_translateX.o" "SkeletonRN.phl[1229]";
+connectAttr "R_Leg_Pivot_Ctrl_translateY.o" "SkeletonRN.phl[1230]";
+connectAttr "R_Leg_Pivot_Ctrl_translateZ.o" "SkeletonRN.phl[1231]";
+connectAttr "R_Leg_Pivot_Ctrl_rotateX.o" "SkeletonRN.phl[1232]";
+connectAttr "R_Leg_Pivot_Ctrl_rotateY.o" "SkeletonRN.phl[1233]";
+connectAttr "R_Leg_Pivot_Ctrl_rotateZ.o" "SkeletonRN.phl[1234]";
+connectAttr "R_Leg_Pivot_Ctrl_scaleX.o" "SkeletonRN.phl[1235]";
+connectAttr "R_Leg_Pivot_Ctrl_scaleY.o" "SkeletonRN.phl[1236]";
+connectAttr "R_Leg_Pivot_Ctrl_scaleZ.o" "SkeletonRN.phl[1237]";
+connectAttr "R_Leg_Pivot_Ctrl_visibility.o" "SkeletonRN.phl[1238]";
+connectAttr "R_Leg_IK_Base_Ctrl_translateX.o" "SkeletonRN.phl[1239]";
+connectAttr "R_Leg_IK_Base_Ctrl_translateY.o" "SkeletonRN.phl[1240]";
+connectAttr "R_Leg_IK_Base_Ctrl_translateZ.o" "SkeletonRN.phl[1241]";
+connectAttr "R_Leg_IK_Base_Ctrl_Operating_Space.o" "SkeletonRN.phl[1242]";
+connectAttr "R_Leg_IK_Base_Ctrl_visibility.o" "SkeletonRN.phl[1243]";
+connectAttr "R_Leg_IK_Base_Ctrl_rotateX.o" "SkeletonRN.phl[1244]";
+connectAttr "R_Leg_IK_Base_Ctrl_rotateY.o" "SkeletonRN.phl[1245]";
+connectAttr "R_Leg_IK_Base_Ctrl_rotateZ.o" "SkeletonRN.phl[1246]";
+connectAttr "R_Leg_IK_Base_Ctrl_scaleX.o" "SkeletonRN.phl[1247]";
+connectAttr "R_Leg_IK_Base_Ctrl_scaleY.o" "SkeletonRN.phl[1248]";
+connectAttr "R_Leg_IK_Base_Ctrl_scaleZ.o" "SkeletonRN.phl[1249]";
+connectAttr "R_Leg_PV_Ctrl_translateX.o" "SkeletonRN.phl[1250]";
+connectAttr "R_Leg_PV_Ctrl_translateY.o" "SkeletonRN.phl[1251]";
+connectAttr "R_Leg_PV_Ctrl_translateZ.o" "SkeletonRN.phl[1252]";
+connectAttr "R_Leg_PV_Ctrl_Operating_Space.o" "SkeletonRN.phl[1253]";
+connectAttr "R_Leg_PV_Ctrl_rotateX.o" "SkeletonRN.phl[1254]";
+connectAttr "R_Leg_PV_Ctrl_rotateY.o" "SkeletonRN.phl[1255]";
+connectAttr "R_Leg_PV_Ctrl_rotateZ.o" "SkeletonRN.phl[1256]";
+connectAttr "R_Leg_PV_Ctrl_visibility.o" "SkeletonRN.phl[1257]";
+connectAttr "R_Leg_PV_Ctrl_scaleX.o" "SkeletonRN.phl[1258]";
+connectAttr "R_Leg_PV_Ctrl_scaleY.o" "SkeletonRN.phl[1259]";
+connectAttr "R_Leg_PV_Ctrl_scaleZ.o" "SkeletonRN.phl[1260]";
+connectAttr "R_Leg_IK_End_Ctrl_Operating_Space.o" "SkeletonRN.phl[1261]";
+connectAttr "R_Leg_IK_End_Ctrl_translateX.o" "SkeletonRN.phl[1262]";
+connectAttr "R_Leg_IK_End_Ctrl_translateY.o" "SkeletonRN.phl[1263]";
+connectAttr "R_Leg_IK_End_Ctrl_translateZ.o" "SkeletonRN.phl[1264]";
+connectAttr "R_Leg_IK_End_Ctrl_visibility.o" "SkeletonRN.phl[1265]";
+connectAttr "R_Leg_IK_End_Ctrl_rotateX.o" "SkeletonRN.phl[1266]";
+connectAttr "R_Leg_IK_End_Ctrl_rotateY.o" "SkeletonRN.phl[1267]";
+connectAttr "R_Leg_IK_End_Ctrl_rotateZ.o" "SkeletonRN.phl[1268]";
+connectAttr "R_Leg_IK_End_Ctrl_scaleX.o" "SkeletonRN.phl[1269]";
+connectAttr "R_Leg_IK_End_Ctrl_scaleY.o" "SkeletonRN.phl[1270]";
+connectAttr "R_Leg_IK_End_Ctrl_scaleZ.o" "SkeletonRN.phl[1271]";
+connectAttr "R_Foot_IK_Out_Ctrl_translateX.o" "SkeletonRN.phl[1272]";
+connectAttr "R_Foot_IK_Out_Ctrl_translateY.o" "SkeletonRN.phl[1273]";
+connectAttr "R_Foot_IK_Out_Ctrl_translateZ.o" "SkeletonRN.phl[1274]";
+connectAttr "R_Foot_IK_Out_Ctrl_visibility.o" "SkeletonRN.phl[1275]";
+connectAttr "R_Foot_IK_Out_Ctrl_rotateX.o" "SkeletonRN.phl[1276]";
+connectAttr "R_Foot_IK_Out_Ctrl_rotateY.o" "SkeletonRN.phl[1277]";
+connectAttr "R_Foot_IK_Out_Ctrl_rotateZ.o" "SkeletonRN.phl[1278]";
+connectAttr "R_Foot_IK_Out_Ctrl_scaleX.o" "SkeletonRN.phl[1279]";
+connectAttr "R_Foot_IK_Out_Ctrl_scaleY.o" "SkeletonRN.phl[1280]";
+connectAttr "R_Foot_IK_Out_Ctrl_scaleZ.o" "SkeletonRN.phl[1281]";
+connectAttr "R_Foot_IK_In_Ctrl_translateX.o" "SkeletonRN.phl[1282]";
+connectAttr "R_Foot_IK_In_Ctrl_translateY.o" "SkeletonRN.phl[1283]";
+connectAttr "R_Foot_IK_In_Ctrl_translateZ.o" "SkeletonRN.phl[1284]";
+connectAttr "R_Foot_IK_In_Ctrl_visibility.o" "SkeletonRN.phl[1285]";
+connectAttr "R_Foot_IK_In_Ctrl_rotateX.o" "SkeletonRN.phl[1286]";
+connectAttr "R_Foot_IK_In_Ctrl_rotateY.o" "SkeletonRN.phl[1287]";
+connectAttr "R_Foot_IK_In_Ctrl_rotateZ.o" "SkeletonRN.phl[1288]";
+connectAttr "R_Foot_IK_In_Ctrl_scaleX.o" "SkeletonRN.phl[1289]";
+connectAttr "R_Foot_IK_In_Ctrl_scaleY.o" "SkeletonRN.phl[1290]";
+connectAttr "R_Foot_IK_In_Ctrl_scaleZ.o" "SkeletonRN.phl[1291]";
+connectAttr "R_Foot_IK_Heel_Ctrl_translateX.o" "SkeletonRN.phl[1292]";
+connectAttr "R_Foot_IK_Heel_Ctrl_translateY.o" "SkeletonRN.phl[1293]";
+connectAttr "R_Foot_IK_Heel_Ctrl_translateZ.o" "SkeletonRN.phl[1294]";
+connectAttr "R_Foot_IK_Heel_Ctrl_visibility.o" "SkeletonRN.phl[1295]";
+connectAttr "R_Foot_IK_Heel_Ctrl_rotateX.o" "SkeletonRN.phl[1296]";
+connectAttr "R_Foot_IK_Heel_Ctrl_rotateY.o" "SkeletonRN.phl[1297]";
+connectAttr "R_Foot_IK_Heel_Ctrl_rotateZ.o" "SkeletonRN.phl[1298]";
+connectAttr "R_Foot_IK_Heel_Ctrl_scaleX.o" "SkeletonRN.phl[1299]";
+connectAttr "R_Foot_IK_Heel_Ctrl_scaleY.o" "SkeletonRN.phl[1300]";
+connectAttr "R_Foot_IK_Heel_Ctrl_scaleZ.o" "SkeletonRN.phl[1301]";
+connectAttr "R_Foot_IK_Toe_Ctrl_translateX.o" "SkeletonRN.phl[1302]";
+connectAttr "R_Foot_IK_Toe_Ctrl_translateY.o" "SkeletonRN.phl[1303]";
+connectAttr "R_Foot_IK_Toe_Ctrl_translateZ.o" "SkeletonRN.phl[1304]";
+connectAttr "R_Foot_IK_Toe_Ctrl_visibility.o" "SkeletonRN.phl[1305]";
+connectAttr "R_Foot_IK_Toe_Ctrl_rotateX.o" "SkeletonRN.phl[1306]";
+connectAttr "R_Foot_IK_Toe_Ctrl_rotateY.o" "SkeletonRN.phl[1307]";
+connectAttr "R_Foot_IK_Toe_Ctrl_rotateZ.o" "SkeletonRN.phl[1308]";
+connectAttr "R_Foot_IK_Toe_Ctrl_scaleX.o" "SkeletonRN.phl[1309]";
+connectAttr "R_Foot_IK_Toe_Ctrl_scaleY.o" "SkeletonRN.phl[1310]";
+connectAttr "R_Foot_IK_Toe_Ctrl_scaleZ.o" "SkeletonRN.phl[1311]";
+connectAttr "R_Foot_IK_Ball_Ctrl_translateX.o" "SkeletonRN.phl[1312]";
+connectAttr "R_Foot_IK_Ball_Ctrl_translateY.o" "SkeletonRN.phl[1313]";
+connectAttr "R_Foot_IK_Ball_Ctrl_translateZ.o" "SkeletonRN.phl[1314]";
+connectAttr "R_Foot_IK_Ball_Ctrl_visibility.o" "SkeletonRN.phl[1315]";
+connectAttr "R_Foot_IK_Ball_Ctrl_rotateX.o" "SkeletonRN.phl[1316]";
+connectAttr "R_Foot_IK_Ball_Ctrl_rotateY.o" "SkeletonRN.phl[1317]";
+connectAttr "R_Foot_IK_Ball_Ctrl_rotateZ.o" "SkeletonRN.phl[1318]";
+connectAttr "R_Foot_IK_Ball_Ctrl_scaleX.o" "SkeletonRN.phl[1319]";
+connectAttr "R_Foot_IK_Ball_Ctrl_scaleY.o" "SkeletonRN.phl[1320]";
+connectAttr "R_Foot_IK_Ball_Ctrl_scaleZ.o" "SkeletonRN.phl[1321]";
+connectAttr "R_Foot_IK_Tap_Ctrl_translateX.o" "SkeletonRN.phl[1322]";
+connectAttr "R_Foot_IK_Tap_Ctrl_translateY.o" "SkeletonRN.phl[1323]";
+connectAttr "R_Foot_IK_Tap_Ctrl_translateZ.o" "SkeletonRN.phl[1324]";
+connectAttr "R_Foot_IK_Tap_Ctrl_visibility.o" "SkeletonRN.phl[1325]";
+connectAttr "R_Foot_IK_Tap_Ctrl_rotateX.o" "SkeletonRN.phl[1326]";
+connectAttr "R_Foot_IK_Tap_Ctrl_rotateY.o" "SkeletonRN.phl[1327]";
+connectAttr "R_Foot_IK_Tap_Ctrl_rotateZ.o" "SkeletonRN.phl[1328]";
+connectAttr "R_Foot_IK_Tap_Ctrl_scaleX.o" "SkeletonRN.phl[1329]";
+connectAttr "R_Foot_IK_Tap_Ctrl_scaleY.o" "SkeletonRN.phl[1330]";
+connectAttr "R_Foot_IK_Tap_Ctrl_scaleZ.o" "SkeletonRN.phl[1331]";
+connectAttr "R_MetTars_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[1332]";
+connectAttr "R_MetTars_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[1333]";
+connectAttr "R_MetTars_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1334]";
+connectAttr "R_MetTars_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[1335]";
+connectAttr "R_MetTars_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1336]";
+connectAttr "R_MetTars_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1337]";
+connectAttr "R_MetTars_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1338]";
+connectAttr "R_MetTars_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1339]";
+connectAttr "R_MetTars_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1340]";
+connectAttr "R_MetTars_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1341]";
+connectAttr "R_Toe_01_Knuckle_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[1342]";
+connectAttr "R_Toe_01_Knuckle_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[1343]";
+connectAttr "R_Toe_01_Knuckle_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1344]";
+connectAttr "R_Toe_01_Knuckle_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[1345]";
+connectAttr "R_Toe_01_Knuckle_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1346]";
+connectAttr "R_Toe_01_Knuckle_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1347]";
+connectAttr "R_Toe_01_Knuckle_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1348]";
+connectAttr "R_Toe_01_Knuckle_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1349]";
+connectAttr "R_Toe_01_Knuckle_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1350]";
+connectAttr "R_Toe_01_Knuckle_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1351]";
+connectAttr "R_Toe_01_Knuckle_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[1352]";
+connectAttr "R_Toe_01_Knuckle_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[1353]";
+connectAttr "R_Toe_01_Knuckle_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1354]";
+connectAttr "R_Toe_01_Knuckle_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[1355]";
+connectAttr "R_Toe_01_Knuckle_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1356]";
+connectAttr "R_Toe_01_Knuckle_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1357]";
+connectAttr "R_Toe_01_Knuckle_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1358]";
+connectAttr "R_Toe_01_Knuckle_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1359]";
+connectAttr "R_Toe_01_Knuckle_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1360]";
+connectAttr "R_Toe_01_Knuckle_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1361]";
+connectAttr "R_MetTars_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[1362]";
+connectAttr "R_MetTars_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[1363]";
+connectAttr "R_MetTars_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1364]";
+connectAttr "R_MetTars_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[1365]";
+connectAttr "R_MetTars_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1366]";
+connectAttr "R_MetTars_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1367]";
+connectAttr "R_MetTars_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1368]";
+connectAttr "R_MetTars_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1369]";
+connectAttr "R_MetTars_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1370]";
+connectAttr "R_MetTars_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1371]";
+connectAttr "R_Toe_02_Knuckle_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[1372]";
+connectAttr "R_Toe_02_Knuckle_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[1373]";
+connectAttr "R_Toe_02_Knuckle_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1374]";
+connectAttr "R_Toe_02_Knuckle_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[1375]";
+connectAttr "R_Toe_02_Knuckle_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1376]";
+connectAttr "R_Toe_02_Knuckle_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1377]";
+connectAttr "R_Toe_02_Knuckle_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1378]";
+connectAttr "R_Toe_02_Knuckle_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1379]";
+connectAttr "R_Toe_02_Knuckle_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1380]";
+connectAttr "R_Toe_02_Knuckle_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1381]";
+connectAttr "R_Toe_02_Knuckle_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[1382]";
+connectAttr "R_Toe_02_Knuckle_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[1383]";
+connectAttr "R_Toe_02_Knuckle_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1384]";
+connectAttr "R_Toe_02_Knuckle_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[1385]";
+connectAttr "R_Toe_02_Knuckle_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1386]";
+connectAttr "R_Toe_02_Knuckle_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1387]";
+connectAttr "R_Toe_02_Knuckle_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1388]";
+connectAttr "R_Toe_02_Knuckle_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1389]";
+connectAttr "R_Toe_02_Knuckle_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1390]";
+connectAttr "R_Toe_02_Knuckle_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1391]";
+connectAttr "R_Toe_02_Knuckle_03_IK_Ctrl_translateX.o" "SkeletonRN.phl[1392]";
+connectAttr "R_Toe_02_Knuckle_03_IK_Ctrl_translateY.o" "SkeletonRN.phl[1393]";
+connectAttr "R_Toe_02_Knuckle_03_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1394]";
+connectAttr "R_Toe_02_Knuckle_03_IK_Ctrl_visibility.o" "SkeletonRN.phl[1395]";
+connectAttr "R_Toe_02_Knuckle_03_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1396]";
+connectAttr "R_Toe_02_Knuckle_03_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1397]";
+connectAttr "R_Toe_02_Knuckle_03_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1398]";
+connectAttr "R_Toe_02_Knuckle_03_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1399]";
+connectAttr "R_Toe_02_Knuckle_03_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1400]";
+connectAttr "R_Toe_02_Knuckle_03_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1401]";
+connectAttr "R_MetTars_03_IK_Ctrl_translateX.o" "SkeletonRN.phl[1402]";
+connectAttr "R_MetTars_03_IK_Ctrl_translateY.o" "SkeletonRN.phl[1403]";
+connectAttr "R_MetTars_03_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1404]";
+connectAttr "R_MetTars_03_IK_Ctrl_visibility.o" "SkeletonRN.phl[1405]";
+connectAttr "R_MetTars_03_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1406]";
+connectAttr "R_MetTars_03_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1407]";
+connectAttr "R_MetTars_03_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1408]";
+connectAttr "R_MetTars_03_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1409]";
+connectAttr "R_MetTars_03_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1410]";
+connectAttr "R_MetTars_03_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1411]";
+connectAttr "R_Toe_03_Knuckle_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[1412]";
+connectAttr "R_Toe_03_Knuckle_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[1413]";
+connectAttr "R_Toe_03_Knuckle_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1414]";
+connectAttr "R_Toe_03_Knuckle_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[1415]";
+connectAttr "R_Toe_03_Knuckle_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1416]";
+connectAttr "R_Toe_03_Knuckle_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1417]";
+connectAttr "R_Toe_03_Knuckle_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1418]";
+connectAttr "R_Toe_03_Knuckle_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1419]";
+connectAttr "R_Toe_03_Knuckle_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1420]";
+connectAttr "R_Toe_03_Knuckle_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1421]";
+connectAttr "R_Toe_03_Knuckle_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[1422]";
+connectAttr "R_Toe_03_Knuckle_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[1423]";
+connectAttr "R_Toe_03_Knuckle_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1424]";
+connectAttr "R_Toe_03_Knuckle_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[1425]";
+connectAttr "R_Toe_03_Knuckle_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1426]";
+connectAttr "R_Toe_03_Knuckle_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1427]";
+connectAttr "R_Toe_03_Knuckle_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1428]";
+connectAttr "R_Toe_03_Knuckle_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1429]";
+connectAttr "R_Toe_03_Knuckle_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1430]";
+connectAttr "R_Toe_03_Knuckle_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1431]";
+connectAttr "R_Toe_03_Knuckle_03_IK_Ctrl_translateX.o" "SkeletonRN.phl[1432]";
+connectAttr "R_Toe_03_Knuckle_03_IK_Ctrl_translateY.o" "SkeletonRN.phl[1433]";
+connectAttr "R_Toe_03_Knuckle_03_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1434]";
+connectAttr "R_Toe_03_Knuckle_03_IK_Ctrl_visibility.o" "SkeletonRN.phl[1435]";
+connectAttr "R_Toe_03_Knuckle_03_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1436]";
+connectAttr "R_Toe_03_Knuckle_03_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1437]";
+connectAttr "R_Toe_03_Knuckle_03_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1438]";
+connectAttr "R_Toe_03_Knuckle_03_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1439]";
+connectAttr "R_Toe_03_Knuckle_03_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1440]";
+connectAttr "R_Toe_03_Knuckle_03_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1441]";
+connectAttr "R_MetTars_04_IK_Ctrl_translateX.o" "SkeletonRN.phl[1442]";
+connectAttr "R_MetTars_04_IK_Ctrl_translateY.o" "SkeletonRN.phl[1443]";
+connectAttr "R_MetTars_04_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1444]";
+connectAttr "R_MetTars_04_IK_Ctrl_visibility.o" "SkeletonRN.phl[1445]";
+connectAttr "R_MetTars_04_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1446]";
+connectAttr "R_MetTars_04_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1447]";
+connectAttr "R_MetTars_04_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1448]";
+connectAttr "R_MetTars_04_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1449]";
+connectAttr "R_MetTars_04_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1450]";
+connectAttr "R_MetTars_04_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1451]";
+connectAttr "R_Toe_04_Knuckle_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[1452]";
+connectAttr "R_Toe_04_Knuckle_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[1453]";
+connectAttr "R_Toe_04_Knuckle_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1454]";
+connectAttr "R_Toe_04_Knuckle_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[1455]";
+connectAttr "R_Toe_04_Knuckle_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1456]";
+connectAttr "R_Toe_04_Knuckle_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1457]";
+connectAttr "R_Toe_04_Knuckle_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1458]";
+connectAttr "R_Toe_04_Knuckle_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1459]";
+connectAttr "R_Toe_04_Knuckle_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1460]";
+connectAttr "R_Toe_04_Knuckle_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1461]";
+connectAttr "R_Toe_04_Knuckle_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[1462]";
+connectAttr "R_Toe_04_Knuckle_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[1463]";
+connectAttr "R_Toe_04_Knuckle_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1464]";
+connectAttr "R_Toe_04_Knuckle_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[1465]";
+connectAttr "R_Toe_04_Knuckle_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1466]";
+connectAttr "R_Toe_04_Knuckle_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1467]";
+connectAttr "R_Toe_04_Knuckle_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1468]";
+connectAttr "R_Toe_04_Knuckle_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1469]";
+connectAttr "R_Toe_04_Knuckle_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1470]";
+connectAttr "R_Toe_04_Knuckle_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1471]";
+connectAttr "R_Toe_04_Knuckle_03_IK_Ctrl_translateX.o" "SkeletonRN.phl[1472]";
+connectAttr "R_Toe_04_Knuckle_03_IK_Ctrl_translateY.o" "SkeletonRN.phl[1473]";
+connectAttr "R_Toe_04_Knuckle_03_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1474]";
+connectAttr "R_Toe_04_Knuckle_03_IK_Ctrl_visibility.o" "SkeletonRN.phl[1475]";
+connectAttr "R_Toe_04_Knuckle_03_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1476]";
+connectAttr "R_Toe_04_Knuckle_03_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1477]";
+connectAttr "R_Toe_04_Knuckle_03_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1478]";
+connectAttr "R_Toe_04_Knuckle_03_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1479]";
+connectAttr "R_Toe_04_Knuckle_03_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1480]";
+connectAttr "R_Toe_04_Knuckle_03_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1481]";
+connectAttr "R_MetTars_05_IK_Ctrl_translateX.o" "SkeletonRN.phl[1482]";
+connectAttr "R_MetTars_05_IK_Ctrl_translateY.o" "SkeletonRN.phl[1483]";
+connectAttr "R_MetTars_05_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1484]";
+connectAttr "R_MetTars_05_IK_Ctrl_visibility.o" "SkeletonRN.phl[1485]";
+connectAttr "R_MetTars_05_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1486]";
+connectAttr "R_MetTars_05_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1487]";
+connectAttr "R_MetTars_05_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1488]";
+connectAttr "R_MetTars_05_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1489]";
+connectAttr "R_MetTars_05_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1490]";
+connectAttr "R_MetTars_05_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1491]";
+connectAttr "R_Toe_05_Knuckle_01_IK_Ctrl_translateX.o" "SkeletonRN.phl[1492]";
+connectAttr "R_Toe_05_Knuckle_01_IK_Ctrl_translateY.o" "SkeletonRN.phl[1493]";
+connectAttr "R_Toe_05_Knuckle_01_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1494]";
+connectAttr "R_Toe_05_Knuckle_01_IK_Ctrl_visibility.o" "SkeletonRN.phl[1495]";
+connectAttr "R_Toe_05_Knuckle_01_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1496]";
+connectAttr "R_Toe_05_Knuckle_01_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1497]";
+connectAttr "R_Toe_05_Knuckle_01_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1498]";
+connectAttr "R_Toe_05_Knuckle_01_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1499]";
+connectAttr "R_Toe_05_Knuckle_01_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1500]";
+connectAttr "R_Toe_05_Knuckle_01_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1501]";
+connectAttr "R_Toe_05_Knuckle_02_IK_Ctrl_translateX.o" "SkeletonRN.phl[1502]";
+connectAttr "R_Toe_05_Knuckle_02_IK_Ctrl_translateY.o" "SkeletonRN.phl[1503]";
+connectAttr "R_Toe_05_Knuckle_02_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1504]";
+connectAttr "R_Toe_05_Knuckle_02_IK_Ctrl_visibility.o" "SkeletonRN.phl[1505]";
+connectAttr "R_Toe_05_Knuckle_02_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1506]";
+connectAttr "R_Toe_05_Knuckle_02_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1507]";
+connectAttr "R_Toe_05_Knuckle_02_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1508]";
+connectAttr "R_Toe_05_Knuckle_02_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1509]";
+connectAttr "R_Toe_05_Knuckle_02_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1510]";
+connectAttr "R_Toe_05_Knuckle_02_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1511]";
+connectAttr "R_Toe_05_Knuckle_03_IK_Ctrl_translateX.o" "SkeletonRN.phl[1512]";
+connectAttr "R_Toe_05_Knuckle_03_IK_Ctrl_translateY.o" "SkeletonRN.phl[1513]";
+connectAttr "R_Toe_05_Knuckle_03_IK_Ctrl_translateZ.o" "SkeletonRN.phl[1514]";
+connectAttr "R_Toe_05_Knuckle_03_IK_Ctrl_visibility.o" "SkeletonRN.phl[1515]";
+connectAttr "R_Toe_05_Knuckle_03_IK_Ctrl_rotateX.o" "SkeletonRN.phl[1516]";
+connectAttr "R_Toe_05_Knuckle_03_IK_Ctrl_rotateY.o" "SkeletonRN.phl[1517]";
+connectAttr "R_Toe_05_Knuckle_03_IK_Ctrl_rotateZ.o" "SkeletonRN.phl[1518]";
+connectAttr "R_Toe_05_Knuckle_03_IK_Ctrl_scaleX.o" "SkeletonRN.phl[1519]";
+connectAttr "R_Toe_05_Knuckle_03_IK_Ctrl_scaleY.o" "SkeletonRN.phl[1520]";
+connectAttr "R_Toe_05_Knuckle_03_IK_Ctrl_scaleZ.o" "SkeletonRN.phl[1521]";
+connectAttr "R_Leg_IKFK_Ctrl_IKFK_Switch.o" "SkeletonRN.phl[1522]";
+connectAttr "Space_Controllers_Ctrl_L_Space_Ctrl_01.o" "SkeletonRN.phl[1523]";
+connectAttr "Space_Controllers_Ctrl_L_Space_Ctrl_02.o" "SkeletonRN.phl[1524]";
+connectAttr "Space_Controllers_Ctrl_L_Space_Ctrl_03.o" "SkeletonRN.phl[1525]";
+connectAttr "Space_Controllers_Ctrl_R_Space_Ctrl_01.o" "SkeletonRN.phl[1526]";
+connectAttr "Space_Controllers_Ctrl_R_Space_Ctrl_02.o" "SkeletonRN.phl[1527]";
+connectAttr "Space_Controllers_Ctrl_R_Space_Ctrl_03.o" "SkeletonRN.phl[1528]";
+connectAttr "Space_Controllers_Ctrl_Mid_Space_Ctrl_01.o" "SkeletonRN.phl[1529]";
+connectAttr "Space_Controllers_Ctrl_Mid_Space_Ctrl_02.o" "SkeletonRN.phl[1530]";
+connectAttr "Spine_01_Redundancy_Ctrl_translateX.o" "SkeletonRN.phl[1531]";
+connectAttr "Spine_01_Redundancy_Ctrl_translateY.o" "SkeletonRN.phl[1532]";
+connectAttr "Spine_01_Redundancy_Ctrl_translateZ.o" "SkeletonRN.phl[1533]";
+connectAttr "Spine_01_Redundancy_Ctrl_rotateX.o" "SkeletonRN.phl[1534]";
+connectAttr "Spine_01_Redundancy_Ctrl_rotateY.o" "SkeletonRN.phl[1535]";
+connectAttr "Spine_01_Redundancy_Ctrl_rotateZ.o" "SkeletonRN.phl[1536]";
+connectAttr "Spine_01_Redundancy_Ctrl_scaleX.o" "SkeletonRN.phl[1537]";
+connectAttr "Spine_01_Redundancy_Ctrl_scaleY.o" "SkeletonRN.phl[1538]";
+connectAttr "Spine_01_Redundancy_Ctrl_scaleZ.o" "SkeletonRN.phl[1539]";
+connectAttr "Spine_01_Redundancy_Ctrl_Operating_Space.o" "SkeletonRN.phl[1540]";
+connectAttr "Spine_01_Redundancy_Ctrl_visibility.o" "SkeletonRN.phl[1541]";
+connectAttr "Spine_02_Redundancy_Ctrl_translateX.o" "SkeletonRN.phl[1542]";
+connectAttr "Spine_02_Redundancy_Ctrl_translateY.o" "SkeletonRN.phl[1543]";
+connectAttr "Spine_02_Redundancy_Ctrl_translateZ.o" "SkeletonRN.phl[1544]";
+connectAttr "Spine_02_Redundancy_Ctrl_rotateX.o" "SkeletonRN.phl[1545]";
+connectAttr "Spine_02_Redundancy_Ctrl_rotateY.o" "SkeletonRN.phl[1546]";
+connectAttr "Spine_02_Redundancy_Ctrl_rotateZ.o" "SkeletonRN.phl[1547]";
+connectAttr "Spine_02_Redundancy_Ctrl_scaleX.o" "SkeletonRN.phl[1548]";
+connectAttr "Spine_02_Redundancy_Ctrl_scaleY.o" "SkeletonRN.phl[1549]";
+connectAttr "Spine_02_Redundancy_Ctrl_scaleZ.o" "SkeletonRN.phl[1550]";
+connectAttr "Spine_02_Redundancy_Ctrl_Operating_Space.o" "SkeletonRN.phl[1551]";
+connectAttr "Spine_02_Redundancy_Ctrl_visibility.o" "SkeletonRN.phl[1552]";
+connectAttr "Spine_03_Redundancy_Ctrl_translateX.o" "SkeletonRN.phl[1553]";
+connectAttr "Spine_03_Redundancy_Ctrl_translateY.o" "SkeletonRN.phl[1554]";
+connectAttr "Spine_03_Redundancy_Ctrl_translateZ.o" "SkeletonRN.phl[1555]";
+connectAttr "Spine_03_Redundancy_Ctrl_rotateX.o" "SkeletonRN.phl[1556]";
+connectAttr "Spine_03_Redundancy_Ctrl_rotateY.o" "SkeletonRN.phl[1557]";
+connectAttr "Spine_03_Redundancy_Ctrl_rotateZ.o" "SkeletonRN.phl[1558]";
+connectAttr "Spine_03_Redundancy_Ctrl_scaleX.o" "SkeletonRN.phl[1559]";
+connectAttr "Spine_03_Redundancy_Ctrl_scaleY.o" "SkeletonRN.phl[1560]";
+connectAttr "Spine_03_Redundancy_Ctrl_scaleZ.o" "SkeletonRN.phl[1561]";
+connectAttr "Spine_03_Redundancy_Ctrl_Operating_Space.o" "SkeletonRN.phl[1562]";
+connectAttr "Spine_03_Redundancy_Ctrl_visibility.o" "SkeletonRN.phl[1563]";
+connectAttr "Chest_Redundancy_Ctrl_translateX.o" "SkeletonRN.phl[1564]";
+connectAttr "Chest_Redundancy_Ctrl_translateY.o" "SkeletonRN.phl[1565]";
+connectAttr "Chest_Redundancy_Ctrl_translateZ.o" "SkeletonRN.phl[1566]";
+connectAttr "Chest_Redundancy_Ctrl_rotateX.o" "SkeletonRN.phl[1567]";
+connectAttr "Chest_Redundancy_Ctrl_rotateY.o" "SkeletonRN.phl[1568]";
+connectAttr "Chest_Redundancy_Ctrl_rotateZ.o" "SkeletonRN.phl[1569]";
+connectAttr "Chest_Redundancy_Ctrl_scaleX.o" "SkeletonRN.phl[1570]";
+connectAttr "Chest_Redundancy_Ctrl_scaleY.o" "SkeletonRN.phl[1571]";
+connectAttr "Chest_Redundancy_Ctrl_scaleZ.o" "SkeletonRN.phl[1572]";
+connectAttr "Chest_Redundancy_Ctrl_Operating_Space.o" "SkeletonRN.phl[1573]";
+connectAttr "Chest_Redundancy_Ctrl_visibility.o" "SkeletonRN.phl[1574]";
+connectAttr "Neck_01_Redundancy_Ctrl_translateX.o" "SkeletonRN.phl[1575]";
+connectAttr "Neck_01_Redundancy_Ctrl_translateY.o" "SkeletonRN.phl[1576]";
+connectAttr "Neck_01_Redundancy_Ctrl_translateZ.o" "SkeletonRN.phl[1577]";
+connectAttr "Neck_01_Redundancy_Ctrl_rotateX.o" "SkeletonRN.phl[1578]";
+connectAttr "Neck_01_Redundancy_Ctrl_rotateY.o" "SkeletonRN.phl[1579]";
+connectAttr "Neck_01_Redundancy_Ctrl_rotateZ.o" "SkeletonRN.phl[1580]";
+connectAttr "Neck_01_Redundancy_Ctrl_scaleX.o" "SkeletonRN.phl[1581]";
+connectAttr "Neck_01_Redundancy_Ctrl_scaleY.o" "SkeletonRN.phl[1582]";
+connectAttr "Neck_01_Redundancy_Ctrl_scaleZ.o" "SkeletonRN.phl[1583]";
+connectAttr "Neck_01_Redundancy_Ctrl_Operating_Space.o" "SkeletonRN.phl[1584]";
+connectAttr "Neck_01_Redundancy_Ctrl_visibility.o" "SkeletonRN.phl[1585]";
+connectAttr "Neck_02_Redundancy_Ctrl_translateX.o" "SkeletonRN.phl[1586]";
+connectAttr "Neck_02_Redundancy_Ctrl_translateY.o" "SkeletonRN.phl[1587]";
+connectAttr "Neck_02_Redundancy_Ctrl_translateZ.o" "SkeletonRN.phl[1588]";
+connectAttr "Neck_02_Redundancy_Ctrl_rotateX.o" "SkeletonRN.phl[1589]";
+connectAttr "Neck_02_Redundancy_Ctrl_rotateY.o" "SkeletonRN.phl[1590]";
+connectAttr "Neck_02_Redundancy_Ctrl_rotateZ.o" "SkeletonRN.phl[1591]";
+connectAttr "Neck_02_Redundancy_Ctrl_scaleX.o" "SkeletonRN.phl[1592]";
+connectAttr "Neck_02_Redundancy_Ctrl_scaleY.o" "SkeletonRN.phl[1593]";
+connectAttr "Neck_02_Redundancy_Ctrl_scaleZ.o" "SkeletonRN.phl[1594]";
+connectAttr "Neck_02_Redundancy_Ctrl_Operating_Space.o" "SkeletonRN.phl[1595]";
+connectAttr "Neck_02_Redundancy_Ctrl_visibility.o" "SkeletonRN.phl[1596]";
+connectAttr "L_Skeleton_Reg_Arms_GeoShapeDeformed.iog" "SkeletonRN.phl[1597]";
+connectAttr "Skeleton_Smooth_GeoShapeDeformed.iog" "SkeletonRN.phl[1598]";
+connectAttr "R_Skeleton_Reg_Arms_GeoShapeDeformed.iog" "SkeletonRN.phl[1599]";
 connectAttr "transformGeometry1.og" "FishBowlRN.phl[1]";
 connectAttr "transformGeometry2.og" "FishBowlRN.phl[2]";
 connectAttr "transformGeometry3.og" "FishBowlRN.phl[3]";
